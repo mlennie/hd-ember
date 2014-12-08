@@ -1,4 +1,3 @@
-require('newrelic');
 
 import Ember from 'ember';
 import Resolver from 'ember/resolver';

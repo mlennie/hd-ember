@@ -1,4 +1,5 @@
 /* global require, module */
+require('newrelic');
 
 var EmberApp = require('ember-cli/lib/broccoli/ember-app');
 
