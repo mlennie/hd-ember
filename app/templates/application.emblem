@@ -1,3 +1,13 @@
-h2.btn.btn-primary#title Welcome to Happy Dining!
+h2#title Welcome to Happy Dining!
+
+link-to 'index' | Home
+link-to 'protected' | Protected
+
+hr
+if session.isAuthenticated
+  button{action 'invalidateSession'} Logout
+else
+  link-to 'login' | Login
+hr
 
 == outlet

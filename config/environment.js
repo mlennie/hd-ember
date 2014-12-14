@@ -2,6 +2,9 @@
 
 module.exports = function(environment) {
   var ENV = {
+    railsCsrf: {
+      csrfURL: 'api/csrf'
+    },
     modulePrefix: 'hd-ember',
     environment: environment,
     baseURL: '/',
@@ -17,6 +20,10 @@ module.exports = function(environment) {
       // Here you can pass flags/options to your application instance
       // when it is created
     }
+  };
+
+  ENV['simple-auth'] = {
+    authorizer: 'simple-auth-authorizer:devise'
   };
 
   if (environment === 'development') {

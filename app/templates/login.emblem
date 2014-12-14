@@ -1,0 +1,7 @@
+form submit='authenticate'
+  label for='identification' Login
+  input id='identification' placeholder='Enter Login' value=identification
+  label for='password' Password
+  input id='password' placeholder='Enter Password' type='password' value=password
+  button type='submit' Login
+== outlet
