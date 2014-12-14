@@ -39,7 +39,6 @@
     "broccoli-sass": "^0.3.3",
     "broccoli-static-compiler": "^0.2.1",
     "ember-cli-emblem": "0.0.2",
-    "newrelic": "^1.14.1",
-    "rails-csrf": "^1.0.1"
+    "newrelic": "^1.14.1"
   }
 }

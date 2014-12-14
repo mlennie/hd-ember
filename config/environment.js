@@ -2,9 +2,6 @@
 
 module.exports = function(environment) {
   var ENV = {
-    railsCsrf: {
-      csrfURL: 'api/csrf'
-    },
     modulePrefix: 'hd-ember',
     environment: environment,
     baseURL: '/',
