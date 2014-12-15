@@ -4,9 +4,6 @@ var EmberApp = require('ember-cli/lib/broccoli/ember-app');
 
 var app = new EmberApp();
 
-//New Relic
-app.import('vendor/newrelic.js');
-
 // Bootstrap
 app.import('bower_components/bootstrap-sass-official/assets/javascripts/bootstrap.js');
 
