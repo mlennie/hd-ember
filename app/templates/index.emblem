@@ -1,1 +1,36 @@
-p landing page
+.container
+  #landing-image
+  .row
+    .col-md-10.col-md-offset-1
+      /
+        #carousel-example-generic.carousel.slide data-ride="carousel"
+
+        ol.carousel-indicators
+          li data-target="#carousel-example-generic" data-slide-to="0"
+          li data-target="#carousel-example-generic" data-slide-to="1"
+          li data-target="#carousel-example-generic" data-slide-to="2"
+
+        .carousel-inner role="listbox"
+          .item
+            img src="/assets/images/wine-steak.jpg" alt="..."
+            .carousel-caption
+              | Trop cool
+          .item
+            img src="..." alt="..."
+            .carousel-caption
+              | Alright!
+
+        a.left.carousel-control href="#carousel-example-generic" role="button" data-slide="prev"
+          i.fa.fa-chevron-left aria-hidden="true"
+          span.sr-only Previous
+        a.right.carousel-control href="#carousel-example-generic" role="button" data-slide="next"
+          i.fa.fa-chevron-right aria-hidden="true"
+          span.sr-only Next
+  .row
+    h2.center#landing-middle-header Happy Dining en quelques
+    .col-md-4
+      img.img-responsive.landing-middle-images.img-rounded src="/assets/images/people.jpg" alt="..."
+    .col-md-4
+      img.img-responsive.landing-middle-images.img-rounded src="/assets/images/concierge.jpeg" alt="..."
+    .col-md-4
+      img.img-responsive.landing-middle-images.img-rounded src="/assets/images/women.jpg" alt="..."

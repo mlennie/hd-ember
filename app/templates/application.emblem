@@ -1,42 +1,33 @@
-nav.navbar.navbar-default role="navigation"
-	.container-fluid
-		.navbar-header
-			button.navbar-toggle.collapsed type="button" data-toggle="collapse" data-target="#navbar-collapse-1"
-				span.sr-only Toggle navigation
-				span.icon-bar
-				span.icon-bar
-				span.icon-bar
-			.navbar-brand #{ link-to 'index' | Happy Dining }
-		.collapse.navbar-collapse#navbar-collapse-1
-			ul.nav.navbar-nav.navbar-right
-				li #{ link-to 'index' | Comment ça marche ? }
-				if session.isAuthenticated
-					li.dropdown
-						a.dropdown-toggle href="#" data-toggle="dropdown" role="button" aria-expanded="false"
-							| Mon compte
-							span.caret
-						ul.dropdown-menu role="menu"
-							li #{ link-to 'index' | Mes euros collectés }
-							li #{ link-to 'index' | Gérer mes réservations }
-							li #{ link-to 'index' | Mon Profil }
-							li #{ link-to 'index' | Mes restaurants favoris }
-							li #{ link-to 'index' | Parrainer un ami }
-							li.divider
-							li{action 'invalidateSession'} #{ link-to '' | Se déconnecter }
-				else
-					li #{ link-to 'login' | Se connecter }
-				li #{ link-to 'index' | Nous contacter }
-/
-	h2#title Welcome to Happy Dining!
+.container-fluid
+	nav.navbar.navbar-default role="navigation"
+		.container-fluid
+			.navbar-header
+				button.navbar-toggle.collapsed type="button" data-toggle="collapse" data-target="#navbar-collapse-1"
+					span.sr-only Toggle navigation
+					span.icon-bar
+					span.icon-bar
+					span.icon-bar
+				.navbar-brand #{ link-to 'index' | Happy Dining }
+			.collapse.navbar-collapse#navbar-collapse-1
+				ul.nav.navbar-nav.navbar-right
+					li #{ link-to 'index' | Comment ça marche ? }
+					if session.isAuthenticated
+						li.dropdown
+							a.dropdown-toggle href="#" data-toggle="dropdown" role="button" aria-expanded="false"
+								| Mon compte
+								span.caret
+							ul.dropdown-menu role="menu"
+								li #{ link-to 'index' | Mes euros collectés }
+								li #{ link-to 'index' | Gérer mes réservations }
+								li #{ link-to 'index' | Mon Profil }
+								li #{ link-to 'index' | Mes restaurants favoris }
+								li #{ link-to 'index' | Parrainer un ami }
+								li.divider
+								li
+									a{action 'invalidateSession'} Se déconnecter
+					else
+						li #{ link-to 'login' | Se connecter }
+					li #{ link-to 'index' | Nous contacter }
 
-	link-to 'index' | Home
-	link-to 'protected' | Protected
-
-	hr
-	if session.isAuthenticated
-		button{action 'invalidateSession'} Logout
-	else
-		link-to 'login' | Login
-	hr
-
-== outlet
+.container-fluid
+	== outlet
