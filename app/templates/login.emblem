@@ -1,10 +1,14 @@
 
 form submit='authenticate'
-	label for="identification" Login
-	input value=identification placeholder='Enter Login'
-	label for="password" Password
-	input value=password placeholder='Enter Password' type='password'
-	button type="submit" Login
+	.input-group
+		label for="identification" Login
+		= input class='form-control' value=identification placeholder='Enter Email'
+	br
+	.input-group
+		label for="password" Password
+		= input class='form-control' value=password placeholder='Enter Password' type='password'
+	br
+	button.btn.btn-primary type="submit" Login
 /
 	<form {{action 'authenticate' on='submit'}}>
 		<label for="identification">Login</label>
