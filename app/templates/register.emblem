@@ -1,14 +1,22 @@
-form submit='registerUser'
-  .input-group
-    label for="email" Login
-    = input class='form-control' value=email placeholder='Enter Email'
-  br
-  .input-group
-    label for="password" Password
-    = input class='form-control' value=password placeholder='Enter Password' type='password'
-  br
-  .input-group
-    label for="passwordConfirmation" Password Confirmation
-    = input class='form-control' value=passwordConfirmation placeholder='Confirm Password' type='password'
-  br
-  button.btn.btn-primary type="submit" Register
+response
+if registrationFailed
+  h3
+    span.label.label-warning Oops record not saved! Please make sure you have the password and password confirmation match exactly.
+if registrationSuccessful
+  h2
+    span.label.label-success Yay you did it!
+else
+  form submit='registerUser'
+    .input-group
+      label for="email" Login
+      = input class='form-control' value=email placeholder='Enter Email' type='email' required=true
+    br
+    .input-group
+      label for="password" Password
+      = input class='form-control' value=password placeholder='Enter Password' type='password' required=true
+    br
+    .input-group
+      label for="passwordConfirmation" Password Confirmation
+      = input class='form-control' value=passwordConfirmation placeholder='Confirm Password' type='password' required=true
+    br
+    button.btn.btn-primary type="submit" Register
