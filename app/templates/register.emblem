@@ -1,4 +1,4 @@
-form submit='register'
+form submit='registerUser'
   .input-group
     label for="email" Login
     = input class='form-control' value=email placeholder='Enter Email'
@@ -8,7 +8,7 @@ form submit='register'
     = input class='form-control' value=password placeholder='Enter Password' type='password'
   br
   .input-group
-    label for="passwordconfirmation" Password Confirmation
-    = input class='form-control' value=passwordconfirmation placeholder='Confirm Password' type='password'
+    label for="passwordConfirmation" Password Confirmation
+    = input class='form-control' value=passwordConfirmation placeholder='Confirm Password' type='password'
   br
   button.btn.btn-primary type="submit" Register
