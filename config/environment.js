@@ -29,6 +29,7 @@ module.exports = function(environment) {
     // ENV.APP.LOG_TRANSITIONS = true;
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     ENV.APP.LOG_VIEW_LOOKUPS = true;
+    ENV.APP.HOST = 'http://localhost:3000'
   }
 
   if (environment === 'test') {
@@ -39,11 +40,12 @@ module.exports = function(environment) {
     // keep test console output quieter
     ENV.APP.LOG_ACTIVE_GENERATION = false;
     ENV.APP.LOG_VIEW_LOOKUPS = false;
-
+    ENV.APP.HOST = 'http://localhost:3000'
     ENV.APP.rootElement = '#ember-testing';
   }
 
   if (environment === 'production') {
+    ENV.APP.HOST = process.env.HOST
 
   }
 
