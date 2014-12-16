@@ -45,7 +45,7 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-    ENV.APP.HOST = process.env.HOST
+    ENV.APP.HOST = 'http://hd-rails.herokuapp.com'
 
   }
 
