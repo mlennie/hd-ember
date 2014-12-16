@@ -3,7 +3,6 @@ import Ember from 'ember';
 export default Ember.Controller.extend({
   registrationSuccessful: false,
   registrationFailed: false,
-  response: '',
   email: '',
   password: '',
   passwordConfirmation: '',

@@ -1,11 +1,13 @@
-
-form submit='authenticate'
-	.input-group
-		label for="identification" Login
-		= input class='form-control' value=identification placeholder='Enter Email'
-	br
-	.input-group
-		label for="password" Password
-		= input class='form-control' value=password placeholder='Enter Password' type='password'
-	br
-	button.btn.btn-primary type="submit" Login
+.container
+	.row
+		.col-md-4.col-md-offset-4#register-form
+			form submit='authenticate'
+				.input-group.full-width
+					label for="identification" Login
+					= input class='form-control' value=identification placeholder='Enter Email' type='email' required=true
+				br
+				.input-group.full-width
+					label for="password" Password
+					= input class='form-control' value=password placeholder='Enter Password' type='password' required=true
+				br
+				button.btn.btn-primary.full-width type="submit" Login
