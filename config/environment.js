@@ -23,10 +23,6 @@ module.exports = function(environment) {
     authorizer: 'simple-auth-authorizer:devise'
   };
 
-  ENV['simple-auth-devise'] = {
-    serverTokenEndpoint:  'http://hd-rails.herokuapp.com/users/sign_in',
-    crossOriginWhitelist: ['http://hd-rails.herokuapp.com/']
-  };
 
   if (environment === 'development') {
     // ENV.APP.LOG_RESOLVER = true;
@@ -51,7 +47,10 @@ module.exports = function(environment) {
 
   if (environment === 'production') {
     ENV.APP.HOST = 'http://hd-rails.herokuapp.com'
-
+    ENV['simple-auth-devise'] = {
+      serverTokenEndpoint:  'http://hd-rails.herokuapp.com/users/sign_in',
+      crossOriginWhitelist: ['http://hd-rails.herokuapp.com/']
+    };
   }
 
   return ENV;
