@@ -23,6 +23,11 @@ module.exports = function(environment) {
     authorizer: 'simple-auth-authorizer:devise'
   };
 
+  ENV['simple-auth-devise'] = {
+    serverTokenEndpoint:  'http://hd-rails.herokuapp.com/users/sign_in',
+    crossOriginWhitelist: ['http://hd-rails.herokuapp.com/']
+  };
+
   if (environment === 'development') {
     // ENV.APP.LOG_RESOLVER = true;
     ENV.APP.LOG_ACTIVE_GENERATION = true;
