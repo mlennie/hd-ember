@@ -1,5 +1,9 @@
 .container
 	.row
+		if confirmation_success
+			.alert.alert-success Confirmation successful. You can now log into your account. 
+		if confirmation_fail
+			.alert.alert-warning Confirmation failed. Either you have already confirmed your account, or this user does not exist. 
 		.col-md-4.col-md-offset-4#register-form
 			form submit='authenticate'
 				.input-group.full-width

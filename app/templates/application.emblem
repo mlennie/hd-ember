@@ -27,7 +27,7 @@
 									a{action 'invalidateSession'} Se déconnecter
 					else
 						li #{ link-to 'register' | S'inscire }
-						li #{ link-to 'login' | Se connecter }
+						li #{ link-to 'login' 'user' | Se connecter }
 					li #{ link-to 'index' | Nous contacter }
 
 .container-fluid

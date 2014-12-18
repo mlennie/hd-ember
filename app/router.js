@@ -7,8 +7,7 @@ var Router = Ember.Router.extend({
 
 Router.map(function() {
   this.route('protected');
-  this.route('login');
-  this.route('confirmation', { path: '/confirmation/:result' });
+  this.route('login', { path: '/login/:confirmation' });
   this.route('register');
 });
 
