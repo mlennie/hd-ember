@@ -1,7 +1,6 @@
-.container
-  #landing-image
+.container-fluid
   .row
-    .col-md-10.col-md-offset-1
+    .col-md-12
       /
         #carousel-example-generic.carousel.slide data-ride="carousel"
 
@@ -29,8 +28,8 @@
   .row
     h2.center#landing-middle-header Happy Dining en quelques
     .col-md-4
-      img.img-responsive.landing-middle-images.img-rounded src="/assets/images/people.jpg" alt="..."
+      img.img-responsive src="/assets/images/illustration_one.jpeg" alt="step one reserve"
     .col-md-4
-      img.img-responsive.landing-middle-images.img-rounded src="/assets/images/concierge.jpeg" alt="..."
+      img.img-responsive src="/assets/images/illustration_two.jpeg" alt="step two eat"
     .col-md-4
-      img.img-responsive.landing-middle-images.img-rounded src="/assets/images/women.jpg" alt="..."
+      img.img-responsive src="/assets/images/illustration_three.jpeg" alt="step three get money and eat for free"

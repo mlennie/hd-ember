@@ -1,29 +1,63 @@
 @import 'bower_components/bootstrap-sass-official/assets/stylesheets/_bootstrap';
 @import 'bower_components/fontawesome/scss/font-awesome';
 
+/* GENERAL */
+
 html, body {
-  margin: 20px;
+  margin: 0px;
+}
+
+/* HEADER */
+
+.navbar {
+  border-radius: 0px;
 }
 
 .center {
   text-align: center;
 }
 
+/* LANDING PAGE */
+
+#main-title {
+  text-align: center;
+  color: white;
+  margin-top: 170px;
+  font-size: 3.2em;
+}
+
 #landing-image {
-  background-image: url("/assets/images/wine-steak.jpg");
+  background-image: url("/assets/images/main_pic.jpg");
   background-repeat: no-repeat;
-  background-position: 0px -400px;
   background-size: cover;
-  height: 350px;
+  height: 700px;
+}
+
+img.navbar-brand {
+  height: 60px;
+  margin: 0;
+  padding: 5px 0 5px 10px;
 }
 
 #landing-middle-header {
   margin-top: 50px;
+  margin-bottom: 50px;
+  color: #999;
 }
 
-.landing-middle-images {
-  height: 170px;
-  margin: 50px auto 0 auto;
+#pre-subscribe-form {
+  background-color: rgba(124, 119, 133, 0.3);
+  border: 2px solid #999;
+  border-radius: 1px;
+}
+
+.pre-subscribe-form-field {
+  border: 2px solid rgba(191, 191, 191, 0.3);
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+#step_one_pic {
+  height: 310px;
 }
 
 .full-width {

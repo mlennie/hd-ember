@@ -19,12 +19,12 @@ export default Ember.Controller.extend({
 
       //save user
       var _this = this;
-      var onSuccess = function(user){
+      var onSuccess = function(){
         _this.set('registrationFailed', false);
         _this.set('registrationSuccessful', true);
       };
 
-      var onFail = function(errors) {
+      var onFail = function() {
         _this.set('registrationFailed', true);
       };
 
