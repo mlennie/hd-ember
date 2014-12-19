@@ -9,7 +9,9 @@ nav.navbar.navbar-inverse role="navigation"
 			img.navbar-brand src="/assets/images/logo.png"
 		.collapse.navbar-collapse#navbar-collapse-1
 			ul.nav.navbar-nav.navbar-right
-				li #{ link-to 'index' | Comment ça marche ? }
+				li 
+					a href='#landing-middle-header'
+						| Comment ça marche ?
 				if session.isAuthenticated
 					li.dropdown
 						a.dropdown-toggle href="#" data-toggle="dropdown" role="button" aria-expanded="false"
