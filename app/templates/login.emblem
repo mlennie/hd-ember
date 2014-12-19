@@ -1,4 +1,4 @@
-.container
+.container#login-page
 	.row
 		if confirmation_success
 			.alert.alert-success Confirmation successful. You can now log into your account. 

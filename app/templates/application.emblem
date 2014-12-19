@@ -6,11 +6,12 @@ nav.navbar.navbar-inverse role="navigation"
 				span.icon-bar
 				span.icon-bar
 				span.icon-bar
-			img.navbar-brand src="/assets/images/logo.png"
+			a href='#landing-image'
+				img.navbar-brand src="/assets/images/logo.png"
 		.collapse.navbar-collapse#navbar-collapse-1
 			ul.nav.navbar-nav.navbar-right
 				li 
-					a href='#landing-middle-header'
+					a href='#comment-ca-marche'
 						| Comment ça marche ?
 				if session.isAuthenticated
 					li.dropdown
@@ -29,5 +30,7 @@ nav.navbar.navbar-inverse role="navigation"
 				else
 					li #{ link-to 'register' | S'inscire }
 					li #{ link-to 'login' 'user' | Se connecter }
-				li #{ link-to 'index' | Nous contacter }
+				li 
+					a href='#home-page-footer'
+						| Nous contacter
 == outlet

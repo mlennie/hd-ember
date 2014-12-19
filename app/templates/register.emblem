@@ -1,4 +1,4 @@
-.container
+.container#register-page
   .row
     .col-md-4.col-md-offset-4#register-form
       if registrationFailed

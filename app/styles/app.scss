@@ -8,6 +8,18 @@ html, body {
   line-height: 1.5;
 }
 
+h1 {
+  font-size: 2.8em;
+}
+
+h2 {
+  font-size: 2.5em;
+}
+
+.no-padding {
+  padding: 0;
+}
+
 /* HEADER */
 
 .navbar {
@@ -18,8 +30,87 @@ html, body {
   z-index: 1;
 }
 
+#main-content {
+  margin-top: 70;
+}
+
 .center {
   text-align: center;
+}
+
+/* FOOTER */
+
+#home-page-footer {
+  margin-top: 30px;
+  color: #fff;
+  display: block;
+  box-sizing: border-box;
+  font-family: 'Montserrat', 'Arial', sans-serif;
+  overflow: hidden;
+  height: 670px;
+}
+
+/* CONTACT PAGE */
+
+#contact-black {
+  background-color: #181818;
+  width: 100%;
+  z-index: -1;
+  height: 670px;
+  position: relative;
+}
+
+#contact-img {
+  opacity: 0.03;
+  position: absolute;
+  top: 0;
+  vertical-align: middle;
+  box-sizing: border-box;
+  height: 670px;
+}
+
+#contact-title {
+  text-align: center;
+  text-transform: uppercase;
+  padding-top: 100px;
+  font-family: 'Montserrat', 'Arial', sans-serif;
+}
+
+#contact-section {
+  margin-top: 50px;
+}
+
+.contact-detail {
+  margin-bottom: 10px;
+  font-size: 1.1em;
+}
+
+.contact-icon {
+  margin-right: 20px;
+  display: inline;
+}
+
+.contact-small-field {
+  width: 100% !important;
+}
+
+#contact-big-field {
+  width: 100%;
+  margin-top: 20px;
+}
+
+#contact-name {
+  width: 95% !important;
+}
+
+.contact-button {
+  margin-top: 20px;
+}
+
+#contact-email-text {
+  color: #999;
+  margin-top: 30px;
+  font-size: 1.3em;
 }
 
 /* LANDING PAGE */
@@ -36,7 +127,7 @@ html, body {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: top;
-  height: 620px;
+  height: 710px;
 }
 
 img.navbar-brand {
@@ -45,8 +136,12 @@ img.navbar-brand {
   padding: 5px 0 5px 10px;
 }
 
+#comment-ca-marche {
+  height: 670px;
+}
+
 #landing-middle-header {
-  margin-top: 50px;
+  margin-top: 100px;
   margin-bottom: 50px;
   color: #999;
 }
@@ -114,18 +209,8 @@ img.navbar-brand {
   background-color: #333;
   color: white;
 }
-.navbar-brand {
-  color: #333;
-  text-decoration: none;
-  a {
-    &:link {
-      color: #333;
-    }
-    &:visited {
-      color: #333;
-    }
-    &:hover {
-      text-decoration: none;
-    }
-  }
+
+/* LOGIN PAGE */
+#login-page, #register-page {
+  padding-top: 75px;
 }
