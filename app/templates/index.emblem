@@ -1,30 +1,14 @@
-.container-fluid
+.container-fluid.landing-image
   .row
-    .col-md-12
-      /
-        #carousel-example-generic.carousel.slide data-ride="carousel"
-
-        ol.carousel-indicators
-          li data-target="#carousel-example-generic" data-slide-to="0"
-          li data-target="#carousel-example-generic" data-slide-to="1"
-          li data-target="#carousel-example-generic" data-slide-to="2"
-
-        .carousel-inner role="listbox"
-          .item
-            img src="/assets/images/wine-steak.jpg" alt="..."
-            .carousel-caption
-              | Trop cool
-          .item
-            img src="..." alt="..."
-            .carousel-caption
-              | Alright!
-
-        a.left.carousel-control href="#carousel-example-generic" role="button" data-slide="prev"
-          i.fa.fa-chevron-left aria-hidden="true"
-          span.sr-only Previous
-        a.right.carousel-control href="#carousel-example-generic" role="button" data-slide="next"
-          i.fa.fa-chevron-right aria-hidden="true"
-          span.sr-only Next
+    h1#main-title La gastronomie qui rapporte
+    .col-md-6.col-md-offset-3#pre-subscribe-form
+      #pre-subscribe-form-title Se préinscrire et profiter des meilleures offres
+      form 
+        span = input class=' pre-subscribe-form-field' value=first_name placeholder='Prénom' maxlength='50'  required=true
+        span = input class=' pre-subscribe-form-field' value=last_name placeholder='Nom' maxlength='50' required=true
+        span = input class=' pre-subscribe-form-field' id='pre-subscribe-form-email-field' value=email placeholder='Email' maxlength='100' type='email' required=true
+        button#pre-subscribe-form-button type="submit" ÇA M'INTÉRESSE!
+.container
   .row
     h2.center#landing-middle-header Happy Dining en quelques
     .col-md-4

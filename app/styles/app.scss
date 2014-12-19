@@ -5,12 +5,14 @@
 
 html, body {
   margin: 0px;
+  line-height: 1.5;
 }
 
 /* HEADER */
 
 .navbar {
   border-radius: 0px;
+  margin-bottom: 0;
 }
 
 .center {
@@ -22,11 +24,11 @@ html, body {
 #main-title {
   text-align: center;
   color: white;
-  margin-top: 170px;
-  font-size: 3.2em;
+  margin-top: 150px;
+  font-size: 2.6em;
 }
 
-#landing-image {
+.landing-image {
   background-image: url("/assets/images/main_pic.jpg");
   background-repeat: no-repeat;
   background-size: cover;
@@ -45,15 +47,51 @@ img.navbar-brand {
   color: #999;
 }
 
+#pre-subscribe-form-title {
+  text-align: center;
+  color: #fff;
+}
+
 #pre-subscribe-form {
   background-color: rgba(124, 119, 133, 0.3);
   border: 2px solid #999;
   border-radius: 1px;
+  box-shadow: 0px 0px 10px #000000;
+  opacity: 1 !important;
+  box-sizing: border-box;
+  display: block;
+  margin-top: 0em;
+  font-family: 'Montserrat', 'Arial', sans-serif;
+  font-size: 1em;
 }
 
 .pre-subscribe-form-field {
   border: 2px solid rgba(191, 191, 191, 0.3);
   background-color: rgba(255, 255, 255, 0.3);
+  margin-top: 5px;
+  margin-bottom: 10px;
+  margin-right: 10px;
+  min-height: 30px;
+  padding: 10px 5px;
+  border-radius: 1px;
+  width: 100px;
+}
+
+#pre-subscribe-form-email-field {
+  width: 200px;
+}
+
+#pre-subscribe-form-button {
+  background-color: #CB154E;
+  color: #fff;
+  border-color: #CB154E;
+  border: none;
+  border-radius: 1px;
+  &:hover {
+    text-decoration: none;
+  }
+  padding: 10px 15px;
+  border: 3px solid transparent;
 }
 
 #step_one_pic {
