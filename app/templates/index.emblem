@@ -1,52 +1,57 @@
 .container-fluid.landing-image#landing-image
-  .row
-    h1#main-title La gastronomie qui rapporte
-    .col-md-6.col-md-offset-3#pre-subscribe-form
-      #pre-subscribe-form-title Se préinscrire et profiter des meilleures offres
-      form 
-        span = input class=' pre-subscribe-form-field' value=first_name placeholder='Prénom' maxlength='50'  required=true
-        span = input class=' pre-subscribe-form-field' value=last_name placeholder='Nom' maxlength='50' required=true
-        span = input class=' pre-subscribe-form-field' id='pre-subscribe-form-email-field' value=email placeholder='Email' maxlength='100' type='email' required=true
-        button#pre-subscribe-form-button type="submit" ÇA M'INTÉRESSE!
+	.row
+		h1#main-title La gastronomie qui rapporte
+		.col-md-6.col-md-offset-3#pre-subscribe-form
+			if subscribeFailed
+				h3#main-title.no-margin Subscription did not go through. Please try again. 
+			if subscribeSuccessful
+				h1#main-title.no-margin Yay you subscribed!
+			else
+				#pre-subscribe-form-title Se préinscrire et profiter des meilleures offres
+				form submit='preSubscribe'
+					span = input class=' pre-subscribe-form-field' value=subscribeFirstName placeholder='Prénom' maxlength='50'  required=true
+					span = input class=' pre-subscribe-form-field' value=subscribeLastName placeholder='Nom' maxlength='50' required=true
+					span = input class=' pre-subscribe-form-field' id='pre-subscribe-form-email-field' value=subscribeEmail placeholder='Email' maxlength='100' type='email' required=true
+					button#pre-subscribe-form-button type="submit" ÇA M'INTÉRESSE!
 .container#comment-ca-marche
-  .row
-    h2.center#landing-middle-header Happy Dining en quelques
-    .col-md-4
-      img.img-responsive src="/assets/images/illustration_one.jpeg" alt="step one reserve"
-    .col-md-4
-      img.img-responsive src="/assets/images/illustration_two.jpeg" alt="step two eat"
-    .col-md-4
-      img.img-responsive src="/assets/images/illustration_three.jpeg" alt="step three get money and eat for free"
+	.row
+		h2.center#landing-middle-header Happy Dining en quelques
+		.col-md-4
+			img.img-responsive src="/assets/images/illustration_one.jpeg" alt="step one reserve"
+		.col-md-4
+			img.img-responsive src="/assets/images/illustration_two.jpeg" alt="step two eat"
+		.col-md-4
+			img.img-responsive src="/assets/images/illustration_three.jpeg" alt="step three get money and eat for free"
 .container-fluid
-  .row 
-    footer#home-page-footer
-      #contact-black
-        #contact-img
-          img src="assets/images/office.jpg" 
-        h2#contact-title Contactez-nous
-        .container
-          .row#contact-section
-            .col-sm-4
-              .col-sm-12.contact-detail
-                .contact-icon = fa-icon 'map-marker'
-                | Happy Dining
-              .col-sm-12.contact-detail
-                .contact-icon = fa-icon 'phone'
-                | 09 52 66 53 19
-              .col-sm-12.contact-detail
-                .contact-icon = fa-icon 'envelope'
-                | hello@happydining.fr
-            .col-sm-8
-              form
-                .col-sm-6.no-padding
-                  span = input class='pre-subscribe-form-field contact-small-field' id='contact-name' value=contact_name placeholder='Nom' maxlength='50' required=true
-                .col-sm-6.no-padding
-                  span = input class='pre-subscribe-form-field contact-small-field' value=contact_email placeholder='Email' maxlength='100' type='email' required=true
-                = input class=' pre-subscribe-form-field' id='contact-big-field' value=contact_content placeholder='Message' maxlength='1000' type='email' required=true          
-                .col-sm-4.no-padding
-                  button#pre-subscribe-form-button.contact-button type="submit" ENVOYER
-                .col-sm-8.no-padding
-                  p#contact-email-text Happy Dining recrute : job@happydining.fr
+	.row 
+		footer#home-page-footer
+			#contact-black
+				#contact-img
+					img src="assets/images/office.jpg" 
+				h2#contact-title Contactez-nous
+				.container
+					.row#contact-section
+						.col-sm-4
+							.col-sm-12.contact-detail
+								.contact-icon = fa-icon 'map-marker'
+								| Happy Dining
+							.col-sm-12.contact-detail
+								.contact-icon = fa-icon 'phone'
+								| 09 52 66 53 19
+							.col-sm-12.contact-detail
+								.contact-icon = fa-icon 'envelope'
+								| hello@happydining.fr
+						.col-sm-8
+							form#contact-form submit='sendContactEmail'
+								.col-sm-6.no-padding
+									span = input class='pre-subscribe-form-field contact-small-field' id='contact-name' value=contactEmailName placeholder='Nom' maxlength='50' required=true
+								.col-sm-6.no-padding
+									span = input class='pre-subscribe-form-field contact-small-field' value=contactEmailEmail placeholder='Email' maxlength='100' type='email' required=true
+								= input class=' pre-subscribe-form-field' id='contact-big-field' value=contactEmailContent placeholder='Message' maxlength='1000' type='email' required=true          
+								.col-sm-4.no-padding
+									button#pre-subscribe-form-button.contact-button type="submit" ENVOYER
+								.col-sm-8.no-padding
+									p#contact-email-text Happy Dining recrute : job@happydining.fr
 
 
 
