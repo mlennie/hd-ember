@@ -31,7 +31,7 @@ h2 {
   margin-bottom: 0;
   position: fixed;
   width: 100%;
-  z-index: 1;
+  z-index: 2;
 }
 
 #main-content {
@@ -222,3 +222,80 @@ img.navbar-brand {
 #login-page, #register-page {
   padding-top: 75px;
 }
+
+/* MEDIA QUERIES */
+
+/* CONTACT PAGE */
+
+@media (max-width: 900px ) {
+  #contact-name {
+    width: 100% !important;
+    margin-bottom: 25px;
+    margin-top: 40px;
+  }
+  #pre-subscribe-form-button {
+    width: 100%;
+    margin-bottom: 6px;
+  }
+  .contact-detail {
+    text-align: center;
+  }
+  #contact-black {
+    height: 800px;
+  }
+  #contact-img {
+    height: 800px !important;
+  }
+  #contact-email-text {
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 1200px) {
+  #comment-ca-marche {
+    height: 600px;
+  }
+}
+
+@media (max-width: 991px) {
+  #comment-ca-marche {
+    height: 2500px;
+  }
+}
+
+@media (max-width: 800px) {
+  #comment-ca-marche {
+    height: 2500px;
+  }
+}
+
+@media (max-width: 730px) {
+  #comment-ca-marche {
+    height: 2200px;
+  }
+}
+
+@media (max-width: 600px) {
+  #comment-ca-marche {
+    height: 1800px;
+  }
+}
+
+@media (max-width: 500px) {
+  #comment-ca-marche {
+    height: 1550px;
+  }
+}
+
+@media (max-width: 400px) {
+  #comment-ca-marche {
+    height: 1300px;
+  }
+}
+
+
+
+
+
+
+
