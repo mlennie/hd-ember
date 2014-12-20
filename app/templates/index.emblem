@@ -48,14 +48,14 @@
 								h1#main-title.no-margin Mail sent. Thank you!
 							else
 								form#contact-form submit='sendContactEmail'
-									.col-sm-6.no-padding
+									.col-md-6.no-padding
 										span = input class='pre-subscribe-form-field contact-small-field' id='contact-name' value=contactEmailName placeholder='Nom' maxlength='50' required=true
-									.col-sm-6.no-padding
+									.col-md-6.no-padding
 										span = input class='pre-subscribe-form-field contact-small-field' value=contactEmailEmail placeholder='Email' maxlength='100' type='email' required=true
 									= input class=' pre-subscribe-form-field' id='contact-big-field' value=contactEmailContent placeholder='Message' maxlength='1000' required=true          
-									.col-sm-4.no-padding
+									.col-md-4.no-padding
 										button#pre-subscribe-form-button.contact-button type="submit" ENVOYER
-									.col-sm-8.no-padding
+									.col-md-8.no-padding
 										p#contact-email-text Happy Dining recrute : job@happydining.fr
 
 
