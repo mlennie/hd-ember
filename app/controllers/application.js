@@ -1,7 +1,9 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
-	restaurants: ['Restaurant, lieu','blue nile', 'fouquets'],
+	names: function() {
+		return this.get('model').getEach('name');
+	}.property(),
 	cuisines: ['Type de cuisine', 'French', 'Italian', 'World'],
 	date: '',
 	hours: ['Heure','1h','2h'],
