@@ -1,7 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
-	name: '',
+	name: null,
 	names: function() {
 		return this.get('model').getEach('name');
 	}.property(),

@@ -43,15 +43,15 @@
 					span.icon-bar
 					span.icon-bar
 			.collapse.navbar-collapse#navbar-collapse-1#search-navbar-collapse
-				form.navbar-form.navbar-left submit='search' role="search"
+				form.navbar-form.navbar-left change='search' role="search"
 					.form-group
-						span.search-field= view Ember.Select content=names value=name class="form-control" 
+						span.search-field= view Ember.Select prompt="Restaurant" content=names valueBinding=name class="form-control" 
 						span.search-field= view Ember.Select content=cuisines class="form-control" 
 						span#search-email.search-field= bootstrap-datepicker value=date class="form-control" format="dd/mm/yy" todayBtn=true todayHighlight=true placeholder="Date"
 						span#calendar-icon= fa-icon 'calendar'
 						span.search-field= view Ember.Select content=hours class="form-control" 
 						span.search-field= view Ember.Select content=couverts class="form-control" 
-					button type="submit" class="btn btn-success" Rechercher
+					button.btn.btn-success Rechercher
 				p Rechercher ou réserver par téléphone: 09 90 90 87 85
 				
 == outlet
