@@ -1,0 +1,6 @@
+.container-fluid
+	.row
+		.col-md-4
+			| Hello
+		.col-md-8
+			==outlet
