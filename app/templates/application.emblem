@@ -45,8 +45,8 @@
 			.collapse.navbar-collapse#navbar-collapse-1#search-navbar-collapse
 				form.navbar-form.navbar-left role="search"
 					.form-group
-						span.search-field= input type="text" class="form-control" placeholder="Restaurant, Lieu"
-						span.search-field= input type="text" class="form-control" placeholder="Type de cuisine"
+						span.search-field= view Ember.Select content=restaurants class="form-control" 
+						span.search-field= view Ember.Select content=cuisines class="form-control" 
 						span#search-email.search-field= input type="text" class="form-control" placeholder="Date"
 						span#calendar-icon= fa-icon 'calendar'
 						span.search-field= input type="text" class="form-control" placeholder="Nombre de couverts"
