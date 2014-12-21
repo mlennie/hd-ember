@@ -11,7 +11,7 @@ br
 	.row
 		.col-md-8.col-md-offset-2
 			ul.list-group
-				= each restaurant in model
+				= each restaurant in filteredRestaurants
 					li.list-group-item
 						.media
 							.media-left
@@ -27,6 +27,21 @@ br
 									.col-sm-2
 										button.btn.btn-success.reserve-button
 											| Reserver
-
-
-| hello
+			h2#more-restaurants-title Some more restaurants you might be interested in!
+			ul.list-group
+				= each restaurant in nonFilteredRestaurants
+					li.list-group-item
+						.media
+							.media-left
+								img.restaurant-search-pic.img-thumbnail src="/assets/images/restaurant.jpg" 
+							.media-body
+								.row
+									.col-sm-7
+										h4.media-heading
+											=restaurant.name
+										p French Cuisine. The best you've ever had!
+									.col-sm-2
+										h1.percent-discount 10%
+									.col-sm-2
+										button.btn.btn-success.reserve-button
+											| Reserver
