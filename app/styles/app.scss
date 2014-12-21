@@ -24,12 +24,18 @@ h2 {
   margin: 0 !important;
 }
 
+.fixed-nav {
+  position: fixed;
+  width: 100%;
+  z-index: 2;
+  padding: 0;
+}
+
 /* HEADER */
 
 .navbar {
   border-radius: 0px;
   margin-bottom: 0;
-  position: fixed;
   width: 100%;
   z-index: 2;
 }
@@ -40,6 +46,36 @@ h2 {
 
 .center {
   text-align: center;
+}
+
+/*SEARCH FORM */
+
+#search-navbar {
+  height: 0px;
+
+  button {
+    margin-right: 15px;
+  }
+}
+#search-navbar-collapse {
+
+  .navbar-form {
+    padding: 0;
+    margin-top: 7px;
+    margin-bottom: 0px;
+  }
+}
+.search-field {
+  margin-right: 35px;
+}
+
+#search-email {
+  margin-right: 10px;
+}
+
+#calendar-icon {
+  margin-right: 35px;
+  font-size: 1.3em;
 }
 
 /* FOOTER */
