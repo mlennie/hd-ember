@@ -25,7 +25,7 @@ br
 							.col-sm-2.no-padding
 								h1.percent-discount -10%
 							.col-sm-2.no-padding
-								button.btn.btn-success.reserve-button
+								button.btn.btn-success.reserve-button data-toggle="popover" data-placement="bottom" data-trigger="focus" title="Please phone" data-content="09 90 90 87 85"
 									| Reserver
 				= else
 					.alert.alert-warning Hmmm no restaurants were found with that search
@@ -45,5 +45,5 @@ br
 							.col-sm-2.no-padding
 								h1.percent-discount -10%
 							.col-sm-2.no-padding
-								button.btn.btn-success.reserve-button
+								button.btn.btn-success.reserve-button data-toggle="popover" data-placement="bottom" data-trigger="focus" title="Please phone" data-content="09 90 90 87 85"
 									| Reserver
