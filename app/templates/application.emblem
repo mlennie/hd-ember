@@ -19,17 +19,13 @@
 							a.dropdown-toggle href="#" data-toggle="dropdown" role="button" aria-expanded="false"
 								| Mon compte
 								span.caret
-							ul.dropdown-menu role="menu"
+							ul.dropdown-menu#main-nav-dropdown role="menu"
 								li #{ link-to 'index' | Mes euros collectés }
-								li #{ link-to 'index' | Gérer mes réservations }
-								li #{ link-to 'index' | Mon Profil }
-								li #{ link-to 'index' | Mes restaurants favoris }
-								li #{ link-to 'index' | Parrainer un ami }
 								li.divider
 								li
 									a{action 'invalidateSession'} Se déconnecter
 					else
-						li #{ link-to 'register' | 'S'inscire }
+						li #{ link-to 'register' | S'inscire }
 						li #{ link-to 'login' 'user' | Se connecter }
 					li 
 						a href='#home-page-footer'
