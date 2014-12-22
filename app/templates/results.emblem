@@ -27,6 +27,8 @@ br
 							.col-sm-2.no-padding
 								button.btn.btn-success.reserve-button
 									| Reserver
+				= else
+					.alert.alert-warning Hmmm no restaurants were found with that search
 			h2#more-restaurants-title Some more restaurants you might be interested in!
 			ul.list-group
 				= each restaurant in nonFilteredRestaurants
