@@ -79,8 +79,15 @@ h2 {
 }
 
 /* SEARCH RESULTS */
+.restaurant-img-container {
+  width: 200px;
+  height: 150px;
+  overflow: hidden; 
+
+}
 .restaurant-search-pic {
-  height: 100px;
+  height: auto;
+  width: 100%;
 }
 
 .percent-discount {
@@ -89,7 +96,7 @@ h2 {
 
 .reserve-button {
   margin-top: 25px;
-  margin-left: 35px;
+  margin-right: 30px;
 }
 #more-restaurants-title {
   text-align: center;
