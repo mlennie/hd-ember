@@ -13,50 +13,7 @@
 					span = input class='pre-subscribe-form-field' value=password placeholder='Mot de passe' maxlength='50' required=true type='password'
 					span = input class='pre-subscribe-form-field' value=passwordConfirmation placeholder='Vérification' maxlength='50' type='password' required=true
 					button#pre-subscribe-form-button type="submit" Register!!
-.container#comment-ca-marche
-	.row
-		h2.center#landing-middle-header Le Concept
-		.col-md-4
-			img.img-responsive src="/assets/images/illustration_one.jpeg" alt="step one reserve"
-		.col-md-4
-			img.img-responsive src="/assets/images/illustration_two.jpeg" alt="step two eat"
-		.col-md-4
-			img.img-responsive src="/assets/images/illustration_three.jpeg" alt="step three get money and eat for free"
-.container-fluid
-	.row 
-		footer#home-page-footer
-			#contact-black
-				#contact-img
-					img src="assets/images/office.jpg" 
-				h2#contact-title Contactez-nous
-				.container
-					.row#contact-section
-						.col-sm-4
-							.col-sm-12.contact-detail
-								.contact-icon = fa-icon 'map-marker'
-								| Happy Dining
-							.col-sm-12.contact-detail
-								.contact-icon = fa-icon 'phone'
-								| 09 52 66 53 19
-							.col-sm-12.contact-detail
-								.contact-icon = fa-icon 'envelope'
-								| hello@happydining.fr
-						.col-sm-8
-							if mailFailed
-								h3#main-title.no-margin Mail did not go through. Please try again. 
-							if mailSuccessful
-								h1#main-title.no-margin Mail sent. Thank you!
-							else
-								form#contact-form submit='sendContactEmail'
-									.col-md-6.no-padding
-										span = input class='pre-subscribe-form-field contact-small-field' id='contact-name' value=contactEmailName placeholder='Nom' maxlength='50' required=true
-									.col-md-6.no-padding
-										span = input class='pre-subscribe-form-field contact-small-field' value=contactEmailEmail placeholder='Email' maxlength='100' type='email' required=true
-									= input class=' pre-subscribe-form-field' id='contact-big-field' value=contactEmailContent placeholder='Message' maxlength='1000' required=true          
-									.col-md-4.no-padding
-										button#pre-subscribe-form-button.contact-button type="submit" ENVOYER
-									.col-md-8.no-padding
-										p#contact-email-text Happy Dining recrute : job@happydining.fr
+
 
 
 
