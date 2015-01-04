@@ -15,7 +15,7 @@
 					button#pre-subscribe-form-button type="submit" ÇA M'INTÉRESSE!
 .container#comment-ca-marche
 	.row
-		h2.center#landing-middle-header Happy Dining en quelques
+		h2.center#landing-middle-header Le Concept
 		.col-md-4
 			img.img-responsive src="/assets/images/illustration_one.jpeg" alt="step one reserve"
 		.col-md-4
