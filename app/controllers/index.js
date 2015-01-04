@@ -4,21 +4,21 @@ export default Ember.Controller.extend({
   //properties
   mailFailed: false,
   mailSuccessful: false,
-  subscribeFailed: false,
-  subscribeSuccessful: false,
-  subscribeFirstName: '',
-  subscribeLastName: '',
-  subscribeEmail: '',
   contactEmailEmail: '',
   contactEmailName: '',
   contactEmailContent:'',
+  registrationSuccessful: false,
+  registrationFailed: false,
+  email: '',
+  password: '',
+  passwordConfirmation: '',
 
   //computed
   contactEmail: function() {
     return this.store.createRecord('contact-email', {});
   }.property(),
-  preSubscription: function() {
-    return this.store.createRecord('pre-subscriber', {});
+  user: function(){
+    return this.store.createRecord('user', {});
   }.property(),
 
   //actions
@@ -43,25 +43,25 @@ export default Ember.Controller.extend({
 
       ce.save().then(onMailSuccess,onMailFail);
     },
-    preSubscribe: function() {
-      //set pre subscription
-      var ps = this.get('preSubscription');
-      ps.set('firstName', this.get('subscribeFirstName'));
-      ps.set('lastName', this.get('subscribeLastName'));
-      ps.set('email', this.get('subscribeEmail'));
+     registerUser: function() {
+      //set user
+      var user = this.get('user');
+      user.set('email', this.get('email'));
+      user.set('password', this.get('password'));
+      user.set('passwordConfirmation', this.get('passwordConfirmation'));
 
-      //save presubscription 
+      //save user
       var _this = this;
-      var onSubscribeSuccess = function(){
-        _this.set('subscribeFailed', false);
-        _this.set('subscribeSuccessful', true);
+      var onSuccess = function(){
+        _this.set('registrationFailed', false);
+        _this.set('registrationSuccessful', true);
       };
 
-      var onSubscribeFail = function() {
-        _this.set('subscribeFailed', true);
+      var onFail = function() {
+        _this.set('registrationFailed', true);
       };
 
-      ps.save().then(onSubscribeSuccess,onSubscribeFail);
+      user.save().then(onSuccess,onFail);
     }
   }
 });
