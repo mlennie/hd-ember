@@ -3,7 +3,9 @@ import Ember from 'ember';
 export default Ember.Controller.extend({
 	name: null,
 	names: function() {
-		return this.get('model').getEach('name');
+		var arrond = ['75017', '75008'];
+		var names = this.get('model').getEach('name');
+		return arrond.concat(names);
 	}.property(),
 	cuisines: ['Type de cuisine', 'French', 'Italian', 'World'],
 	date: '',

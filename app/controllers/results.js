@@ -7,18 +7,20 @@ export default Ember.Controller.extend({
     var name = this.get('name');
     var restaurants = this.get('model');
 
-    if (name) {
+    if (name == '75017' || name == '75008') {
+      return restaurants.filterBy('zipcode', name);
+    } else {
       return restaurants.filterBy('name', name);
-    } 
+    }
   }.property('name', 'model'),
   nonFilteredRestaurants: function() {
     var name = this.get('name');
     var restaurants = this.get('model');
 
-    if (name) {
-      return restaurants.rejectBy('name', name);
+    if (name == '75017' || name == '75008') {
+      return restaurants.rejectBy('zipcode', name);
     } else {
-      return restaurants;
+      return restaurants.rejectBy('name', name);
     }
   }.property('name', 'model')
 });
