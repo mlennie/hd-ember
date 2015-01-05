@@ -22,7 +22,7 @@
 								li
 									a{action 'invalidateSession'} Se déconnecter
 					else
-						li #{ link-to 'register' | S'inscire }
+						li #{ link-to 'register' | 'S'inscire }
 						li #{ link-to 'login' 'user' | Se connecter }
 	if session.isAuthenticated
 		nav.navbar.navbar-default#search-navbar role="navigation"
@@ -38,7 +38,7 @@
 						.form-group
 							span.search-field= view Ember.Select prompt="Restaurant" content=names valueBinding=name class="form-control" 
 							span.search-field= view Ember.Select content=cuisines class="form-control" 
-							span#search-email.search-field= bootstrap-datepicker value=date class="form-control" format="dd/mm/yy" todayBtn=true todayHighlight=true placeholder="Date"
+							span#search-email.search-field= bootstrap-datepicker value=date class="form-control" format="dd/mm/yy" todayBtn=true todayHighlight=true placeholder="Date" language='fr'
 							span#calendar-icon= fa-icon 'calendar'
 							span.search-field= view Ember.Select content=hours class="form-control" 
 							span.search-field= view Ember.Select content=couverts class="form-control" 
