@@ -13,5 +13,9 @@
 				.input-group.full-width
 					label for="password" Password
 					= input class='form-control' value=password placeholder='Enter Password' type='password' required=true
+				.input-group#remember-me
+					= input type="checkbox" name="rememberMe"
+					label for="rememberMe" Remember me
+					
 				br
 				button.btn.btn-default.btn-lg.btn-black.full-width type="submit" Login

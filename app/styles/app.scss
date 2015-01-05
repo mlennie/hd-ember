@@ -118,18 +118,6 @@ h2 {
   margin-bottom: 30px;
 }
 
-/* FOOTER */
-
-#home-page-footer {
-  margin-top: 30px;
-  color: #fff;
-  display: block;
-  box-sizing: border-box;
-  font-family: 'Montserrat', 'Arial', sans-serif;
-  overflow: hidden;
-  height: 670px;
-}
-
 /* CONTACT PAGE */
 
 #contact-form {
@@ -306,6 +294,15 @@ img.navbar-brand {
   padding-top: 75px;
 }
 
+#remember-me {
+  padding-top: 15px;
+  margin-bottom: 0;
+
+  label {
+    margin-left: 10px;
+  }
+}
+
 /* MEDIA QUERIES */
 
 /* CONTACT PAGE */
@@ -408,6 +405,16 @@ img.navbar-brand {
   /* Set the fixed height of the footer here */
   height: 60px;
   background-color: #f5f5f5;
+}
+
+#home-page-footer {
+  margin-top: 30px;
+  color: #fff;
+  display: block;
+  box-sizing: border-box;
+  font-family: 'Montserrat', 'Arial', sans-serif;
+  overflow: hidden;
+  height: 670px;
 }
 
 
