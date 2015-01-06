@@ -17,7 +17,8 @@
 								| Mon compte
 								span.caret
 							ul.dropdown-menu#main-nav-dropdown role="menu"
-								li #{ link-to 'index' | Mes euros collectés }
+								li = link-to 'index' | Mes euros collectés 
+								li = link-to 'users.edit' 1 | Mon Profil 
 								li.divider
 								li
 									a{action 'invalidateSession'} Se déconnecter
