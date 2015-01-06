@@ -23,16 +23,15 @@ export default Ember.Controller.extend(
   //actions
   actions: {
     authenticate: function() {
+      var controller = this;
       //set authentication data to send to rails
       var data = this.getProperties('identification', 'password');
-
-      //call original function
-      this._super(data)
-
-      //erase password and show login error
-      this.setProperties({
-        loginError: true,
-        password: null
+      this.get('session').authenticate(this.get('authenticator'), data).then(function() {
+        //do nothing special if authenticated
+      }, function(error) {
+        //show authenticate error if authentication not good
+        controller.set('loginError', true);
+        controller.set('password', null);
       });
     }
   }
