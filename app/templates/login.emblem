@@ -1,5 +1,7 @@
 .container#login-page
 	.row
+		if loginError
+			.alert.alert-warning Could not log in. Please make sure email and password match. 
 		if confirmation_success
 			.alert.alert-success Confirmation successful. You can now log into your account. 
 		if confirmation_fail
