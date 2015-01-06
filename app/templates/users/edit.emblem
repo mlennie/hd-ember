@@ -1,0 +1,6 @@
+.container#register-page
+	.row
+		.col-md-4.col-md-offset-4
+			h1.center Edit Profile
+			br
+			=partial "users/form"

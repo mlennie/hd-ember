@@ -1,0 +1,13 @@
+h1 User show
+
+p
+  strong First name:
+  span =firstName
+
+p
+  strong Last name:
+  span =lastName
+
+p
+  strong Email:
+  span =email
