@@ -7,9 +7,10 @@
 		if confirmation_fail
 			.alert.alert-warning Confirmation failed. Either you have already confirmed your account, or this user does not exist. 
 		.col-md-4.col-md-offset-4#register-form
+			h1.center Sign In
 			form submit='authenticate'
 				.input-group.full-width
-					label for="identification" Login
+					label for="identification" Email
 					= input class='form-control' value=identification placeholder='Enter Email' type='email' required=true
 				br
 				.input-group.full-width
@@ -18,6 +19,12 @@
 				.input-group#remember-me
 					= input type="checkbox" name="rememberMe"
 					label for="rememberMe" Remember me
-					
 				br
 				button.btn.btn-default.btn-lg.btn-black.full-width type="submit" Login
+				br
+				br
+				= link-to 'register' | Sign up
+				br
+				= link-to 'index' | Forget password?
+				br
+				= link-to 'index' | Didn't receive confirmation email?

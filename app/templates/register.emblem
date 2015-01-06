@@ -6,9 +6,10 @@
       if registrationSuccessful
         h4.alert.alert-success Yay you did it!
       else
+        h1.center Sign Up
         form submit='registerUser'
           .input-group.full-width
-            label for="email" Login
+            label for="email" Email
             = input class='form-control' value=email placeholder='Enter Email' type='email' required=true
           br
           .input-group.full-width
@@ -20,3 +21,6 @@
             = input class='form-control' value=passwordConfirmation placeholder='Confirm Password' type='password' required=true
           br
           button.btn.btn-default.btn-lg.btn-black.full-width type="submit" Register
+          br
+          br
+          =link-to 'login' 'user' | Already have an account? Sign in
