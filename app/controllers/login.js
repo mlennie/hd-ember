@@ -11,7 +11,6 @@ export default Ember.Controller.extend(
   identification: null,
   password: null,
   loginError: false,
-  isSubmitting: false,
 
   //computed
   confirmation_success: function() {
@@ -24,15 +23,16 @@ export default Ember.Controller.extend(
   //actions
   actions: {
     authenticate: function() {
+      //set authentication data to send to rails
       var data = this.getProperties('identification', 'password');
 
-      this._super(data);
+      //call original function
+      this._super(data)
 
-      this.set('password', null);
-
+      //erase password and show login error
       this.setProperties({
         loginError: true,
-        loginResponse: 'login error'
+        password: null
       });
     }
   }
