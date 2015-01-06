@@ -28,7 +28,7 @@ export default Ember.Controller.extend(
       var data = this.getProperties('identification', 'password');
       this.get('session').authenticate(this.get('authenticator'), data).then(function() {
         //do nothing special if authenticated
-      }, function(error) {
+      }, function() {
         //show authenticate error if authentication not good
         controller.set('loginError', true);
         controller.set('password', null);
