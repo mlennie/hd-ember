@@ -1,4 +1,4 @@
-form submit='save'
+form submit='update'
 	.input-group.full-width
 		label for='firstName' First name
 		=input class='form-control' type="text" value=firstName placeholder='First Name' required=true
@@ -9,6 +9,6 @@ form submit='save'
 	br
 	.input-group.full-width
 		label for='email' Email
-		=input class='form-control' type="email" value=Email placeholder='Email' required=true 
+		=input class='form-control' type="email" value=email placeholder='Email' required=true 
 	br
-		button.btn.btn-default.btn-lg.btn-black.full-width type="submit" value='save' Update
+		button.btn.btn-default.btn-lg.btn-black.full-width type="submit" Update
