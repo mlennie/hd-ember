@@ -27,4 +27,4 @@
 				br
 				= link-to 'users.reset-password' | Forget password?
 				br
-				= link-to 'index' | Didn't receive confirmation email?
+				= link-to 'users.resend-confirmation' | Didn't receive confirmation email?

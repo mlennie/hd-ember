@@ -11,6 +11,7 @@ Router.map(function() {
     this.route('edit', { path: ':user_id/edit' });
     this.route('show', { path: ':user_id' });
     this.route('reset-password');
+    this.route('resend-confirmation');
   });
   this.route('login', { path: '/login/:confirmation' });
   this.route('register');
