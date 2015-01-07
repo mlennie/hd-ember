@@ -2,28 +2,32 @@ import Ember from 'ember';
 import ENV from "hd-ember/config/environment";
 export default Ember.Controller.extend({
 	//properties
-  email: null,
-  emailSuccess: false,
-  emailFailed: false,
+  queryParams: ['token'],
+  token: null,
+  newPassword: null,
+  newPasswordConfirmation: null,
+  editSuccess: false,
+  editFailed: false,
 
 	//actions
 	actions: {
-    sendPasswordEmail: function() {
+    resetPassword: function() {
       var controller = this;
        // Custom ajax call for resending .                                                                             
       Ember.$.ajax({                                                                                                                                                                                       
-        url: ENV.APP.HOST + '/password_update',                                                               
+        url: ENV.APP.HOST + '/update_password',                                                               
         type: 'PUT',                                                                                                 
         data: {
-          email: this.get('email'),
-          token: this.get('token') 
+          password_reset_token: this.get('token'),
+          password: this.get('newPassword'), 
+          password_confirmation: this.get('newPasswordConfirmation'), 
         }                                                                                   
       }).then(function(){                                                                                     
-        controller.set('emailSuccess', true);                                                                                                                                               
-        controller.set('emailFailed', false);                                                                                                                                               
+        controller.set('editSuccess', true);                                                                                                                                               
+        controller.set('editFailed', false);                                                                                                                                               
       }, function(){                                                                                               
-        controller.set('emailSuccess', false);                                                                                                                                               
-        controller.set('emailFailed', true);                                                                                       
+        controller.set('editSuccess', false);                                                                                                                                               
+        controller.set('editFailed', true);                                                                                       
       });     
     }
   }
