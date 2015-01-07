@@ -10,7 +10,8 @@ Router.map(function() {
     this.route('new');
     this.route('edit', { path: ':user_id/edit' });
     this.route('show', { path: ':user_id' });
-    this.route('reset-password');
+    this.route('new-password');
+    this.route('edit-password');
     this.route('resend-confirmation');
   });
   this.route('login', { path: '/login/:confirmation' });
