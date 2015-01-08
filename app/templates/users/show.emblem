@@ -1,10 +1,7 @@
 .container-fluid
 	.row
 		.col-md-7.col-md-offset-2
-			h1.center#profile-title 
-				| Welcome 
-				= session.currentUser.firstName 
-				= session.currentUser.lastName
+			h1.center#profile-title Mon Profil
 			br
 			br
 			.row
@@ -13,15 +10,12 @@
 						tr
 							td
 								strong First name:
-							td
-								= session.currentUser.firstName
+							td = firstName
 						tr
 							td
 								strong Last name:
-							td
-								= session.currentUser.lastName
+							td = lastName
 						tr
 							td
 								strong Email:
-							td
-								= session.currentUser.email
+							td = email

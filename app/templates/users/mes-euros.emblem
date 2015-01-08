@@ -1,0 +1,17 @@
+.container-fluid
+	.row
+		.col-md-7.col-md-offset-2
+			h1.center#profile-title Mes Euros Collectés
+			br
+			.row
+				.col-sm-12
+					.panel.panel-default
+						.panel-heading.center
+							| Ma Situation
+						.panel-body
+							p 
+								strong Mes euros collectés: 
+								| No euros yet!! Get to work!
+
+
+					

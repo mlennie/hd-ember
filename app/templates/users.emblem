@@ -10,6 +10,7 @@ br
 	.row
 		.col-sm-3
 			.list-group
+				.list-group-item #{link-to 'users.mes-euros' session.currentUser | Mes Euros Collectés }
 				.list-group-item #{link-to 'users.show' session.currentUser | Mon Profil }
 				.list-group-item #{link-to 'users.edit' session.currentUser | Edit Profil }
 		.col-sm-9

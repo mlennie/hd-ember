@@ -17,7 +17,7 @@
 								| Mon compte
 								span.caret
 							ul.dropdown-menu#main-nav-dropdown role="menu"
-								li = link-to 'index' | Mes euros collectés 
+								li = link-to 'users.mes-euros' session.currentUser | Mes Euros Collectés
 								li = link-to 'users.show' session.currentUser | Mon Profil 
 								li.divider
 								li
