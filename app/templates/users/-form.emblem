@@ -7,8 +7,9 @@ form submit='update'
 		label for='lastName' Last name
 		=input class='form-control' type="text" value=lastName placeholder='Last Name' required=true
 	br
-	.input-group.full-width
-		label for='email' Email
-		=input class='form-control' type="email" value=email placeholder='Email' required=true 
+	// put in email update functionality with email confirmation
+		.input-group.full-width
+			label for='email' Email
+			=input class='form-control' type="email" value=email placeholder='Email' required=true 
 	br
 		button.btn.btn-default.btn-lg.btn-black.full-width type="submit" Update

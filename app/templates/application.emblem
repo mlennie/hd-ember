@@ -18,12 +18,12 @@
 								span.caret
 							ul.dropdown-menu#main-nav-dropdown role="menu"
 								li = link-to 'index' | Mes euros collectés 
-								li = link-to 'users.edit' 1 | Mon Profil 
+								li = link-to 'users.show' session.currentUser | Mon Profil 
 								li.divider
 								li
 									a{action 'invalidateSession'} Se déconnecter
 					else
-						li #{ link-to 'register' | 'S'inscire }
+						li #{ link-to 'register' | S'inscire }
 						li #{ link-to 'login' 'user' | Se connecter }
 	if session.isAuthenticated
 		nav.navbar.navbar-default#search-navbar role="navigation"

@@ -10,7 +10,7 @@ br
 	.row
 		.col-sm-3
 			.list-group
-				.list-group-item #{link-to 'users.show' session.currentUser.id | Mon Profil }
-				.list-group-item #{link-to 'users.edit' session.currentUser.id | Edit Profil }
+				.list-group-item #{link-to 'users.show' session.currentUser | Mon Profil }
+				.list-group-item #{link-to 'users.edit' session.currentUser | Edit Profil }
 		.col-sm-9
 			==outlet

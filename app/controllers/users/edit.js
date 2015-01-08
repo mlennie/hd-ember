@@ -5,21 +5,24 @@ export default Ember.Controller.extend({
 	fail: false,
 
 	//computed properties
+  currentUser: function() {
+    return this.get('session.currentUser');
+  }.property('session.currentUser'),
 	email: function(){
-		return this.get('model.email');
-	}.property('model.email'),
+		return this.get('currentUser.email');
+	}.property('currentUser.email'),
 	firstName: function(){
-		return this.get('model.firstName');
-	}.property('model.firstName'),
+		return this.get('currentUser.firstName');
+	}.property('currentUser.email'),
 	lastName: function(){
-		return this.get('model.lastName');
-	}.property('model.lastName'),
+		return this.get('currentUser.lastName');
+	}.property('currentUser.lastName'),
 
 	//actions
 	actions: {
     update: function() {
     	var controller = this;
-      var user = this.get('model');
+      var user = this.get('currentUser');
       user.setProperties({
        	email: this.get('email'),
        	firstName: this.get('firstName'),
