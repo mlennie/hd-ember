@@ -11,7 +11,12 @@
 						.panel-body
 							p 
 								strong Mes euros collectés: 
-								| No euros yet!! Get to work!
+								if hasBalance
+									span.balance
+										= balance
+										| €
+								else
+									| No euros yet!! Get to work!
 
 
 					
