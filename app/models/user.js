@@ -6,5 +6,5 @@ export default DS.Model.extend({
   email: DS.attr('string'),
   password: DS.attr('string'),
   passwordConfirmation: DS.attr('string'),
-  wallet: DS.belongsTo('wallet', {async: true})
+  wallet: DS.belongsTo('wallet')
 });
