@@ -1,13 +1,16 @@
-h1 User show
+.container-fluid
+	.row
+		.col-md-7.col-md-offset-2
+			h1 User show
 
-p
-  strong First name:
-  span =firstName
+			p
+			  strong First name:
+			  span =firstName
 
-p
-  strong Last name:
-  span =lastName
+			p
+			  strong Last name:
+			  span =lastName
 
-p
-  strong Email:
-  span =email
+			p
+			  strong Email:
+			  span =email

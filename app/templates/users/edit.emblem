@@ -1,10 +1,10 @@
-.container#register-page
+.container-fluid
 	.row
-		.col-md-4.col-md-offset-4#register-form
+		.col-md-7.col-md-offset-2
 			if success
 				.alert.alert-success User updated!
 			if fail
 				.alert.alert-danger User could not be updated, please try again later.
-			h1.center Edit Profile
+			h1.center#profile-title Edit Profile
 			br
 			=partial "users/form" email=email lastName=lastName firstName=firstName 

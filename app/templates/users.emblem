@@ -1,0 +1,16 @@
+br
+br
+br
+br
+br
+br
+br
+br
+.container-fluid
+	.row
+		.col-sm-3
+			.list-group
+				.list-group-item #{link-to 'users.show' session.currentUser.id | Mon Profil }
+				.list-group-item #{link-to 'users.edit' session.currentUser.id | Edit Profil }
+		.col-sm-9
+			==outlet
