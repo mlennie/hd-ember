@@ -11,9 +11,6 @@ Router.map(function() {
     this.route('edit', { path: ':user_id/edit' });
     this.route('show', { path: ':user_id' });
     this.route('mes-euros', { path: ':user_id/mes-euros' });
-    this.route('new-password');
-    this.route('edit-password');
-    this.route('resend-confirmation');
   });
   this.resource('restaurants', function() {
     this.route('show', { path: ':restaurant_id'});
@@ -21,6 +18,9 @@ Router.map(function() {
   });
   this.route('login', { path: '/login/:confirmation' });
   this.route('register');
+  this.route('new-password');
+  this.route('edit-password');
+  this.route('resend-confirmation');
 });
 
 export default Router;

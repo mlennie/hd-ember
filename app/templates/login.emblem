@@ -25,6 +25,6 @@
 				br
 				= link-to 'register' | Sign up
 				br
-				= link-to 'users.new-password' | Forget password?
+				= link-to 'new-password' | Forget password?
 				br
-				= link-to 'users.resend-confirmation' | Didn't receive confirmation email?
+				= link-to 'resend-confirmation' | Didn't receive confirmation email?
