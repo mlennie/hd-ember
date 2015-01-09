@@ -12,9 +12,9 @@ br
 		.col-sm-6.col-sm-offset-3#restaurant-image style=backgroundUrl
 		.col-sm-6.col-sm-offset-3
 			br
-				p 
-					=model.zipcode
-			br
+				p
+					strong Address: 
+					=fullAddress
 			p 
 				=model.description
 			

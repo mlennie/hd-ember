@@ -4,5 +4,7 @@ export default DS.Model.extend({
   name: DS.attr('string'),
   imgUrl: DS.attr('string'),
   description: DS.attr('string'),
-  zipcode: DS.attr('string')
+  zipcode: DS.attr('string'),
+  street: DS.attr('string'),
+  city: DS.attr('string')
 });
