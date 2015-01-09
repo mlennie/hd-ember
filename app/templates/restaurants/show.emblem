@@ -10,11 +10,24 @@ br
 .container-fluid
 	.row
 		.col-sm-6.col-sm-offset-3#restaurant-image style=backgroundUrl
-		.col-sm-6.col-sm-offset-3
-			br
-				p
-					strong Address: 
-					=fullAddress
-			p 
-				=model.description
+		.col-sm-6.col-sm-offset-3.no-padding
+			.row.no-padding
+				if showReserveButton
+					.col-sm-4.col-sm-offset-4
+						br
+						button.btn.btn-success.btn-lg.full-width click=showPhoneNumber Reserver
+					br
+				else
+					br
+					.col-sm-6.col-sm-offset-3
+						.full-width.alert.alert-info.center Please phone 09 90 90 87 85
+			br	
+			ul.list-group
+				li.list-group-item
+					p
+						strong Address: 
+						=fullAddress
+				li.list-group-item
+					p 
+						=model.description
 			
