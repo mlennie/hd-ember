@@ -1,0 +1,17 @@
+ul.list-group
+	= each restaurant in restaurants
+		li.list-group-item
+			.row
+				.col-sm-4
+					.restaurant-img-container
+						img.restaurant-search-pic.img-thumbnail src={restaurant.imgUrl} 
+				.col-sm-4
+					h4
+						=restaurant.name
+					p 
+						=restaurant.description
+				.col-sm-2.no-padding
+					h1.percent-discount -10%
+				.col-sm-2.no-padding
+					button.btn.btn-success.reserve-button data-toggle="popover" data-placement="bottom" data-trigger="focus" title="Please phone" data-content="09 90 90 87 85"
+						| Reserver
