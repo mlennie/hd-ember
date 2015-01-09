@@ -22,5 +22,8 @@ export default Ember.Controller.extend({
     } else {
       return restaurants.rejectBy('name', name);
     }
-  }.property('name', 'model')
+  }.property('name', 'model'),
+  hasFilteredRestaurants: function() {
+    return this.get('filteredRestaurants.length') > 0;
+  }.property('filteredRestaurants'),
 });
