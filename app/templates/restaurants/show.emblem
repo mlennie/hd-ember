@@ -1,1 +1,20 @@
-h1 restaurant page
+br
+br
+br
+br
+br
+h1.center 
+	=model.name
+	span.margin-left-20.percent-discount - 10%
+br
+.container-fluid
+	.row
+		.col-sm-6.col-sm-offset-3#restaurant-image style=backgroundUrl
+		.col-sm-6.col-sm-offset-3
+			br
+				p 
+					=model.zipcode
+			br
+			p 
+				=model.description
+			

@@ -34,6 +34,18 @@ h2 {
   margin: 0 !important;
 }
 
+.margin-left-10 {
+  margin-left: 10px;
+}
+
+.margin-left-15 {
+  margin-left: 15px;
+}
+
+.margin-left-20 {
+  margin-left: 20px;
+}
+
 .fixed-nav {
   position: fixed;
   width: 100%;
@@ -315,6 +327,19 @@ img.navbar-brand {
   font-weight: bold;
   margin-left: 10px;
 }
+
+/* END OF USER PAGES */
+
+/* RESTAURANT PAGES */
+
+#restaurant-image {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top;
+  height: 300px;
+}
+
+/* END OF RESTAURANT PAGES */
 
 /* MEDIA QUERIES */
 
