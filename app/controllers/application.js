@@ -15,7 +15,7 @@ export default Ember.Controller.extend({
 	couverts: ['Nombre de couverts', 1, 2, 3, 4, 5, 6, 7, 8, 9],
 	actions: {
 		search: function() {
-			this.transitionTo('results', {queryParams: {name: this.get('name')}});
+			this.transitionTo('restaurants.search-results', {queryParams: {name: this.get('name')}});
 		}
 	}
 });

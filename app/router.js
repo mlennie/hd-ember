@@ -17,10 +17,10 @@ Router.map(function() {
   });
   this.resource('restaurants', function() {
     this.route('show', { path: ':restaurant_id'});
+    this.route('search-results');
   });
   this.route('login', { path: '/login/:confirmation' });
   this.route('register');
-  this.route('results');
 });
 
 export default Router;
