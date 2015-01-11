@@ -9,6 +9,14 @@
 					table.table
 						tr
 							td
+								strong Restaurant Owner?
+							td = currentUser.isOwner
+						tr
+							td
+								strong Restaurant Name
+							td = currentUser.isOwner
+						tr
+							td
 								strong First name:
 							td = firstName
 						tr
