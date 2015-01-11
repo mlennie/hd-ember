@@ -1,7 +1,11 @@
 .container-fluid
 	.row
 		.col-md-7.col-md-offset-2
-			h1.center#profile-title Mes Euros Collectés
+			h1.center#profile-title
+				if session.currentUser.isOwner
+							| Ma balance
+				else
+					| Mes Euros Collectés
 			br
 			.row
 				.col-sm-12
@@ -9,14 +13,20 @@
 						.panel-heading.center
 							| Ma Situation
 						.panel-body
-							p 
-								strong Mes euros collectés: 
+							p
+								if session.currentUser.isOwner
+									strong Ma balance:
+								else
+									strong Mes Euros Collectés: 
 								if hasBalance
 									span.balance
 										= balance
 										| €
 								else
-									| No euros yet!! Get to work!
+									span.margin-left-10 No euros yet!! Get to work!
+							if session.currentUser.isOwner
+								br
+								button.btn.btn-success View history
 
 
 					

@@ -12,5 +12,8 @@ export default DS.Model.extend({
   isOwner: function() {
   	var ownerRole = this.get('roles').findBy('name', 'owner');
   	return ownerRole !== null;
-  }.property()
+  }.property('roles'),
+  fullName: function() {
+    return this.get('firstName') + ' ' + this.get('lastName');
+  }.property('firstName', 'lastName')
 });

@@ -1,17 +1,34 @@
-br
-br
-br
-br
-br
-br
-br
-br
+if session.currentUser.fullName
+	br
+	br
+	br
+	br
+	br
+	br
+else
+	br
+	br
+	br
+	br
+	br
+	br
+	br
+	br
 .container-fluid
 	.row
 		.col-sm-3
 			.list-group
-				.list-group-item #{link-to 'users.mes-euros' session.currentUser | Mes Euros Collectés }
-				.list-group-item #{link-to 'users.show' session.currentUser | Mon Profil }
-				.list-group-item #{link-to 'users.edit' session.currentUser | Edit Profil }
+				.list-group-item.grey-background
+					= session.currentUser.fullName
+				.list-group-item 
+					=link-to 'users.mes-euros' session.currentUser 
+						if session.currentUser.isOwner
+							| Ma balance
+						else
+							| Mes Euros Collectés
+				.list-group-item 
+					=link-to 'users.show' session.currentUser | Mon Profil 
+				.list-group-item 
+					=link-to 'users.edit' session.currentUser | Edit Profil 
 		.col-sm-9
 			==outlet

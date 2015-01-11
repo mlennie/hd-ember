@@ -12,5 +12,12 @@ export default Ember.Controller.extend({
 	}.property('currentUser.email'),
 	lastName: function(){
 		return this.get('currentUser.lastName');
-	}.property('currentUser.lastName')
+	}.property('currentUser.lastName'),
+	isOwner: function() {
+		return this.get('currentUser.isOwner');
+	}.property('currentUser.isOwner'),
+	restaurant: function() {
+		var restaurants = this.get('currentUser.restaurants');
+		return restaurants.get('firstObject');
+	}.property('currentUser.restaurants')
 });
