@@ -7,6 +7,7 @@ export default DS.Model.extend({
   password: DS.attr('string'),
   passwordConfirmation: DS.attr('string'),
   wallet: DS.belongsTo('wallet', {async: true}),
+  restaurants: DS.hasMany('restaurant', {async: true}),
   roles: DS.hasMany('role', {async: true}),
   isOwner: function() {
   	var ownerRole = this.get('roles').findBy('name', 'owner');

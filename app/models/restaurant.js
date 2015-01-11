@@ -7,6 +7,7 @@ export default DS.Model.extend({
   zipcode: DS.attr('string'),
   street: DS.attr('string'),
   city: DS.attr('string'),
+  user: DS.belongsTo('user', {async: true}),
   fullAddress: function() {
     var street = this.get('street');
     var city = this.get('city');
