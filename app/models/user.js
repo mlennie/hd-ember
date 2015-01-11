@@ -11,9 +11,16 @@ export default DS.Model.extend({
   roles: DS.hasMany('role', {async: true}),
   isOwner: function() {
   	var ownerRole = this.get('roles').findBy('name', 'owner');
-  	return ownerRole !== null;
+  	if (ownerRole !== undefined) {
+      return ownerRole.get('name') === 'owner';
+    } else {
+      return false;
+    }
+
   }.property('roles'),
   fullName: function() {
-    return this.get('firstName') + ' ' + this.get('lastName');
+    if (this.get('firstName') !== null && this.get('lastName') !== null) {
+      return this.get('firstName') + ' ' + this.get('lastName');
+    }
   }.property('firstName', 'lastName')
 });

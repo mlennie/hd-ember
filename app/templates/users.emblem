@@ -1,4 +1,4 @@
-if session.currentUser.fullName
+if session.currentUser.isOwner
 	br
 	br
 	br
