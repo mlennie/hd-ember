@@ -4,8 +4,6 @@
 	br
 	br
 	br
-	br
-	br
 .visible-sm-block.visible-xs-block
 	br
 	br
@@ -13,13 +11,25 @@
 .container
 	.row
 		.col-md-8.col-md-offset-2
-			h1.center Restaurants Found!
+			br
+			if filteredRestaurants
+				h1.center Restaurants Found!
+				.row
+					.visible-sm-block.visible-xs-block.col-sm-6.col-sm-offset-3
+						=link-to 'index' 			
+							button.btn.btn-success.full-width.center 
+								| Search Again!
 			br
 			ul.list-group
 				= each restaurant in filteredRestaurants
 					= partial 'restaurants/item' restaurant=restaurant
 				= else
 					.alert.alert-warning Hmmm no restaurants were found with that search
+					.row
+						.visible-sm-block.visible-xs-block.col-sm-6.col-sm-offset-3
+							=link-to 'index' 			
+								button.btn.btn-success.btn-lg.full-width.center 
+									| Search Again!
 			h2#more-restaurants-title Some more restaurants you might be interested in!
 			ul.list-group
 				= each restaurant in nonFilteredRestaurants
