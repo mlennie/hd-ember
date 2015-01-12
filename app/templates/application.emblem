@@ -49,14 +49,14 @@
 footer.footer
 	.container
 		.row#contact-section
-			.col-sm-8
+			.col-md-8.col-sm-12.footer-text
 				.contact-icon = fa-icon 'map-marker'
 				| Happy Dining
 				.contact-icon = fa-icon 'phone'
 				| 09 52 66 53 19
 				.contact-icon = fa-icon 'envelope'
 				| hello@happydining.fr
-			.col-sm-4
+			.col-md-4.col-sm-12.footer-text
 				= link-to 'index' | FAQ
 
 

@@ -1,16 +1,22 @@
-br
-br
-br
-br
-br
+.visible-md-block.visible-lg-block
+	br
+	br
+	br
+	br
+	br
+.visible-sm-block.visible-xs-block
+	br
+	br
+	br
 h1.center 
 	=model.name
 	span.margin-left-20.percent-discount - 10%
 br
 .container-fluid
 	.row
-		.col-sm-6.col-sm-offset-3#restaurant-image style=backgroundUrl
-		.col-sm-6.col-sm-offset-3.no-padding
+		.col-sm-6.col-sm-offset-3
+			#restaurant-image style=backgroundUrl
+		.col-sm-6.col-sm-offset-3
 			.row.no-padding
 				if showReserveButton
 					.col-sm-4.col-sm-offset-4

@@ -13,7 +13,8 @@
 		.col-md-8.col-md-offset-2
 			br
 			if filteredRestaurants
-				h1.center Restaurants Found!
+				br
+				h1#more-restaurants-title.no-margin-top.center Restaurants Found!
 				.row
 					.visible-sm-block.visible-xs-block.col-sm-6.col-sm-offset-3
 						=link-to 'index' 			
@@ -30,7 +31,7 @@
 							=link-to 'index' 			
 								button.btn.btn-success.btn-lg.full-width.center 
 									| Search Again!
-			h2#more-restaurants-title Some more restaurants you might be interested in!
+			h2#more-restaurants-title.no-margin-top Some more restaurants you might be interested in!
 			ul.list-group
 				= each restaurant in nonFilteredRestaurants
 					= partial 'restaurants/item' restaurant=restaurant

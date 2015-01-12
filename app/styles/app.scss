@@ -38,6 +38,10 @@ h2 {
   margin: 0 !important;
 }
 
+.no-margin-top {
+  margin-top: 0 !important;
+}
+
 .margin-left-10 {
   margin-left: 10px;
 }
@@ -133,12 +137,7 @@ h2 {
 }
 
 /* SEARCH RESULTS */
-.restaurant-img-container {
-  width: 200px;
-  height: 150px;
-  overflow: hidden; 
 
-}
 .restaurant-search-pic {
   height: auto;
   width: 100%;
@@ -370,6 +369,28 @@ img.navbar-brand {
 
 /* END OF RESTAURANT PAGES */
 
+/* FOOTER */
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  background-color: #f5f5f5;
+}
+
+#home-page-footer {
+  margin-top: 30px;
+  color: #fff;
+  display: block;
+  box-sizing: border-box;
+  font-family: 'Montserrat', 'Arial', sans-serif;
+  overflow: hidden;
+  height: 670px;
+}
+
+
 /* MEDIA QUERIES */
 
 /* CONTACT PAGE */
@@ -416,6 +437,18 @@ img.navbar-brand {
   #contact-email-text {
     margin-top: 10px;
   }
+  .restaurant-img-container {
+    width: 70%;
+    height: 70%;
+    overflow: hidden; 
+    margin: 0 auto;
+  }
+  .footer {
+    height: 100px;
+  }
+  .footer-text {
+    text-align: center;
+  }
 }
 
 @media (max-width: 800px) {
@@ -453,6 +486,14 @@ img.navbar-brand {
   .landing-image {
     height: 650px;
   }
+
+  .restaurant-img-container {
+    width: 100%;
+    height: 100%;
+    overflow: hidden; 
+    margin: 0 auto;
+  }
+
 }
 
 @media (max-width: 500px) {
@@ -467,26 +508,6 @@ img.navbar-brand {
   }
 }
 
-/* FOOTER */
-
-.footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  /* Set the fixed height of the footer here */
-  height: 60px;
-  background-color: #f5f5f5;
-}
-
-#home-page-footer {
-  margin-top: 30px;
-  color: #fff;
-  display: block;
-  box-sizing: border-box;
-  font-family: 'Montserrat', 'Arial', sans-serif;
-  overflow: hidden;
-  height: 670px;
-}
 
 
 
