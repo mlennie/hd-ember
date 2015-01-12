@@ -93,6 +93,7 @@ h2 {
 #mobile-search-title {
   color: #000;
   text-align: center;
+  margin-top: 80px;
 }
 
 #mobile-search-form {
@@ -106,7 +107,7 @@ h2 {
   font-family: 'Montserrat', 'Arial', sans-serif;
   font-size: 1em;
   color: #000;
-  padding: 30px;
+  padding: 10px 30px;
   margin-top: 30px;
 }
 
@@ -447,6 +448,10 @@ img.navbar-brand {
 @media (max-width: 600px) {
   #comment-ca-marche {
     height: 1800px;
+  }
+
+  .landing-image {
+    height: 650px;
   }
 }
 

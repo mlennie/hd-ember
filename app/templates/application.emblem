@@ -44,20 +44,6 @@
 							button.btn.btn-success Rechercher
 						.visible-lg-block
 							p Rechercher ou réserver par téléphone: 09 90 90 87 85
-			.visible-sm-block.visible-xs-block
-				.container
-					.row
-						.col-sm-8.col-sm-offset-2
-							h1#mobile-search-title Find Restaurants
-							form#mobile-search-form submit='search' role="search"
-								.form-group
-									.input-group.full-width
-										br = view Ember.Select prompt="Arrondissment ou Restaurant" content=names valueBinding=name class="form-control"  
-									br = bootstrap-datepicker value=date class="form-control" format="dd/mm/yy" todayBtn=true todayHighlight=true placeholder="Date" language='fr'
-									br = view Ember.Select content=hours class="form-control" 
-									br = view Ember.Select content=couverts class="form-control" 
-									br
-									button.btn.btn-success.btn-lg.full-width Rechercher
 == outlet
 
 footer.footer
