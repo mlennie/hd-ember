@@ -6,6 +6,7 @@ export default Ember.Route.extend({
   },
   setupController: function(controller, model) {
     controller.set('params', this.get('params'));
+    controller.set('loginError', false);
     this._super(controller, model);
   }
 });
