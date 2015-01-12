@@ -1,15 +1,20 @@
-| results!
-br
-br
-br
-br
-br
-br
-br
-br
+.visible-md-block.visible-lg-block
+	br
+	br
+	br
+	br
+	br
+	br
+	br
+.visible-sm-block.visible-xs-block
+	br
+	br
+	br
 .container
 	.row
 		.col-md-8.col-md-offset-2
+			h1.center Restaurants Found!
+			br
 			ul.list-group
 				= each restaurant in filteredRestaurants
 					= partial 'restaurants/item' restaurant=restaurant
