@@ -45,17 +45,15 @@ module.exports = function(environment) {
     ENV.APP.rootElement = '#ember-testing';
   }
 
-  //production
-  if (environment === '') {
-    ENV.APP.HOST = 'https://hd-rails.herokuapp.com'
+  if (environment === 'production') {
+    ENV.APP.HOST = ENV['API_URL']
     ENV['simple-auth-devise'] = {
-      serverTokenEndpoint:  'https://hd-rails.herokuapp.com/users/sign_in',
-      crossOriginWhitelist: ['https://hd-rails.herokuapp.com/']
+      serverTokenEndpoint:  ENV['API_URL'] + 'users/sign_in',
+      crossOriginWhitelist: [ENV['API_URL']]
     };
   }
 
-  //staging
-  if (environment === 'production') {
+  if (environment === 'staging') {
     ENV.APP.HOST = 'https://hdrailsstag.herokuapp.com'
     ENV['simple-auth-devise'] = {
       serverTokenEndpoint:  'https://hdrailsstag.herokuapp.com/users/sign_in',
