@@ -48,16 +48,16 @@ module.exports = function(environment) {
   if (environment === 'production') {
     ENV.APP.HOST = 'http://hd-rails.herokuapp.com'
     ENV['simple-auth-devise'] = {
-      serverTokenEndpoint:  'http://hd-rails.herokuapp.com/users/sign_in',
-      crossOriginWhitelist: ['http://hd-rails.herokuapp.com/']
+      serverTokenEndpoint:  'https://hd-rails.herokuapp.com/users/sign_in',
+      crossOriginWhitelist: ['https://hd-rails.herokuapp.com/']
     };
   }
 
   if (environment === 'staging') {
     ENV.APP.HOST = 'http://hdrailsstag.herokuapp.com'
     ENV['simple-auth-devise'] = {
-      serverTokenEndpoint:  'http://hdrailsstag.herokuapp.com/users/sign_in',
-      crossOriginWhitelist: ['http://hdrailsstag.herokuapp.com/']
+      serverTokenEndpoint:  'https://hdrailsstag.herokuapp.com/users/sign_in',
+      crossOriginWhitelist: ['https://hdrailsstag.herokuapp.com/']
     };
   }
 
