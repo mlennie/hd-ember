@@ -46,19 +46,19 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-    if (ENV['NODE_ENV'] === 'production') {
-      ENV.APP.HOST = 'https://hd-rails.herokuapp.com'
-      ENV['simple-auth-devise'] = {
-        serverTokenEndpoint:  'https://hd-rails.herokuapp.com/users/sign_in',
-        crossOriginWhitelist: ['https://hd-rails.herokuapp.com/']
-      };
-    } else if (ENV['NODE_ENV'] === 'staging') {
-      ENV.APP.HOST = 'https://hdrailsstag.herokuapp.com'
-      ENV['simple-auth-devise'] = {
-        serverTokenEndpoint:  'https://hdrailsstag.herokuapp.com/users/sign_in',
-        crossOriginWhitelist: ['https://hdrailsstag.herokuapp.com/']
-      };
-    }
+    ENV.APP.HOST = 'https://hd-rails.herokuapp.com'
+    ENV['simple-auth-devise'] = {
+      serverTokenEndpoint:  'https://hd-rails.herokuapp.com/users/sign_in',
+      crossOriginWhitelist: ['https://hd-rails.herokuapp.com/']
+    };
+  }
+
+  if (environment === 'staging') {
+    ENV.APP.HOST = 'https://hdrailsstag.herokuapp.com'
+    ENV['simple-auth-devise'] = {
+      serverTokenEndpoint:  'https://hdrailsstag.herokuapp.com/users/sign_in',
+      crossOriginWhitelist: ['https://hdrailsstag.herokuapp.com/']
+    };
   }
 
   return ENV;
