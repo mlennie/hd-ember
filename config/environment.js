@@ -46,18 +46,10 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-    ENV.APP.HOST = ENV['API_URL']
+    ENV.APP.HOST = process.env.API_URL
     ENV['simple-auth-devise'] = {
-      serverTokenEndpoint:  ENV['API_URL'] + 'users/sign_in',
-      crossOriginWhitelist: [ENV['API_URL']]
-    };
-  }
-
-  if (environment === 'staging') {
-    ENV.APP.HOST = 'https://hdrailsstag.herokuapp.com'
-    ENV['simple-auth-devise'] = {
-      serverTokenEndpoint:  'https://hdrailsstag.herokuapp.com/users/sign_in',
-      crossOriginWhitelist: ['https://hdrailsstag.herokuapp.com/']
+      serverTokenEndpoint:  process.env.API_URL + 'users/sign_in',
+      crossOriginWhitelist: process.env.API_URL
     };
   }
 
