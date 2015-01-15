@@ -56,8 +56,9 @@ footer.footer
 				| 09 52 66 53 19
 				.contact-icon = fa-icon 'envelope'
 				| hello@happydining.fr
-			.col-md-4.col-sm-12.footer-text
-				= link-to 'index' | FAQ
+			.col-md-4.col-sm-12
+				a.pull-right href='https://www.facebook.com/www.happydining.fr' target="_blank"
+					h3.no-margin = fa-icon 'facebook-square'
 
 
 
