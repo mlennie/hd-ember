@@ -1,26 +1,32 @@
 .container#register-page
   .row
+    if registrationFailed
+      .alert.alert-warning 
+        strong User not registered. Possible reasons are...
+        ul
+          li Passwords do not match
+          li Passwords are not longer than 4 characters
+          li 
+            | Email is already associated with an account. If you already have an account associated with this email, please sign in 
+            =link-to 'login' 'user' | here
+    if registrationSuccessful
+      .alert.alert-success Yay you registered You will now receive an email to confirm your registration!
     .col-md-4.col-md-offset-4#register-form
-      if registrationFailed
-        h4.alert.alert-warning Oops record not saved! Please make sure you have the password and password confirmation match exactly.
-      if registrationSuccessful
-        h4.alert.alert-success Yay you did it!
-      else
-        h1.center Sign Up
-        form submit='registerUser'
-          .input-group.full-width
-            label for="email" Email
-            = input class='form-control' value=email placeholder='Enter Email' type='email' required=true
-          br
-          .input-group.full-width
-            label for="password" Password
-            = input class='form-control' value=password placeholder='Enter Password' type='password' required=true
-          br
-          .input-group.full-width
-            label for="passwordConfirmation" Password Confirmation
-            = input class='form-control' value=passwordConfirmation placeholder='Confirm Password' type='password' required=true
-          br
-          button.btn.btn-default.btn-lg.btn-black.full-width type="submit" Register
-          br
-          br
-          =link-to 'login' 'user' | Already have an account? Sign in
+      h1.center Sign Up
+      form submit='registerUser'
+        .input-group.full-width
+          label for="email" Email
+          = input class='form-control' value=email placeholder='Enter Email' type='email' required=true
+        br
+        .input-group.full-width
+          label for="password" Password
+          = input class='form-control' value=password placeholder='Enter Password' type='password' required=true
+        br
+        .input-group.full-width
+          label for="passwordConfirmation" Password Confirmation
+          = input class='form-control' value=passwordConfirmation placeholder='Confirm Password' type='password' required=true
+        br
+        button.btn.btn-default.btn-lg.btn-black.full-width type="submit" Register
+        br
+        br
+        =link-to 'login' 'user' | Already have an account? Sign in

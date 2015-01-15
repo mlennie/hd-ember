@@ -1,7 +1,13 @@
 .container#login-page
 	.row
 		if loginError
-			.alert.alert-warning Could not log in. Please make sure email and password match. 
+			.alert.alert-warning 
+				strong Could not log in. 
+				ul
+					li Please make sure email and password match. 
+					li 
+						| Please make sure you have confirmed your account. If you would like another confirmation email sent to you, please click 
+						= link-to 'resend-confirmation' | here
 		if confirmation_success
 			.alert.alert-success Confirmation successful. You can now log into your account. 
 		if confirmation_fail

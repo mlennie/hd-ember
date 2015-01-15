@@ -20,11 +20,18 @@
 			h1#main-title L'addition qui rapporte
 			.col-xs-10.col-xs-offset-1.col-sm-10.col-sm-offset-1.col-md-6.col-md-offset-3#pre-subscribe-form
 				if registrationFailed
-					h3#main-title.no-margin Registration did not go through. Please try again. 
+					h4.alert.alert-warning 
+						strong User not registered. Possible reasons are...
+						ul
+							li Passwords do not match
+							li Passwords are not longer than 4 characters
+							li 
+								| Email is already associated with an account. If you already have an account associated with this email, please sign in 
+								=link-to 'login' 'user' | here
 				if registrationSuccessful
-					h1#main-title.no-margin Yay you registered You will now receive an email to confirm your registration!
+					h4.alert.alert-success Yay you registered You will now receive an email to confirm your registration!
 				else
-					#pre-subscribe-form-title Se préinscrire et profiter des meilleures offres
+					#pre-subscribe-form-title Sign up now!
 					form submit='registerUser'
 						span = input class='pre-subscribe-form-field' id='pre-subscribe-form-email-field' value=email placeholder='Email' maxlength='50' required=true type='email'
 						span = input class='pre-subscribe-form-field' value=password placeholder='Mot de passe' maxlength='50' required=true type='password'
