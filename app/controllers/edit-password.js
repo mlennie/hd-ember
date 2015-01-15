@@ -8,15 +8,19 @@ export default Ember.Controller.extend({
   newPasswordConfirmation: null,
   editSuccess: false,
   editFailed: false,
+  isLoading: false,
 
 	//actions
 	actions: {
     resetPassword: function() {
       var controller = this;
+      controller.set('isLoading', true);  
+      controller.set('editSuccess', false);                                                                                                                                               
+      controller.set('editFailed', false); 
        // Custom ajax call for resending .                                                                             
       Ember.$.ajax({                                                                                                                                                                                       
         url: ENV.APP.HOST + '/update_password',                                                               
-        type: 'PUT',                                                                                                 
+        type: 'POST',                                                                                                 
         data: {
           password_reset_token: this.get('token'),
           password: this.get('newPassword'), 
@@ -24,10 +28,12 @@ export default Ember.Controller.extend({
         }                                                                                   
       }).then(function(){                                                                                     
         controller.set('editSuccess', true);                                                                                                                                               
-        controller.set('editFailed', false);                                                                                                                                               
+        controller.set('editFailed', false);  
+        controller.set('isLoading', false);                                                                                                                                               
       }, function(){                                                                                               
         controller.set('editSuccess', false);                                                                                                                                               
-        controller.set('editFailed', true);                                                                                       
+        controller.set('editFailed', true);     
+        controller.set('isLoading', false);                                                                                    
       });     
     }
   }

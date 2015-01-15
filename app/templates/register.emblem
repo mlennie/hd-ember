@@ -1,7 +1,7 @@
 .container#register-page
   .row
     if registrationFailed
-      .alert.alert-warning 
+      .alert.alert-danger 
         strong User not registered. Possible reasons are...
         ul
           li Passwords do not match

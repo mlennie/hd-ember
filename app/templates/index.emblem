@@ -20,7 +20,7 @@
 			h1#main-title L'addition qui rapporte
 			.col-xs-10.col-xs-offset-1.col-sm-10.col-sm-offset-1.col-md-6.col-md-offset-3#pre-subscribe-form
 				if registrationFailed
-					h4.alert.alert-warning 
+					h4.alert.alert-danger 
 						strong User not registered. Possible reasons are...
 						ul
 							li Passwords do not match
