@@ -15,7 +15,7 @@ Router.map(function() {
     this.route('show', { path: ':restaurant_id'});
     this.route('search-results');
   });
-  this.route('login', { path: '/login/:confirmation' });
+  this.route('login');
   this.route('register');
   this.route('new-password');
   this.route('edit-password');

@@ -6,19 +6,16 @@ export default Ember.Controller.extend(
 	//authentication mixin
   LoginControllerMixin, {
 
+  //queryParams
+  queryParams: ['confirmation_success','confirmation_fail'],
+
   //properties
   authenticator: 'simple-auth-authenticator:devise',
   identification: null,
   password: null,
   loginError: false,
-
-  //computed
-  confirmation_success: function() {
-    return this.get('params.confirmation') === 'confirmation_success';
-  }.property(),
-  confirmation_fail: function() {
-    return this.get('params.confirmation') === 'confirmation_fail';
-  }.property(),
+  confirmation_success: false,
+  confirmation_fail: false,
 
   //actions
   actions: {
