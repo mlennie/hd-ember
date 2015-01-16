@@ -5,8 +5,10 @@ export default Ember.Mixin.create({
 		var arrond = ['75017', '75008'];
 		var names = this.get('model').getEach('name');
 		return arrond.concat(names);
-	}.property(),
-	cuisines: ['Type de cuisine', 'French', 'Italian', 'World'],
+	}.property('model'),
+	cuisines: function() {
+		return this.store.all('cuisine').getEach('name');
+	}.property('model'),
 	date: '',
 	hours: ['Heure','13h','13h30','14h','14h30','15h','15h30','16h','16h30','17h',
 					'17h30','18h','18h30','19h','19h30','20h','20h30','21h','21h30','22h', 
