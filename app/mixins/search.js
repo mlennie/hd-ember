@@ -1,7 +1,7 @@
 import Ember from "ember";
 export default Ember.Mixin.create({
 	name: null,
-	cuisine: null,
+	cuisine: undefined,
 	isDisabled: function() {
 		var name = this.get('name');
 		if (
@@ -11,7 +11,7 @@ export default Ember.Mixin.create({
 			) {
 			return false;
 		} else {
-			this.set('cuisine', null);
+			this.set('cuisine', undefined);
 			return true;
 		}
 	}.property('name'),

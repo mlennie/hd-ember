@@ -3,7 +3,7 @@ import Ember from 'ember';
 export default Ember.Controller.extend({
 	queryParams: ['name', 'cuisine'],
   name: null,
-  cuisine: null,
+  cuisine: undefined,
   filteredRestaurants: function() {
     var name = this.get('name');
     var cuisine = this.get('cuisine');
@@ -19,7 +19,7 @@ export default Ember.Controller.extend({
     }
 
     //filter by restaurant cuisine
-    if (cuisine !== null) {
+    if (cuisine !== undefined) {
       restaurants = restaurants.filter(function(r) {
         var cuisines = r.get('cuisines');
         cuisines = cuisines.filterBy('name', cuisine );
