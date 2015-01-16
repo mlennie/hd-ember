@@ -1,6 +1,20 @@
 import Ember from "ember";
 export default Ember.Mixin.create({
 	name: null,
+	cuisine: null,
+	isDisabled: function() {
+		var name = this.get('name');
+		if (
+			name === '75017' ||
+			name === '75008' ||
+			name === null
+			) {
+			return false;
+		} else {
+			this.set('cuisine', null);
+			return true;
+		}
+	}.property('name'),
 	names: function() {
 		var arrond = ['75017', '75008'];
 		var names = this.get('model').getEach('name');

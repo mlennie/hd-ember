@@ -1,65 +1,65 @@
 .container-fluid.fixed-nav
-	nav.navbar.navbar-inverse role="navigation"
-		.container-fluid
-			.navbar-header
-				button.navbar-toggle.collapsed type="button" data-toggle="collapse" data-target="#navbar-collapse-1"
-					span.sr-only Toggle navigation
-					span.icon-bar
-					span.icon-bar
-					span.icon-bar
-				=link-to 'index'
-					img.navbar-brand src="/assets/images/logo.png"
-			.collapse.navbar-collapse#navbar-collapse-1
-				ul.nav.navbar-nav.navbar-right
-					if session.isAuthenticated
-						li.dropdown
-							a.dropdown-toggle href="#" data-toggle="dropdown" role="button" aria-expanded="false"
-								| Mon compte
-								span.caret
-							ul.dropdown-menu#main-nav-dropdown role="menu"
-								li = link-to 'users.mes-euros' session.currentUser 
-									if session.currentUser.isOwner
-										| Ma balance
-									else
-										| Mes Euros Collectés
-								li = link-to 'users.show' session.currentUser | Mon Profil 
-								li.divider
-								li
-									a{action 'invalidateSession'} Se déconnecter
-					else
-						li #{ link-to 'register' | 'S'inscire }
-						li #{ link-to 'login' | Se connecter }
-	if session.isAuthenticated
-		unless session.currentUser.isOwner
-			.visible-md-block.visible-lg-block
-				nav.navbar.navbar-default#search-navbar role="navigation"
-					.container-fluid
-						form.navbar-form.navbar-left submit='search' role="search"
-							.form-group
-								span.search-field= view Ember.Select prompt="Arrondissment ou Restaurant" content=names valueBinding=name class="form-control"  
-								span.search-field= view Ember.Select prompt="Type de Cuisine" content=cuisines class="form-control"  
-								span#search-email.search-field= bootstrap-datepicker value=date class="form-control" format="dd/mm/yy" todayBtn=true todayHighlight=true placeholder="Date" language='fr'
-								span#calendar-icon= fa-icon 'calendar'
-								span.search-field= view Ember.Select content=hours class="form-control" 
-								span.search-field= view Ember.Select content=couverts class="form-control" 
-							button.btn.btn-success Rechercher
-						.visible-lg-block
-							p Rechercher ou réserver par téléphone: 09 90 90 87 85
+  nav.navbar.navbar-inverse role="navigation"
+    .container-fluid
+      .navbar-header
+        button.navbar-toggle.collapsed type="button" data-toggle="collapse" data-target="#navbar-collapse-1"
+          span.sr-only Toggle navigation
+          span.icon-bar
+          span.icon-bar
+          span.icon-bar
+        =link-to 'index'
+          img.navbar-brand src="/assets/images/logo.png"
+      .collapse.navbar-collapse#navbar-collapse-1
+        ul.nav.navbar-nav.navbar-right
+          if session.isAuthenticated
+            li.dropdown
+              a.dropdown-toggle href="#" data-toggle="dropdown" role="button" aria-expanded="false"
+                | Mon compte
+                span.caret
+              ul.dropdown-menu#main-nav-dropdown role="menu"
+                li = link-to 'users.mes-euros' session.currentUser 
+                  if session.currentUser.isOwner
+                    | Ma balance
+                  else
+                    | Mes Euros Collectés
+                li = link-to 'users.show' session.currentUser | Mon Profil 
+                li.divider
+                li
+                  a{action 'invalidateSession'} Se déconnecter
+          else
+            li #{ link-to 'register' | 'S'inscire }
+            li #{ link-to 'login' | Se connecter }
+  if session.isAuthenticated
+    unless session.currentUser.isOwner
+      .visible-md-block.visible-lg-block
+        nav.navbar.navbar-default#search-navbar role="navigation"
+          .container-fluid
+            form.navbar-form.navbar-left submit='search' role="search"
+              .form-group
+                span.search-field= view Ember.Select prompt="Arrondissment ou Restaurant" content=names valueBinding=name class="form-control"  
+                span.search-field= view Ember.Select prompt="Type de Cuisine" content=cuisines valueBinding=cuisine class="form-control" disabled=isDisabled
+                span#search-email.search-field= bootstrap-datepicker value=date class="form-control" format="dd/mm/yy" todayBtn=true todayHighlight=true placeholder="Date" language='fr'
+                span#calendar-icon= fa-icon 'calendar'
+                span.search-field= view Ember.Select content=hours class="form-control" 
+                span.search-field= view Ember.Select content=couverts class="form-control" 
+              button.btn.btn-success Rechercher
+            .visible-lg-block
+              p Rechercher ou réserver par téléphone: 09 90 90 87 85
 == outlet
 
 footer.footer
-	.container
-		.row#contact-section
-			.col-md-8.col-sm-12.footer-text
-				.contact-icon = fa-icon 'map-marker'
-				| Happy Dining
-				.contact-icon = fa-icon 'phone'
-				| 09 52 66 53 19
-				.contact-icon = fa-icon 'envelope'
-				| hello@happydining.fr
-			.col-md-4.col-sm-12
-				a.pull-right href='https://www.facebook.com/www.happydining.fr' target="_blank"
-					h3.no-margin = fa-icon 'facebook-square'
+  .container
+    .row#contact-section
+      .col-md-8.col-sm-12.footer-text
+        .contact-icon = fa-icon 'map-marker'
+        | Happy Dining
+        .contact-icon = fa-icon 'phone'
+        | 09 52 66 53 19
+        .contact-icon = fa-icon 'envelope'
+        | hello@happydining.fr
+      .col-md-4.col-sm-12
+        a.pull-right href='https://www.facebook.com/www.happydining.fr' target="_blank"
+          h3.no-margin = fa-icon 'facebook-square'
 
 
 
