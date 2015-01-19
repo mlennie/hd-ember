@@ -56,7 +56,7 @@ module.exports = function(environment) {
       crossOriginWhitelist: [ENV.APP.HOST]
     };
     ENV['simple-auth-devise'] = {
-      serverTokenEndpoint:  process.env.API_URL + 'users/sign_in',
+      serverTokenEndpoint:  process.env.API_URL + '/users/sign_in',
       crossOriginWhitelist: process.env.API_URL
     };
   }

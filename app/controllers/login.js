@@ -21,6 +21,11 @@ export default Ember.Controller.extend(
   actions: {
     authenticate: function() {
       var controller = this;
+      controller.setProperties({
+        confirmation_success: false,
+        confirmation_fail: false,
+        loginError: false
+      });
       //set authentication data to send to rails
       var data = this.getProperties('identification', 'password');
       this.get('session').authenticate(this.get('authenticator'), data).then(function() {
