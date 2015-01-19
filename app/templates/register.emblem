@@ -37,7 +37,7 @@
           = input class='form-control' value=passwordConfirmation placeholder='Password Confirmation' type='password' required=true
         br
         if genderBlank
-          .alert.alert-danger Gender can't be genderBlank
+          .alert.alert-danger Gender can't be blank
         //label for="gender" Gender
         span.grey Male
         span.margin-left-10 = radio-button value='Male' checked=gender

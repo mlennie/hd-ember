@@ -19,9 +19,11 @@ export default Ember.Controller.extend(SearchMixin,{
     sendContactEmail: function() {
       //set contact email
       var ce = this.get('contactEmail');
-      ce.set('email', this.get('contactEmailEmail'));
-      ce.set('name', this.get('contactEmailName'));
-      ce.set('content', this.get('contactEmailContent'));
+      ce.setProperties({
+        email: this.get('contactEmailEmail'),
+        name: this.get('contactEmailName'),
+        content: this.get('contactEmailContent')
+      });
 
       //save contact email
       var _this = this;
