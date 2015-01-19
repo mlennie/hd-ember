@@ -27,6 +27,10 @@
 							if session.currentUser.isOwner
 								br
 								button.btn.btn-success View history
+							else
+								br 
+								button.btn.btn-success data-toggle="popover" data-placement="bottom" data-trigger="focus" title="Please phone" data-content="09 90 90 87 85"
+									| Use my euros!
 
 
 					
