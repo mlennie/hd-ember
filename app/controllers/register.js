@@ -1,34 +1,72 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
+
+  //properties
   registrationSuccessful: false,
   registrationFailed: false,
+  genderBlank: false,
+  passwordTooShort: false,
+  passwordMismatch: false,
+  lastName: '',
+  firstName: '',
   email: '',
   password: '',
   passwordConfirmation: '',
+  gender: '',
+
+  //computed properties
   user: function(){
     return this.store.createRecord('user', {});
   }.property(),
+
+  //actions
   actions: {
     registerUser: function() {
-      //set user
-      var user = this.get('user');
-      user.set('email', this.get('email'));
-      user.set('password', this.get('password'));
-      user.set('passwordConfirmation', this.get('passwordConfirmation'));
+      //check client side validations
+      if (this.get('gender') === '') {
+        //add gender warning
+        this.set('genderBlank', true);
+      } else if (this.get('password').length < 4) {
+        //remove gender warning
+        this.set('genderBlank', false);
+        //set new warning
+        this.set('passwordTooShort', true);
+      } else if (this.get('password') !== this.get('passwordConfirmation')) {
+        //remove old warnings
+        this.set('genderBlank', false);
+        this.set('passwordTooShort', false);
+        //add new warning
+        this.set('passwordMismatch', true);
+      } else { //send create request
+        //remove error warnings
+        this.set('genderBlank', false);
+        this.set('passwordMismatch', false);
+        this.set('passwordTooShort', false);
 
-      //save user
-      var _this = this;
-      var onSuccess = function(){
-        _this.set('registrationFailed', false);
-        _this.set('registrationSuccessful', true);
-      };
+        //set user
+        var user = this.get('user');
+        user.set('lastName', this.get('lastName'));
+        user.set('firstName', this.get('firstName'));
+        user.set('email', this.get('email'));
+        user.set('password', this.get('password'));
+        user.set('passwordConfirmation', this.get('passwordConfirmation'));
+        user.set('gender', this.get('gender'));
 
-      var onFail = function() {
-        _this.set('registrationFailed', true);
-      };
+        //save user
+        var _this = this;
+        var onSuccess = function(){
+          _this.set('registrationFailed', false);
+          _this.set('registrationSuccessful', true);
+        };
 
-      user.save().then(onSuccess,onFail);
+        var onFail = function() {
+          _this.set('registrationFailed', true);
+          _this.set('registrationSuccessful', false);
+        };
+
+        user.save().then(onSuccess,onFail);
+      }
     }
   }
 });
