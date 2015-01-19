@@ -26,13 +26,13 @@ module.exports = function(environment) {
     ENV.APP.LOG_TRANSITIONS = true;
     //ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     //ENV.APP.LOG_VIEW_LOOKUPS = true;
-    ENV.APP.HOST = 'http://localhost:3000'
+    ENV.APP.HOST = 'http://localhost:3000/'
     ENV['simple-auth'] = {
       authorizer: 'simple-auth-authorizer:devise',
       crossOriginWhitelist: [ENV.APP.HOST]
     };
     ENV['simple-auth-devise'] = {
-      serverTokenEndpoint:  ENV.APP.HOST + '/users/sign_in',
+      serverTokenEndpoint:  ENV.APP.HOST + 'users/sign_in',
       crossOriginWhitelist: ENV.APP.HOST
     };
   }
