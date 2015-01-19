@@ -19,10 +19,6 @@ module.exports = function(environment) {
     }
   };
 
-  ENV['simple-auth'] = {
-    authorizer: 'simple-auth-authorizer:devise'
-  };
-
 
   if (environment === 'development') {
     //ENV.APP.LOG_RESOLVER = true;
@@ -31,6 +27,14 @@ module.exports = function(environment) {
     //ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     //ENV.APP.LOG_VIEW_LOOKUPS = true;
     ENV.APP.HOST = 'http://localhost:3000'
+    ENV['simple-auth'] = {
+      authorizer: 'simple-auth-authorizer:devise',
+      crossOriginWhitelist: [ENV.APP.HOST]
+    };
+    ENV['simple-auth-devise'] = {
+      serverTokenEndpoint:  ENV.APP.HOST + '/users/sign_in',
+      crossOriginWhitelist: ENV.APP.HOST
+    };
   }
 
   if (environment === 'test') {
@@ -47,11 +51,16 @@ module.exports = function(environment) {
 
   if (environment === 'production') {
     ENV.APP.HOST = process.env.API_URL
+    ENV['simple-auth'] = {
+      authorizer: 'simple-auth-authorizer:devise',
+      crossOriginWhitelist: [ENV.APP.HOST]
+    };
     ENV['simple-auth-devise'] = {
       serverTokenEndpoint:  process.env.API_URL + 'users/sign_in',
       crossOriginWhitelist: process.env.API_URL
     };
   }
+
 
   return ENV;
 };
