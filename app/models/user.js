@@ -6,6 +6,7 @@ export default DS.Model.extend({
   email: DS.attr('string'),
   password: DS.attr('string'),
   passwordConfirmation: DS.attr('string'),
+  gender: DS.attr('string'),
   wallet: DS.belongsTo('wallet', {async: true}),
   restaurants: DS.hasMany('restaurant', {async: true}),
   roles: DS.hasMany('role', {async: true}),
