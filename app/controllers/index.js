@@ -8,18 +8,10 @@ export default Ember.Controller.extend(SearchMixin,{
   contactEmailEmail: '',
   contactEmailName: '',
   contactEmailContent:'',
-  registrationSuccessful: false,
-  registrationFailed: false,
-  email: '',
-  password: '',
-  passwordConfirmation: '',
 
   //computed
   contactEmail: function() {
     return this.store.createRecord('contact-email', {});
-  }.property(),
-  user: function(){
-    return this.store.createRecord('user', {});
   }.property(),
 
   //actions
@@ -43,26 +35,6 @@ export default Ember.Controller.extend(SearchMixin,{
       };
 
       ce.save().then(onMailSuccess,onMailFail);
-    },
-     registerUser: function() {
-      //set user
-      var user = this.get('user');
-      user.set('email', this.get('email'));
-      user.set('password', this.get('password'));
-      user.set('passwordConfirmation', this.get('passwordConfirmation'));
-
-      //save user
-      var _this = this;
-      var onSuccess = function(){
-        _this.set('registrationFailed', false);
-        _this.set('registrationSuccessful', true);
-      };
-
-      var onFail = function() {
-        _this.set('registrationFailed', true);
-      };
-
-      user.save().then(onSuccess,onFail);
     }
   }
 });
