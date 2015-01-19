@@ -19,7 +19,7 @@ export default Ember.Controller.extend({
       controller.set('editFailed', false); 
        // Custom ajax call for resending .                                                                             
       Ember.$.ajax({                                                                                                                                                                                       
-        url: ENV.APP.HOST + 'update_password',                                                               
+        url: ENV.APP.HOST + '/update_password',                                                               
         type: 'POST',                                                                                                 
         data: {
           password_reset_token: this.get('token'),
