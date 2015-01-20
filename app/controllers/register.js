@@ -14,6 +14,7 @@ export default Ember.Controller.extend({
   password: '',
   passwordConfirmation: '',
   gender: '',
+  isLoading: false,
 
   //computed properties
   user: function(){
@@ -39,6 +40,10 @@ export default Ember.Controller.extend({
         //add new warning
         this.set('passwordMismatch', true);
       } else { //send create request
+
+        //add loading spinner
+        this.set('isLoading', true);
+        
         //remove error warnings
         this.setProperties({
           genderBlank: false,
@@ -61,11 +66,13 @@ export default Ember.Controller.extend({
         //setup callbacks for after user request is sent
         var _this = this;
         var onSuccess = function(){
+          _this.set('isLoading', false);
           _this.set('registrationFailed', false);
           _this.set('registrationSuccessful', true);
         };
 
         var onFail = function() {
+          _this.set('isLoading', false);
           _this.set('registrationFailed', true);
           _this.set('registrationSuccessful', false);
         };

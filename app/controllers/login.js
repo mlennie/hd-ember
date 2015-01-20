@@ -4,37 +4,46 @@ import LoginControllerMixin from 'simple-auth/mixins/login-controller-mixin';
 export default Ember.Controller.extend(
 
 	//authentication mixin
-  LoginControllerMixin, {
+	LoginControllerMixin, {
 
-  //queryParams
-  queryParams: ['confirmation_success','confirmation_fail'],
+	//queryParams
+	queryParams: ['confirmation_success','confirmation_fail'],
 
-  //properties
-  authenticator: 'simple-auth-authenticator:devise',
-  identification: null,
-  password: null,
-  loginError: false,
-  confirmation_success: false,
-  confirmation_fail: false,
+	//properties
+	authenticator: 'simple-auth-authenticator:devise',
+	identification: null,
+	password: null,
+	loginError: false,
+	confirmation_success: false,
+	confirmation_fail: false,
+	isLoading: false,
 
-  //actions
-  actions: {
-    authenticate: function() {
-      var controller = this;
-      controller.setProperties({
-        confirmation_success: false,
-        confirmation_fail: false,
-        loginError: false
-      });
-      //set authentication data to send to rails
-      var data = this.getProperties('identification', 'password');
-      this.get('session').authenticate(this.get('authenticator'), data).then(function() {
-        //do nothing special if authenticated
-      }, function() {
-        //show authenticate error if authentication not good
-        controller.set('loginError', true);
-        controller.set('password', null);
-      });
-    }
-  }
+	//actions
+	actions: {
+		authenticate: function() {
+
+			var controller = this;
+			controller.setProperties({
+				confirmation_success: false,
+				confirmation_fail: false,
+				loginError: false,
+				isLoading: true
+			});
+
+			//set authentication data to send to rails
+			var data = this.getProperties('identification', 'password');
+			this.get('session').authenticate(this.get('authenticator'), data).then(function() {
+				controller.setProperties({
+					isLoading: false
+				});
+			}, function() {
+				//show authenticate error if authentication not good
+				controller.setProperties({
+					loginError: true, 
+					password: null,
+					isLoading: false
+				});
+			});
+		}
+	}
 });

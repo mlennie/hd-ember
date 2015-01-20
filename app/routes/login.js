@@ -5,8 +5,11 @@ export default Ember.Route.extend({
     this.set('params', params);
   },
   setupController: function(controller, model) {
-    controller.set('params', this.get('params'));
-    controller.set('loginError', false);
+    controller.setProperties({
+    	params: this.get('params'),
+    	loginError: false,
+    	isLoading: false
+    });
     this._super(controller, model);
   }
 });

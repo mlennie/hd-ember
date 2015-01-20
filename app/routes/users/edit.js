@@ -3,8 +3,11 @@ import AuthenticatedRouteMixin from 'simple-auth/mixins/authenticated-route-mixi
 
 export default Ember.Route.extend(AuthenticatedRouteMixin, {
 	setupController: function(controller, model) {
-    controller.set('success', false);
-    controller.set('fail', false);
+    controller.setProperties({
+    	success: false,
+    	fail: false,
+    	isLoading: false
+    });
     this._super(controller, model);
   }
 });
