@@ -40,20 +40,25 @@ export default Ember.Controller.extend({
         this.set('passwordMismatch', true);
       } else { //send create request
         //remove error warnings
-        this.set('genderBlank', false);
-        this.set('passwordMismatch', false);
-        this.set('passwordTooShort', false);
+        this.setProperties({
+          genderBlank: false,
+          passwordMismatch: false,
+          passwordTooShort: false
+        });
 
         //set user
         var user = this.get('user');
-        user.set('lastName', this.get('lastName'));
-        user.set('firstName', this.get('firstName'));
-        user.set('email', this.get('email'));
-        user.set('password', this.get('password'));
-        user.set('passwordConfirmation', this.get('passwordConfirmation'));
-        user.set('gender', this.get('gender'));
+        //set new attributes
+        user.setProperties({
+          lastName: this.get('lastName'),
+          firstName: this.get('firstName'),
+          email: this.get('email'),
+          password: this.get('password'),
+          passwordConfirmation: this.get('passwordConfirmation'),
+          gender: this.get('gender')
+        });
 
-        //save user
+        //setup callbacks for after user request is sent
         var _this = this;
         var onSuccess = function(){
           _this.set('registrationFailed', false);
@@ -65,6 +70,7 @@ export default Ember.Controller.extend({
           _this.set('registrationSuccessful', false);
         };
 
+        //send user update request
         user.save().then(onSuccess,onFail);
       }
     }
