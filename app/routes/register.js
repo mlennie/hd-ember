@@ -8,7 +8,8 @@ export default Ember.Route.extend(ApplicationRouteMixin, {
     	registrationFailed: false,
     	genderBlank: false,
     	passwordMismatch: false,
-    	passwordTooShort: false
+    	passwordTooShort: false,
+        isLoading: false
     });
     this._super(controller, model);
   }

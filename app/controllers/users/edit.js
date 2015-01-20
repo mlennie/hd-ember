@@ -3,6 +3,7 @@ export default Ember.Controller.extend({
 	//properties
 	success: false,
 	fail: false,
+  isLoading: false,
 
 	//computed properties
   currentUser: function() {
@@ -22,6 +23,7 @@ export default Ember.Controller.extend({
 	actions: {
     update: function() {
     	var controller = this;
+      controller.set('isLoading', true);
       var user = this.get('currentUser');
       user.setProperties({
        	email: this.get('email'),
@@ -29,9 +31,11 @@ export default Ember.Controller.extend({
        	lastName: this.get('lastName')
       });
       user.save().then(function() {
+        controller.set('isLoading', false);
         controller.set('success', true);
         controller.set('fail', false);
       }, function() {
+        controller.set('isLoading', false);
         controller.set('success', false);
         controller.set('fail', true);
       });

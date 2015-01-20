@@ -10,6 +10,7 @@ export default DS.Model.extend({
   wallet: DS.belongsTo('wallet', {async: true}),
   restaurants: DS.hasMany('restaurant', {async: true}),
   roles: DS.hasMany('role', {async: true}),
+  promotionCode: DS.attr('string'),
   isOwner: function() {
   	var ownerRole = this.get('roles').findBy('name', 'owner');
   	if (ownerRole !== undefined) {

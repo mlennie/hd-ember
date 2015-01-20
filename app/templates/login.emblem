@@ -12,25 +12,28 @@
 			.alert.alert-success Confirmation successful. You can now log into your account. 
 		if confirmation_fail
 			.alert.alert-danger Confirmation failed. Either you have already confirmed your account, or this user does not exist. 
-		.col-md-4.col-md-offset-4#register-form
-			h1.center Sign In
-			form submit='authenticate'
-				.input-group.full-width
-					label for="identification" Email
-					= input class='form-control' value=identification placeholder='Enter Email' type='email' required=true
-				br
-				.input-group.full-width
-					label for="password" Password
-					= input class='form-control' value=password placeholder='Enter Password' type='password' required=true
-				.input-group#remember-me
-					= input type="checkbox" name="rememberMe"
-					label for="rememberMe" Remember me
-				br
-				button.btn.btn-default.btn-lg.btn-black.full-width type="submit" Login
-				br
-				br
-				= link-to 'register' | Sign up
-				br
-				= link-to 'new-password' | Forget password?
-				br
-				= link-to 'resend-confirmation' | Didn't receive confirmation email?
+		if isLoading
+			h1.center = fa-icon 'fa-spin fa-spinner'
+		else
+			.col-md-4.col-md-offset-4#register-form
+				h1.center Sign In
+				form submit='authenticate'
+					.input-group.full-width
+						label for="identification" Email
+						= input class='form-control' value=identification placeholder='Enter Email' type='email' required=true
+					br
+					.input-group.full-width
+						label for="password" Password
+						= input class='form-control' value=password placeholder='Enter Password' type='password' required=true
+					.input-group#remember-me
+						= input type="checkbox" name="rememberMe"
+						label for="rememberMe" Remember me
+					br
+					button.btn.btn-default.btn-lg.btn-black.full-width type="submit" Login
+					br
+					br
+					= link-to 'register' | Sign up
+					br
+					= link-to 'new-password' | Forget password?
+					br
+					= link-to 'resend-confirmation' | Didn't receive confirmation email?
