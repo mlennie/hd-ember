@@ -14,6 +14,7 @@ export default Ember.Controller.extend({
   password: '',
   passwordConfirmation: '',
   gender: '',
+  promotionCode: '',
   isLoading: false,
 
   //computed properties
@@ -60,7 +61,8 @@ export default Ember.Controller.extend({
           email: this.get('email'),
           password: this.get('password'),
           passwordConfirmation: this.get('passwordConfirmation'),
-          gender: this.get('gender')
+          gender: this.get('gender'),
+          promotionCode: this.get('promotionCode')
         });
 
         //setup callbacks for after user request is sent

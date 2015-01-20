@@ -35,10 +35,9 @@
             //label for="password" Password
             = input class='form-control' value=password placeholder='Password' type='password' required=true
           br
-          .input-group.full-width
+          .input-group.full-width.margin-bottom-10
             //label for="passwordConfirmation" Password Confirmation
             = input class='form-control' value=passwordConfirmation placeholder='Password Confirmation' type='password' required=true
-          br
           if genderBlank
             .alert.alert-danger Gender can't be blank
           //label for="gender" Gender
@@ -46,6 +45,10 @@
           span.margin-left-10 = radio-button value='Male' checked=gender
           span.margin-left-10.grey Female
           span.margin-left-10 = radio-button value='Femail' checked=gender
+          br
+          .input-group.full-width.margin-top-10
+            //label for="password" First Name
+            = input class='form-control' value=promotionCode placeholder='Promotional Code' 
           button.margin-top-10.btn.btn-default.btn-lg.btn-black.full-width type="submit" Register
           br
           br
