@@ -1,0 +1,4 @@
+.container-fluid
+	.row
+		.col-md-7.col-md-offset-2
+			h1.center#profile-title Parrainer un ami

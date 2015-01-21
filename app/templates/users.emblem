@@ -21,14 +21,16 @@ else
 				.list-group-item.grey-background
 					= session.currentUser.fullName
 				.list-group-item 
-					=link-to 'users.mes-euros' session.currentUser 
+					=link-to 'users.mes-euros'
 						if session.currentUser.isOwner
 							| Ma balance
 						else
 							| Mes Euros Collectés
 				.list-group-item 
-					=link-to 'users.show' session.currentUser | Mon Profil 
+					=link-to 'users.show' | Mon Profil 
 				.list-group-item 
-					=link-to 'users.edit' session.currentUser | Edit Profil 
+					=link-to 'users.parrainer-un-ami' | Parrainer un ami 
+				.list-group-item 
+					=link-to 'users.edit' | Edit Profil 
 		.col-sm-9
 			==outlet

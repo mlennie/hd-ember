@@ -17,17 +17,18 @@
 								| Mon compte
 								span.caret
 							ul.dropdown-menu#main-nav-dropdown role="menu"
-								li = link-to 'users.mes-euros' session.currentUser 
+								li = link-to 'users.mes-euros' 
 									if session.currentUser.isOwner
 										| Ma balance
 									else
 										| Mes Euros Collectés
-								li = link-to 'users.show' session.currentUser | Mon Profil 
+								li = link-to 'users.show' | Mon Profil
+								li = link-to 'users.parrainer-un-ami' | Parrainer un ami  
 								li.divider
 								li
 									a{action 'invalidateSession'} Se déconnecter
 					else
-						li #{ link-to 'register' | 'S'inscire }
+						li #{ link-to 'register' | S'inscire }
 						li #{ link-to 'login' | Se connecter }
 	if session.isAuthenticated
 		unless session.currentUser.isOwner
