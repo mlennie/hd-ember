@@ -27,6 +27,7 @@ module.exports = function(environment) {
     //ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     //ENV.APP.LOG_VIEW_LOOKUPS = true;
     ENV.APP.HOST = 'http://localhost:3000'
+    ENV.APP.EMBER_URL = 'http://localhost:4200'
     ENV['simple-auth'] = {
       authorizer: 'simple-auth-authorizer:devise',
       crossOriginWhitelist: [ENV.APP.HOST]
@@ -46,11 +47,13 @@ module.exports = function(environment) {
     ENV.APP.LOG_ACTIVE_GENERATION = false;
     ENV.APP.LOG_VIEW_LOOKUPS = false;
     ENV.APP.HOST = 'http://localhost:3000'
+    ENV.APP.EMBER_URL = 'http://localhost:4200'
     ENV.APP.rootElement = '#ember-testing';
   }
 
   if (environment === 'production') {
     ENV.APP.HOST = process.env.API_URL
+    ENV.APP.EMBER_URL = process.env.EMBER_URL
     ENV['simple-auth'] = {
       authorizer: 'simple-auth-authorizer:devise',
       crossOriginWhitelist: [ENV.APP.HOST]

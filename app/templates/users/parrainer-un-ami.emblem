@@ -2,3 +2,15 @@
 	.row
 		.col-md-7.col-md-offset-2
 			h1.center#profile-title Parrainer un ami
+			br
+			.row
+				.col-sm-12
+					.panel.panel-default
+						.panel-heading.center
+							p Share your referral link with friends to make money!. 
+						.panel-body
+							p 
+								| After a friend that you referred finishes their first reservation you will get money!!
+								|  Your referral link to share with friends is right below:
+							br
+							= link-to referralCodeUrl target='_blank'

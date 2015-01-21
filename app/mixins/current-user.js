@@ -1,5 +1,7 @@
 import Ember from "ember";
+import ENV from "hd-ember/config/environment";
 export default Ember.Mixin.create({
+
 	//computed properties
   currentUser: function() {
     return this.get('session.currentUser');
@@ -20,6 +22,12 @@ export default Ember.Mixin.create({
 		var restaurants = this.get('currentUser.restaurants');
 		return restaurants.get('firstObject');
 	}.property('currentUser.restaurants'),
+	referralCodeUrl: function() {
+		var url = ENV.APP.EMBER_URL;
+		var registerUrl = url + '/register';
+		var referral_code = this.get('currentUser.referralCode');
+		return registerUrl + '?referralCode=' + referral_code;
+	}.property('currentUser'),
 
 	//wallet
   wallet: function() {
