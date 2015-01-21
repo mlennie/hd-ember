@@ -6,9 +6,6 @@ export default Ember.Controller.extend({
 
   //properties
   referral_code: null,
-
-  //properties
-  
   registrationSuccessful: false,
   registrationFailed: false,
   genderBlank: false,
@@ -61,6 +58,11 @@ export default Ember.Controller.extend({
 
         //set user
         var user = this.get('user');
+
+        //get cookies
+        var cookie = this.get('cookie');
+        var referred_user_code = cookie.getCookie('referralCode');
+
         //set new attributes
         user.setProperties({
           lastName: this.get('lastName'),
@@ -69,7 +71,8 @@ export default Ember.Controller.extend({
           password: this.get('password'),
           passwordConfirmation: this.get('passwordConfirmation'),
           gender: this.get('gender'),
-          promotionCode: this.get('promotionCode')
+          promotionCode: this.get('promotionCode'),
+          referred_user_code: referred_user_code
         });
 
         //setup callbacks for after user request is sent
