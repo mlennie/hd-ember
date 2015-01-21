@@ -8,6 +8,8 @@ export default DS.Model.extend({
   passwordConfirmation: DS.attr('string'),
   gender: DS.attr('string'),
   wallet: DS.belongsTo('wallet', {async: true}),
+  referralCode: DS.attr('string'),
+  referredUserCode: DS.attr('string'),
   restaurants: DS.hasMany('restaurant', {async: true}),
   roles: DS.hasMany('role', {async: true}),
   promotionCode: DS.attr('string'),
