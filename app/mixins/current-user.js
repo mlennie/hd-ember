@@ -28,6 +28,13 @@ export default Ember.Mixin.create({
 		var referral_code = this.get('currentUser.referralCode');
 		return registerUrl + '?referralCode=' + referral_code;
 	}.property('currentUser'),
+	emailReferralMessage: function() {
+		var mail = "mailto:yourfriends@mail.com?";
+		var subject = "subject=Eat out with Happy Dining!&";
+		var body = "body=Please sign up for happy dining. You get money for eating out and if you sign up I get money too!";
+		var link = "Just click here: " + this.get('referralCodeUrl'); 
+		return mail + subject + body + link;
+	}.property('referralCodeUrl'),
 
 	//wallet
   wallet: function() {

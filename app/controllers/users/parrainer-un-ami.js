@@ -3,4 +3,5 @@ import CurrentUserMixin from '../../mixins/current-user';
 
 export default Ember.Controller.extend(CurrentUserMixin, {
 	
+	
 });
