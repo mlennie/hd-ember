@@ -13,6 +13,7 @@ export default Ember.View.extend({
     	}
     }(document, 'script', 'twitter-wjs');
   }.on('didInsertElement'),
+  
   setFacebookButton: function() {
   	(function(d, s, id) {
       var js, fjs = d.getElementsByTagName(s)[0];
