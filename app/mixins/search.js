@@ -30,7 +30,8 @@ export default Ember.Mixin.create({
 	couverts: ['Nombre de couverts', 1, 2, 3, 4, 5, 6, 7, 8, 9],
 	actions: {
 		search: function() {
-			this.transitionToRoute('restaurants.search-results', {queryParams: {name: this.get('name'), cuisine: this.get('cuisine')}});
+    	window.scrollTo(0, 0);
+			this.transitionToRoute('restaurants.search-results', {queryParams: {name: this.get('name')}});
 		}
 	}
 });
