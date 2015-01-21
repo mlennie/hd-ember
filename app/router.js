@@ -13,7 +13,7 @@ Router.map(function() {
     this.route('parrainer-un-ami');
   });
   this.resource('restaurants', function() {
-    this.route('show', { path: ':restaurant_id'});
+    this.route('show');
     this.route('search-results');
   });
   this.route('login');

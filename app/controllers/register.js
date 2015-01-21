@@ -1,12 +1,14 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
-
   //queryParams
-  queryParams: ['referralCode'],
+  queryParams: ['referral_code'],
 
   //properties
-  referralCode: null,
+  referral_code: null,
+
+  //properties
+  
   registrationSuccessful: false,
   registrationFailed: false,
   genderBlank: false,
@@ -28,6 +30,7 @@ export default Ember.Controller.extend({
 
   //actions
   actions: {
+  
     registerUser: function() {
       //check client side validations
       if (this.get('gender') === '') {
