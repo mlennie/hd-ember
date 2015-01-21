@@ -72,7 +72,7 @@ export default Ember.Controller.extend({
           passwordConfirmation: this.get('passwordConfirmation'),
           gender: this.get('gender'),
           promotionCode: this.get('promotionCode'),
-          referred_user_code: referred_user_code
+          referredUserCode: referred_user_code
         });
 
         //setup callbacks for after user request is sent
