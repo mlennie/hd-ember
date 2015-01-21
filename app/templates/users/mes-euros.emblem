@@ -3,7 +3,7 @@
 		.col-md-7.col-md-offset-2
 			h1.center#profile-title
 				if session.currentUser.isOwner
-							| Ma balance
+					| Ma balance
 				else
 					| Mes Euros Collectés
 			br

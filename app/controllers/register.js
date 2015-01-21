@@ -2,7 +2,11 @@ import Ember from 'ember';
 
 export default Ember.Controller.extend({
 
+  //queryParams
+  queryParams: ['referralCode'],
+
   //properties
+  referralCode: null,
   registrationSuccessful: false,
   registrationFailed: false,
   genderBlank: false,
