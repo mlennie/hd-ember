@@ -390,6 +390,19 @@ img.navbar-brand {
 .fc-basic-view tbody .fc-row {
   min-height: 0em !important;
 }
+
+td.fc-day-number {
+  border: 1px solid #eee !important;
+  border-bottom: none !important;
+}
+
+#calendar > div.fc-toolbar > div.fc-left > h2 {
+  font-size: 1.3em;
+}
+
+td.fc-day {
+  border: 1px solid #eee !important;
+}
 #calendar-percent {
   //background-color: yellow;
   padding-top: 20px;
