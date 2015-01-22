@@ -2,12 +2,14 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
 
-	initializeCalendar: function() {
+	services: function() {
+		return this.store.find(
+			'service', 
+			{ restaurant_id: this.get('restaurant.id') }
+		);
+	}.property(),
 
-		var date = new Date();
-		var d = date.getDate();
-		var m = date.getMonth();
-		var y = date.getFullYear();
+	initializeCalendar: function() {
 
     Ember.$("#calendar").fullCalendar({
 
