@@ -386,6 +386,18 @@ img.navbar-brand {
   height: 300px;
 }
 
+/* RESTAURANT SHOW PAGE */
+.fc-basic-view tbody .fc-row {
+  min-height: 0em !important;
+}
+#calendar-percent {
+  //background-color: yellow;
+  padding-top: 20px;
+  margin-bottom: 0;
+  color: red;
+  text-align: center;
+}
+
 /* END OF RESTAURANT PAGES */
 
 /* FOOTER */
