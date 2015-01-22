@@ -38,6 +38,6 @@ br
 						=model.description
 	.row
 		.col-sm-3.col-sm-offset-2
-			= reservation-calendar restaurant=model store=store
+			= reservation-calendar restaurant=model services=services
 
 			

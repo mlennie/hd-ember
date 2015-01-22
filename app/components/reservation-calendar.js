@@ -2,30 +2,41 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
 
-	services: function() {
-		var restaurant_id = this.get('restaurant.id');
-		alert('worked');
-		return this.controller.store.find('service', { restaurant_id: restaurant_id });
-	}.on("didInsertElement"),
-
 	initializeCalendar: function() {
-
+		//set component
+		var component = this;
+		
+		//initiate and set values for calendar
     Ember.$("#calendar").fullCalendar({
 
     	height: 300,
     	fixedWeekCount: false,
 
+    	//add logic for each day on calendar
 			dayRender: function(date, cell) {
-				var y = date.year();
-				var m = date.month();
-				var d = date.date();
-        if (d === moment().date()) {
+
+				//get start times of services for restaurant
+				var startTimes = component.get('services').getEach('startTime');
+
+				//change start time format to just show days
+				var days = startTimes.map(function(item) {
+					return moment(item).stripZone().stripTime().format();
+				});
+
+				//get proper format for calendar days
+				var dateFormat = moment(date).stripTime().format();
+
+				//if there is a service for a calendar day highlight the day
+				//and show highest service discount percent
+        if ( days.indexOf(dateFormat) > -1) {
+
         	cell.prepend("<a href='#'></a>");
         	cell.html("<p id='calendar-percent'>-10%</p>");
         	cell.css('background-color', 'yellow');
     		}
 			},
 
+			//set logic when clicking on day
 			dayClick: function(date, jsEvent, view) {
 				alert(date.format());
     	}
