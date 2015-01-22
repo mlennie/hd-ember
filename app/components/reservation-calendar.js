@@ -3,11 +3,10 @@ import Ember from 'ember';
 export default Ember.Component.extend({
 
 	services: function() {
-		return this.store.find(
-			'service', 
-			{ restaurant_id: this.get('restaurant.id') }
-		);
-	}.property(),
+		var restaurant_id = this.get('restaurant.id');
+		alert('worked');
+		return this.controller.store.find('service', { restaurant_id: restaurant_id });
+	}.on("didInsertElement"),
 
 	initializeCalendar: function() {
 
