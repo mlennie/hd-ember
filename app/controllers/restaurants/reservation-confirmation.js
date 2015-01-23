@@ -10,10 +10,20 @@ export default Ember.Controller.extend({
   number: null,
   name: null,
 
-  //action
+  //actions
   actions: {
   	confirmReservation: function() {
-  		
+  		var reservation = this.store.createRecord('reservation', {
+  			nbPeople: this.get('number'),
+  			time: null,
+  			restaurant: this.get('model'),
+  			user: this.get('session.currentUser'),
+  			service: null,
+  			discount: 0.10,
+  			userContribution: 0,
+  			bookingName: this.get('name')
+  		});
+  		reservation.save();
   	}
   }
 });
