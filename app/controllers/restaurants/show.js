@@ -1,11 +1,13 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
+  
   //properties
   showReserveButton: true,
+  showServices: false,
+  servicesToList: null,
 
 	//computed properties
-
   services: function() {
     return this.get('model.services');
   }.property('model'),

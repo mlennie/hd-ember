@@ -61,9 +61,21 @@ export default Ember.View.extend({
 					var dateFormat = moment(date).stripTime().format();
 					//initiate and set values for calendar
 
-  			if ( days.indexOf(dateFormat) > -1) {
+  			//check if day clicked has any services
+  			if ( days.indexOf(dateFormat) > -1 ) {
   			
-  				alert('picked day');
+  				//get services to list
+  				var services = self.controller.get('services');
+
+  				//filter services by date chosen
+  				var serviceDate;
+  				var servicesToList = services.filter(function(service) {
+  					serviceDate = moment(service.get('startTime')).stripZone().stripTime().format();
+  					return serviceDate === dateFormat;
+  				});
+
+  				self.controller.set('showServices', true);
+  				self.controller.set('servicesToList', servicesToList);
   			}
       }
     });

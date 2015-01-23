@@ -37,7 +37,13 @@ br
 					p 
 						=model.description
 	.row
-		.col-sm-3.col-sm-offset-2
+		.col-sm-3.col-sm-offset-3
 			#calendar.margin-bottom-10
+		.col-sm-3
+			if showServices
+				each service in servicesToList
+					ul.list-group
+						li.list-group-ite
+							= fullDate service.startTime
 
 			
