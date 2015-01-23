@@ -2,10 +2,11 @@ import Ember from 'ember';
 
 export default Ember.Controller.extend({
 
-  queryParams: ['date'],
+  queryParams: ['date', 'time'],
   
   //properties
   date: null,
+  time: null,
   showReserveButton: true,
   servicesToList: null,
 

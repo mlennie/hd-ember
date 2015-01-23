@@ -1,4 +1,5 @@
 ul.list-group
   li.list-group-item
     each time in timeArray
-      span.center.btn.btn-default.btn-sm = time
+      .center.btn.btn-default.btn-sm = link-to 'restaurants.show' restaurant (query-params date=date time=time)
+         = time
