@@ -45,8 +45,21 @@ br
 				ul.list-group
 					li.list-group-item
 						each number in nbPeopleArray
-							.center.btn.btn-default.btn-sm = link-to 'restaurants.show' model (query-params date=date time=time number=number)
-								= number
+							= link-to 'restaurants.show' model (query-params date=date time=time number=number)
+								.center.btn.btn-default.btn-sm.margin-2
+									= number
+		.col-sm-3
+			if showReservationName
+				p Couverts:		
+				ul.list-group
+					li.list-group-item
+						form submit='goToReservationConfirmationPage'
+							.input-group.full-width
+								//label for="name"  Booking name
+								= input class='form-control' value=name placeholder='Booking name' required=true
+							button.btn.btn-success.btn-sm.margin-top-10 type="submit" Validate Reservation
+
+						
 
 
 

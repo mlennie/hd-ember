@@ -1,5 +1,5 @@
 ul.list-group
   li.list-group-item
     each time in timeArray
-      .center.btn.btn-default.btn-sm = link-to 'restaurants.show' restaurant (query-params date=date time=time)
-         = time
+      = link-to 'restaurants.show' restaurant (query-params date=date time=time)
+        .center.btn.btn-default.btn-sm.margin-2 = time
