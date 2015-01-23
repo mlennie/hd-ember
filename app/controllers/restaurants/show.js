@@ -7,7 +7,6 @@ export default Ember.Controller.extend({
   //properties
   date: null,
   showReserveButton: true,
-  showServices: false,
   servicesToList: null,
 
 	//computed properties
@@ -23,13 +22,31 @@ export default Ember.Controller.extend({
     return 'background-image: url(' + this.get('model.imgUrl')+');';
   }.property('model'),
 
+  showServices: function() {
+    if (this.get('date') !== null) {
+      return true;
+    } else {
+      return false;
+    }
+  }.property('date'),
+
+  filteredServices: function() {
+    var date = this.get('date');
+    var services = this.get('services');
+    return services.filter(function(service) {
+      var serviceDate = moment(service.get('startTime')).stripTime().stripZone().format();
+      return date === serviceDate;
+    });
+  }.property('date'),
+
+
   //actions
   actions: {
     showPhoneNumber: function() {
       this.set('showReserveButton', false);
     },
 
-    showServices: function(date) {
+    addDateQueryParams: function(date) {
       this.transitionToRoute('restaurants.show', this.get('model'), { queryParams: {date: date} });
     }
   }

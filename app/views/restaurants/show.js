@@ -65,7 +65,7 @@ export default Ember.View.extend({
   			if ( days.indexOf(dateFormat) > -1 ) {
 
   				//call show services method from controller
-  				self.get('controller').send('showServices', dateFormat);
+  				self.get('controller').send('addDateQueryParams', dateFormat);
   			}
       }
     });

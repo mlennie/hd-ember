@@ -1,0 +1,4 @@
+ul.list-group
+  li.list-group-item
+    each time in timeArray
+      span.center.btn.btn-default.btn-sm = time

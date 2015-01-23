@@ -41,9 +41,7 @@ br
 			#calendar.margin-bottom-10
 		.col-sm-3
 			if showServices
-				each service in servicesToList
-					ul.list-group
-						li.list-group-ite
-							= fullDate service.startTime
+				each service in filteredServices
+					service-times service=service
 
 			
