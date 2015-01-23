@@ -1,8 +1,11 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
+
+  queryParams: ['date'],
   
   //properties
+  date: null,
   showReserveButton: true,
   showServices: false,
   servicesToList: null,
@@ -24,6 +27,10 @@ export default Ember.Controller.extend({
   actions: {
     showPhoneNumber: function() {
       this.set('showReserveButton', false);
+    },
+
+    showServices: function(date) {
+      this.transitionToRoute('restaurants.show', this.get('model'), { queryParams: {date: date} });
     }
   }
 });

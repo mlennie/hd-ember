@@ -63,19 +63,9 @@ export default Ember.View.extend({
 
   			//check if day clicked has any services
   			if ( days.indexOf(dateFormat) > -1 ) {
-  			
-  				//get services to list
-  				var services = self.controller.get('services');
 
-  				//filter services by date chosen
-  				var serviceDate;
-  				var servicesToList = services.filter(function(service) {
-  					serviceDate = moment(service.get('startTime')).stripZone().stripTime().format();
-  					return serviceDate === dateFormat;
-  				});
-
-  				self.controller.set('showServices', true);
-  				self.controller.set('servicesToList', servicesToList);
+  				//call show services method from controller
+  				self.get('controller').send('showServices', dateFormat);
   			}
       }
     });
