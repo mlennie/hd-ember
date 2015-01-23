@@ -7,7 +7,6 @@ export default Ember.View.extend({
 		//set component
 		var self = this;
 		
-		//initiate and set values for calendar
     Ember.$("#calendar").fullCalendar({
 
     	height: 300,
@@ -17,33 +16,55 @@ export default Ember.View.extend({
   		dayRender: function(date, cell) {
 
   			//get start times of services for restaurant
-  			var startTimes = self.controller.get('serviceStartTimes');
+				var startTimes = self.controller.get('serviceStartTimes');
 
-  			//change start time format to just show days
-  			var days = startTimes.map(function(item) {
-  				return moment(item).stripZone().stripTime().format();
-  			});
+				//change start time format to just show days
+				var days = startTimes.map(function(item) {
+					return moment(item).stripZone().stripTime().format();
+				});
 
-  			//get proper format for calendar days
-  			var dateFormat = moment(date).stripTime().format();
+				//get proper format for calendar days
+				var dateFormat = moment(date).stripTime().format();
+				//initiate and set values for calendar
 
   			//if there is a service for a calendar day highlight the day
   			//and show highest service discount percent
           if ( days.indexOf(dateFormat) > -1) {
 
           	//add percent and change background color to yellow
-          	cell.html("<a href='#'><p id='calendar-percent'>-10%</p></a>");
+          	cell.html("<p id='calendar-percent'>-10%</p>");
           	cell.css('background-color', 'yellow');
-      	  }
-      	//disable background 
-      	if (moment(date).stripTime() < moment().stripTime()) {
-      		cell.css('background-color', '#DDD');
-      	}
+          	cell.css('cursor', 'pointer');
+      	  } else if (moment(date).stripTime() < moment().stripTime()) {
+      	  	//disable background 
+      	  	cell.css('background-color', '#DDD');
+	      		cell.prop('disabled', true);
+	      		cell.css('cursor', 'not-allowed');
+	      	} else {
+	      		cell.prop('disabled', true);
+	      		cell.css('cursor', 'not-allowed');
+	      	}
       },
 
   		//set logic when clicking on day
   		dayClick: function(date) {
-  			alert(date.format());
+
+  				//get start times of services for restaurant
+					var startTimes = self.controller.get('serviceStartTimes');
+
+					//change start time format to just show days
+					var days = startTimes.map(function(item) {
+						return moment(item).stripZone().stripTime().format();
+					});
+
+					//get proper format for calendar days
+					var dateFormat = moment(date).stripTime().format();
+					//initiate and set values for calendar
+
+  			if ( days.indexOf(dateFormat) > -1) {
+  			
+  				alert('picked day');
+  			}
       }
     });
 
