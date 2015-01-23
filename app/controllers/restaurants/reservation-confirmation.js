@@ -8,5 +8,12 @@ export default Ember.Controller.extend({
   date: null,
   time: null,
   number: null,
-  name: null
+  name: null,
+
+  //action
+  actions: {
+  	confirmReservation: function() {
+  		
+  	}
+  }
 });

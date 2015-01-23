@@ -1,7 +1,40 @@
 br
 br
 br
-br
-br
-br
-| Hello
+.container#register-page
+	.row
+		.col-md-6.col-md-offset-3
+			h1.center Reservation Confirmation
+			br
+	.row
+		.col-sm-4.col-sm-offset-4
+			table.table
+				tr
+					td colspan="2"
+						.center Reservation Details
+				tr
+					td
+						strong Restaurant Name:
+					td = model.name
+				tr
+					td
+						strong Discount:
+					td.percent-discount - 10%
+				tr
+					td
+						strong Restaurant Name:
+					td = model.fullAddress
+				tr
+					td
+						strong Date:
+					td = date
+				tr
+					td
+						strong Time:
+					td = time
+				tr
+					td
+						strong Number of People:
+					td = number
+			br
+			button.btn.btn-success.btn-lg.full-width click='confirmReservation' Confirm Reservation
