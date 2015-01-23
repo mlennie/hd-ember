@@ -15,7 +15,8 @@ export default Ember.Controller.extend({
   	confirmReservation: function() {
   		var reservation = this.store.createRecord('reservation', {
   			nbPeople: this.get('number'),
-  			time: null,
+  			time: new Date(),
+  			status: "not_viewed",
   			restaurant: this.get('model'),
   			user: this.get('session.currentUser'),
   			service: null,
