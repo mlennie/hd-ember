@@ -8,5 +8,5 @@ export default DS.Model.extend({
   nb_15: DS.attr('number'),
   nb_20: DS.attr('number'),
   nb_25: DS.attr('number'),
-  restaurant: DS.belongsTo('restaurant')
+  restaurant: DS.belongsTo('restaurant', {async: true})
 });

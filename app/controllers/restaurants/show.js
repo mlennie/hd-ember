@@ -8,11 +8,6 @@ export default Ember.Controller.extend({
   backgroundUrl: function() {
     return 'background-image: url(' + this.get('model.imgUrl')+');';
   }.property('model'),
-  
-  services: function() {
-    var restaurant_id = this.get('model.id');
-    return this.store.find('service', { restaurant_id: restaurant_id });
-  }.property('model'),
 
   //actions
   actions: {
