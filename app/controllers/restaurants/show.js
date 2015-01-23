@@ -2,11 +2,12 @@ import Ember from 'ember';
 
 export default Ember.Controller.extend({
 
-  queryParams: ['date', 'time'],
+  queryParams: ['date', 'time', 'number'],
   
   //properties
   date: null,
   time: null,
+  number: null,
   showReserveButton: true,
   servicesToList: null,
 
@@ -30,6 +31,24 @@ export default Ember.Controller.extend({
       return false;
     }
   }.property('date'),
+
+  showNbPeople: function() {
+    if (this.get('time') !== null) {
+      return true;
+    } else {
+      return false;
+    }
+  }.property('time'),
+
+  nbPeopleArray: function() {
+    var nbPeople = 9;
+    var nbPeopleArray = [];
+    var i;
+    for (i=0; i < nbPeople; ++i) {
+      nbPeopleArray.push(i + 1);
+    }
+    return nbPeopleArray;
+  }.property('time'),
 
   filteredServices: function() {
     var date = this.get('date');

@@ -17,6 +17,7 @@ br
 		.col-sm-6.col-sm-offset-3
 			#restaurant-image style=backgroundUrl
 		.col-sm-6.col-sm-offset-3
+			h3.center Information
 			br	
 			ul.list-group
 				li.list-group-item
@@ -28,12 +29,24 @@ br
 						=model.description
 	.row
 		.col-sm-6.col-sm-offset-3
-			h1.center Reserve
+			h3.center Reserve
 			hr
 		.col-sm-3.col-sm-offset-3
 			#calendar.margin-bottom-10
 		.col-sm-3
+			p Heure:
 			if showServices
 				each service in filteredServices
 					service-times service=service restaurant=model date=date
+	.row
+		.col-sm-3.col-sm-offset-3	
+			if showNbPeople
+				p Couverts:		
+				ul.list-group
+					li.list-group-item
+						each number in nbPeopleArray
+							.center.btn.btn-default.btn-sm = link-to 'restaurants.show' model (query-params date=date time=time number=number)
+								= number
+
+
 
