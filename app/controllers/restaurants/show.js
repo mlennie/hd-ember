@@ -104,7 +104,13 @@ export default Ember.Controller.extend({
       this.transitionToRoute(
         'restaurants.reservation-confirmation', 
         this.get('model'), 
-        { queryParams: {date: this.get('date')} }
+        { queryParams: {
+            date: this.get('date'), 
+            time: this.get('time'), 
+            number: this.get('number'),
+            name: this.get('name')
+          }
+        }
       );
     }
   }

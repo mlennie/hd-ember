@@ -19,6 +19,6 @@ export default Ember.Component.extend({
 			var startFormatted = moment(start).format("HH:mm");
 			timeArray.push(startFormatted);
 		}
-		return timeArray
+		return timeArray;
 	}.property('service')
 });

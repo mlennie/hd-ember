@@ -15,6 +15,7 @@ Router.map(function() {
   this.resource('restaurants', function() {
     this.route('show', { path: ':restaurant_id'});
     this.route('search-results');
+    this.route('reservation-confirmation', { path: '/reservation-confirm/:restaurant_id'});
   });
   this.route('login');
   this.route('register');
