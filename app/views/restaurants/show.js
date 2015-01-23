@@ -6,7 +6,6 @@ export default Ember.View.extend({
 
 		//set component
 		var self = this;
-		console.log(self.controller.get('model.services').getEach('startTime'));
 		
 		//initiate and set values for calendar
     Ember.$("#calendar").fullCalendar({
@@ -18,7 +17,7 @@ export default Ember.View.extend({
   		dayRender: function(date, cell) {
 
   			//get start times of services for restaurant
-  			var startTimes = self.controller.get('model.services').getEach('startTime');
+  			var startTimes = self.controller.get('serviceStartTimes');
 
   			//change start time format to just show days
   			var days = startTimes.map(function(item) {
@@ -32,10 +31,14 @@ export default Ember.View.extend({
   			//and show highest service discount percent
           if ( days.indexOf(dateFormat) > -1) {
 
-          	cell.prepend("<a href='#'></a>");
-          	cell.html("<p id='calendar-percent'>-10%</p>");
+          	//add percent and change background color to yellow
+          	cell.html("<a href='#'><p id='calendar-percent'>-10%</p></a>");
           	cell.css('background-color', 'yellow');
       	  }
+      	//disable background 
+      	if (moment(date).stripTime() < moment().stripTime()) {
+      		cell.css('background-color', '#DDD');
+      	}
       },
 
   		//set logic when clicking on day
@@ -44,8 +47,5 @@ export default Ember.View.extend({
       }
     });
 
-    //color all background colors for past days disabled
-    Ember.$(".fc-past").css({"background-color": "#DDD"});
-
-  }.observes("controller.model").on("didInsertElement")
+  }.observes("controller.serviceStartTimes").on("didInsertElement")
 });
