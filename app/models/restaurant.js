@@ -10,6 +10,7 @@ export default DS.Model.extend({
   user: DS.belongsTo('user', {async: true}),
   cuisines: DS.hasMany('cuisine', {async: true}),
   services: DS.hasMany('service', {async: true}),
+  reservations: DS.hasMany('reservation'),
   fullAddress: function() {
     var street = this.get('street');
     var city = this.get('city');
