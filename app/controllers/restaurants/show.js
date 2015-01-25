@@ -42,7 +42,10 @@ export default Ember.Controller.extend({
   //decide whether or not to show number of people box
   //based on whether time has been chosen or not
   showNbPeople: function() {
-    if (this.get('time') !== null) {
+    if (
+      this.get('time') !== null && 
+      this.get('date') !== null
+    ) {
       return true;
     } else {
       return false;
@@ -52,7 +55,11 @@ export default Ember.Controller.extend({
   //decide whether or not to show reservation name box
   //based on whether number of people has been chosen or not
   showReservationName: function() {
-    if (this.get('number') !== null) {
+    if (
+      this.get('number') !== null && 
+      this.get('time') !== null && 
+      this.get('date') !== null
+    ) {
       return true;
     } else {
       return false;

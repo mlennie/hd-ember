@@ -22,7 +22,7 @@ br
 					td.percent-discount - 10%
 				tr
 					td
-						strong Restaurant Name:
+						strong Restaurant Address:
 					td = model.fullAddress
 				tr
 					td
