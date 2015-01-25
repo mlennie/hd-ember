@@ -31,7 +31,7 @@ export default Ember.Mixin.create({
 	actions: {
 		search: function() {
     	window.scrollTo(0, 0);
-			this.transitionToRoute('restaurants.search-results', {queryParams: {name: this.get('name')}});
+			this.transitionToRoute('restaurants.search-results', {queryParams: {name: this.get('name'), cuisine: this.get('cuisine')}});
 		}
 	}
 });
