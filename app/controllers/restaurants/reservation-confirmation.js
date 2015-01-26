@@ -17,7 +17,6 @@ export default Ember.Controller.extend({
   actions: {
   	confirmReservation: function() {
       var time = new Date(moment(this.get('date') + ',' + this.get('time')));
-      alert(time);
       //show loading spinner
       this.set('isLoading', true);
 
