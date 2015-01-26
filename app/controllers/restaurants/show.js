@@ -9,8 +9,8 @@ export default Ember.Controller.extend({
   time: null,
   number: null,
   name: null,
-  showReserveButton: true,
   servicesToList: null,
+  showNoServiceMessage: false,
 
 	//computed properties
 
@@ -28,6 +28,23 @@ export default Ember.Controller.extend({
   backgroundUrl: function() {
     return 'background-image: url(' + this.get('model.imgUrl')+');';
   }.property('model'),
+
+  //array with number of services with given date
+  //used to find number of buttons to show for each service
+  //and to check whether date matches any services
+  filteredServices: function() {
+    var date = this.get('date');
+    var services = this.get('services');
+    if (services !== null) {
+      return services.filter(function(service) {
+        var serviceStartTime = moment(service.get('startTime'));
+        var serviceDate = serviceStartTime.stripTime().stripZone().format();
+        return date === serviceDate;
+      });
+    } else {
+      return 0;
+    }
+  }.property('date'),
 
   //decide whether or not to show time box
   //based on whether date has been chosen or not
@@ -77,16 +94,21 @@ export default Ember.Controller.extend({
     return nbPeopleArray;
   }.property('time'),
 
-  //array with number of time buttons to show for each service
-  filteredServices: function() {
-    var date = this.get('date');
-    var services = this.get('services');
-    return services.filter(function(service) {
-      var serviceStartTime = moment(service.get('startTime'));
-      var serviceDate = serviceStartTime.stripTime().stripZone().format();
-      return date === serviceDate;
-    });
-  }.property('date'),
+  checkDateForMatchingService: function() {
+    //take date, compare services with date and if nothing matches
+    //show notice that that date doesn't match but they can view the calendar
+    //to choose another date and then hide next three things
+    
+    //use filteredServices method to get number of services that match date
+    var serviceAmount = this.get('filteredServices');
+    if (serviceAmount === 0) {
+      this.set('showServices', false);
+      this.set('showNbPeople', false);
+      this.set('showReservationName', false);
+      this.set('showNoServiceMessage', true);
+      alert(this.get('showNoServiceMessage'));
+    }
+  }.observes('date'), 
 
 
   //actions

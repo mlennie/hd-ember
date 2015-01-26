@@ -8,6 +8,11 @@
 	br
 	br
 	br
+= showNoServiceMessage
+if showNoServiceMessage
+	.alert.alert-warning
+		| There are currently no reservations available that match that date. 
+		|  Please use the calendar below to choose a date with an opening. 
 h1.center 
 	=model.name
 	span.margin-left-20.percent-discount - 10%

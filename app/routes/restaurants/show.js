@@ -13,7 +13,9 @@ export default Ember.Route.extend({
     }
   },
 	setupController: function(controller, model) {
-    controller.set('showReserveButton', true);
+    controller.setProperties({
+    	showNoServiceMessage: false
+    });
     this._super(controller, model);
   }
 });
