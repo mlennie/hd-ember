@@ -9,10 +9,17 @@ export default Ember.Controller.extend({
   time: null,
   number: null,
   name: null,
+  isLoading: false,
+  reservationSuccess: false,
+  reservationFail: false,
 
   //actions
   actions: {
   	confirmReservation: function() {
+      //show loading spinner
+      this.set('isLoading', true);
+
+      //build reservation
   		var reservation = this.store.createRecord('reservation', {
   			nbPeople: this.get('number'),
   			time: new Date(),
@@ -24,7 +31,25 @@ export default Ember.Controller.extend({
   			userContribution: 0,
   			bookingName: this.get('name')
   		});
-  		reservation.save();
+
+      var controller = this;
+
+      //save reservation
+  		reservation.save().then(function(){
+        //hide loading spinner
+        controller.setProperties({
+          isLoading: false,
+          reservationSuccess: true,
+          reservationFail: false
+        });
+      }, function() {
+        //hide loading spinner
+        controller.setProperties({
+          isLoading: false,
+          reservationSuccess: false,
+          reservationFail: true
+        });
+      });
   	}
   }
 });
