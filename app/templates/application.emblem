@@ -39,10 +39,10 @@
 							.form-group
 								span.search-field= view Ember.Select prompt="Arrondissment ou Restaurant" content=names value=name class="form-control"  
 								span.search-field= view Ember.Select prompt="Type de Cuisine" content=cuisines value=cuisine class="form-control" disabled=isDisabled
-								span#search-email.search-field= bootstrap-datepicker valueBinding=date class="form-control" format="yyyy-mm-dd" todayBtn=true todayHighlight=true placeholder="Date" language='fr'
+								span#search-email.search-field= bootstrap-datepicker value=searchDate class="form-control" format="yyyy-mm-dd" todayBtn=true todayHighlight=true placeholder="Date" language='fr' required=datesRequired
 								span#calendar-icon= fa-icon 'calendar'
-								span.search-field= view Ember.Select prompt="Heure" content=hours value=time class="form-control" 
-								span.search-field= view Ember.Select prompt="Nombre de couverts" content=couverts value=number class="form-control" 
+								span.search-field= view Ember.Select prompt="Heure" content=hours value=searchTime class="form-control" required=datesRequired
+								span.search-field= view Ember.Select prompt="Nombre de couverts" content=couverts value=searchNumber class="form-control" required=datesRequired
 							button.btn.btn-success Rechercher
 						.visible-lg-block
 							p Rechercher ou réserver par téléphone: 09 90 90 87 85

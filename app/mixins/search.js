@@ -5,8 +5,12 @@ export default Ember.Mixin.create({
 	//set initial search options to be null
 	name: null,
 	cuisine: undefined,
+	searchDate: null,
+	searchTime: null, 
+	searchNumber: null,
+	datesRequired: false,
 	date: null,
-	time: null, 
+	time: null,
 	number: null,
 
 	//computed properties
@@ -30,6 +34,26 @@ export default Ember.Mixin.create({
 			return true;
 		}
 	}.property('name'),
+
+	//check to make sure date, time and number of people are required
+	//if one is selected
+	checkIfDatesRequired: function() {
+		if (
+			this.get('searchDate') !== null && 
+			this.get('searchDate') !== "" ||
+			this.get('searchTime') !== null ||
+			this.get('searchNumber') !== null ||
+			this.get('date') !== null && 
+			this.get('date') !== "" ||
+			this.get('time') !== null ||
+			this.get('number') !== null
+		) {
+			this.set('datesRequired', true);
+		} else {
+			this.set('datesRequired', false);
+		}
+	}.observes('searchDate', 'searchTime', 'searchNumber', 'model',
+						 'date', 'time', 'number'),
 
 	//setup names to be shown for select box
 	names: function() {
@@ -73,9 +97,9 @@ export default Ember.Mixin.create({
 					{ queryParams: { 
 						name: this.get('name'), 
 						cuisine: this.get('cuisine'),
-						date: this.get('date'),
-						time: this.get('time'),
-						number: this.get('number')
+						date: this.get('searchDate'),
+						time: this.get('searchTime'),
+						number: this.get('searchNumber')
 					}}
 				);
 			//else go to the specific restaurant page that was picked
@@ -90,9 +114,9 @@ export default Ember.Mixin.create({
 					restaurantId,
 					{ queryParams: { 
 						cuisine: this.get('cuisine'),
-						date: this.get('date'),
-						time: this.get('time'),
-						number: this.get('number')
+						date: this.get('searchDate'),
+						time: this.get('searchTime'),
+						number: this.get('searchNumber')
 					}}
 				);
 			}
