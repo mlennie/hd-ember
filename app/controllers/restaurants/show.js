@@ -48,7 +48,7 @@ export default Ember.Controller.extend({
 
   //decide whether or not to show time box
   //based on whether date has been chosen or not
-  showServices: function() {
+  anyServices: function() {
     if (this.get('date') !== null) {
       return true;
     } else {
@@ -106,9 +106,10 @@ export default Ember.Controller.extend({
       this.set('showNbPeople', false);
       this.set('showReservationName', false);
       this.set('showNoServiceMessage', true);
-      alert(this.get('showNoServiceMessage'));
+    } else {
+      //this.set('showNoServiceMessage', false);
     }
-  }.observes('date'), 
+  }.observes('date', 'model'), 
 
 
   //actions
