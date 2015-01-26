@@ -95,16 +95,11 @@ export default Ember.Controller.extend({
   }.property('time'),
 
   //update no service message depending on whether date matches any services
-  //also update whether to show next three boxes or not
   updateServiceMessage: function() {
     //decide whether to show message and services box
     if (this.get('date') !== null &&
         this.get('date') !== "" && 
         this.get('filteredServices.length') === 0) {
-          //no services match so hide last three boxes 
-          this.set('showServices', false);
-          this.set('showNbPeople', false);
-          this.set('showReservationName', false);
           //show message
           this.set('showNoServiceMessage', true);
     } else {
