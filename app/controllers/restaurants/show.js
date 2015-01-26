@@ -98,7 +98,8 @@ export default Ember.Controller.extend({
   //also update whether to show next three boxes or not
   updateServiceMessage: function() {
     //decide whether to show message and services box
-    if (this.get('date') !== null && 
+    if (this.get('date') !== null &&
+        this.get('date') !== "" && 
         this.get('filteredServices.length') === 0) {
           //no services match so hide last three boxes 
           this.set('showServices', false);
