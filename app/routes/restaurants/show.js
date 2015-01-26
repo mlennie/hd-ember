@@ -14,7 +14,7 @@ export default Ember.Route.extend({
   },
 	setupController: function(controller, model) {
     controller.setProperties({
-    	//showNoServiceMessage: false
+    	showNoServiceMessage: false
     });
     this._super(controller, model);
   }

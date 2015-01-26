@@ -10,6 +10,7 @@ export default Ember.Controller.extend({
   number: null,
   name: null,
   servicesToList: null,
+  showNoServiceMessage: false,
 
 	//computed properties
 
@@ -43,9 +44,9 @@ export default Ember.Controller.extend({
         return date === serviceDate;
       });
     } else {
-      return 0;
+      return [];
     }
-  }.property('date', 'model'),
+  }.property('date', 'model', 'services'),
 
 
 
@@ -98,16 +99,15 @@ export default Ember.Controller.extend({
     return nbPeopleArray;
   }.property('time'),
 
-  showNoServiceMessage: function() {
-    if (this.get('date') !== null && this.get('filteredServices') === 0) {
-      //this.set('showServices', false);
-      //this.set('showNbPeople', false);
-      //this.set('showReservationName', false);
-      return true
-    } else if (this.get('date') !== null && this.get('filteredServices') !== 0) {
-      return false;
+  updateServiceMessage: function() {
+    var self = this;
+    if (self.get('date') !== null && 
+        self.get('filteredServices.length') === 0) {
+          self.set('showNoServiceMessage', true);
+    } else {
+      self.set('showNoServiceMessage', false);
     }
-  }.property('date', 'model'),
+  }.observes("model", "date"),
 
 
 

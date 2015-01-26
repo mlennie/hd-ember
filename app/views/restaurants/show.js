@@ -75,14 +75,12 @@ export default Ember.View.extend({
   updateServiceMessage: function() {
     var self = this;
     Ember.$('body').on('click', '.btn', function() {
-      if (this.controller.get('date') !== null && this.controller.get('filteredServices') === 0) {
-      this.controller.set('showServices', false);
-      this.controller.set('showNbPeople', false);
-      this.controller.set('showReservationName', false);
-      this.controller.set('showNoServiceMessage', true);
-    } else {
-      this.controller.set('showNoServiceMessage', false);
-    }
+      if (self.controller.get('date') !== null && 
+          self.controller.get('filteredServices.length') === 0) {
+            self.get('controller').set('showNoServiceMessage', true);
+      } else {
+        self.get('controller').set('showNoServiceMessage', false);
+      }
     });
   }.on("didInsertElement")*/
 
