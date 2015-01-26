@@ -5,10 +5,10 @@ export default Ember.Route.extend({
     if (isExiting) {
       // isExiting would be false if only the route's model was changing
       controller.setProperties({
-      	//date: null,
-      	//time: null,
-      	//number: null, 
-      	//name: null
+      	date: null,
+      	time: null,
+      	number: null, 
+      	name: null
       });
     }
   },

@@ -11,6 +11,9 @@ export default Ember.Controller.extend({
   name: null,
   servicesToList: null,
   showNoServiceMessage: false,
+  showServices: false,
+  showNbPeople: false,
+  showReservationName: false,
 
 	//computed properties
 
@@ -29,8 +32,6 @@ export default Ember.Controller.extend({
     return 'background-image: url(' + this.get('model.imgUrl')+');';
   }.property('model'),
 
-
-
   //array with number of services with given date
   //used to find number of buttons to show for each service
   //and to check whether date matches any services
@@ -48,45 +49,39 @@ export default Ember.Controller.extend({
     }
   }.property('date', 'model', 'services'),
 
-
-
-  //decide whether or not to show time box
-  //based on whether date has been chosen or not
-  showServices: function() {
+  //decide whether or not to show reservation boxes
+  //based on whether previous boxes have been shown or not
+  updateReservationBoxesVisibility: function() {
     if (this.get('date') !== null && 
-        this.get('filteredServices') !== 0) {
-      return true;
+        this.get('filteredServices.length') !== 0) {
+      this.setProperties({
+        showServices: true,
+        showNbPeople: false,
+        showReservationName: false
+      });
+      if (
+        this.get('time') !== null 
+      ) {
+        this.setProperties({
+          showNbPeople: true,
+          showReservationName: false
+        });
+        if (
+          this.get('number') !== null 
+        ) {
+          this.setProperties({
+            showReservationName: true
+          });
+        }
+      }
     } else {
-      return false;
+      this.setProperties({
+        showServices: false,
+        showNbPeople: false,
+        showReservationName: false
+      });
     }
-  }.property('date', 'model'),
-
-  //decide whether or not to show number of people box
-  //based on whether time has been chosen or not
-  showNbPeople: function() {
-    if (
-      this.get('time') !== null && 
-      this.get('date') !== null
-    ) {
-      return true;
-    } else {
-      return false;
-    }
-  }.property('time'),
-
-  //decide whether or not to show reservation name box
-  //based on whether number of people has been chosen or not
-  showReservationName: function() {
-    if (
-      this.get('number') !== null && 
-      this.get('time') !== null && 
-      this.get('date') !== null
-    ) {
-      return true;
-    } else {
-      return false;
-    }
-  }.property('number'),
+  }.observes('date', 'model', 'time', 'number'),
 
   //array with number of buttons to show in number of people box
   nbPeopleArray: function() {
@@ -99,39 +94,23 @@ export default Ember.Controller.extend({
     return nbPeopleArray;
   }.property('time'),
 
+  //update no service message depending on whether date matches any services
+  //also update whether to show next three boxes or not
   updateServiceMessage: function() {
-    var self = this;
-    if (self.get('date') !== null && 
-        self.get('filteredServices.length') === 0) {
+    //decide whether to show message and services box
+    if (this.get('date') !== null && 
+        this.get('filteredServices.length') === 0) {
+          //no services match so hide last three boxes 
           this.set('showServices', false);
           this.set('showNbPeople', false);
           this.set('showReservationName', false);
-          self.set('showNoServiceMessage', true);
+          //show message
+          this.set('showNoServiceMessage', true);
     } else {
-      self.set('showNoServiceMessage', false);
-      this.set('showServices', true);
+      //reset message back to hidden
+      this.set('showNoServiceMessage', false);
     }
   }.observes("model", "date"),
-
-
-
-  /*checkDateForMatchingService: function() {
-    //take date, compare services with date and if nothing matches
-    //show notice that that date doesn't match but they can view the calendar
-    //to choose another date and then hide next three things
-    
-    //use filteredServices method to get number of services that match date
-    if (this.get('date') !== null && this.get('filteredServices') === 0) {
-      //this.set('showServices', false);
-      //this.set('showNbPeople', false);
-      //this.set('showReservationName', false);
-      this.set('showNoServiceMessage', true);
-    } else if (this.get('date') !== null && this.get('filteredServices') !== 0) {
-      this.set('showNoServiceMessage', false);
-      this.set('showServices', true);
-    }
-  }.observes('filteredServices', 'date', 'model'), */
-
 
   //actions
   actions: {
@@ -142,6 +121,7 @@ export default Ember.Controller.extend({
     //after date has been chosen show date query param in url 
     //to trigger next step
     addDateQueryParams: function(date) {
+      this.set('showServices', true);
       //update query params
       this.transitionToRoute(
         'restaurants.show', 

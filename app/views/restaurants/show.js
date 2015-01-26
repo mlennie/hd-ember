@@ -70,36 +70,6 @@ export default Ember.View.extend({
       }
     });
 
-  }.observes("controller.serviceStartTimes").on("didInsertElement")/*,
-
-  updateServiceMessage: function() {
-    var self = this;
-    Ember.$('body').on('click', '.btn', function() {
-      if (self.controller.get('date') !== null && 
-          self.controller.get('filteredServices.length') === 0) {
-            self.get('controller').set('showNoServiceMessage', true);
-      } else {
-        self.get('controller').set('showNoServiceMessage', false);
-      }
-    });
-  }.on("didInsertElement")*/
-
-  /*checkDateForMatchingService: function() {
-    //take date, compare services with date and if nothing matches
-    //show notice that that date doesn't match but they can view the calendar
-    //to choose another date and then hide next three things
-    
-    //use filteredServices method to get number of services that match date
-    var serviceAmount = this.controller.get('filteredServices');
-    if (this.get('date') !== null && serviceAmount === 0) {
-      this.controller.set('showServices', false);
-      this.controller.set('showNbPeople', false);
-      this.controller.set('showReservationName', false);
-      this.controller.set('showNoServiceMessage', true);
-    } else {
-      this.controller.set('showNoServiceMessage', false);
-    }
-  }.observes('controller.filteredServices', 'controller.model', 
-             'controller.date'), */
+  }.observes("controller.serviceStartTimes").on("didInsertElement")
 
 });
