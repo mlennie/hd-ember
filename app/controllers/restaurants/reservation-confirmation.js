@@ -16,13 +16,15 @@ export default Ember.Controller.extend({
   //actions
   actions: {
   	confirmReservation: function() {
+      var time = new Date(moment(this.get('date') + ',' + this.get('time')));
+      alert(time);
       //show loading spinner
       this.set('isLoading', true);
 
       //build reservation
   		var reservation = this.store.createRecord('reservation', {
   			nbPeople: this.get('number'),
-  			time: new Date(),
+  			time: time,
   			status: "not_viewed",
   			restaurant: this.get('model'),
   			user: this.get('session.currentUser'),
