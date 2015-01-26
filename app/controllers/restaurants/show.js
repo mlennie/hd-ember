@@ -103,9 +103,13 @@ export default Ember.Controller.extend({
     var self = this;
     if (self.get('date') !== null && 
         self.get('filteredServices.length') === 0) {
+          this.set('showServices', false);
+          this.set('showNbPeople', false);
+          this.set('showReservationName', false);
           self.set('showNoServiceMessage', true);
     } else {
       self.set('showNoServiceMessage', false);
+      this.set('showServices', true);
     }
   }.observes("model", "date"),
 
