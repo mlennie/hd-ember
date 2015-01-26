@@ -39,7 +39,7 @@
 							.form-group
 								span.search-field= view Ember.Select prompt="Arrondissment ou Restaurant" content=names valueBinding=name class="form-control"  
 								span.search-field= view Ember.Select prompt="Type de Cuisine" content=cuisines valueBinding=cuisine class="form-control" disabled=isDisabled
-								span#search-email.search-field= bootstrap-datepicker valueBinding=date class="form-control" format="dd/mm/yy" todayBtn=true todayHighlight=true placeholder="Date" language='fr'
+								span#search-email.search-field= bootstrap-datepicker valueBinding=date class="form-control" format="yyyy-mm-dd" todayBtn=true todayHighlight=true placeholder="Date" language='fr'
 								span#calendar-icon= fa-icon 'calendar'
 								span.search-field= view Ember.Select prompt="Heure" content=hours valueBinding=time class="form-control" 
 								span.search-field= view Ember.Select prompt="Nombre de couverts" content=couverts valueBinding=number class="form-control" 
