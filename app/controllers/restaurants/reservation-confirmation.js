@@ -2,7 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Controller.extend({
 
-  queryParams: ['date', 'time', 'number', 'name'],
+  queryParams: ['date', 'time', 'number', 'name', 'discount'],
   
   //properties
   date: null,
@@ -12,6 +12,7 @@ export default Ember.Controller.extend({
   isLoading: false,
   reservationSuccess: false,
   reservationFail: false,
+  discount: null,
 
   //actions
   actions: {
@@ -28,7 +29,7 @@ export default Ember.Controller.extend({
   			restaurant: this.get('model'),
   			user: this.get('session.currentUser'),
   			service: null,
-  			discount: 0.10,
+  			discount: this.get('discount') / 100,
   			userContribution: 0,
   			bookingName: this.get('name')
   		});

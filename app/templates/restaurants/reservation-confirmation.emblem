@@ -29,7 +29,10 @@ br
 					tr
 						td
 							strong Discount:
-						td.percent-discount - 10%
+						td.percent-discount 
+							| - 
+							= discount
+							| %
 					tr
 						td
 							strong Restaurant Address:
