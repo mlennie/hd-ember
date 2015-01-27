@@ -9,6 +9,10 @@ export default Ember.Component.extend({
 		return (moment(end) - moment(start)) / 1000 / 60 / 30;
 	}.property('service'),
 
+	formatedCurrentDiscount: function() {
+    return this.get('service.currentDiscount') * 100;
+  }.property('service'),
+
 	timeArray: function() {
 		var numberButtons = this.get('numberButtons');
 		var start = this.get('service.startTime');

@@ -1,5 +1,10 @@
 ul.list-group
-  li.list-group-item
-    each time in timeArray
-      = link-to 'restaurants.show' restaurant (query-params date=date time=time)
-        .center.btn.btn-default.btn-sm.margin-2 = time
+	li.list-group-item
+		p 
+			| Discount: 
+			span.percent-discount
+				= formatedCurrentDiscount
+				| %
+		each time in timeArray
+			= link-to 'restaurants.show' restaurant (query-params date=date time=time)
+				.center.btn.btn-default.btn-sm.margin-2 = time
