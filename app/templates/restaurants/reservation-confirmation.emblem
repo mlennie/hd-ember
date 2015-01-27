@@ -3,6 +3,14 @@ br
 br
 .container#register-page
 	.row
+		if showDiscountError
+			.alert.alert-danger 
+				strong 
+					| Discount has changed since you have started this reservation.
+					|  The new discount is 
+					| - 
+					= discount
+					| %. You may now reserve with this new discount.
 		if reservationFail
 			.alert.alert-danger 
 				strong Could not complete reservation. Please try again soon.

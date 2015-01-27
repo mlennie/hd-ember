@@ -13,6 +13,7 @@ export default Ember.Controller.extend({
   reservationSuccess: false,
   reservationFail: false,
   discount: null,
+  showDiscountError: false,
 
   //actions
   actions: {
@@ -42,15 +43,26 @@ export default Ember.Controller.extend({
         controller.setProperties({
           isLoading: false,
           reservationSuccess: true,
-          reservationFail: false
+          reservationFail: false,
+          showDiscountError: false
         });
-      }, function() {
-        //hide loading spinner
-        controller.setProperties({
-          isLoading: false,
-          reservationSuccess: false,
-          reservationFail: true
-        });
+      }, function(response) {
+        if (response.errors.discount) {
+          controller.setProperties({
+            isLoading: false,
+            reservationSuccess: false,
+            reservationFail: false,
+            discount: response.errors.discount * 100,
+            showDiscountError: true
+          });
+        } else {
+          //hide loading spinner
+          controller.setProperties({
+            isLoading: false,
+            reservationSuccess: false,
+            reservationFail: true
+          });
+        }
       });
   	}
   }
