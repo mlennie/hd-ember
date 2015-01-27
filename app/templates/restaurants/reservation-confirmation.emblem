@@ -11,6 +11,11 @@ br
 					| - 
 					= discount
 					| %. You may now reserve with this new discount.
+		if showNoAvailibilitiesError
+			.alert.alert-danger 
+				strong 
+					| Someone else took the last availability for this reservation while you were reserving.
+					|  Please make another reservation.
 		if reservationFail
 			.alert.alert-danger 
 				strong Could not complete reservation. Please try again soon.
@@ -23,7 +28,7 @@ br
 			br
 	.row
 		.col-sm-4.col-sm-offset-4
-			if isLoading
+			if isLoading 
 				h1.center = fa-icon 'fa-spin fa-spinner'
 			else
 				table.table
@@ -58,5 +63,5 @@ br
 							strong Number of People:
 						td = number
 				br
-				unless reservationSuccess
+				unless dontShowReserveButton
 					button.btn.btn-success.btn-lg.full-width click='confirmReservation' Confirm Reservation

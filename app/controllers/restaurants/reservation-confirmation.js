@@ -14,6 +14,17 @@ export default Ember.Controller.extend({
   reservationFail: false,
   discount: null,
   showDiscountError: false,
+  showNoAvailibilitiesError: false,
+
+  //computed properties
+  dontShowReserveButton: function() {
+    if (this.get('reservationSuccess') === true ||
+        this.get('showNoAvailibilitiesError') === true) {
+      return true;
+    } else {
+      return false;
+    }
+  }.property('showNoAvailibilitiesError', 'reservationSuccess'),
 
   //actions
   actions: {
@@ -44,22 +55,36 @@ export default Ember.Controller.extend({
           isLoading: false,
           reservationSuccess: true,
           reservationFail: false,
-          showDiscountError: false
+          showDiscountError: false,
+          showNoAvailibilitiesError: false
         });
       }, function(response) {
-        if (response.errors.discount) {
-          controller.setProperties({
-            isLoading: false,
-            reservationSuccess: false,
-            reservationFail: false,
-            discount: response.errors.discount * 100,
-            showDiscountError: true
-          });
+        //reset all properties
+        controller.setProperties({
+          isLoading: false,
+          reservationSuccess: false,
+          reservationFail: false,
+          showDiscountError: false,
+          showNoAvailibilitiesError: false
+        });
+
+        if (response.errors.discount !== null) {
+          //show error message if no availabilites left
+          if (response.errors.discount === 0) {
+            controller.setProperties({
+              discount: response.errors.discount * 100,
+              showNoAvailibilitiesError: true
+            });
+          } else {
+            //show error message if discount different
+            controller.setProperties({
+              discount: response.errors.discount * 100,
+              showDiscountError: true
+            });
+          }
         } else {
           //hide loading spinner
           controller.setProperties({
-            isLoading: false,
-            reservationSuccess: false,
             reservationFail: true
           });
         }
