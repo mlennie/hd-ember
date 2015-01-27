@@ -14,6 +14,7 @@ export default Ember.Controller.extend({
   showServices: false,
   showNbPeople: false,
   showReservationName: false,
+  calendarDate: null,
 
 	//computed properties
 
@@ -107,6 +108,29 @@ export default Ember.Controller.extend({
       this.set('showNoServiceMessage', false);
     }
   }.observes("model", "date"),
+
+  //get highest discount for day to put on calendar
+  highestDiscount: function() {
+    var self = this;
+    //get services that match dateFormat parameter
+    var filteredServices = this.get('services').filter(function(service){
+      var serviceDate = moment(service.get('startTime')).stripTime().format();
+      return self.get('calendarDate') === serviceDate;
+    });
+
+    //get all discounts for services
+    var discounts = filteredServices.getEach('currentDiscount');
+    
+    //get highest discount
+    var highestDiscount = 0;
+    for (i = 0; i < discounts.length; i++) { 
+      var discount = discounts[i];
+      highestDiscount = discount > highestDiscount ? discount : highestDiscount;
+    }
+
+    //return highest discount
+    return highestDiscount * 100;
+  }.property(),
 
   //actions
   actions: {

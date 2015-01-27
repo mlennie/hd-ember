@@ -30,9 +30,13 @@ export default Ember.View.extend({
   			//if there is a service for a calendar day highlight the day
   			//and show highest service discount percent
           if ( days.indexOf(dateFormat) > -1) {
-
+            //get highest discount from all services for that day 
+            //with that have a date equal to dateFormat
+            self.controller.set('calendarDate', dateFormat);
+            var highestDiscount = self.controller.get('highestDiscount');
+            
           	//add percent and change background color to yellow
-          	cell.html("<p id='calendar-percent'>-10%</p>");
+          	cell.html("<p id='calendar-percent'>-" + highestDiscount.toString() + "%</p>");
           	cell.css('background-color', 'yellow');
           	cell.css('cursor', 'pointer');
       	  } else if (moment(date).stripTime() < moment().stripTime()) {
