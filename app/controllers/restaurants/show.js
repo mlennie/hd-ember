@@ -131,7 +131,7 @@ export default Ember.Controller.extend({
 
     //return highest discount
     return highestDiscount * 100;
-  }.property(),
+  }.property('calendarDate'),
 
   //actions
   actions: {

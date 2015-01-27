@@ -28,31 +28,36 @@ export default Ember.View.extend({
 				
         //initiate and set values for calendar
 
-  			//if there is a service for a calendar day highlight the day
-  			//and show highest service discount percent
-          if ( days.indexOf(dateFormat) > -1) {
+        //if date is past show as grey and disable
+  			if (moment(date).stripTime() < moment().stripTime()) {
 
-            //get highest discount from all services for that day 
-            //with that have a date equal to dateFormat
-            self.controller.set('calendarDate', dateFormat);
-            var highestDiscount = self.controller.get('highestDiscount');
+          //disable background 
+          cell.css('background-color', '#DDD');
+          cell.prop('disabled', true);
+          cell.css('cursor', 'not-allowed');
 
-          	//add percent and change background color to yellow
+          //if there is a service for a calendar day highlight the day
+    			//and show highest service discount percent
+        } else if ( days.indexOf(dateFormat) > -1 ) {
+
+          //get highest discount from all services for that day 
+          //with that have a date equal to dateFormat
+          self.controller.set('calendarDate', dateFormat);
+          var highestDiscount = self.controller.get('highestDiscount');
+          //check to make sure theres still availabilites left
+        	if (highestDiscount !== 0) {
+            //add percent and change background color to yellow
           	cell.html("<p id='calendar-percent'>-" + highestDiscount.toString() + "%</p>");
           	cell.css('background-color', 'yellow');
           	cell.css('cursor', 'pointer');
-
-      	  } else if (moment(date).stripTime() < moment().stripTime()) {
-
-      	  	//disable background 
-      	  	cell.css('background-color', '#DDD');
-	      		cell.prop('disabled', true);
-	      		cell.css('cursor', 'not-allowed');
-
-	      	} else {
-	      		cell.prop('disabled', true);
-	      		cell.css('cursor', 'not-allowed');
-	      	}
+          } else {
+            cell.prop('disabled', true);
+            cell.css('cursor', 'not-allowed');
+          }
+      	} else { //else disable cell
+      		cell.prop('disabled', true);
+      		cell.css('cursor', 'not-allowed');
+      	}
       },
 
   		//set logic when clicking on day
@@ -72,9 +77,16 @@ export default Ember.View.extend({
 
   			//check if day clicked has any services
   			if ( days.indexOf(dateFormat) > -1 ) {
+          //get highest discount from all services for that day 
+          //with that have a date equal to dateFormat
+          self.controller.set('calendarDate', dateFormat);
+          var highestDiscount = self.controller.get('highestDiscount');
+          //check to make sure theres still availabilites left
+          if (highestDiscount !== 0) {
 
-  				//call show services method from controller
-  				self.get('controller').send('addDateQueryParams', dateFormat);
+    				//call show services method from controller
+    				self.get('controller').send('addDateQueryParams', dateFormat);
+          }
   			}
       }
     });
