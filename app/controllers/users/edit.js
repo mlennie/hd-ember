@@ -16,7 +16,8 @@ export default Ember.Controller.extend(CurrentUserMixin, {
       user.setProperties({
        	email: this.get('email'),
        	firstName: this.get('firstName'),
-       	lastName: this.get('lastName')
+       	lastName: this.get('lastName'),
+        gender: this.get('gender')
       });
       user.save().then(function() {
         controller.set('isLoading', false);

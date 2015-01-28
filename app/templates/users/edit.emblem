@@ -5,10 +5,10 @@
 				.alert.alert-success User updated!
 			if fail
 				.alert.alert-danger User could not be updated, please try again later.
-			h1.center#profile-title Edit Profile
+			h1.center#profile-title Mon Profile
 			br
 			if isLoading
 				h1.center = fa-icon 'fa-spin fa-spinner'
 			else 
-				= partial "users/form" email=email lastName=lastName firstName=firstName 
+				= partial "users/form" gender=gender email=email lastName=lastName firstName=firstName 
 

@@ -28,6 +28,9 @@ export default Ember.Mixin.create({
 		var referral_code = this.get('currentUser.referralCode');
 		return registerUrl + '?referralCode=' + referral_code;
 	}.property('currentUser'),
+	gender: function() {
+		return this.get('currentUser.gender');
+	}.property('currentUser.gender'),
 	emailReferralMessage: function() {
 		var mail = "mailto:yourfriends@mail.com?";
 		var subject = "subject=Eat out with Happy Dining!&";

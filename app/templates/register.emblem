@@ -44,7 +44,7 @@
           span.grey Male
           span.margin-left-10 = radio-button value='Male' checked=gender
           span.margin-left-10.grey Female
-          span.margin-left-10 = radio-button value='Femail' checked=gender
+          span.margin-left-10 = radio-button value='Female' checked=gender
           br
           .input-group.full-width.margin-top-10
             //label for="password" First Name
