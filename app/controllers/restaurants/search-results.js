@@ -15,7 +15,6 @@ export default Ember.Controller.extend({
         input[randomIndex] = input[i]; 
         input[i] = itemAtIndex;
     }
-    alert(input.get('firstObject'));
     return input.get('firstObject');
   }.property('model', 'name'),
 
@@ -26,7 +25,6 @@ export default Ember.Controller.extend({
 
   filteredRestaurants: function() {
     var name = this.get('name');
-    alert(this.get('shuffledRestaurants'));
     var restaurants = this.get('shuffledRestaurants');
 
 
