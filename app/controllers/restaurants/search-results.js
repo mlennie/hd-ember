@@ -3,9 +3,32 @@ import Ember from 'ember';
 export default Ember.Controller.extend({
 	queryParams: ['name'],
   name: null,
+
+  randomSortBy: function() {
+    var input = ['name', 'street', 'imgUrl', 'description'];
+     
+    for (var i = input.length-1; i >=0; i--) {
+     
+        var randomIndex = Math.floor(Math.random()*(i+1)); 
+        var itemAtIndex = input[randomIndex]; 
+         
+        input[randomIndex] = input[i]; 
+        input[i] = itemAtIndex;
+    }
+    alert(input.get('firstObject'));
+    return input.get('firstObject');
+  }.property('model', 'name'),
+
+  shuffledRestaurants: function() {
+    return this.get('model').sortBy(this.get('randomSortBy'));
+  }.property('randomSortBy'),
+  
+
   filteredRestaurants: function() {
     var name = this.get('name');
-    var restaurants = this.get('model');
+    alert(this.get('shuffledRestaurants'));
+    var restaurants = this.get('shuffledRestaurants');
+
 
     if (name === '75017' || name === '75008') {
       return restaurants.filterBy('zipcode', name);
@@ -15,7 +38,7 @@ export default Ember.Controller.extend({
   }.property('name', 'model'),
   nonFilteredRestaurants: function() {
     var name = this.get('name');
-    var restaurants = this.get('model');
+    var restaurants = this.get('shuffledRestaurants');
 
     if (name === '75017' || name === '75008') {
       return restaurants.rejectBy('zipcode', name);
@@ -25,5 +48,5 @@ export default Ember.Controller.extend({
   }.property('name', 'model'),
   hasFilteredRestaurants: function() {
     return this.get('filteredRestaurants.length') > 0;
-  }.property('filteredRestaurants'),
+  }.property('filteredRestaurants')
 });
