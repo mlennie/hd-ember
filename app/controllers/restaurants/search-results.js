@@ -4,10 +4,29 @@ export default Ember.Controller.extend({
 	queryParams: ['name', 'cuisine'],
   name: null,
   cuisine: undefined,
+
+  randomSortBy: function() {
+    var input = ['name', 'street', 'imgUrl', 'description'];
+     
+    for (var i = input.length-1; i >=0; i--) {
+     
+        var randomIndex = Math.floor(Math.random()*(i+1)); 
+        var itemAtIndex = input[randomIndex]; 
+         
+        input[randomIndex] = input[i]; 
+        input[i] = itemAtIndex;
+    }
+    return input.get('firstObject');
+  }.property('model', 'name'),
+
+  shuffledRestaurants: function() {
+    return this.get('model').sortBy(this.get('randomSortBy'));
+  }.property('randomSortBy'),
+
   filteredRestaurants: function() {
     var name = this.get('name');
     var cuisine = this.get('cuisine');
-    var restaurants = this.get('model');
+    var restaurants = this.get('shuffledRestaurants');
 
     //filter by restaurant name
     if (name !== null) {
@@ -28,19 +47,21 @@ export default Ember.Controller.extend({
     } 
     return restaurants;
   }.property('name', 'model', 'cuisine'),
+
   nonFilteredRestaurants: function() {
 
     var controller = this;
 
     //take filtered restaurants out of resteraunts
-    return this.get('model').filter(function(r) {
+    return this.get('shuffledRestaurants').filter(function(r) {
       var filteredRestaurants = controller.get('filteredRestaurants');
       var names = filteredRestaurants.getEach('name');
       return !(names.indexOf(r.get('name')) > -1);
     });
 
   }.property('filteredRestaurants'),
+  
   hasFilteredRestaurants: function() {
     return this.get('filteredRestaurants.length') > 0;
-  }.property('filteredRestaurants'),
+  }.property('filteredRestaurants')
 });
