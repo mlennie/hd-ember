@@ -7,6 +7,14 @@ form submit='update'
 		label for='lastName' Last name
 		=input class='form-control' type="text" value=lastName placeholder='Last Name' required=true
 	br
+		.input-group.full-width
+			label Email
+			p = email
+	span Male
+	span.margin-left-10 = radio-button value='Male' checked=gender
+	span.margin-left-10 Female
+	span.margin-left-10 = radio-button value='Female' checked=gender
+	br
 	// put in email update functionality with email confirmation
 		.input-group.full-width
 			label for='email' Email

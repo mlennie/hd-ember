@@ -7,8 +7,7 @@ var Router = Ember.Router.extend({
 
 Router.map(function() {
   this.resource('users', function() {
-    this.route('edit');
-    this.route('show');
+    this.route('edit', { path: 'users/show' });
     this.route('mes-euros');
     this.route('parrainer-un-ami');
   });

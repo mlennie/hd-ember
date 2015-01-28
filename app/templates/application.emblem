@@ -22,7 +22,7 @@
 										| Ma balance
 									else
 										| Mes Euros Collectés
-								li = link-to 'users.show' | Mon Profil
+								li = link-to 'users.edit' | Mon Profil
 								li = link-to 'users.parrainer-un-ami' | Parrainer un ami  
 								li.divider
 								li

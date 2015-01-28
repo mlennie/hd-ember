@@ -27,10 +27,8 @@ else
 						else
 							| Mes Euros Collectés
 				.list-group-item 
-					=link-to 'users.show' | Mon Profil 
+					=link-to 'users.edit' | Mon Profil 
 				.list-group-item 
 					=link-to 'users.parrainer-un-ami' | Parrainer un ami 
-				.list-group-item 
-					=link-to 'users.edit' | Edit Profil 
 		.col-sm-9
 			==outlet
