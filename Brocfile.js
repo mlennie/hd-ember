@@ -8,10 +8,6 @@ var app = new EmberApp({
   }
 });
 
-//cookieconsent popup
-app.import('vendor/styles/cookieconsent.min.css');
-app.import('vendor/scripts/cookieconsent.min.js');
-
 // Bootstrap
 app.import('bower_components/bootstrap-sass-official/assets/javascripts/bootstrap.js');
 
