@@ -11,7 +11,7 @@
 									.form-group
 										.input-group.full-width
 											br = view Ember.Select prompt="Arrondissment ou Restaurant" content=names valueBinding=name class="form-control"  
-										br = input value=date class="form-control" format="dd/mm/yy" placeholder="Date dd/mm/yy" type=date
+										br = input value=date id='date' class="form-control" placeholder="Date" type=date
 										br = view Ember.Select content=hours class="form-control" 
 										br = view Ember.Select content=couverts class="form-control" 
 										br
