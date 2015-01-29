@@ -14,6 +14,9 @@ app.import('bower_components/bootstrap-sass-official/assets/javascripts/bootstra
 // French locale
 app.import('bower_components/bootstrap-datepicker/js/locales/bootstrap-datepicker.fr.js');
 
+// maskedinput
+app.import('bower_components/jquery-maskedinputs/src/jquery.maskedinput.js');
+
 // Glyphicons
 var pickFiles = require('broccoli-static-compiler');
 var bootstrapFonts = pickFiles('bower_components/bootstrap-sass-official/assets/fonts/bootstrap', {
