@@ -18,11 +18,17 @@
 										button.btn.btn-success.btn-lg.full-width Rechercher
 		else
 			h1#main-title L'addition qui rapporte
+			h4#second-home-title
+				| Réservez pour vous, vos amis, vos clients 
+				br
+				| et recevez personnellement un pourcentage de l'addition.  
+
+			br
 			br
 			br
 			.col-sm-4.col-sm-offset-4
 				= link-to 'register'
-					button.btn.btn-success.btn-lg.center.full-width Register
+					button.btn.register-gold.btn-lg.center.full-width S'inscrire
 
 
 

@@ -1,5 +1,5 @@
 .container-fluid.fixed-nav
-	nav.navbar.navbar-inverse role="navigation"
+	nav.navbar.navbar-default role="navigation"
 		.container-fluid
 			.navbar-header
 				button.navbar-toggle.collapsed type="button" data-toggle="collapse" data-target="#navbar-collapse-1"
@@ -28,8 +28,8 @@
 								li
 									a{action 'invalidateSession'} Se déconnecter
 					else
-						li #{ link-to 'register' | 'S'inscire }
-						li #{ link-to 'login' | Se connecter }
+						li.nav-item #{ link-to 'register' | S'inscire }
+						li.nav-item #{ link-to 'login' | Se connecter }
 	if session.isAuthenticated
 		unless session.currentUser.isOwner
 			.visible-md-block.visible-lg-block
