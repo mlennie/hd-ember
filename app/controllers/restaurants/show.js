@@ -124,7 +124,7 @@ export default Ember.Controller.extend({
     
     //get highest discount
     var highestDiscount = 0;
-    for (i = 0; i < discounts.length; i++) { 
+    for (var i = 0; i < discounts.length; i++) { 
       var discount = discounts[i];
       highestDiscount = discount > highestDiscount ? discount : highestDiscount;
     }
