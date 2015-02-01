@@ -246,18 +246,60 @@ h2 {
 
 /* LANDING PAGE */
 
+#ember464 > div.container-fluid.fixed-nav > nav {
+  background-color: rgba(255, 255, 255, 0.4);
+  border: none;
+}
+
 #main-title {
   text-align: center;
+  text-transform: uppercase;
   color: white;
-  margin-top: 150px;
-  font-size: 2.6em;
+  margin-top: 200px;
+  text-shadow: -2px -2px 10px #333;
+  font-size: 4em;
+}
+
+#second-home-title {
+  text-align: center;
+  color: #fff;
+  text-shadow: -1px -1px 10px #333;
+  font-size: 1.5em;
+}
+
+.register-gold {
+  background-color: #CB9A4E;
+  border-radius: 0;
+  color: #fff;
+  font-size: 2em;
+  text-transform: uppercase;
+  text-shadow: -0.5px -0.5px 4px #333;
+  box-shadow: -0.5px -0.5px 10px #333;
+
+  &:hover {
+    color: #eee;
+    box-shadow: none;
+  }
+}
+
+.nav-item > a {
+  color: white !important;
+  margin-top: 10px;
+  font-size: 1.5em;
+  text-transform: uppercase; 
+  text-shadow: -0.5px -0.5px 4px #333;
+
+  &.active {
+    padding-bottom: 5px;
+    border-bottom: 2px solid #CB9A4E;
+  }
 }
 
 .landing-image {
-  background-image: url("/assets/images/main_pic.jpg");
+  background-image: url("https://res.cloudinary.com/happydining/image/upload/v1422806918/landing-image-1_oxo9qx.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: top;
+  background-position: 0 70%;
   height: 750px;
 }
 
