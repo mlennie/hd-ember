@@ -5,10 +5,9 @@
 @import 'footer.scss';
 @import 'search.scss';
 @import 'contact.scss';
-@import 'login.scss';
-@import 'register.scss';
-@import 'restaurants/general.scss';
+@import 'users/login.scss';
 @import 'users/general.scss';
+@import 'restaurants/general.scss';
 
 /* GENERAL */
 
@@ -79,11 +78,10 @@ h2 {
   margin-top: 20px;
 }
 
-  button {
-    background-color: #45AAFA;
-    color: #fff;
-    padding: 0 30px;
-  }
+button {
+  background-color: #45AAFA;
+  color: #fff;
+  padding: 0 30px;
 }
 
 .full-width {
