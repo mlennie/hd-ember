@@ -1,5 +1,12 @@
 #login-page, #register-page {
   padding-top: 75px;
+  padding-bottom: 50px; 
+
+  .register-gold {
+  	font-size: 1.3em;
+  	box-shadow: 1px 1px 1px #999;
+  	text-shadow: none;
+  }
 }
 
 #remember-me {
@@ -13,9 +20,33 @@
 
 #register-form {
   margin-top: 10px;
+
+  p {
+		font-size: 1.8em;
+	}
 }
 
 .btn-black {
   background-color: #333;
   color: white;
+}
+
+#sign-in-form {
+	background-color: #F9F9F9;
+	padding: 30px;
+}
+
+.required-asterix {
+	font-size: 1.5em;
+	margin: 0;
+	padding: 0;
+	height: 25px;
+}
+
+.required-asterix-legend {
+	font-size: 0.9em;
+}
+
+.login-bottom {
+	font-size: 1.3em;
 }

@@ -13,43 +13,43 @@
       h1.center = fa-icon 'fa-spin fa-spinner'
     else
       .col-md-4.col-md-offset-4#register-form
-        h1.center Sign Up
-        form submit='registerUser'
+        p.center Rejoignez-nous:
+        form#sign-in-form submit='registerUser'
+          if genderBlank
+            .alert.alert-danger Gender can't be blank
+          span.clear.grey M.
+          span.margin-left-10 = radio-button value='Male' checked=gender
+          span.margin-left-10.grey Mme.
+          span.margin-left-10 = radio-button value='Female' checked=gender
+          span.margin-left-10.gold.required-asterix *
           .input-group.full-width
-            //label for="lastName" Last Name
-            = input class='form-control' value=lastName placeholder='Last Name' required=true
-          br
+            .gold.required-asterix.pull-right *
+            = input class='form-control black-border' value=lastName placeholder='Prénom' required=true
           .input-group.full-width
-            //label for="password" First Name
-            = input class='form-control' value=firstName placeholder='First Name' required=true
-          br
+            .gold.required-asterix.pull-right *
+            = input class='form-control black-border' value=firstName placeholder='Nom' required=true
           .input-group.full-width
-            //label for="email" Email
-            = input class='form-control' value=email placeholder='Email' type='email' required=true
-          br
+            .gold.required-asterix.pull-right *
+            = input class='form-control black-border' value=email placeholder='Addresse email' type='email' required=true
           if passwordTooShort
             .alert.alert-danger Password must be at least 4 characters
           if passwordMismatch
             .alert.alert-danger Password do not match
           .input-group.full-width
-            //label for="password" Password
-            = input class='form-control' value=password placeholder='Password' type='password' required=true
-          br
+            .gold.required-asterix.pull-right *
+            = input class='form-control black-border' value=password placeholder='Mot de passe' type='password' required=true
           .input-group.full-width.margin-bottom-10
-            //label for="passwordConfirmation" Password Confirmation
-            = input class='form-control' value=passwordConfirmation placeholder='Password Confirmation' type='password' required=true
-          if genderBlank
-            .alert.alert-danger Gender can't be blank
-          //label for="gender" Gender
-          span.grey Male
-          span.margin-left-10 = radio-button value='Male' checked=gender
-          span.margin-left-10.grey Female
-          span.margin-left-10 = radio-button value='Female' checked=gender
+            .gold.required-asterix.pull-right *
+            = input class='form-control black-border' value=passwordConfirmation placeholder='Confirmation mot de passe' type='password' required=true
+          .input-group.full-width.margin-top-20
+            = input class='form-control black-border' value=promotionCode placeholder='Code Promotional'
+          br 
+          .black.center.small-text En cliquant sur S'inscrire, vous acceptez
+          .black-link.center.margin-left-10.small-text=link-to 'register' | les conditions générales d'Happy Dining
+          button.margin-top-10.btn.register-gold.center.full-width type="submit" S'inscrire
           br
-          .input-group.full-width.margin-top-10
-            //label for="password" First Name
-            = input class='form-control' value=promotionCode placeholder='Promotional Code' 
-          button.margin-top-10.btn.btn-default.btn-lg.btn-black.full-width type="submit" Register
-          br
-          br
-          =link-to 'login' | Already have an account? Sign in
+          span.black.small-text Déja membre?
+          span.black-link.margin-left-10.small-text=link-to 'login' | Se connecter
+          .pull-right.margin-top-10.required-asterix-legend
+            span.gold (*)
+            span.margin-left-10 Champs obligatoires

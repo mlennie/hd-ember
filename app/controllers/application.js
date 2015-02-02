@@ -17,6 +17,26 @@ export default Ember.Controller.extend(SearchMixin,{
     window.scrollTo(0, 0);
   }.observes('currentPath'),
 
+  //get navbar class
+  navbarClass: function() {
+    if (this.get('currentPath') === 'login' || 
+        this.get('currentPath') === 'register') {
+      return 'navbar-white';
+    } else {
+      return 'nav-item';
+    }
+  }.property('currentPath'),
+
+  //get logo class
+  logoClass: function() {
+    if (this.get('currentPath') === 'login' || 
+        this.get('currentPath') === 'register') {
+      return 'logo-black';
+    } else {
+      return 'logo-white';
+    }
+  }.property('currentPath'),
+
   //actions
   actions: {
 

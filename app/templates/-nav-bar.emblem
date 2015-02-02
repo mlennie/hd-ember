@@ -1,5 +1,5 @@
 .container-fluid.fixed-nav
-	nav.navbar.navbar-default class={session.isAuthenticated:transparent} role="navigation"
+	nav.navbar.navbar-default class={session.isAuthenticated:transparent navbarClass} role="navigation"
 		.container-fluid
 			.navbar-header
 				button.navbar-toggle.collapsed type="button" data-toggle="collapse" data-target="#navbar-collapse-1"
@@ -8,7 +8,7 @@
 					span.icon-bar
 					span.icon-bar
 				#logo-link=link-to 'index'
-					h2#logo Happy Dining
+					h3 id={logoClass} Happy Dining
 			.collapse.navbar-collapse#navbar-collapse-1
 				ul.nav.navbar-nav.navbar-right
 					if session.isAuthenticated
@@ -28,5 +28,6 @@
 								li
 									a{action 'invalidateSession'} Se déconnecter
 					else
-						li.nav-item #{ link-to 'register' | 'S'inscire }
-						li.nav-item #{ link-to 'login' | Se connecter }
+						li class={navbarClass} #{ link-to 'login' | Connection }
+						li class={navbarClass} #{ link-to 'register' | Inscription }
+						
