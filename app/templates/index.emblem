@@ -4,16 +4,17 @@
 			unless session.currentUser.isOwner
 				.visible-md-block.visible-lg-block
 					#center-search-medium.col-sm-8.col-sm-offset-2
-						span.input_container
-							input.input placeholder="Date"
-							span.search-icon = fa-icon 'calendar'
-						span.input_container
-							input.input placeholder="Heure"
-							span.search-icon = fa-icon 'caret-down'
-						span.input_container
-							input.input placeholder="Nombre de couverts"
-							span.search-icon = fa-icon 'caret-down'
-						button type="submit" Rechercher
+						form submit='search'
+							span.input_container
+								= bootstrap-datepicker value=date class="input" format="dd/mm/yy" todayBtn=true todayHighlight=true placeholder="Date" language='fr'
+								span.search-icon = fa-icon 'calendar'
+							span.input_container
+								= view Ember.Select content=hours class="search-select input" prompt="Heure"
+								span.search-icon = fa-icon 'caret-down'
+							span.input_container
+								= view Ember.Select content=couverts class="search-select input"
+								span.search-icon = fa-icon 'caret-down'
+							button type="submit" Rechercher
 				.visible-sm-block.visible-xs-block
 					.container
 						.col-sm-8.col-sm-offset-2.col-xs-10.col-xs-offset-1
@@ -21,7 +22,7 @@
 							form#mobile-search-form submit='search' role="search"
 								.form-group
 									.input-group.full-width
-										br = view Ember.Select prompt="Arrondissment ou Restaurant" content=names valueBinding=name class="form-control"  
+										br = view Ember.Select placeholder="Arrondissment ou Restaurant" content=names valueBinding=name class="form-control"  
 									br = input value=date id='date' class="form-control" placeholder="Date" type=date
 									br = view Ember.Select content=hours class="form-control" 
 									br = view Ember.Select content=couverts class="form-control" 
