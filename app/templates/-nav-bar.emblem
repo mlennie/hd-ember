@@ -1,0 +1,32 @@
+.container-fluid.fixed-nav
+	nav.navbar.navbar-default role="navigation"
+		.container-fluid
+			.navbar-header
+				button.navbar-toggle.collapsed type="button" data-toggle="collapse" data-target="#navbar-collapse-1"
+					span.sr-only Toggle navigation
+					span.icon-bar
+					span.icon-bar
+					span.icon-bar
+				=link-to 'index'
+					img.navbar-brand src="/assets/images/logo.png"
+			.collapse.navbar-collapse#navbar-collapse-1
+				ul.nav.navbar-nav.navbar-right
+					if session.isAuthenticated
+						li.dropdown
+							a.dropdown-toggle href="#" data-toggle="dropdown" role="button" aria-expanded="false"
+								| Mon compte
+								span.caret
+							ul.dropdown-menu#main-nav-dropdown role="menu"
+								li = link-to 'users.mes-euros' 
+									if session.currentUser.isOwner
+										| Ma balance
+									else
+										| Mes Euros Collectés
+								li = link-to 'users.edit' | Mon Profil
+								li = link-to 'users.parrainer-un-ami' | Parrainer un ami  
+								li.divider
+								li
+									a{action 'invalidateSession'} Se déconnecter
+					else
+						li.nav-item #{ link-to 'register' | 'S'inscire }
+						li.nav-item #{ link-to 'login' | Se connecter }
