@@ -16,8 +16,9 @@
 			h1.center = fa-icon 'fa-spin fa-spinner'
 		else
 			.col-md-4.col-md-offset-4#register-form
-				h1.center Sign In
-				form submit='authenticate'
+				br
+				p.center Connectez-vous:
+				form#sign-in-form submit='authenticate'
 					.input-group.full-width
 						label for="identification" Email
 						= input class='form-control' value=identification placeholder='Enter Email' type='email' required=true

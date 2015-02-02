@@ -8,7 +8,7 @@
 					span.icon-bar
 					span.icon-bar
 				#logo-link=link-to 'index'
-					h2#logo Happy Dining
+					h3 id={logoClass} Happy Dining
 			.collapse.navbar-collapse#navbar-collapse-1
 				ul.nav.navbar-nav.navbar-right
 					if session.isAuthenticated

@@ -27,6 +27,16 @@ export default Ember.Controller.extend(SearchMixin,{
     }
   }.property('currentPath'),
 
+  //get logo class
+  logoClass: function() {
+    if (this.get('currentPath') === 'login' || 
+        this.get('currentPath') === 'register') {
+      return 'logo-black';
+    } else {
+      return 'logo-white';
+    }
+  }.property('currentPath'),
+
   //actions
   actions: {
 

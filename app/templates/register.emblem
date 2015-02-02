@@ -13,8 +13,8 @@
       h1.center = fa-icon 'fa-spin fa-spinner'
     else
       .col-md-4.col-md-offset-4#register-form
-        h1.center Sign Up
-        form submit='registerUser'
+        p.center Rejoignez-nous:
+        form#sign-in-form submit='registerUser'
           .input-group.full-width
             //label for="lastName" Last Name
             = input class='form-control' value=lastName placeholder='Last Name' required=true

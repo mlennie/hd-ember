@@ -52,9 +52,14 @@ li.dropdown.open > a {
   padding: 0;
 }
 
-h2#logo {
+#logo-white {
   color: #fff;
   text-shadow: -1px -1px 4px #333;
+  text-decoration: none;
+}
+
+#logo-black {
+  color: #000;
   text-decoration: none;
 }
 
