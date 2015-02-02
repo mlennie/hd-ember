@@ -1,46 +1,9 @@
 .container-fluid.landing-image#landing-image
 	.row
 		if session.isAuthenticated
-			unless session.currentUser.isOwner
-				.visible-md-block.visible-lg-block
-					#center-search-medium.col-sm-8.col-sm-offset-2
-						form submit='search'
-							span.input_container
-								= bootstrap-datepicker value=date class="input" format="dd/mm/yy" todayBtn=true todayHighlight=true placeholder="Date" language='fr'
-								span.search-icon = fa-icon 'calendar'
-							span.input_container
-								= view Ember.Select content=hours class="search-select input" prompt="Heure"
-								span.search-icon = fa-icon 'caret-down'
-							span.input_container
-								= view Ember.Select content=couverts class="search-select input" prompt="Nombre de couverts"
-								span.search-icon = fa-icon 'caret-down'
-							button type="submit" Rechercher
-				.visible-sm-block.visible-xs-block
-					.container
-						.col-sm-8.col-sm-offset-2.col-xs-10.col-xs-offset-1
-							h1#mobile-search-title Find Restaurants
-							form#mobile-search-form submit='search' role="search"
-								.form-group
-									.input-group.full-width
-										br = view Ember.Select placeholder="Arrondissment ou Restaurant" content=names valueBinding=name class="form-control"  
-									br = input value=date id='date' class="form-control" placeholder="Date" type=date
-									br = view Ember.Select content=hours class="form-control" 
-									br = view Ember.Select content=couverts class="form-control" 
-									br
-									button.btn.btn-success.btn-lg.full-width Rechercher
+			partial 'logged-in-index'
 		else
-			h1#main-title L'addition qui rapporte
-			h4#second-home-title
-				| Réservez pour vous, vos amis, vos clients 
-				br
-				| et recevez personnellement un pourcentage de l'addition.  
-
-			br
-			br
-			br
-			.col-sm-4.col-sm-offset-4
-				= link-to 'register'
-					button.btn.register-gold.btn-lg.center.full-width S'inscrire
+			partial 'not-logged-in-index'
 
 
 

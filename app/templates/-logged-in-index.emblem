@@ -1,0 +1,5 @@
+unless session.currentUser.isOwner
+	.visible-md-block.visible-lg-block
+		partial 'medium-search'
+	.visible-sm-block.visible-xs-block
+		partial 'small-search'
