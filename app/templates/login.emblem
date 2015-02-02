@@ -27,7 +27,7 @@
 						= input class='form-control black-border' value=password placeholder='Mot de passe' type='password' required=true
 					.black-link.margin-top-10= link-to 'new-password' | Mot de passe oublié?
 					.black-link= link-to 'resend-confirmation' | Didn't receive confirmation email?
-					.input-group#remember-me
+					.padding-top-5.input-group#remember-me
 						= input type="checkbox" name="rememberMe"
 						span.margin-left-10 Se souvenir de moi cur cet ordinateur
 					br
