@@ -2,9 +2,17 @@
 	.row
 		if session.isAuthenticated
 			unless session.currentUser.isOwner
+				.visible-md-block.visible-lg-block
+					#center-search-medium.col-sm-8.col-sm-offset-2
+						input placeholder="Date"
+						span#input_container
+							input#input placeholder="Heure"
+							span.search-icon = fa-icon 'caret-down'
+						input placeholder="Nombre de couverts"
+						button type="submit" Rechercher
 				.visible-sm-block.visible-xs-block
 					.container
-						.row
+						//.row
 							.col-sm-8.col-sm-offset-2.col-xs-10.col-xs-offset-1
 								h1#mobile-search-title Find Restaurants
 								form#mobile-search-form submit='search' role="search"

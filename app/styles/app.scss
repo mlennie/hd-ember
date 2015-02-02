@@ -309,6 +309,50 @@ img.navbar-brand {
   padding: 5px 0 5px 10px;
 }
 
+#center-search-medium {
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 250px;
+  float: none !important;
+
+  #input_container {
+    position: relative; 
+    padding: 0; 
+    margin: 0;
+
+    .search-icon {
+      position: absolute; 
+      left: 10px; 
+    }
+  }
+
+  input, button {
+    height: 80px;
+    text-align: center;
+    font-size: 1.5em;
+    border: none;
+  }
+
+  input {
+    border-right: 1px solid #000;
+
+    &:nth-child(1) {
+      width: 15%;
+      
+      #input {
+        margin: 0; 
+        padding-left: 30px;
+      }    
+    }
+  }
+
+  button {
+    background-color: #45AAFA;
+    color: #fff;
+    padding: 0 30px;
+  }
+}
+
 #comment-ca-marche {
   height: 670px;
 }
