@@ -1,0 +1,129 @@
+#search-navbar {
+  height: 0px;
+
+  button {
+    margin-right: 15px;
+  }
+}
+.navbar-default {
+  height: 700;
+}
+
+#mobile-search-title {
+  color: #000;
+  text-align: center;
+  margin-top: 80px;
+}
+
+#mobile-search-form {
+  background-color: rgba(124, 119, 133, 0.5);
+  border: 2px solid #999;
+  border-radius: 1px;
+  box-shadow: 0px 0px 10px #000000;
+  opacity: 1 !important;
+  box-sizing: border-box;
+  display: block;
+  font-family: 'Montserrat', 'Arial', sans-serif;
+  font-size: 1em;
+  color: #000;
+  padding: 10px 30px;
+  margin-top: 30px;
+}
+
+#search-navbar-collapse {
+
+  .navbar-form {
+    padding: 0;
+    margin-top: 7px;
+    margin-bottom: 0px;
+  }
+}
+.search-field {
+  margin-right: 35px;
+}
+
+#search-email {
+  margin-right: 10px;
+}
+
+#calendar-icon {
+  margin-right: 35px;
+  font-size: 1.3em;
+}
+
+#center-search-medium {
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 250px;
+  float: none !important;
+
+  .input_container {
+    position: relative; 
+    padding: 0; 
+    margin: 0;
+
+    &:nth-child(1) > input {
+      color: #999;
+      width: 20%;
+      
+      .input {
+        color: #999;
+        margin: 0; 
+        padding-left: 30px;
+      }    
+    }
+
+    &:nth-child(2) > .input {
+      color: #999;
+      margin: 0; 
+      padding-left: 30px;
+      padding-right: 50px;
+    }
+
+    &:nth-child(3) { 
+      width: 50%; 
+
+      .input {
+        color: #999;
+        margin: 0; 
+        padding-left: 30px;
+        padding-right: 50px;
+      }
+    }
+
+    .search-icon {
+      position: absolute; 
+      right: 20px;
+      top: -15px;
+      font-size: 1.8em; 
+    }
+  }
+
+  input, .search-select, button {
+    height: 80px;
+    text-align: center;
+    font-size: 1.5em;
+    border: none;
+    border-radius: 0 !important;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+  }
+
+  input, .search-select  {
+    border-right: 1px solid #000;
+    padding-right: 5%;
+  }
+
+  button {
+    width: 22%;
+  }
+}
+
+.search-select {
+  height: 100%;
+}
+
+
+
+

@@ -28,11 +28,11 @@
 								li
 									a{action 'invalidateSession'} Se déconnecter
 					else
-						li.nav-item #{ link-to 'register' | S'inscire }
+						li.nav-item #{ link-to 'register' | 'S'inscire }
 						li.nav-item #{ link-to 'login' | Se connecter }
 	if session.isAuthenticated
 		unless session.currentUser.isOwner
-			.visible-md-block.visible-lg-block
+			//.visible-md-block.visible-lg-block
 				nav.navbar.navbar-default#search-navbar role="navigation"
 					.container-fluid
 						form.navbar-form.navbar-left submit='search' role="search"
