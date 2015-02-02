@@ -29,6 +29,21 @@ li.dropdown.open > a {
   background-color: rgba(255, 255, 255, 0) !important;
 }
 
+.navbar-white {
+  background-color: #fff !important;
+
+  & > a {
+    color: #000 !important;
+    font-size: 1.2em;
+    margin-top: 10px;
+    text-transform: uppercase;
+    
+    &.active {
+      padding-bottom: 5px;
+      border-bottom: 2px solid #CB9A4E;
+    }
+  }
+}
 
 .fixed-nav {
   position: fixed;
@@ -43,8 +58,10 @@ h2#logo {
   text-decoration: none;
 }
 
-#logo-link > a:hover {
-  text-decoration: none !important;
+#logo-link > a {
+  &:visited, &:hover {
+    text-decoration: none !important;
+  }
 }
 
 .nav-item > a, span.nav-item {

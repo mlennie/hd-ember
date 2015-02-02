@@ -1,4 +1,4 @@
-.container#login-page
+.container-fluid#login-page
 	.row
 		if loginError
 			.alert.alert-danger 
