@@ -39,6 +39,30 @@ h2 {
   color: #999;
 }
 
+.black {
+  color: #000;
+}
+
+.gold {
+  color: #CB9A4E;
+}
+
+.black-link > a {
+  color: #000;
+  text-decoration-color: #000;
+  text-decoration: underline;
+}
+
+.black-border {
+  border: 1px solid #000;
+  border-radius: 0;
+  color: #000 !important;
+}
+
+hr.black-line {
+  border-bottom: 1px solid #000;
+}
+
 .grey-background {
   background-color: #eee;
 }

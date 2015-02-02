@@ -20,21 +20,24 @@
 				p.center Connectez-vous:
 				form#sign-in-form submit='authenticate'
 					.input-group.full-width
-						label for="identification" Email
-						= input class='form-control' value=identification placeholder='Enter Email' type='email' required=true
-					br
+						.gold.required-asterix.pull-right *
+						= input class='form-control black-border' value=identification placeholder='Adresse email' type='email' required=true
 					.input-group.full-width
-						label for="password" Password
-						= input class='form-control' value=password placeholder='Enter Password' type='password' required=true
+						.gold.required-asterix.pull-right *
+						= input class='form-control black-border' value=password placeholder='Mot de passe' type='password' required=true
+					.black-link.margin-top-10= link-to 'new-password' | Mot de passe oublié?
+					.black-link= link-to 'resend-confirmation' | Didn't receive confirmation email?
 					.input-group#remember-me
 						= input type="checkbox" name="rememberMe"
-						label for="rememberMe" Remember me
+						span.margin-left-10 Se souvenir de moi cur cet ordinateur
 					br
-					button.btn.btn-default.btn-lg.btn-black.full-width type="submit" Login
+					button.btn.register-gold.center.full-width type="submit" Se Connecter
+					.pull-right.margin-top-10.required-asterix-legend
+						span.gold (*)
+						span.margin-left-10 Champs obligatoires
+					.clear
 					br
-					br
-					= link-to 'register' | Sign up
-					br
-					= link-to 'new-password' | Forget password?
-					br
-					= link-to 'resend-confirmation' | Didn't receive confirmation email?
+					hr.black-line
+					.login-bottom
+						.center.black Pas encore membre?
+						.center.black-link= link-to 'register' | S'inscrire maintenant

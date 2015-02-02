@@ -48,8 +48,9 @@
           br
           .input-group.full-width.margin-top-10
             //label for="password" First Name
-            = input class='form-control' value=promotionCode placeholder='Promotional Code' 
-          button.margin-top-10.btn.btn-default.btn-lg.btn-black.full-width type="submit" Register
+            = input class='form-control' value=promotionCode placeholder='Promotional Code'
+          br 
+          button.btn.register-gold.center.full-width type="submit" Register
           br
           br
           =link-to 'login' | Already have an account? Sign in
