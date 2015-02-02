@@ -21,6 +21,15 @@ div.container-fluid.fixed-nav > nav {
   border: none;
 }
 
+div.container-fluid.fixed-nav > nav.transparent {
+  background-color: rgba(255, 255, 255, 0);
+}
+
+li.dropdown.open > a {
+  background-color: rgba(255, 255, 255, 0) !important;
+}
+
+
 .fixed-nav {
   position: fixed;
   width: 100%;
@@ -28,7 +37,17 @@ div.container-fluid.fixed-nav > nav {
   padding: 0;
 }
 
-.nav-item > a {
+h2#logo {
+  color: #fff;
+  text-shadow: -1px -1px 4px #333;
+  text-decoration: none;
+}
+
+#logo-link > a:hover {
+  text-decoration: none !important;
+}
+
+.nav-item > a, span.nav-item {
   color: white !important;
   margin-top: 10px;
   font-size: 1.5em;
@@ -45,4 +64,10 @@ img.navbar-brand {
   height: 60px;
   margin: 0;
   padding: 5px 0 5px 10px;
+}
+
+.nav-icon {
+  color: #CB9A4E;
+  font-size: 2em;
+  margin-right: 10px;
 }
