@@ -1,15 +1,19 @@
 if session.isAuthenticated
-		unless session.currentUser.isOwner
-			//.visible-md-block.visible-lg-block
-				nav.navbar.navbar-default#search-navbar role="navigation"
-					.container-fluid
-						form.navbar-form.navbar-left submit='search' role="search"
-							.form-group
-								span.search-field= view Ember.Select prompt="Arrondissment ou Restaurant" content=names valueBinding=name class="form-control"  
-								span#search-email.search-field= bootstrap-datepicker value=date class="form-control" format="dd/mm/yy" todayBtn=true todayHighlight=true placeholder="Date" language='fr'
-								span#calendar-icon= fa-icon 'calendar'
-								span.search-field= view Ember.Select content=hours class="form-control" 
-								span.search-field= view Ember.Select content=couverts class="form-control" 
-							button.btn.btn-success Rechercher
-						.visible-lg-block
-							p Rechercher ou réserver par téléphone: 09 90 90 87 85
+	unless session.currentUser.isOwner
+		.visible-md-block.visible-lg-block#center-search-medium
+			nav.navbar.navbar-default
+				.container-fluid
+					form submit='search'
+						span.input_container
+							= bootstrap-datepicker value=date class="input" format="dd/mm/yy" todayBtn=true todayHighlight=true placeholder="Date" language='fr'
+							span.search-icon = fa-icon 'calendar'
+						span.input_container
+							= view Ember.Select content=hours class="search-select input" prompt="Heure"
+							span.search-icon = fa-icon 'caret-down'
+						span.input_container
+							= view Ember.Select content=couverts class="search-select input"
+							span.search-icon = fa-icon 'caret-down'
+						span.input_container
+							= view Ember.Select prompt="Où ?" content=names valueBinding=name class="search-select input"  
+							span.search-icon = fa-icon 'caret-down'
+						button type="submit" Rechercher

@@ -30,4 +30,23 @@
 					else
 						li class={navbarClass} #{ link-to 'login' | Connection }
 						li class={navbarClass} #{ link-to 'register' | Inscription }
+	if session.isAuthenticated
+		unless session.currentUser.isOwner
+			.visible-md-block.visible-lg-block#center-search-medium
+				nav.navbar.navbar-default
+					.container-fluid
+						form submit='search'
+							span.input_container
+								= bootstrap-datepicker value=date class="input" format="dd/mm/yy" todayBtn=true todayHighlight=true placeholder="Date" language='fr'
+								span.search-icon = fa-icon 'calendar'
+							span.input_container
+								= view Ember.Select content=hours class="search-select input" prompt="Heure"
+								span.search-icon = fa-icon 'caret-down'
+							span.input_container
+								= view Ember.Select content=couverts class="search-select input"
+								span.search-icon = fa-icon 'caret-down'
+							span.input_container
+								= view Ember.Select prompt="Où ?" content=names valueBinding=name class="search-select input"  
+								span.search-icon = fa-icon 'caret-down'
+							button type="submit" Rechercher
 						
