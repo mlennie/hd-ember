@@ -1,36 +1,41 @@
-.container-fluid
+.container-fluid.mes-euros
 	.row
-		.col-md-7.col-md-offset-2
-			h1.center#profile-title
-				if session.currentUser.isOwner
-					| Ma balance
+		.col-8-box.grey-background
+			#gold-euros-box.pull-right
+				if hasBalance
+					span.gold-balance
+						= balance
+						| €
 				else
-					| Mes Euros Collectés
+					span.margin-left-10 No euros yet!! Get to work!
+			h2.no-margin
+				span.users-title
+					if session.currentUser.isOwner
+						| Ma balance
+					else
+						| Mes Euros Collectés
 			br
-			.row
-				.col-sm-12
-					.panel.panel-default
-						.panel-heading.center
-							| Ma Situation
-						.panel-body
-							p
-								if session.currentUser.isOwner
-									strong Ma balance:
-								else
-									strong Mes Euros Collectés: 
-								if hasBalance
-									span.balance
-										= balance
-										| €
-								else
-									span.margin-left-10 No euros yet!! Get to work!
-							if session.currentUser.isOwner
-								br
-								button.btn.btn-success View history
-							else
-								br 
-								button.btn.btn-success data-toggle="popover" data-placement="bottom" data-trigger="focus" title="Please phone" data-content="09 90 90 87 85"
-									| Use my euros!
+			br
+			p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sollicitudin ultricies vestibulum. Proin ultrices pellentesque ligula. Praesent et ante in lorem euismod scelerisque. Aliquam sed luctus lorem. Aliquam erat volutpat. Aliquam gravida malesuada enim, aliquet vehicula justo tempus sit amet. Etiam tristique, dolor ac auctor hendrerit, massa dolor eleifend orci, vel ultricies velit metus id turpis. Curabitur rutrum luctus pharetra. Cras libero elit, rhoncus sed sollicitudin nec, dapibus sit amet nibh. 
+		br
+	.row
+		.col-8-box.grey-background.margin-bottom-20
+			h2.no-margin
+				span.users-title.users-title-small
+					unless session.currentUser.isOwner
+						| Découvrez le parrainage
+			br
+			p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sollicitudin ultricies vestibulum. Proin ultrices pellentesque ligula. Praesent et ante in lorem euismod scelerisque. Aliquam sed luctus lorem. Aliquam erat volutpat. Aliquam gravida malesuada enim, aliquet vehicula justo tempus sit amet. Etiam tristique, dolor ac auctor hendrerit, massa dolor eleifend orci, vel ultricies velit metus id turpis. Curabitur rutrum luctus pharetra. Cras libero elit, rhoncus sed sollicitudin nec, dapibus sit amet nibh. 
+			.center= link-to 'users.parrainer-un-ami'
+				button.margin-top-10.btn.register-gold.center.half-width Parrainer mes amis
+		//
+			if session.currentUser.isOwner
+				br
+				button.btn.btn-success View history
+			else
+				br 
+				button.btn.btn-success data-toggle="popover" data-placement="bottom" data-trigger="focus" title="Please phone" data-content="09 90 90 87 85"
+					| Use my euros!
 
 
 					

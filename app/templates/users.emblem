@@ -28,5 +28,5 @@ else
 						=link-to 'users.edit' | Mon Profil 
 					li.nav-link
 						=link-to 'users.parrainer-un-ami' | Parrainer un ami 
-		.col-sm-8
+		.col-sm-8.padding-left-5
 			==outlet
