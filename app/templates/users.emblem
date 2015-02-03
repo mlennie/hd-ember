@@ -12,7 +12,8 @@ else
 	br
 	br
 	br
-.container-fluid
+	br
+.container-fluid.margin-top-10
 	.row
 		.col-sm-4
 			nav.horizontal-nav.grey-background
