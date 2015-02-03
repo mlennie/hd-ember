@@ -1,5 +1,4 @@
 partial 'nav-bar' 
-	partial 'search-bar' 
 div class=backgroundColor
 	== outlet
 partial 'cookie-message' 
