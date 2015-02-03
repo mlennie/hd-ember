@@ -1,6 +1,7 @@
 partial 'nav-bar' 
 	partial 'search-bar' 
-== outlet
+div class=backgroundColor
+	== outlet
 partial 'cookie-message' 
 partial 'footer' 
 

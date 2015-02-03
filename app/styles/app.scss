@@ -34,7 +34,6 @@ html {
 body {
   /* Margin bottom by footer height */
   margin-bottom: 60px;
-  background-color: #ECECEC;
 }
 
 h1 {
@@ -78,7 +77,11 @@ hr.black-line {
 }
 
 .grey-background {
-  background-color: #eee;
+  background-color: #ECECEC;
+}
+
+.white-background {
+  background-color: #fff;
 }
 
 .no-padding {
