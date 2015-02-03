@@ -9,11 +9,21 @@
 @import 'users/general.scss';
 @import 'restaurants/general.scss';
 
+/* latin */
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Raleway'), url(http://fonts.gstatic.com/s/raleway/v9/QAUlVt1jXOgQavlW5wEfxQLUuEpTyoUstqEm5AMlJo4.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+
 /* GENERAL */
 
 html, body {
   margin: 0px;
   line-height: 1.5;
+  font-family: 'Raleway', sans-serif;
 }
 
 html {
@@ -24,7 +34,6 @@ html {
 body {
   /* Margin bottom by footer height */
   margin-bottom: 60px;
-  background-color: #ECECEC;
 }
 
 h1 {
@@ -32,24 +41,24 @@ h1 {
 }
 
 h2 {
-  font-size: 2.5em;
+  font-size: 1.9em;
 }
 
-.small-text {
-  font-size: 0.8em;
+h3 {
+  font-size: 2em;
 }
 
-.grey {
-  color: #999;
-}
+.small-text { font-size: 0.8em; }
 
-.black {
-  color: #000;
-}
+.one-smaller { font-size: 0.9em; }
 
-.gold {
-  color: #CB9A4E;
-}
+.grey { color: #999; }
+
+.black { color: #000; }
+
+.white { color: #fff; }
+
+.gold { color: #CB9A4E; }
 
 .black-link > a {
   color: #000;
@@ -68,7 +77,15 @@ hr.black-line {
 }
 
 .grey-background {
-  background-color: #eee;
+  background-color: #ECECEC;
+}
+
+.white-background {
+  background-color: #fff;
+}
+
+.light-black-background {
+  background-color: #4F4F4F;
 }
 
 .no-padding {
@@ -79,43 +96,38 @@ hr.black-line {
   padding-top: 5px !important;
 }
 
+.padding-left-5 {
+  padding-left: 5px !important;
+}
+
 .no-margin {
   margin: 0 !important;
 }
 
-.no-margin-top {
-  margin-top: 0 !important;
-}
+.no-margin-top { margin-top: 0 !important; }
 
-.margin-2 {
-  margin: 2px;
-}
+.margin-2 { margin: 2px; }
 
-.margin-left-10 {
-  margin-left: 10px;
-}
+.margin-right-5 { margin-right: 5px; }
 
-.margin-left-15 {
-  margin-left: 15px;
-}
+.margin-right-10 { margin-right: 10px; }
 
-.margin-left-20 {
-  margin-left: 20px;
-}
+.margin-left-10 { margin-left: 10px; }
 
-.margin-bottom-10 {
-  margin-bottom: 10px;
-}
+.margin-left-15 { margin-left: 15px; }
 
-.margin-top-10 {
-  margin-top: 10px;
-}
+.margin-left-20 { margin-left: 20px; }
 
-.margin-top-20 {
-  margin-top: 20px;
-}
+.margin-bottom-10 { margin-bottom: 10px; }
 
-.full-width {
-  width: 100%;
-}
+.margin-bottom-20 { margin-bottom: 20px; }
 
+.margin-top-5 { margin-top: 5px; }
+
+.margin-top-10 { margin-top: 10px; }
+
+.margin-top-20 { margin-top: 20px;}
+
+.full-width { width: 100%; }
+
+.half-width { width: 50%; }

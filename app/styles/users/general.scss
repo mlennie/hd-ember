@@ -8,3 +8,83 @@
   font-weight: bold;
   margin-left: 10px;
 }
+
+.horizontal-nav {
+	margin-left: 20px;
+	padding: 10px;
+
+	.nav-title {
+		font-size: 1.5em;
+		border-bottom: 1px solid #44A9F9;
+		text-transform: capitalize;
+		margin-left: 10px;
+		padding-bottom: 2px;
+		font-weight: bold;
+	}
+
+	.nav-link {
+		list-style-type: none;
+		margin-top: 15px;
+		font-size: 1.1em;
+
+		a {
+			color: #000;
+
+			&.active {
+				font-weight: 900;
+				font-size: 1.1em;
+			}
+
+			&:link, &:visited, &:active, &:hover {
+				text-decoration: none;
+			}
+		}
+	}
+}
+
+.mes-euros {
+	.col-8-box {
+		padding: 15px;
+		padding-left: 20px;
+		margin-right: 20px;
+
+		.users-title {		
+			border-bottom: 1px solid #000;
+			text-transform: capitalize;
+			margin-left: 10px;
+			padding-bottom: 2px;
+			font-weight: bold;
+		}
+
+		.users-title-small {
+			font-size: 0.8em;
+			font-weight: none;
+		}
+
+		#gold-euros-box {
+			border: 2px solid #CA9956;
+			background-color: #fff;
+			padding: 5px 20px 10px 20px;
+			margin: 5px 5px 0 0;
+
+			.gold-balance {
+				color: #CA9956;
+				font-size: 2.2em;
+				font-weight: bold;
+			}
+		}
+
+		p {
+			padding: 15px;
+		}
+
+		.register-gold {
+			text-transform: none;
+			font-weight: none;
+			font-size: 1.5em;
+			margin-bottom: 10px;
+			text-shadow: none;
+		}
+	}
+}
+

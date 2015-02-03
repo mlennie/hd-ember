@@ -19,8 +19,7 @@ export default Ember.Controller.extend(SearchMixin,{
 
   //get navbar class
   navbarClass: function() {
-    if (this.get('currentPath') === 'login' || 
-        this.get('currentPath') === 'register') {
+    if (this.get('currentPath') !== 'index') {
       return 'navbar-white';
     } else {
       return 'nav-item';
@@ -29,11 +28,20 @@ export default Ember.Controller.extend(SearchMixin,{
 
   //get logo class
   logoClass: function() {
-    if (this.get('currentPath') === 'login' || 
-        this.get('currentPath') === 'register') {
+    if (this.get('currentPath') !== 'index') {
       return 'logo-black';
     } else {
       return 'logo-white';
+    }
+  }.property('currentPath'),
+
+  //get background color
+  backgroundColor: function() {
+    if (this.get('currentPath') === 'register' ||
+        this.get('currentPath') === 'login') {
+      return 'grey-background';
+    } else {
+      return 'white-background';
     }
   }.property('currentPath'),
 

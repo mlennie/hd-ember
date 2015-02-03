@@ -12,23 +12,21 @@ else
 	br
 	br
 	br
-	br
-	br
 .container-fluid
 	.row
-		.col-sm-3
-			.list-group
-				.list-group-item.grey-background
-					= session.currentUser.fullName
-				.list-group-item 
-					=link-to 'users.mes-euros'
-						if session.currentUser.isOwner
-							| Ma balance
-						else
-							| Mes Euros Collectés
-				.list-group-item 
-					=link-to 'users.edit' | Mon Profil 
-				.list-group-item 
-					=link-to 'users.parrainer-un-ami' | Parrainer un ami 
-		.col-sm-9
+		.col-sm-4
+			nav.horizontal-nav.grey-background
+				span.nav-title = session.currentUser.fullName
+				ul
+					li.nav-link
+						=link-to 'users.mes-euros'
+							if session.currentUser.isOwner
+								| Ma balance
+							else
+								| Mes Euros Collectés
+					li.nav-link
+						=link-to 'users.edit' | Mon Profil 
+					li.nav-link
+						=link-to 'users.parrainer-un-ami' | Parrainer un ami 
+		.col-sm-8.padding-left-5
 			==outlet
