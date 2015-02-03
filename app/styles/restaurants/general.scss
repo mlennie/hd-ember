@@ -8,6 +8,7 @@
 .restaurant-search-pic {
   height: auto;
   width: 100%;
+  max-height: 320px;
 }
 
 .percent-discount {
@@ -23,6 +24,19 @@
   color: #999;
   margin-top: 50px;
   margin-bottom: 30px;
+}
+
+.middle-border {
+  border-top: 1.5px solid #000;
+  margin-top: 20px;
+}
+
+#search-results-title {
+  font-size: 1.7em;
+}
+
+.restaurant-box {
+  max-height: 350px;
 }
 
 @media (max-width: 991px) {

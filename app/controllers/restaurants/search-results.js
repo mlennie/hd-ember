@@ -34,6 +34,12 @@ export default Ember.Controller.extend({
       return restaurants.filterBy('name', name);
     }
   }.property('name', 'model'),
+
+  //get length of filtered restaurants
+  filteredRestaurantsLength: function() {
+    return this.get('filteredRestaurants.length');
+  }.property('filteredRestaurants'),
+
   nonFilteredRestaurants: function() {
     var name = this.get('name');
     var restaurants = this.get('shuffledRestaurants');

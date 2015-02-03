@@ -1,4 +1,16 @@
-li.list-group-item
+.row.margin-bottom-20
+	.restaurant-box.grey-background.padding-10
+		.row
+			.col-sm-8
+				.restaurant-img-container
+					img.restaurant-search-pic src={restaurant.imgUrl} 
+			.col-sm-4
+
+
+
+
+
+//li.list-group-item
 	.row
 		.visible-md-block.visible-lg-block
 			.col-sm-4
