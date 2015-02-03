@@ -1,10 +1,23 @@
 .row.margin-bottom-20
-	.restaurant-box.grey-background.padding-10
-		.row
-			.col-sm-8
-				.restaurant-img-container
-					img.restaurant-search-pic src={restaurant.imgUrl} 
-			.col-sm-4
+	.restaurant-box.grey-background.padding-15
+		.row.corner-ribbon.top-right.sticky.black 10%
+		.col-sm-8
+			.restaurant-img-container
+				img.restaurant-search-pic src={restaurant.imgUrl} 
+		.col-sm-4
+			h4.margin-top-60
+				span.restaurant-title 
+					=restaurant.name
+			p 
+				=restaurant.cuisine
+			p.address 
+				=restaurant.fullAddress
+			br
+			br
+			p 
+				=restaurant.description
+			.pull-right= link-to 'restaurants.show' restaurant
+				button.btn.register-gold.center Réserver
 
 
 

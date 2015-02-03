@@ -5,12 +5,6 @@
   height: 300px;
 }
 
-.restaurant-search-pic {
-  height: auto;
-  width: 100%;
-  max-height: 320px;
-}
-
 .percent-discount {
   color: red;
 }
@@ -36,8 +30,65 @@
 }
 
 .restaurant-box {
-  max-height: 350px;
+  max-height: 375px;
+  position: relative;
+  overflow: hidden;
+
+  .restaurant-search-pic {
+    height: auto;
+    width: 100%;
+    max-height: 340px;
+  }
+
+  .restaurant-title {
+    font-size: 1.5em;
+    font-weight: bold;
+    border-bottom: 1px solid #000;
+  }
+
+  .address {
+    font-size: 1.3em;
+    font-weight: normal;
+  }
+
+  button {
+    margin-top: 90px;
+    margin-right: 10px;
+    font-size: 1.5em;
+  }
+
+  /* The ribbons */
+
+  .corner-ribbon{
+    width: 200px;
+    background: #e43;
+    position: absolute;
+    top: 25px;
+    left: -50px;
+    text-align: center;
+    line-height: 50px;
+    letter-spacing: 1px;
+    color: #f0f0f0;
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    overflow: hidden;
+    font-size: 2em;
+  }
+
+  /* Custom styles */
+
+  .corner-ribbon.top-right{
+    top: 25px;
+    right: -50px;
+    left: auto;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+  }
+
+  .corner-ribbon.black{background: #333;}
 }
+
+
 
 @media (max-width: 991px) {
   .restaurant-img-container {
