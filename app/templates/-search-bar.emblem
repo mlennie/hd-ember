@@ -2,10 +2,11 @@ if showTopSearch
 	if session.isAuthenticated
 		unless session.currentUser.isOwner
 			.visible-md-block.visible-lg-block
-				nav.navbar.navbar-default.padding-10.grey-background#top-search-medium
+				nav.navbar.padding-10.grey-background#top-search-medium
 					.row
-						.col-md-10.col-md-offset-1
-							form.pull-right submit='search'
+						.col-md-1
+						.col-md-10
+							form submit='search'
 								span.input_container
 									= bootstrap-datepicker value=date class="input" format="dd/mm/yy" todayBtn=true todayHighlight=true placeholder="Date" language='fr'
 									span.search-icon = fa-icon 'calendar'
