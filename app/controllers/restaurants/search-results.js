@@ -1,9 +1,13 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
+
+  //properties
 	queryParams: ['name', 'cuisine'],
   name: null,
   cuisine: undefined,
+
+  //computed properties
 
   randomSortBy: function() {
     var input = ['name', 'street', 'imgUrl', 'description'];

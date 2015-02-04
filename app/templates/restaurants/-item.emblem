@@ -16,7 +16,8 @@
 			br
 			br
 			p 
-				=restaurant.description
+				= restaurant.shortDescription
+				|  ...
 			.pull-right= link-to 'restaurants.show' restaurant
 				button.btn.register-gold.center Réserver
 
