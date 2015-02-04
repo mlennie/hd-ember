@@ -25,14 +25,13 @@
 				.col-md-8	
 					#restaurant-image style=backgroundUrl
 				.col-md-4
+					.description-title
+						| Description et Histoire
 					p 
 						=model.description
-
-
-
-
-
-
+				.pull-right
+					button.btn.register-gold.center data-toggle="popover" data-placement="top" data-trigger="focus" title="Please phone" data-content="09 90 90 87 85" 
+						| Réserver
 
 //
 	h1.center 
@@ -48,7 +47,8 @@
 					if showReserveButton
 						.col-sm-4.col-sm-offset-4
 							br
-							button.btn.btn-success.btn-lg.full-width click=showPhoneNumber Reserver
+							button.btn.btn-success.btn-lg.full-width 
+								| Reserver
 						br
 					else
 						br

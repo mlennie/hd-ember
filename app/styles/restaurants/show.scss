@@ -35,5 +35,22 @@
 		.address {
 			font-size: 1.3em;
 		}
+
+		.description-title {
+			margin-top: 0px;
+			padding-top: 0;
+			font-size: 2em;
+			margin-bottom: 20px;
+		}
+
+		.register-gold {
+			margin-right: 20px;
+
+			&:visited, &:active, &:hover {
+				text-decoration: none;
+				color: #fff;
+				border: none;
+			}
+		}
 	}
 }
