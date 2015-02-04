@@ -93,3 +93,9 @@ img.navbar-brand {
   font-size: 2em;
   margin-right: 10px;
 }
+
+@media (max-width: 600px) {
+  #logo-link {
+    margin-left: 15px;
+  }
+}

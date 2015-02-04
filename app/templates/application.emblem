@@ -1,5 +1,5 @@
 partial 'nav-bar' 
-div class=backgroundColor
+div class=backgroundColor 
 	== outlet
 partial 'cookie-message' 
 partial 'footer' 
