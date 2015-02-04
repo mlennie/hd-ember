@@ -6,6 +6,10 @@
   height: 750px;
 }
 
+.special-height {
+  height: 720px;
+}
+
 #main-title {
   text-align: center;
   text-transform: uppercase;
@@ -46,6 +50,24 @@
 
 @media (max-width: 600px) {
   .landing-image {
-    height: 650px;
+    height: 100%;
+    background-position: -300px 70%;
+  }
+
+  .special-height {
+    height: 95%;
+  }
+
+  #main-title {
+    font-size: 2em;
+    margin-top: 200px;
+  }
+
+  #second-home-title {
+    font-size: 1em;
+  }
+
+  .register-gold {
+    font-size: 1.5em;
   }
 }

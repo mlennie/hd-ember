@@ -6,6 +6,6 @@ h4#second-home-title
 br
 br
 br
-.col-sm-4.col-sm-offset-4
+.col-sm-4.col-sm-offset-4.col-xs-8.col-xs-offset-2
 	= link-to 'register'
 		button.btn.register-gold.btn-lg.center.full-width S'inscrire

@@ -1,9 +1,8 @@
-.container-fluid.landing-image#landing-image
-	.row
-		if session.isAuthenticated
-			partial 'logged-in-index'
-		else
-			partial 'not-logged-in-index'
+.container-fluid.landing-image
+	if session.isAuthenticated
+		partial 'logged-in-index'
+	else
+		partial 'not-logged-in-index'
 
 
 
