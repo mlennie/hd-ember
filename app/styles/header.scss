@@ -4,6 +4,33 @@
   width: 100%;
 }
 
+/*collapse navbar menu button*/
+div.container-fluid.fixed-nav > nav > div > div.navbar-header > button {
+  background-color: #000;
+
+  .icon-bar {
+    background-color: #fff;
+  }
+
+}
+
+#navbar-collapse-1 {
+    background-color: #fff !important;
+    border: 1px solid #eee;
+
+    ul > li > a {
+      color: #333;
+      text-align: right;
+      font-size: 1.2em;
+      border-bottom: 1px solid #eee;
+
+      &:hover {
+        background-color: #eee;
+      }
+    }
+  }
+
+
 #main-nav-dropdown {
   z-index: 3;
 }
