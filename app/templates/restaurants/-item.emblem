@@ -1,6 +1,7 @@
 .row.margin-bottom-20
 	.restaurant-box.grey-background.padding-15
-		.row.corner-ribbon.top-right.sticky.black 10%
+		.row.corner-ribbon.top-right.sticky.black 
+			.gold-border 10%
 		.col-sm-8
 			.restaurant-img-container
 				img.restaurant-search-pic src={restaurant.imgUrl} 

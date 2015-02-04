@@ -64,15 +64,20 @@
     background: #e43;
     position: absolute;
     top: 25px;
-    left: -50px;
+    left: -55px;
     text-align: center;
-    line-height: 50px;
     letter-spacing: 1px;
     color: #f0f0f0;
     transform: rotate(-45deg);
     -webkit-transform: rotate(-45deg);
     overflow: hidden;
     font-size: 2em;
+
+    .gold-border {
+      border-top: 1px dashed #CA9956;
+      border-bottom: 1px dashed #CA9956;
+      margin: 5px 5px;
+    }
   }
 
   /* Custom styles */
