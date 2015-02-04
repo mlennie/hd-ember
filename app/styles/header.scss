@@ -4,6 +4,17 @@
   width: 100%;
 }
 
+/*collapse navbar menu button*/
+div.container-fluid.fixed-nav > nav > div > div.navbar-header > button {
+  background-color: #000;
+
+  .icon-bar {
+    background-color: #fff;
+  }
+
+}
+
+
 #main-nav-dropdown {
   z-index: 3;
 }
