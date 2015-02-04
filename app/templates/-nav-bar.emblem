@@ -4,12 +4,12 @@
 			.navbar-header
 				button.navbar-toggle.collapsed type="button" data-toggle="collapse" data-target="#navbar-collapse-1"
 					span.sr-only Toggle navigation
-					span.icon-bar.white
-					span.icon-bar.white
-					span.icon-bar.white
+					span.icon-bar
+					span.icon-bar
+					span.icon-bar
 				#logo-link=link-to 'index'
 					h3 id={logoClass} Happy Dining
-			.collapse.navbar-collapse#navbar-collapse-1
+			.hidden-xs
 				ul.nav.navbar-nav.navbar-right
 					if session.isAuthenticated
 						li.dropdown
@@ -30,5 +30,21 @@
 					else
 						li class={navbarClass} #{ link-to 'login' | Connection }
 						li class={navbarClass} #{ link-to 'register' | Inscription }
+			.visible-xs-block
+				.collapse.navbar-collapse#navbar-collapse-1
+					ul.nav.navbar-nav.navbar-right
+						if session.isAuthenticated
+							li = link-to 'users.mes-euros' 
+								if session.currentUser.isOwner
+									| Ma balance
+								else
+									| Mes Euros Collectés
+							li = link-to 'users.edit' | Mon Profil
+							li = link-to 'users.parrainer-un-ami' | Parrainer un ami 
+							li
+								a{action 'invalidateSession'} Se déconnecter
+						else
+							li class={navbarClass} #{ link-to 'login' | Connection }
+							li class={navbarClass} #{ link-to 'register' | Inscription }
 	= partial 'search-bar' 
 						
