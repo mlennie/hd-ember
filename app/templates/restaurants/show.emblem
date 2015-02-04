@@ -4,36 +4,63 @@
 	br
 	br
 	br
+	br
 .visible-sm-block.visible-xs-block
 	br
 	br
 	br
-h1.center 
-	=model.name
-	span.margin-left-20.percent-discount - 10%
-br
-.container-fluid
+.back-link=link-to 'restaurants.search-results'
+	span.back-caret= fa-icon 'caret-left'
+	| Retour recherches
+.container#restaurant-show
 	.row
-		.col-sm-6.col-sm-offset-3
-			#restaurant-image style=backgroundUrl
-		.col-sm-6.col-sm-offset-3
-			.row.no-padding
-				if showReserveButton
-					.col-sm-4.col-sm-offset-4
-						br
-						button.btn.btn-success.btn-lg.full-width click=showPhoneNumber Reserver
-					br
-				else
-					br
-					.col-sm-6.col-sm-offset-3
-						.full-width.alert.alert-info.center Please phone 09 90 90 87 85
-			br	
-			ul.list-group
-				li.list-group-item
-					p
-						strong Address: 
-						=model.fullAddress
-				li.list-group-item
+		.col-md-12.restaurant-box.grey-background
+			.corner-ribbon.top-right.sticky.black 
+				.gold-border 10%
+			h1
+				=model.name
+			p.address
+				=model.fullAddress
+			.row
+				.col-md-8	
+					#restaurant-image style=backgroundUrl
+				.col-md-4
 					p 
 						=model.description
+
+
+
+
+
+
+
+//
+	h1.center 
+		=model.name
+		span.margin-left-20.percent-discount - 10%
+	br
+	.container-fluid
+		.row
+			.col-sm-6.col-sm-offset-3
+				#restaurant-image style=backgroundUrl
+			.col-sm-6.col-sm-offset-3
+				.row.no-padding
+					if showReserveButton
+						.col-sm-4.col-sm-offset-4
+							br
+							button.btn.btn-success.btn-lg.full-width click=showPhoneNumber Reserver
+						br
+					else
+						br
+						.col-sm-6.col-sm-offset-3
+							.full-width.alert.alert-info.center Please phone 09 90 90 87 85
+				br	
+				ul.list-group
+					li.list-group-item
+						p
+							strong Address: 
+							=model.fullAddress
+					li.list-group-item
+						p 
+							=model.description
 			

@@ -13,5 +13,9 @@ export default DS.Model.extend({
     var city = this.get('city');
     var zipcode = this.get('zipcode');
     return street + ', ' + city + ', ' + zipcode;
-  }.property('zipcode','street','city')
+  }.property('zipcode','street','city'),
+  shortDescription: function() {
+    var description = this.get('description');
+    return description.split(' ').slice(0,25).join(' ');
+  }.property('description')
 });
