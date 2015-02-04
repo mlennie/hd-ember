@@ -2,6 +2,10 @@ import Ember from 'ember';
 
 export default Ember.View.extend({
 
+  jqueryEvents: function(){
+    Ember.$('[data-toggle="popover"]').popover();
+  }.on('didInsertElement'),
+
 	initializeCalendar: function() {
 
 		//set component
@@ -92,5 +96,4 @@ export default Ember.View.extend({
     });
 
   }.observes("controller.serviceStartTimes").on("didInsertElement")
-
 });

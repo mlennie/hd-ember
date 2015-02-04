@@ -15,7 +15,7 @@
 				=restaurant.fullAddress
 			br
 			br
-			p 
+			p
 				= restaurant.shortDescription
 				|  ...
 			.pull-right= link-to 'restaurants.show' restaurant
