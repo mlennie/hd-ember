@@ -104,5 +104,3 @@ br
 					li.list-group-item
 						p 
 							=model.description
-			
->>>>>>> master
