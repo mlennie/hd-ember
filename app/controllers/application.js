@@ -35,6 +35,13 @@ export default Ember.Controller.extend(SearchMixin,{
     }
   }.property('currentPath'),
 
+  //get nav collaps button class
+  collapseButton: function() {
+    if (this.get('currentPath') !== 'index') {
+      return 'white-collapse-button';
+    } 
+  }.property('currentPath'),
+
   //get background color
   backgroundColor: function() {
     if (this.get('currentPath') === 'register' ||

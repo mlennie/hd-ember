@@ -12,6 +12,15 @@ div.container-fluid.fixed-nav > nav > div > div.navbar-header > button {
     background-color: #fff;
   }
 
+  &.white-collapse-button {
+    background-color: #fff;
+    border: 1px solid #000;
+
+    .icon-bar {
+      background-color: #000;
+    }
+  }
+
 }
 
 #navbar-collapse-1 {
