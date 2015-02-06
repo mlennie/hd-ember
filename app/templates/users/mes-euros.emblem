@@ -1,14 +1,12 @@
 .container-fluid.mes-euros
+	.visible-xs-block#mobile-balance
+		.row
+			h3.pull-left Vous avez actuellement: 
+			= partial 'users/balance'
 	.row
 		.col-8-box.grey-background
-			#gold-euros-box.pull-right
-				if hasBalance
-					span.gold-balance
-						= balance
-						| €
-				else
-					span.gold-balance
-						| 00,00€
+			.hidden-xs
+				= partial 'users/balance'
 			h2.no-margin
 				span.users-title
 					if session.currentUser.isOwner
