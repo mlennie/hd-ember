@@ -34,8 +34,10 @@ export default Ember.Controller.extend({
 
     if (name === '75017' || name === '75008') {
       return restaurants.filterBy('zipcode', name);
-    } else {
+    } else if (name !== null) {
       return restaurants.filterBy('name', name);
+    } else {
+      return restaurants;
     }
   }.property('name', 'model'),
 
