@@ -27,7 +27,7 @@
 				.col-md-4
 					.description-title
 						| Description et Histoire
-					p 
+					p.description
 						=model.description
 				.pull-right
 					button.btn.register-gold.center data-toggle="popover" data-placement="top" data-trigger="focus" title="Please phone" data-content="09 90 90 87 85" 
