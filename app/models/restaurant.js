@@ -20,5 +20,9 @@ export default DS.Model.extend({
   shortDescription: function() {
     var description = this.get('description');
     return description.split(' ').slice(0,25).join(' ');
+  }.property('description'),
+  shortMobileDescription: function() {
+    var description = this.get('description');
+    return description.split(' ').slice(0,15).join(' ');
   }.property('description')
 });

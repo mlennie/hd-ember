@@ -2,21 +2,21 @@
 	.restaurant-box.grey-background.padding-15
 		.row.corner-ribbon.top-right.sticky.black 
 			.gold-border 10%
-		.col-sm-8
-			.restaurant-img-container
-				img.restaurant-search-pic src={restaurant.imgUrl} 
-		.col-sm-4
-			h4.margin-top-60
+		.col-sm-8.restaurant-img-container
+			img.restaurant-search-pic src={restaurant.imgUrl} 
+		.col-sm-4#restaurant-list-info
+			h4.restaurant-title-container
 				span.restaurant-title 
 					=restaurant.name
 			p 
 				=restaurant.cuisine
 			p.address 
 				=restaurant.fullAddress
-			br
-			br
-			p
+			p.visible-md-block.visible-lg-block
 				= restaurant.shortDescription
+				|  ...
+			p.visible-xs-block.visible-sm-block.description
+				= restaurant.shortMobileDescription
 				|  ...
 			.pull-right= link-to 'restaurants.show' restaurant
 				button.btn.register-gold.center Réserver
