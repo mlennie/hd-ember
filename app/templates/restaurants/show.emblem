@@ -21,7 +21,6 @@ br
 			| Retour recherches
 		.container#restaurant-show
 			.row
-<<<<<<< HEAD
 				.col-md-12.restaurant-box.grey-background
 					.corner-ribbon.top-right.sticky.black 
 						.gold-border 10%
@@ -35,7 +34,7 @@ br
 						.col-md-4
 							.description-title
 								| Description et Histoire
-							p 
+							p.description 
 								=model.description
 						.pull-right
 							button.btn.register-gold.center data-toggle="popover" data-placement="top" data-trigger="focus" title="Please phone" data-content="09 90 90 87 85" 
@@ -71,18 +70,6 @@ br
 								//label for="name"  Booking name
 								= input class='form-control' value=name placeholder='Booking name' required=true
 							button.btn.btn-success.btn-sm.margin-top-10 type="submit" Reserve
-=======
-				.col-md-8	
-					#restaurant-image style=backgroundUrl
-				.col-md-4
-					.description-title
-						| Description et Histoire
-					p.description
-						=model.description
-				.pull-right
-					button.btn.register-gold.center data-toggle="popover" data-placement="top" data-trigger="focus" title="Please phone" data-content="09 90 90 87 85" 
-						| Réserver
->>>>>>> mobile
 
 //
 	h1.center 
