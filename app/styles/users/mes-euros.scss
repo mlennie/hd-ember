@@ -41,6 +41,7 @@
 
 		p {
 			padding: 15px;
+			margin-top: 40px;
 		}
 
 		.register-gold {
@@ -53,7 +54,7 @@
 	}
 }
 
-@media (max-width: 991px) {
+@media (max-width: 768px) {
 	#mobile-balance {
 		margin-top: 10px;
 	}
@@ -64,12 +65,26 @@
 			margin: 0;
 			padding-left: 15px;
 			margin-top: 15px;
+
+			.users-title {
+				font-size: 0.7em;
+			}
+			p {
+				font-size: 0.9em;
+				margin-top: 10px;
+			}
 		}
 
 		#gold-euros-box {
 			span.gold-balance {
 				font-size: 1.5em;
 			}
+		}
+
+		.register-gold {
+			font-size: 1.1em;
+			margin-top: 20px;
+			margin-bottom: 20px;
 		}
 	}
 }

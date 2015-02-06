@@ -5,8 +5,7 @@ if showTopSearch
 				nav.navbar.grey-background#top-search-medium
 					.row
 						.visible-md-block.visible-lg-block
-							.col-md-1
-							.col-md-10
+							.col-lg-10.col-lg-offset-1.col-md-12
 								form submit='search'
 									span.input_container
 										= bootstrap-datepicker value=date class="input" format="dd/mm/yy" todayBtn=true todayHighlight=true placeholder="Date" language='fr'
