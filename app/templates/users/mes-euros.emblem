@@ -13,8 +13,6 @@
 						| Ma balance
 					else
 						| Mes Euros Collectés
-			br
-			br
 			p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sollicitudin ultricies vestibulum. Proin ultrices pellentesque ligula. Praesent et ante in lorem euismod scelerisque. Aliquam sed luctus lorem. Aliquam erat volutpat. Aliquam gravida malesuada enim, aliquet vehicula justo tempus sit amet. Etiam tristique, dolor ac auctor hendrerit, massa dolor eleifend orci, vel ultricies velit metus id turpis. Curabitur rutrum luctus pharetra. Cras libero elit, rhoncus sed sollicitudin nec, dapibus sit amet nibh. 
 		br
 	.row
@@ -23,10 +21,14 @@
 				span.users-title.users-title-small
 					unless session.currentUser.isOwner
 						| Découvrez le parrainage
-			br
 			p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sollicitudin ultricies vestibulum. Proin ultrices pellentesque ligula. Praesent et ante in lorem euismod scelerisque. Aliquam sed luctus lorem. Aliquam erat volutpat. Aliquam gravida malesuada enim, aliquet vehicula justo tempus sit amet. Etiam tristique, dolor ac auctor hendrerit, massa dolor eleifend orci, vel ultricies velit metus id turpis. Curabitur rutrum luctus pharetra. Cras libero elit, rhoncus sed sollicitudin nec, dapibus sit amet nibh. 
+			.hidden-xs
+				.center= link-to 'users.parrainer-un-ami'
+					button.margin-top-10.btn.register-gold.center.half-width Parrainer mes amis
+	.row.visible-xs-block
+		.col-xs-10.col-xs-offset-1
 			.center= link-to 'users.parrainer-un-ami'
-				button.margin-top-10.btn.register-gold.center.half-width Parrainer mes amis
+				button.margin-top-10.btn.register-gold.center.full-width Parrainer mes amis
 		//
 			if session.currentUser.isOwner
 				br
