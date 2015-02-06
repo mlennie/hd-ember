@@ -20,21 +20,11 @@
 					= filteredRestaurantsLength 
 					| ):
 				.col-md-4.middle-border
-			.row
-				.visible-sm-block.visible-xs-block.col-sm-6.col-sm-offset-3
-					=link-to 'index' 			
-						button.btn.btn-success.full-width.center 
-							| Search Again!
 		br
 		= each restaurant in filteredRestaurants
 			= partial 'restaurants/item' restaurant=restaurant
 		= else
 			.alert.alert-warning Hmmm no restaurants were found with that search
-			.row
-				.visible-sm-block.visible-xs-block.col-sm-6.col-sm-offset-3
-					=link-to 'index' 			
-						button.btn.btn-success.btn-lg.full-width.center 
-							| Search Again!
 		h2#more-restaurants-title.no-margin-top Some more restaurants you might be interested in!
 		= each restaurant in nonFilteredRestaurants
 			= partial 'restaurants/item' restaurant=restaurant

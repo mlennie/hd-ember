@@ -1,22 +1,28 @@
 if showTopSearch
 	if session.isAuthenticated
 		unless session.currentUser.isOwner
-			.visible-md-block.visible-lg-block
-				nav.navbar.padding-10.grey-background#top-search-medium
+			div
+				nav.navbar.grey-background#top-search-medium
 					.row
-						.col-md-1
-						.col-md-10
-							form submit='search'
-								span.input_container
-									= bootstrap-datepicker value=date class="input" format="dd/mm/yy" todayBtn=true todayHighlight=true placeholder="Date" language='fr'
-									span.search-icon = fa-icon 'calendar'
-								span.input_container
-									= view Ember.Select content=hours class="search-select input" prompt="Heure"
-									span.search-icon = fa-icon 'caret-down'
-								span.input_container
-									= view Ember.Select content=couverts class="search-select input"
-									span.search-icon = fa-icon 'caret-down'
-								span.input_container
-									= view Ember.Select prompt="Où ?" content=names valueBinding=name class="search-select input"  
-									span.search-icon = fa-icon 'caret-down'
-								button type="submit" Rechercher
+						.visible-md-block.visible-lg-block
+							.col-md-1
+							.col-md-10
+								form submit='search'
+									span.input_container
+										= bootstrap-datepicker value=date class="input" format="dd/mm/yy" todayBtn=true todayHighlight=true placeholder="Date" language='fr'
+										span.search-icon = fa-icon 'calendar'
+									span.input_container
+										= view Ember.Select content=hours class="search-select input" prompt="Heure"
+										span.search-icon = fa-icon 'caret-down'
+									span.input_container
+										= view Ember.Select content=couverts class="search-select input"
+										span.search-icon = fa-icon 'caret-down'
+									span.input_container
+										= view Ember.Select prompt="Où ?" content=names valueBinding=name class="search-select input"  
+										span.search-icon = fa-icon 'caret-down'
+									button type="submit" Rechercher
+						.visible-xs-block.visible-sm-block
+							=link-to 'index' 	
+								button.btn.btn-info#mobile-top-search-button
+									= fa-icon 'search'
+									|  Rechercher
