@@ -33,21 +33,25 @@
     max-height: 340px;
   }
 
-  .restaurant-title {
-    font-size: 1.5em;
-    font-weight: bold;
-    border-bottom: 1px solid #000;
-  }
+  #restaurant-list-info {
+    margin-top: 60px;
 
-  .address {
-    font-size: 1.3em;
-    font-weight: normal;
-  }
+    .restaurant-title {
+      font-size: 1.5em;
+      font-weight: bold;
+      border-bottom: 1px solid #000;
+    }
 
-  button {
-    margin-top: 30px;
-    margin-right: 10px;
-    font-size: 1.5em;
+    .address {
+      font-size: 1.3em;
+      font-weight: normal;
+    }
+
+    button {
+      margin-top: 30px;
+      margin-right: 10px;
+      font-size: 1.5em;
+    }
   }
 
   /* The ribbons */
@@ -84,13 +88,16 @@
 
 @media (max-width: 991px) {
   .restaurant-img-container {
-    width: 70%;
-    height: 70%;
+    width: 80%;
+    height: 100%;
     overflow: hidden; 
     margin: 0 auto;
+    padding: 0;
   }
 
   .restaurant-box {
+    max-height: 550px;
+
     .corner-ribbon {
       font-size: 1.5em;
       line-height: 1.3;
@@ -104,6 +111,36 @@
         border-top: 1px dashed #CA9956;
         border-bottom: 1px dashed #CA9956;
         margin: 3px 5px;
+      }
+    }
+
+    #restaurant-list-info {
+      padding: 0;
+      margin-top: 0px;
+
+      .restaurant-title-container {
+        margin-top: 5px;
+
+        .restaurant-title {
+          font-size: 1.1em;
+          margin: 0;
+          padding: 0;
+        }
+      }
+
+      .address {
+        font-size: 1.1em;
+        font-weight: 900;
+      }
+
+      .description {
+        font-size: 0.8em;
+      }
+
+      button {
+        margin-top: 10px;
+        margin-right: 0px;
+        font-size: 1.2em;
       }
     }
   }
