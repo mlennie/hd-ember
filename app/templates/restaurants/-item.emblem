@@ -1,4 +1,4 @@
-.row.margin-bottom-20
+.row.margin-bottom-20 = link-to 'restaurants.show' restaurant
 	.restaurant-box.grey-background.padding-15
 		.row.corner-ribbon.top-right.sticky.black 
 			.gold-border 10%
@@ -18,12 +18,9 @@
 			p.visible-xs-block.visible-sm-block.description
 				= restaurant.shortMobileDescription
 				|  ...
-			.pull-right= link-to 'restaurants.show' restaurant
-				button.btn.register-gold.center Réserver
-
-
-
-
+			.pull-right
+				button.btn.register-gold.center data-toggle="popover" data-placement="top" data-trigger="focus" title="Please phone" data-content="09 90 90 87 85" 
+					| Réserver
 
 //li.list-group-item
 	.row
