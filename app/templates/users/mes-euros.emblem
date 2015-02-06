@@ -7,7 +7,8 @@
 						= balance
 						| €
 				else
-					span.margin-left-10 No euros yet!! Get to work!
+					span.gold-balance
+						| 00,00€
 			h2.no-margin
 				span.users-title
 					if session.currentUser.isOwner

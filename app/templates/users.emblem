@@ -15,7 +15,7 @@ else
 	br
 .container-fluid.margin-top-10
 	.row
-		.col-sm-4
+		.col-sm-4.hidden-xs
 			nav.horizontal-nav.grey-background
 				span.nav-title = session.currentUser.fullName
 				ul
