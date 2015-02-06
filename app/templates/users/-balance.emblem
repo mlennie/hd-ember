@@ -1,0 +1,8 @@
+#gold-euros-box.pull-right
+	if hasBalance
+		span.gold-balance
+			= balance
+			| €
+	else
+		span.gold-balance
+			| 00,00€

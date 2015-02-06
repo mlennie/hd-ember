@@ -11,9 +11,7 @@ else
 	br
 	br
 	br
-	br
-	br
-.container-fluid.margin-top-10
+.container-fluid#users-page
 	.row
 		.col-sm-4.hidden-xs
 			nav.horizontal-nav.grey-background
@@ -29,5 +27,5 @@ else
 						=link-to 'users.edit' | Mon Profil 
 					li.nav-link
 						=link-to 'users.parrainer-un-ami' | Parrainer un ami 
-		.col-sm-8.padding-left-5
+		.col-sm-8.col-xs-12
 			==outlet
