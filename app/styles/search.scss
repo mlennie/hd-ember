@@ -234,6 +234,20 @@
     height: 42.5px; 
     min-height: 0;
   }
+
+  #search-results-title {
+    font-size: 1.1em !important;
+    padding-top: 5px;
+    padding-right: 0;
+    padding-left: 0;
+    margin-bottom: 10px;
+    font-weight: 900;
+  }
+
+  #restaurant-list {
+    margin: 20px;
+    margin-top: 0;
+  }
 }
 
 
