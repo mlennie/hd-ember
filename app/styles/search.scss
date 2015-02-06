@@ -117,6 +117,18 @@
 }
 
 #top-search-medium {
+  padding: 10px;
+
+  #mobile-top-search-button {
+    width: 140px;
+    height: 35px;
+    padding: 2px;
+    margin-top: 2.5px;
+    margin-bottom: 2.5px;
+    float: right;
+    margin-right: 7%;
+    font-size: 1.1em;
+  }
 
   .input_container {
 
@@ -213,6 +225,15 @@
 
 .search-select {
   height: 100%;
+}
+
+/* MEDIA QUERIES */
+@media (max-width: 991px) {
+  nav#top-search-medium.navbar.grey-background {
+    padding: 0px;
+    height: 42.5px; 
+    min-height: 0;
+  }
 }
 
 
