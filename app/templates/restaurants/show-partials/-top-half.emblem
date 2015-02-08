@@ -1,17 +1,3 @@
-.visible-md-block.visible-lg-block
-	br
-	br
-	br
-	br
-	br
-	br
-.visible-sm-block.visible-xs-block
-	br
-	br
-	br
-.back-link=link-to 'restaurants.search-results'
-	span.back-caret= fa-icon 'caret-left'
-	| Retour recherches
 .container#restaurant-show
 	.row
 		.col-md-12.restaurant-box.grey-background

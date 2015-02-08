@@ -55,6 +55,18 @@
 	}
 }
 
+/* MENU */
+
+#menu {
+	padding: 10px;
+	margin-top: 30px;
+
+	#menu-inner-box {
+		border: 1px solid #999;
+		padding: 10px;
+	}
+}
+
 @media (max-width: 991px) {
 
 	#restaurant-show {
