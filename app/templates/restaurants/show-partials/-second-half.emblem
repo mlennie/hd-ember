@@ -1,0 +1,18 @@
+= firstMenu.title
+br
+= firstMenu.description
+br
+each item in orderveMenuItems
+	= partial 'restaurants/show-partials/menu-item'
+br
+each item in entreeMenuItems
+	= partial 'restaurants/show-partials/menu-item'
+br
+each item in principauxMenuItems
+	= partial 'restaurants/show-partials/menu-item'
+br
+each item in dessertMenuItems
+	= partial 'restaurants/show-partials/menu-item'
+br
+each item in boissonMenuItems
+	= partial 'restaurants/show-partials/menu-item'

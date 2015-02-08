@@ -1,1 +1,2 @@
-= partial 'restaurants/show-partials/top-half' model=model
+= partial 'restaurants/show-partials/top-half' 
+= partial 'restaurants/show-partials/second-half'
