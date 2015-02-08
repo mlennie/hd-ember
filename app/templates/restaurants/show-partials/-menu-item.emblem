@@ -1,3 +1,9 @@
-= item.name
-= item.description
-= item.price
+table
+	td.description-td
+		| - 
+		= item.description
+	td.no-padding
+		.pull-right.menu-item-price
+			= item.price
+			| €
+.margin-bottom-5

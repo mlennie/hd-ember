@@ -1,0 +1,6 @@
+if array
+	h4.center.category-menu = title
+	each item in array
+		= partial 'restaurants/show-partials/menu-item'
+		br
+	br

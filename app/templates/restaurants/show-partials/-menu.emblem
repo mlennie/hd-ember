@@ -1,0 +1,13 @@
+.grey-background#menu
+	h2.no-margin.center 
+		span#menu-main-title.center Menu selection
+	#menu-inner-box
+		= firstMenu.title
+		br
+		= firstMenu.description
+		br
+		= menu-category array=orderveMenuItems title="Les hors d'oeuvres"
+		= menu-category array=entreeMenuItems title="Les entrées"
+		= menu-category array=principauxMenuItems title="Les plats principaux"
+		= menu-category array=dessertMenuItems title="Les desserts"
+		= menu-category array=boissonMenuItems title="Les boissons"
