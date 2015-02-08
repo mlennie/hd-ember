@@ -46,5 +46,5 @@
 						else
 							li class={navbarClass} #{ link-to 'login' | Connection }
 							li class={navbarClass} #{ link-to 'register' | Inscription }
-	= partial 'search-bar' 
+	= partial 'application-partials/search-bar' 
 						

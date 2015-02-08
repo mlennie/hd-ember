@@ -1,0 +1,35 @@
+.visible-md-block.visible-lg-block
+	br
+	br
+	br
+	br
+	br
+	br
+.visible-sm-block.visible-xs-block
+	br
+	br
+	br
+.back-link=link-to 'restaurants.search-results'
+	span.back-caret= fa-icon 'caret-left'
+	| Retour recherches
+.container#restaurant-show
+	.row
+		.col-md-12.restaurant-box.grey-background
+			.corner-ribbon.top-right.sticky.black 
+				.gold-border 10%
+			h1
+				=model.name
+			p.address
+				=model.fullAddress
+			.row
+				.col-md-8	
+					#restaurant-image style=backgroundUrl
+				.col-md-4
+					.description-title
+						| Description et Histoire
+					p.description
+						=model.description
+				.pull-right
+					button.btn.register-gold.center data-toggle="popover" data-placement="top" data-trigger="focus" title="Please phone" data-content="09 90 90 87 85" 
+						| Réserver
+			
