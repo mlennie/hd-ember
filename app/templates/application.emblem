@@ -1,8 +1,8 @@
-partial 'nav-bar' 
+partial 'application-partials/nav-bar' 
 div class=backgroundColor 
 	== outlet
-partial 'cookie-message' 
-partial 'footer' 
+partial 'application-partials/cookie-message' 
+partial 'application-partials/footer' 
 
 
 
