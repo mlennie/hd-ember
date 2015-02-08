@@ -4,7 +4,10 @@ export default Ember.Controller.extend({
 
   queryParams: ['date', 'time', 'number', 'discount'],
   
-  //properties
+  //
+  //PROPERTIES
+  //
+  
   date: null,
   time: null,
   number: null,
@@ -17,7 +20,51 @@ export default Ember.Controller.extend({
   showReservationName: false,
   calendarDate: null,
 
-	//computed properties
+	//
+  //COMPUTED PROPERTIES
+  //
+
+  //get background url to use as restaurant image
+  backgroundUrl: function() {
+    return 'background-image: url(' + this.get('model.imgUrl')+');';
+  }.property('model'),
+
+
+  //
+  //MENU
+  //
+
+  //get first menu for restaurant
+  firstMenu: function() {
+    return this.get('model.menus').get('firstObject');
+  }.property('model'),
+  menuItems: function() {
+    return this.get('firstMenu.menuItems');
+  }.property('firstMenu'),
+
+  //get orderve menu items
+  orderveMenuItems: function() {
+    return this.get('menuItems').filterBy('course', 'Hors_doeuvre');
+  }.property('firstMenu'),
+
+  //get entree menu items
+  entreeMenuItems: function() {
+    return this.get('menuItems').filterBy('course', 'entree');
+  }.property('firstMenu'),
+
+  //get principaux menu items
+  principauxMenuItems: function() {
+    return this.get('menuItems').filterBy('course', 'principaux');
+  }.property('firstMenu'),
+
+  //get boisson menu items
+  boissonMenuItems: function() {
+    return this.get('menuItems').filterBy('course', 'boisson');
+  }.property('firstMenu'),
+
+  //
+  //SERVICES
+  //
 
   //get services
   services: function() {
@@ -28,11 +75,6 @@ export default Ember.Controller.extend({
   serviceStartTimes: function() {
     return this.get('services').getEach('startTime');
   }.property('services'),
-
-  //get background url to use as restaurant image
-  backgroundUrl: function() {
-    return 'background-image: url(' + this.get('model.imgUrl')+');';
-  }.property('model'),
 
   //array with number of services with given date
   //used to find number of buttons to show for each service
