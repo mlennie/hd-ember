@@ -29,6 +29,11 @@ export default Ember.Controller.extend({
   }.property('firstMenu'),
 
   //get boisson menu items
+  dessertMenuItems: function() {
+    return this.get('menuItems').filterBy('course', 'dessert');
+  }.property('firstMenu'),
+
+  //get boisson menu items
   boissonMenuItems: function() {
     return this.get('menuItems').filterBy('course', 'boisson');
   }.property('firstMenu'),

@@ -1,21 +1,13 @@
 .grey-background#menu
-	h4.center Menu selection
+	h2.no-margin.center 
+		span#menu-main-title.center Menu selection
 	#menu-inner-box
 		= firstMenu.title
 		br
 		= firstMenu.description
 		br
-		each item in orderveMenuItems
-			= partial 'restaurants/show-partials/menu-item'
-		br
-		each item in entreeMenuItems
-			= partial 'restaurants/show-partials/menu-item'
-		br
-		each item in principauxMenuItems
-			= partial 'restaurants/show-partials/menu-item'
-		br
-		each item in dessertMenuItems
-			= partial 'restaurants/show-partials/menu-item'
-		br
-		each item in boissonMenuItems
-			= partial 'restaurants/show-partials/menu-item'
+		= menu-category array=orderveMenuItems title="Les hors d'oeuvres"
+		= menu-category array=entreeMenuItems title="Les entrées"
+		= menu-category array=principauxMenuItems title="Les plats principaux"
+		= menu-category array=dessertMenuItems title="Les desserts"
+		= menu-category array=boissonMenuItems title="Les boissons"
