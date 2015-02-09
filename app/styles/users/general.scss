@@ -2,6 +2,12 @@
 	margin-top: 50px;
 }
 
+#user-edit {
+	.register-gold {
+		font-size: 1.2em;
+	}
+}
+
 #profile-title {
   margin-top: 0;
 }
@@ -13,8 +19,13 @@
   margin-left: 10px;
 }
 
-.share-buttons{
+.share-buttons {
 	list-style: none;
+}
+
+.form-labels {
+	font-size: 1.3em;
+	font-weight: normal;
 }
 
 .share-buttons li {
@@ -89,9 +100,20 @@
 	}
 }
 
+@media (max-width: 900px) {
+	#user-edit {
+		.register-gold {
+			font-size: 1em;
+		}
+	}
+}
+
 @media (max-width: 768px) {
 	#users-page {
 		margin-top: 0px;
+	}
+	.form-labels {
+		margin-top: 35px;
 	}
 }
 
