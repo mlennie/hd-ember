@@ -35,7 +35,8 @@
 
 		#parrainez-center-text {
 			text-align: center;
-			font-size: 1.5em;
+			font-size: 1.6em;
+			font-weight: bold;
 			margin-top: 40px;
 			text-transform: uppercase;
 		}
@@ -77,6 +78,11 @@
 			margin: 0;
 			padding-left: 15px;
 			margin-top: 15px;
+
+			#parrainez-center-text {
+				font-size: 1.5em;
+				font-weight: normal;
+			}
 
 			.users-title {
 				font-size: 0.7em;
