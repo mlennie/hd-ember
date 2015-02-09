@@ -12,5 +12,6 @@
 .back-link=link-to 'restaurants.search-results'
 	span.back-caret= fa-icon 'caret-left'
 	| Retour recherches
-= partial 'restaurants/show-partials/top-half' 
-= partial 'restaurants/show-partials/second-half'
+#restaurant-show
+	= partial 'restaurants/show-partials/top-half' 
+	= partial 'restaurants/show-partials/second-half'
