@@ -1,7 +1,10 @@
-.container
+.container#second-half
 	.row
 		.col-sm-6
-			//description and map
+			.description-title
+				| Description et Histoire
+			p.description
+				=model.description
 		.col-sm-6
 			= partial 'restaurants/show-partials/menu'
 			
