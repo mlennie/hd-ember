@@ -13,13 +13,20 @@
   margin-left: 10px;
 }
 
+.share-buttons{
+	list-style: none;
+}
+
+.share-buttons li{
+	display: inline;
+}
+
 .horizontal-nav {
 	margin-left: 20px;
 	padding: 10px;
 
 	.nav-title {
 		font-size: 1.5em;
-		border-bottom: 1px solid #44A9F9;
 		text-transform: capitalize;
 		margin-left: 10px;
 		padding-bottom: 2px;

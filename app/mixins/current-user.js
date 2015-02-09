@@ -22,22 +22,9 @@ export default Ember.Mixin.create({
 		var restaurants = this.get('currentUser.restaurants');
 		return restaurants.get('firstObject');
 	}.property('currentUser.restaurants'),
-	referralCodeUrl: function() {
-		var url = ENV.APP.EMBER_URL;
-		var registerUrl = url + '/register';
-		var referral_code = this.get('currentUser.referralCode');
-		return registerUrl + '?referralCode=' + referral_code;
-	}.property('currentUser'),
 	gender: function() {
 		return this.get('currentUser.gender');
 	}.property('currentUser.gender'),
-	emailReferralMessage: function() {
-		var mail = "mailto:yourfriends@mail.com?";
-		var subject = "subject=Eat out with Happy Dining!&";
-		var body = "body=Please sign up for happy dining. You get money for eating out and if you sign up I get money too!";
-		var link = "Just click here: " + this.get('referralCodeUrl'); 
-		return mail + subject + body + link;
-	}.property('referralCodeUrl'),
 
 	//wallet
   wallet: function() {
