@@ -1,0 +1,28 @@
+#concept {
+
+	border-top: 5px solid #eee;
+
+	#concept-title {
+		text-transform: uppercase;
+		border-bottom: 1px solid #CB9A4E;
+	}
+
+	#concept-gold-titles {
+		margin-top: 20px;
+		color: #CB9A4E;
+		text-align: center;
+		font-size: 2.3em;
+
+		.concept-circle {
+			margin-right: 10px;
+			border-radius: 50px;
+			border: 1px solid #CB9A4E;
+
+			&.circle-1 { padding: 0px 13px; }
+
+			&.circle-2 { padding: 0px 11px; }
+
+			&.circle-3 { padding: 0px 12px 2px 12px; }
+		}
+	}
+}

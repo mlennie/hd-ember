@@ -1,0 +1,16 @@
+.container#concept
+	.row
+		h1.center
+			span#concept-title Le Concept
+	.row#concept-gold-titles
+		.col-sm-4
+			span.concept-circle.circle-1 1
+			span Reservez
+		.col-sm-4
+			span.concept-circle.circle-2 2
+			span Recevez
+		.col-sm-4
+			span.concept-circle.circle-3 3
+			span Profitez
+	.row#concept-images
+		
