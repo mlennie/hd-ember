@@ -13,5 +13,5 @@ export default Ember.View.extend({
 		Ember.$('.navbar-collapse .dropdown-menu').click(function(){
     	Ember.$(".navbar-collapse").collapse('hide');
 		});
-	}.on('didInsertElement'),
+	}.on('didInsertElement')
 });
