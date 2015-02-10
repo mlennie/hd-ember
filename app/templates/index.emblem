@@ -3,7 +3,9 @@
 		partial 'index-partials/logged-in-index'
 	else
 		partial 'index-partials/not-logged-in-index'
-partial 'index-partials/concept'
+.container-fluid
+	partial 'index-partials/concept'
+
 
 
 
