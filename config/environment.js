@@ -6,6 +6,9 @@ module.exports = function(environment) {
     environment: environment,
     baseURL: '/',
     locationType: 'auto',
+    mixpanel: {
+      token: '71aac3e175ed8f2f524fa6641358284b'
+    }, 
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build

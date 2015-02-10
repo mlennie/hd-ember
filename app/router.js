@@ -1,7 +1,8 @@
 import Ember from 'ember';
+import TrackingMixin from './mixin/tracking_mixin'
 import config from './config/environment';
 
-var Router = Ember.Router.extend({
+var Router = Ember.Router.extend(TrackingMixin,{
   location: config.locationType
 });
 
