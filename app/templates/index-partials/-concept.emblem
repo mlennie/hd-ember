@@ -1,0 +1,32 @@
+.container-fluid#concept
+	.row
+		h1.center
+			span#concept-title Le Concept
+	.row#concept-images
+		.col-sm-4
+			#concept-gold-titles
+				span.concept-circle.circle-1 1
+				span Reservez
+			img.img-responsive.border src="/assets/images/illustration_one.jpeg" alt="step one reserve"
+			#concept-gold-subtitles
+				p Reservez un restaurant
+				p sur happydining.fr ou par téléphone
+		.col-sm-4
+			#concept-gold-titles
+				span.concept-circle.circle-2 2
+				span Recevez
+			img.img-responsive.border src="/assets/images/illustration_two.jpeg" alt="step two eat"
+			#concept-gold-subtitles
+				p Recevez personnellement
+				p 10% à 30% de l'addition sur votre compte 
+		.col-sm-4
+			#concept-gold-titles
+				span.concept-circle.circle-3 3
+				span Profitez
+			img.img-responsive src="/assets/images/illustration_three.jpeg" alt="step three get money and eat for free"
+			#concept-gold-subtitles
+				p Profitez dans un de nos restaurants
+				p partenaires
+br
+br
+
