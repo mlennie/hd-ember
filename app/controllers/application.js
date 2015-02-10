@@ -2,7 +2,7 @@ import Ember from 'ember';
 import SearchMixin from '../mixins/search';
 
 export default Ember.Controller.extend(SearchMixin,{
-	
+
 	//computed properties
 	showCookieMessage: function() {
 		//get cookieAccepted cookie and if not there (cookies not accepted)
@@ -66,6 +66,40 @@ export default Ember.Controller.extend(SearchMixin,{
   		var cookie = this.get('cookie');
 	    cookie.setCookie('cookiesAccepted', true);
 	    this.set('showCookieMessage', false);
-  	}
+  	},
+
+    goToIndex: function() {
+      this.transitionToRoute('index', { queryParams: {concept: null}});
+      Ember.$(window).scrollTop(0);
+    },
+
+    scrollToConcept: function() {
+      Ember.$(document).ready(
+        Ember.$('html, body').animate({
+            scrollTop: Ember.$("#concept").offset().top
+        }, 750)
+      )
+    },
+
+     //allow clicking of link with specific id to go to that part of page
+    jumpToConcept : function(){
+      if (this.get('currentPath') === 'index') {
+        this.send('scrollToConcept');
+      } else {
+        this.transitionToRoute('index', { queryParams: {concept: true}});
+      }
+    }
   }
 });
+
+/*
+alert('jumpin');
+        if (this.get('onIndex') === false) {
+          this.set('onIndex', true);
+          this.transitionToRoute('index' { queryParams: {concept=true}});
+          Ember.$(document).ready(
+            Ember.$('html, body').animate({
+                scrollTop: Ember.$("#concept").offset().top
+            }, 750)
+          )
+        }*/

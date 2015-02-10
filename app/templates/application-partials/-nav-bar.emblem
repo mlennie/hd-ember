@@ -7,8 +7,9 @@
 					span.icon-bar
 					span.icon-bar
 					span.icon-bar
-				#logo-link=link-to 'index'
-					h3 id={logoClass} Happy Dining
+				#logo-link
+					a click=goToIndex
+						h3 id={logoClass} Happy Dining
 			.hidden-xs
 				ul.nav.navbar-nav.navbar-right
 					if session.isAuthenticated
@@ -28,6 +29,9 @@
 								li
 									a{action 'invalidateSession'} Se déconnecter
 					else
+						li class={navbarClass}
+							a#concept-link click=jumpToConcept
+								| Le Concept 
 						li class={navbarClass} #{ link-to 'login' | Connection }
 						li class={navbarClass} #{ link-to 'register' | Inscription }
 			.visible-xs-block
@@ -44,7 +48,9 @@
 							li
 								a{action 'invalidateSession'} Se déconnecter
 						else
+							li class={navbarClass}
+								a#concept-link click=jumpToConcept
+									| Le Concept
 							li class={navbarClass} #{ link-to 'login' | Connection }
 							li class={navbarClass} #{ link-to 'register' | Inscription }
 	= partial 'application-partials/search-bar' 
-						
