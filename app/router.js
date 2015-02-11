@@ -2,11 +2,9 @@ import Ember from 'ember';
 import config from './config/environment';
 Ember.Route.reopen(
   {
-    //add mixpanel page visiting with page name event
+    //initionalize mixpanel on page view
     beforeModel: function(transition) {
       mixpanel.init(config.APP.MIXPANEL_CODE);
-      this._super(transition);
-      return mixpanel.track("visit" , {pageName: transition.targetName});
     }
   }
 );
