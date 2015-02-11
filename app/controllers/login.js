@@ -35,7 +35,7 @@ export default Ember.Controller.extend(
 			this.get('session').authenticate(this.get('authenticator'), data).then(function() {
 				
 				//Identify user for Mixpanel
-				mixpanel.identify(controller.get('session.currentUser.id'));
+				mixpanel.identify(controller.get('session.user_id'));
 
 				//MIXPANEL: Make a login event
 				mixpanel.track('Login');
