@@ -1,5 +1,14 @@
 import Ember from 'ember';
 import config from './config/environment';
+Ember.Route.reopen(
+  {
+    //add mixpanel page visiting with page name event
+    beforeModel: function(transition) {
+      this._super(transition);
+      return mixpanel.track("visit" , {pageName: transition.targetName});
+    }
+  }
+);
 
 var Router = Ember.Router.extend({
   location: config.locationType
