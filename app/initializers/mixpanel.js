@@ -1,7 +1,6 @@
 export function initialize(container) {
   var router = container.lookup('router:main');
   router.on('didTransition', function() {
-  	alert('transitioned!');
     var page = this.get('url');
     if (!page) {
         var loc = window.location;
