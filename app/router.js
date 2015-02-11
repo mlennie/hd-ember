@@ -5,6 +5,10 @@ Ember.Route.reopen(
     //initionalize mixpanel on page view
     beforeModel: function(transition) {
       mixpanel.init(config.APP.MIXPANEL_CODE);
+      //call mixpanel over https
+      mixpanel.set_config({
+        secure_cookie: true
+      });
     }
   }
 );
