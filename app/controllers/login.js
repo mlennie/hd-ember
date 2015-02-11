@@ -33,6 +33,13 @@ export default Ember.Controller.extend(
 			//set authentication data to send to rails
 			var data = this.getProperties('identification', 'password');
 			this.get('session').authenticate(this.get('authenticator'), data).then(function() {
+				
+				//Identify user for Mixpanel
+				mixpanel.identify(controller.get('session.currentUser.id'));
+
+				//MIXPANEL: Make a login event
+				mixpanel.track('Login');
+
 				controller.setProperties({
 					isLoading: false
 				});
