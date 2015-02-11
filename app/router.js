@@ -5,8 +5,6 @@ Ember.Route.reopen(
     //add mixpanel page visiting with page name event
     beforeModel: function(transition) {
       mixpanel.init(config.APP.MIXPANEL_CODE);
-      this._super(transition);
-      return mixpanel.track("visit" , {pageName: transition.targetName});
     }
   }
 );

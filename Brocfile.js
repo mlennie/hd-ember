@@ -8,11 +8,7 @@ var app = new EmberApp({
 });
 
 //Mixpanel
-app.import({
-  development: 'vendor/scripts/mixpanel-dev.js',
-  production:  'vendor/scripts/mixpanel-prod.js'
-});
-//Mixpanel
+app.import('vendor/scripts/mixpanel.js');
 
 // Bootstrap
 app.import('bower_components/bootstrap-sass-official/assets/javascripts/bootstrap.js');
