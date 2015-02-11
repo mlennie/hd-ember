@@ -78,20 +78,21 @@ export default Ember.Controller.extend({
         //setup callbacks for after user request is sent
         var _this = this;
         var onSuccess = function(user){
-          alert(user["first_name"]);
-          alert(user.firstName);
-          //create a mixpanel alias (assign user id to given profile id)
-          //alert(mixpanel.get_distinct_id());
+
+          //MIXPANEL: create a mixpanel alias (assign user id to given profile id)
           mixpanel.alias(user.id.toString());
-          //mixpanel.identify(user.id.toString());
+          //MIXPANEL: Add registered event
           mixpanel.track('Registered', { 'Made By': 'User' });
+          //MIXPANEL: Add user profile
           mixpanel.people.set({
             'Id': user.id,
-            'First Name': _this.get('firstName'),
-            'Last Name': _this.get('lastName'),
-            'Email': _this.get('email'),
+            '$first_name': _this.get('firstName'),
+            '$last_name': _this.get('lastName'),
+            '$email': _this.get('email'),
             'Gender': _this.get('gender')
           });
+
+          //reset properties
           _this.set('isLoading', false);
           _this.set('registrationFailed', false);
           _this.set('registrationSuccessful', true);
