@@ -1,8 +1,8 @@
-table
-	td.description-td
+.row
+	.col-xs-9
 		| - 
 		= item.description
-	td.no-padding
+	.col-xs-3
 		.pull-right.menu-item-price
 			= item.price
 			| €
