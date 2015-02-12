@@ -42,14 +42,15 @@
             .gold.required-asterix.pull-right *
             = input class='form-control black-border' value=passwordConfirmation placeholder='Confirmation mot de passe' type='password' required=true
           .input-group.full-width.margin-top-20
-            = input class='form-control black-border' value=promotionCode placeholder='Code Promotional'
+            = input class='form-control black-border' value=promotionCode placeholder='Code promotionnel'
           br 
           .black.center.small-text En cliquant sur S'inscrire, vous acceptez
-          .black-link.center.margin-left-10.small-text=link-to 'register' | les conditions générales d'Happy Dining
+          .black-link.center.margin-left-10.small-text=link-to 'register' | les conditions générale d'utilisation de Happy Dining
           button.margin-top-10.btn.register-gold.center.full-width type="submit" S'inscrire
           br
-          span.black.small-text Déja membre?
+          span.black.small-text Déjà membre?
           span.black-link.margin-left-10.small-text=link-to 'login' | Se connecter
           .pull-right.margin-top-10.required-asterix-legend
+            br
             span.gold (*)
             span.margin-left-10 Champs obligatoires

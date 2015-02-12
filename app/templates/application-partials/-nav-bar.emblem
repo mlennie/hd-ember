@@ -32,7 +32,7 @@
 						li class={navbarClass}
 							a#concept-link click=jumpToConcept
 								| Le Concept 
-						li class={navbarClass} #{ link-to 'login' | Connection }
+						li class={navbarClass} #{ link-to 'login' | Connexion }
 						li class={navbarClass} #{ link-to 'register' | Inscription }
 			.visible-xs-block
 				.collapse.navbar-collapse#navbar-collapse-1
@@ -51,6 +51,6 @@
 							li class={navbarClass}
 								a#concept-link click=jumpToConcept
 									| Le Concept
-							li class={navbarClass} #{ link-to 'login' | Connection }
+							li class={navbarClass} #{ link-to 'login' | Connexion }
 							li class={navbarClass} #{ link-to 'register' | Inscription }
 	= partial 'application-partials/search-bar' 
