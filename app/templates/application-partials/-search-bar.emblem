@@ -19,7 +19,7 @@ if showTopSearch
 									span.input_container
 										= view Ember.Select prompt="Où ?" content=names valueBinding=name class="search-select input"  
 										span.search-icon = fa-icon 'caret-down'
-									button type="submit" Rechercher
+									button#top-search-button type="submit" Rechercher
 						.visible-xs-block.visible-sm-block
 							=link-to 'index' 	
 								button.btn.btn-info#mobile-top-search-button
