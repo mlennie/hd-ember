@@ -1,5 +1,5 @@
 .row.margin-bottom-20 = link-to 'restaurants.show' restaurant
-	.restaurant-box.grey-background.padding-15
+	.restaurant-box.grey-background.padding-15.highlighted-border
 		.row.corner-ribbon.top-right.sticky.black 
 			.gold-border 10%
 		.col-sm-8.restaurant-img-container
