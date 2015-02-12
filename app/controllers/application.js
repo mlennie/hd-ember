@@ -54,7 +54,7 @@ export default Ember.Controller.extend(SearchMixin,{
 
   //whether to show top search bar or not
   showTopSearch: function() {
-    return this.get('currentPath') !== 'index'
+    return this.get('currentPath') !== 'index';
   }.property('currentPath'),
 
   //actions
