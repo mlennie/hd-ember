@@ -24,6 +24,6 @@
 			= partial 'restaurants/item' restaurant=restaurant
 		= else
 			.alert.alert-warning Hmmm no restaurants were found with that search
-		h2#more-restaurants-title.no-margin-top Some more restaurants you might be interested in!
+		h2#more-restaurants-title.no-margin-top Vous aimerez aussi :
 		= each restaurant in nonFilteredRestaurants
 			= partial 'restaurants/item' restaurant=restaurant
