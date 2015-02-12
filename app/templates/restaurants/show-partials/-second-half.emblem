@@ -6,5 +6,6 @@
 			p.description
 				=model.description
 		.col-sm-6
-			= partial 'restaurants/show-partials/menu'
+			if firstMenu
+				= partial 'restaurants/show-partials/menu'
 			
