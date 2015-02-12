@@ -1,6 +1,7 @@
 import Ember from 'ember';
+import AuthenticatedRouteMixin from 'simple-auth/mixins/authenticated-route-mixin';
 
-export default Ember.Route.extend({
+export default Ember.Route.extend(AuthenticatedRouteMixin, {
 	resetController: function (controller, isExiting) {
     if (isExiting) {
       // isExiting would be false if only the route's model was changing
@@ -12,6 +13,7 @@ export default Ember.Route.extend({
       });
     }
   },
+
 	setupController: function(controller, model) {
     controller.setProperties({
     	showNoServiceMessage: false
