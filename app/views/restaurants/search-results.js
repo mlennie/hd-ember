@@ -12,7 +12,7 @@ export default Ember.View.extend({
   resetRestaurantSorting: function(){
   	var controller = this.controller;
   	//add click event
-    Ember.$('button#top-search-button').click(function() {
+    Ember.$('body').on('click','button#top-search-button', function() {
     	//load spinner and set timeout
     	Ember.$('.load-spinner').css('display', 'block');
 	    setTimeout(function(){
