@@ -13,9 +13,5 @@ export default Ember.View.extend({
 		Ember.$('.navbar-collapse .dropdown-menu').click(function(){
     	Ember.$(".navbar-collapse").collapse('hide');
 		});
-	}.on('didInsertElement'),
-
-	setHtmlBackgroundColor: function() {
-  	Ember.$('html').css('background-color', '#ECECEC');
-  }.on('didInsertElement')
+	}.on('didInsertElement')
 });
