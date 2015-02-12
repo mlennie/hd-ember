@@ -6,5 +6,12 @@ export default Ember.View.extend({
   		event.preventDefault();
   		event.stopPropagation();
   	});
-  }.observes('controller.filteredRestaurants').on('didInsertElement')
+  }.observes('controller.filteredRestaurants').on('didInsertElement'),
+  
+  resetRestaurantSorting: function(){
+  	var controller = this.controller;
+    Ember.$('button').click(function() {
+    	controller.send('changeSortBy');
+    });
+  }.observes('controller.currentPath').on('didInsertElement')
 });
