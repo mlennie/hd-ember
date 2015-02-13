@@ -3,8 +3,11 @@ import SearchMixin from '../mixins/search';
 
 export default Ember.Controller.extend(SearchMixin,{
 
-  queryParams: ['concept'],
+  queryParams: ['concept', 'confirmation_success', 'confirmation_fail', 'already_logged_in'],
   concept: null,
+  confirmation_success: null,
+  confirmation_fail: null,
+  already_logged_in: null,
   //properties
   mailFailed: false,
   mailSuccessful: false,
