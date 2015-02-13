@@ -18,14 +18,6 @@ export default Ember.Controller.extend(
 	confirmation_fail: false,
 	isLoading: false,
 
-	//Computed Properties
-	//check to see if already logged in and redirect if so
-	//
-		checkForSession: function() {
-			alert('hello');
-		}.observes('currentPath'),
-
-
 	//actions
 	actions: {
 		authenticate: function() {
