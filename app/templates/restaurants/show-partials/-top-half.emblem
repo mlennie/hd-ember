@@ -10,6 +10,6 @@
 			.row
 				.col-md-11
 					#restaurant-image style=backgroundUrl
-				button.btn.register-gold.center data-toggle="popover" data-placement="top" data-trigger="focus" title="Please phone" data-content="09 90 90 87 85" 
+				button.btn.register-gold.center data-toggle="popover" data-placement="top" data-trigger="focus" title="Composez le:" data-content="09 90 90 87 85" 
 					| Réserver
 			

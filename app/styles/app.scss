@@ -88,6 +88,8 @@ h3 {
 
 hr.black-line { border-bottom: 1px solid #000; }
 
+.no-background { background: none !important;}
+
 .grey-background { background-color: #ECECEC; }
 
 .white-background { background-color: #fff; }
@@ -115,6 +117,8 @@ hr.black-line { border-bottom: 1px solid #000; }
 /* margin */
 
 .no-margin { margin: 0 !important; }
+
+.margin-10 { margin: 10 !important; }
 
 .no-margin-top { margin-top: 0 !important; }
 
