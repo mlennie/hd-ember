@@ -20,6 +20,8 @@ export default Ember.Controller.extend(SearchMixin,{
     return this.store.createRecord('contact-email', {});
   }.property(),
 
+  //alreadyLoggedInMessage: func
+
   //actions
   actions: {
     sendContactEmail: function() {
