@@ -13,7 +13,7 @@ export default Ember.Controller.extend(SearchMixin,{
 	}.property('currentPath'),
 
 	//scroll to top of page on page change
-	currentPathChanged: function () {
+	scrollToTop: function () {
     window.scrollTo(0, 0);
   }.observes('currentPath'),
 
