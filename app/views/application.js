@@ -10,7 +10,7 @@ export default Ember.View.extend({
 
 	//close collapsable navbar dropdown when 
 	closeNavbar: function() {
-		Ember.$('.navbar-collapse .dropdown-menu').click(function(){
+		Ember.$('.navbar-collapse, body').click(function(){
     	Ember.$(".navbar-collapse").collapse('hide');
 		});
 	}.on('didInsertElement')

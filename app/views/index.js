@@ -7,6 +7,7 @@ export default Ember.View.extend({
    	Ember.$("#date").mask("99/99/99",{placeholder:"mm/dd/yy"});
 	}.on('didInsertElement'),
 
+	//scroll to concept part of page when concept link clicked
 	scrollToConcept: function() {
 		if (this.controller.get('concept') === 'true') {
 			Ember.$('html, body').animate({

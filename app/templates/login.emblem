@@ -26,7 +26,7 @@
 						.gold.required-asterix.pull-right *
 						= input class='form-control black-border' value=password placeholder='Mot de passe' type='password' required=true
 					.black-link.margin-top-10= link-to 'new-password' | Mot de passe oublié?
-					.black-link= link-to 'resend-confirmation' | Didn't receive confirmation email?
+					.black-link= link-to 'resend-confirmation' | Vous n'avez pas reçu d'email de confirmation?
 					.padding-top-5.input-group#remember-me
 						= input type="checkbox" name="rememberMe"
 						span.margin-left-10 Se souvenir de moi cur cet ordinateur
