@@ -29,7 +29,7 @@
 					.black-link= link-to 'resend-confirmation' | Vous n'avez pas reçu d'email de confirmation?
 					.padding-top-5.input-group#remember-me
 						= input type="checkbox" name="rememberMe"
-						span.margin-left-10 Se souvenir de moi cur cet ordinateur
+						span.margin-left-10 Se souvenir de moi
 					br
 					button.btn.register-gold.center.full-width type="submit" Se Connecter
 					.pull-right.margin-top-10.required-asterix-legend
