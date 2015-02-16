@@ -7,14 +7,14 @@
           li 
             | Cette adresse email est déjà associée à un compte utilisateur. Si vous avez déjà associé un compte à cette adresse email, 
             =link-to 'login' | connectez-vous ici.
-    if registrationSuccessful
+    unless registrationSuccessful
       .alert.alert-success 
         strong Bienvenue chez Happydining.fr
         p Confirmez dès à présent votre inscription en vous rendant dans votre boite mail et en cliquant sur "activer mon compte"
     if isLoading
       h1.center = fa-icon 'fa-spin fa-spinner'
     else
-      unless registrationSuccessful
+      if registrationSuccessful
         .col-md-4.col-md-offset-4#register-form
           p.center Rejoignez-nous:
           form#sign-in-form submit='registerUser'

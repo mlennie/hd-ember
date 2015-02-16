@@ -5,13 +5,13 @@
 				.alert.alert-success Confirmation email has been sent!
 			if emailFailed
 				.alert.alert-danger Confirmation could not be sent. Either email does not exist or this email has already been confirmed. 
-			h3.center Resend Confirmation Email
-			p.center (please be sure to check you spam folder)
+			h3.center Renvoyer un email de confirmation
+			p.center (vérifiez vos spams)
 			form#sign-in-form.no-background submit='resendConfirmationEmail'
 				.input-group.full-width
-						= input class='form-control black-border' value=email placeholder='Addresse email' type='email' required=true
+						= input class='form-control black-border' value=email placeholder='entrer email' type='email' required=true
 				br
-				button.margin-top-10.btn.register-gold.center.full-width type="submit" Resend confirmation email
+				button.margin-top-10.btn.register-gold.center.full-width type="submit" renvoyer un email
 				br
 				br
 				.center= link-to 'login' | retour
