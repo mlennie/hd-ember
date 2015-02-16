@@ -19,7 +19,7 @@
           p.center Rejoignez-nous:
           form#sign-in-form submit='registerUser'
             if genderBlank
-              .alert.alert-danger Gender can't be blank
+              .alert.alert-danger Veuillez indiquer votre civilitè
             span.clear.grey M.
             span.margin-left-10 = radio-button value='Male' checked=gender required=true
             span.margin-left-10.grey Mme.
