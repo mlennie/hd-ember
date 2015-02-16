@@ -12,7 +12,7 @@
       br
       br
       br
-        h1.center Bienvenue chez Happydining.fr
+        h1.center Bienvenue sur Happydining.fr
         br
         h4#confirmation-success-text.center Confirmez dès à présent votre inscription en vous rendant dans votre boite mail et en cliquant sur "activer mon compte"
     if isLoading
