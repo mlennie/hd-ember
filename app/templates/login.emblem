@@ -2,12 +2,12 @@
 	.row
 		if loginError
 			.alert.alert-danger 
-				strong Could not log in. 
+				strong Indentifiants invalides 
 				ul
-					li Please make sure email and password match. 
+					li Veuillez vous assurer que l'email et le mot de passe correspondent.
 					li 
-						| Please make sure you have confirmed your account. If you would like another confirmation email sent to you, please click 
-						= link-to 'resend-confirmation' | here
+						| Veuilliz vous assurer que vous avez confirmer votre compte. Pour recevoir un autre email de confirmation, 
+						= link-to 'resend-confirmation' | cliquez ici
 		if confirmation_success
 			.alert.alert-success Confirmation successful. You can now log into your account. 
 		if confirmation_fail
