@@ -7,7 +7,6 @@
 .visible-sm-block.visible-xs-block
 	br
 	br
-	br
 .container
 	.row#restaurant-list
 		br
