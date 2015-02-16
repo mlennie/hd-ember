@@ -9,7 +9,7 @@
 						| Veuilliz vous assurer que vous avez confirmer votre compte. Pour recevoir un autre email de confirmation, 
 						= link-to 'resend-confirmation' | cliquez ici
 		if confirmation_success
-			.alert.alert-success Confirmation successful. You can now log into your account. 
+			.alert.alert-success Votre compte est dêsormais confirmé. Connectez vous dès maintenant.
 		if confirmation_fail
 			.alert.alert-danger Confirmation failed. Either you have already confirmed your account, or this user does not exist. 
 		if isLoading
