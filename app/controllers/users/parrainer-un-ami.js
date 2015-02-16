@@ -25,10 +25,10 @@ export default Ember.Controller.extend(CurrentUserMixin, {
 
 	//get info for referall email link
 	emailReferralMessage: function() {
-		var mail = "mailto:yourfriends@mail.com?";
-		var subject = "subject=Eat out with Happy Dining!&";
-		var body = "body=Please sign up for happy dining. You get money for eating out and if you sign up I get money too!";
-		var link = "Just click here: " + this.get('referralCodeUrl'); 
+		var mail = "mailto:?";
+		var subject = "subject=Une nouvelle appli à essayer absolument&";
+		var body = "body=Lorsque tu reserves un restaurant avec Happy Dining tu reçois personnellement de 10 à 30 pourcent du montant de l'addition. Si tu t'inscrit avec ce lien tu recevras instantanément 5 euros sur ton compte : ";
+		var link = this.get('referralCodeUrl'); 
 		return mail + subject + body + link;
 	}.property('referralCodeUrl'),
 
