@@ -4,8 +4,7 @@ if showCookieMessage
 			.col-xs-1
 				h3.margin-left-10.pull-right = fa-icon 'info-circle'
 			.col-xs-9
-				strong Happy Dining Cookie Policy
-				p We use cookies to give you the best possible experience on our website. By continuing to browse this site, you give consent for cookies to be used. For more details, including how you can amend your preferences, please read our Cookie Policy.
+				p.small Ce site utilise des cookies pour enregistrer des informations sur votre ordinateur. Parmi ces informations, certaines sont essentielles au bon fonctionnement de notre site. D'autres nous aident à optimiser la visite des utilisateurs. En utilisant ce site, vous acceptez d'utiliser ces cookies. Consultez note politique de confidentialité pour en savoir plus.
 				br
 			.col-xs-1
 				button.pull-right click=closeAndAcceptCookies

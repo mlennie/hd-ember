@@ -14,4 +14,4 @@
 				button.margin-top-10.btn.register-gold.center.full-width type="submit" Resend confirmation email
 				br
 				br
-				.center= link-to 'login' | back
+				.center= link-to 'login' | retour

@@ -3,12 +3,16 @@
 		.col-8-box.grey-background
 			h2.no-margin
 				span.users-title
-					| Découvrez le parrainage
+					strong Parrainer un ami
 			h2#parrainez-center-text
-				| Parrainez un ami pour etre 
+				| Faites découvrir Happy Dining à vos amis. Ils
 				br
-				| credite de 5 euros 
-			p#social-buttons-title Via les reseaux sociaux:
+				| bénéficieront de 5€ crédités sur leur compte Happy 
+				br
+				| Dining. Dès leur première réservation (honorée). vous
+				br
+				| recevrez automatiquement 5€* sur votre compte Happy Dining. 
+			p#social-buttons-title Partagez via les réseaux sociaux:
 			ul.share-buttons.center
 				li 
 					a href={twitterShareUrl} target="_blank" title="Tweet"
@@ -19,7 +23,7 @@
 				li 
 					a href={emailReferralMessage} target="_blank" title="Email"
 						span.envelope = fa-icon 'fa-envelope-o'
-			p.margin-top-20 Ou en envoyant directement votre lien référentiel: 
+			p.margin-top-20 Ou en envoyant directement votre lien référentiel à vos amis: 
 			.white-box
 				= referralCodeUrl
 
