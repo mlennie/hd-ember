@@ -49,6 +49,10 @@ div.container-fluid.fixed-nav > nav > div > div.navbar-header > button {
     background-color: #fff !important;
     border: 1px solid #eee;
 
+    li > a {
+      color: #000 !important;
+    }
+
     ul > li > a {
       color: #333;
       text-align: right;
@@ -93,6 +97,10 @@ li.dropdown.open > a {
 */
 .navbar-white {
   background-color: #fff !important;
+
+  .container-fluid > .navbar-header > button {
+    margin-top: 15px !important;
+  }
 
   & > a {
     color: #000 !important;
