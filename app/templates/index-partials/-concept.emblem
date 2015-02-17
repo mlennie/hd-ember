@@ -5,7 +5,7 @@
 	.row#concept-images
 		.col-sm-4
 			#concept-gold-titles
-				span.concept-circle.circle-1 1
+				img.circle src="/assets/images/num1.png" alt="step two eat" height='30'
 				span Reservez
 			img.img-responsive.border src="/assets/images/illusite1.png" alt="step one reserve"
 			#concept-gold-subtitles
@@ -13,7 +13,7 @@
 				p sur happydining.fr ou par téléphone.
 		.col-sm-4
 			#concept-gold-titles
-				span.concept-circle.circle-2 2
+				img.circle src="/assets/images/num2.png" alt="step two eat" height='30'
 				span Recevez
 			img.img-responsive.border src="/assets/images/illusite2.png" alt="step two eat"
 			#concept-gold-subtitles
@@ -21,7 +21,7 @@
 				p 10% à 30% de l'addition sur votre compte.
 		.col-sm-4
 			#concept-gold-titles
-				span.concept-circle.circle-3 3
+				img.circle src="/assets/images/num3.png" alt="step two eat" height='30'
 				span Profitez
 			img.img-responsive#concept-shrink src="/assets/images/illusite3.png" alt="step three get money and eat for free"
 			#concept-gold-subtitles
