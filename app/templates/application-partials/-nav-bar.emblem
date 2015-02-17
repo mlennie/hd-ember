@@ -9,7 +9,7 @@
 					span.icon-bar
 				#logo-link
 					a click=goToIndex
-						img#logo-image src='https://res.cloudinary.com/happydining/image/upload/v1424185468/logogold_g8zd5e.png' height='65'
+						img#logo-image src='https://res.cloudinary.com/happydining/image/upload/v1424185468/logogold_g8zd5e.png'
 			.hidden-xs
 				ul.nav.navbar-nav.navbar-right
 					if session.isAuthenticated
