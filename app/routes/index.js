@@ -4,7 +4,7 @@ export default Ember.Route.extend({
 	setupController: function(controller, model) {
     controller.setProperties({
     	registrationSuccessful: false,
-    	registrationFailed: false
+    	registrationFailed: false,
     	date: null,
     	time: null,
     	number: null
