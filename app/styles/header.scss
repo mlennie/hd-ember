@@ -2,11 +2,31 @@
   border-radius: 0px;
   margin-bottom: 0;
   width: 100%;
+
+  #gold-menu-box {
+    margin-right: 20px;
+    margin-left: 15px;
+    border: 1px solid #CB9A4E;
+    margin-top: 23px;
+    margin-bottom: 5px;
+    padding: 10px;
+  }
+
+  #logo-image {
+    margin: 10px;
+  }
+
+  #mon-compte-dropdown {
+    margin-top: 10px;
+    margin-right: 15px;
+  }
 }
 
 /*collapse navbar menu button*/
 div.container-fluid.fixed-nav > nav > div > div.navbar-header > button {
   background-color: #000;
+  margin-top: 25px;
+  margin-right: 25px;
 
   .icon-bar {
     background-color: #fff;
@@ -23,6 +43,7 @@ div.container-fluid.fixed-nav > nav > div > div.navbar-header > button {
 
 }
 
+/* Collapsed navbar */
 #navbar-collapse-1 {
     background-color: #fff !important;
     border: 1px solid #eee;
@@ -53,12 +74,13 @@ div.container-fluid.fixed-nav > nav > div > div.navbar-header > button {
 }
 
 div.container-fluid.fixed-nav > nav {
-  background-color: rgba(255, 255, 255, 0.4);
+  background-color: rgba(0, 0, 0, 0.8);
   border: none;
+  border-bottom: 1px solid #fff;
 }
 
 div.container-fluid.fixed-nav > nav.transparent {
-  background-color: rgba(255, 255, 255, 0);
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 li.dropdown.open > a {
@@ -71,12 +93,38 @@ li.dropdown.open > a {
   & > a {
     color: #000 !important;
     font-size: 1.2em;
-    margin-top: 10px;
+    margin-top: 20px;
     text-transform: uppercase;
     
     &.active {
       padding-bottom: 5px;
       border-bottom: 2px solid #CB9A4E;
+      padding-left: 0;
+      padding-right: 0;
+      margin-left: 15px;
+      margin-right: 15px;
+    }
+  }
+
+  .nav-item > a, span.nav-item {
+    color: #000 !important;
+  }
+
+  #gold-menu-box {
+    margin-right: 20px;
+    margin-left: 10px;
+    border: none;
+    margin-top: 25px;
+    margin-bottom: 5px;
+    padding: 10px;
+
+    &.active {
+      padding-bottom: 5px;
+      border-bottom: 2px solid #CB9A4E;
+      padding-left: 0;
+      padding-right: 0;
+      margin-left: 20px !important;
+      margin-right: 30px !important;
     }
   }
 }
@@ -100,6 +148,7 @@ li.dropdown.open > a {
 }
 
 #logo-link > a {
+
   &:link, &:visited, &:active, &:hover {
     text-decoration: none !important;
   }
@@ -107,10 +156,10 @@ li.dropdown.open > a {
 
 .nav-item > a, span.nav-item {
   color: white !important;
-  margin-top: 10px;
-  font-size: 1.5em;
+  margin-top: 20px;
+  font-size: 1.2em;
+  font-weight: 0;
   text-transform: uppercase; 
-  text-shadow: -0.5px -0.5px 4px #333;
 
   &.active {
     padding-bottom: 5px;
