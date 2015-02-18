@@ -7,7 +7,7 @@
 		.col-8-box.grey-background
 			.hidden-xs
 				= partial 'users/balance'
-			h2.no-margin
+			h5.no-margin
 				span.users-title
 					if session.currentUser.isOwner
 						| Ma balance
@@ -19,8 +19,8 @@
 		br
 	.row
 		.col-8-box.grey-background.margin-bottom-20
-			h2.no-margin
-				span.users-title.users-title-small
+			h5.no-margin
+				span.users-title
 					unless session.currentUser.isOwner
 						| LE SAVIEZ VOUS?
 			p.mes-euros-text.margin-top-10 Partager le bon plan Happy Dining permet de gagner encore plus d'euros *.

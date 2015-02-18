@@ -1,7 +1,7 @@
 .container-fluid.mes-euros#user-edit
 	.row
 		.col-8-box.grey-background
-			h2.no-margin
+			h5.no-margin
 				span.users-title
 					| Mon profil
 			if success
@@ -31,13 +31,6 @@
 						button.margin-top-10.btn.register-gold.center.full-width type="submit" Enregistrer les modifications
 						br
 						.pull-right.margin-top-10.required-asterix-legend
-							span.gold (*)
-							span.margin-left-10 Champs obligatoires
-		//
-			h1.center#profile-title Mon Profile
-			br
-			if isLoading
-				h1.center = fa-icon 'fa-spin fa-spinner'
-			else 
-				= partial "users/form" gender=gender email=email lastName=lastName firstName=firstName 
+							span.gold.small (*)
+							span.margin-left-10.small Champs obligatoires
 
