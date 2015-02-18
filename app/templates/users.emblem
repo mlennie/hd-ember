@@ -11,12 +11,11 @@ else
 	br
 	br
 	br
-	br
 .container-fluid#users-page
 	.row
 		.col-sm-4.hidden-xs
 			nav.horizontal-nav.grey-background
-				span.nav-title = session.currentUser.fullName
+				h5.nav-title = session.currentUser.fullName
 				ul
 					li.nav-link
 						=link-to 'users.mes-euros'

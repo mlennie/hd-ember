@@ -73,24 +73,22 @@
 	padding: 10px;
 
 	.nav-title {
-		font-size: 1.5em;
 		text-transform: capitalize;
 		margin-left: 10px;
 		padding-bottom: 2px;
-		font-weight: bold;
 	}
 
 	.nav-link {
 		list-style-type: none;
 		margin-top: 15px;
-		font-size: 1.1em;
+		font-weight: 300;
+		font-size: 1.25em;
 
 		a {
 			color: #000;
 
 			&.active {
-				font-weight: 900;
-				font-size: 1.1em;
+				font-weight: 600;
 			}
 
 			&:link, &:visited, &:active, &:hover {

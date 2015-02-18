@@ -8,8 +8,8 @@
 
 		.gold-balance {
 			color: #CA9956;
-			font-size: 2.2em;
-			font-weight: bold;
+			font-size: 2.1875em;
+			font-weight: 600;
 		}
 	}
 
@@ -30,7 +30,6 @@
 			border-bottom: 1px solid #000;
 			margin-left: 10px;
 			padding-bottom: 2px;
-			font-size: 0.8em;
 		}
 
 		.mes-euros-text {
@@ -52,11 +51,6 @@
 			font-weight: 0;
 		}
 
-		.users-title-small {
-			font-size: 0.8em;
-			font-weight: none;
-		}
-
 		p {
 			padding: 15px;
 			margin-top: 40px;
@@ -64,10 +58,11 @@
 
 		.register-gold {
 			text-transform: none;
-			font-weight: none;
-			font-size: 1.5em;
 			margin-bottom: 10px;
 			text-shadow: none;
+			box-shadow: none;
+			font-weight: 200;
+			font-size: 1.25em;
 		}
 	}
 }
