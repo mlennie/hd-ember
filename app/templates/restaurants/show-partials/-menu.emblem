@@ -1,5 +1,5 @@
 .grey-background#menu
-	h2.no-margin.center 
+	h5.no-margin.center 
 		span#menu-main-title.center Menu selection
 	#menu-inner-box
 		br

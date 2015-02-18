@@ -1,7 +1,7 @@
 .container#second-half
 	.row
 		.col-sm-6
-			.description-title
+			h5.description-title
 				| Description et Histoire
 			p.description
 				=model.description
