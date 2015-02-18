@@ -16,8 +16,8 @@
 			h1.center = fa-icon 'fa-spin fa-spinner'
 		else
 			.col-md-4.col-md-offset-4#register-form
+				h4.center Connectez-vous:
 				br
-				p.center Connectez-vous:
 				form#sign-in-form submit='authenticate'
 					.input-group.full-width
 						.gold.required-asterix.pull-right *
@@ -25,19 +25,19 @@
 					.input-group.full-width
 						.gold.required-asterix.pull-right *
 						= input class='form-control black-border' value=password placeholder='Mot de passe' type='password' required=true
-					.black-link.margin-top-10= link-to 'new-password' | Mot de passe oublié?
-					.black-link= link-to 'resend-confirmation' | Vous n'avez pas reçu d'email de confirmation?
-					.padding-top-5.input-group#remember-me
+					.small.black-link.margin-top-10= link-to 'new-password' | Mot de passe oublié?
+					.small.black-link= link-to 'resend-confirmation' | Vous n'avez pas reçu d'email de confirmation?
+					.small.padding-top-5.input-group#remember-me
 						= input type="checkbox" name="rememberMe"
 						span.margin-left-10 Se souvenir de moi
 					br
 					button.btn.register-gold.center.full-width type="submit" Se Connecter
-					.pull-right.margin-top-10.required-asterix-legend
+					.small.pull-right.margin-top-10.required-asterix-legend
 						span.gold (*)
 						span.margin-left-10 Champs obligatoires
 					.clear
 					br
 					hr.black-line
-					.login-bottom
-						.center.black Pas encore membre?
-						.center.black-link= link-to 'register' | S'inscrire maintenant
+					h6.center
+						.black Pas encore membre?
+						.black-link= link-to 'register' | S'inscrire maintenant
