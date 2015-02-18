@@ -45,6 +45,7 @@
     "broccoli-sass": "^0.3.3",
     "broccoli-static-compiler": "^0.2.1",
     "ember-cli-emblem": "0.0.2",
-    "newrelic": "^1.14.1"
+    "newrelic": "^1.14.1",
+    "node-sass": "^2.0.1"
   }
 }
