@@ -1,10 +1,10 @@
 .container-fluid.mes-euros
 	.row
 		.col-8-box.grey-background
-			h2.no-margin
+			h5.no-margin
 				span.users-title
-					strong Parrainer un ami
-			h2#parrainez-center-text
+					| Parrainer un ami
+			h6#parrainez-center-text
 				| Faites découvrir Happy Dining à vos amis. Ils
 				br
 				| bénéficieront de 5€ crédités sur leur compte Happy 
