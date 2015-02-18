@@ -11,7 +11,6 @@ else
 	br
 	br
 	br
-	br
 .container-fluid#users-page
 	.row
 		.col-sm-4.hidden-xs
