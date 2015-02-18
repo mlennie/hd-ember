@@ -19,6 +19,7 @@ html, body {
   margin: 0px;
   line-height: 1.5;
   font-family: 'Raleway', sans-serif;
+  font-weight: 400;
   font-size: 16px;
 }
 
@@ -33,16 +34,41 @@ body {
 }
 
 h1 {
-  font-size: 3.5em; /* 56px/16=2.5em */
+  font-size: 3.5em !important; /* 56px/16=3.5em */
 }
 
 h2 {
-  font-size: 1.875em; /* 30px/16=1.875em */
+  font-size: 2.5em !important; /* 40px/16=2.5em */
+}
+
+h3 {
+  font-size: 1.875em !important; /* 30px/16=1.875em */
+}
+
+h4 {
+  font-size: 1.875em !important; /* 30px/16=1.875em */
+}
+
+h5 {
+  font-size: 1.5625em !important; /* 25px/16=1.5625 */
+}
+
+h6 {
+  font-size: 1.375em !important; /* 22px/16=1.375em */
 }
 
 p {
-  font-size: 0.875em; /* 14px/16=0.875em */
+  font-size: 0.875em !important; /* 14px/16=0.875em */
 }
+
+.extra-light {
+  font-weight: 200;
+}
+
+.medium {
+  font-weight: 500;
+}
+
 
 .small-text { font-size: 0.8em; }
 

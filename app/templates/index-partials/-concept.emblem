@@ -1,6 +1,6 @@
 .container-fluid#concept
 	.row
-		h1.center
+		h2.center
 			span#concept-title Le Concept
 	.row#concept-images
 		.col-sm-4
