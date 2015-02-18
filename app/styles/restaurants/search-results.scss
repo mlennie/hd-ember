@@ -18,12 +18,12 @@
 }
 
 .middle-border {
-  border-top: 1.5px solid #000;
-  margin-top: 20px;
+  border-top: 1px solid #000;
+  margin-top: 15px;
 }
 
 #search-results-title {
-  font-size: 1.7em;
+  font-weight: 400;
 }
 
 .restaurant-box {
@@ -43,20 +43,15 @@
     color: #000;
 
     .restaurant-title {
-      font-size: 1.5em;
-      font-weight: bold;
       border-bottom: 1px solid #000;
     }
 
     .address {
-      font-size: 1.3em;
-      font-weight: normal;
     }
 
     button {
       margin-top: 30px;
       margin-right: 10px;
-      font-size: 1.5em;
     }
   }
 
@@ -68,7 +63,7 @@
     text-align: center;
     letter-spacing: 1px;
     color: #f0f0f0;
-    font-size: 2em;
+    font-size: 1.5em;
 
     .gold-border {
       border-top: 1px dashed #CA9956;

@@ -10,10 +10,9 @@
 .container
 	.row#restaurant-list
 		br
-		br
 		h1.load-spinner.center = fa-icon 'fa-spin fa-spinner'
 		if filteredRestaurants
-			.row#search-results-message
+			h5.row#search-results-message
 				.col-md-4.col-xs-2.middle-border
 				.col-md-4.col-xs-8.center#search-results-title
 					| Résultat de votre recherche (
