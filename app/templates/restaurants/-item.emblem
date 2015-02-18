@@ -5,12 +5,12 @@
 		.col-sm-8.restaurant-img-container
 			img.restaurant-search-pic src={restaurant.imgUrl} 
 		.col-sm-4#restaurant-list-info
-			h4.restaurant-title-container
+			h4.medium.restaurant-title-container
 				span.restaurant-title 
 					=restaurant.name
 			p 
 				=restaurant.cuisine
-			p.address 
+			h6.address 
 				=restaurant.fullAddress
 			p.visible-md-block.visible-lg-block
 				= restaurant.shortDescription
