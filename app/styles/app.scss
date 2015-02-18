@@ -12,23 +12,6 @@
 @import 'restaurants/show.scss';
 @import 'restaurants/search-results.scss';
 
-/* latin */
-@font-face {
-  font-family: 'Raleway';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Raleway'), url(https://fonts.gstatic.com/s/raleway/v9/QAUlVt1jXOgQavlW5wEfxQLUuEpTyoUstqEm5AMlJo4.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
-}
-
-@font-face {
-  font-family: 'Raleway-light';
-  font-style: normal;
-  font-weight: normal;
-  src: local('Raleway'), url(https://fonts.gstatic.com/s/raleway/v9/QAUlVt1jXOgQavlW5wEfxQLUuEpTyoUstqEm5AMlJo4.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
-}
-
 
 /* GENERAL */
 
@@ -36,6 +19,7 @@ html, body {
   margin: 0px;
   line-height: 1.5;
   font-family: 'Raleway', sans-serif;
+  font-size: 16px;
 }
 
 html {
@@ -49,15 +33,15 @@ body {
 }
 
 h1 {
-  font-size: 2.8em;
+  font-size: 3.5em; /* 56px/16=2.5em */
 }
 
 h2 {
-  font-size: 1.9em;
+  font-size: 1.875em; /* 30px/16=1.875em */
 }
 
-h3 {
-  font-size: 2em;
+p {
+  font-size: 0.875em; /* 14px/16=0.875em */
 }
 
 .small-text { font-size: 0.8em; }
