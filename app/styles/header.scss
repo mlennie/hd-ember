@@ -56,7 +56,7 @@ div.container-fluid.fixed-nav > nav > div > div.navbar-header > button {
     ul > li > a {
       color: #333;
       text-align: right;
-      font-size: 1.2em;
+      font-size: 1.25em;
       border-bottom: 1px solid #eee;
 
       &:hover {
@@ -104,7 +104,7 @@ li.dropdown.open > a {
 
   & > a {
     color: #000 !important;
-    font-size: 1.2em;
+    font-size: 1.25em;
     margin-top: 8px;
     text-transform: uppercase;
     
@@ -179,7 +179,7 @@ li.dropdown.open > a {
 .nav-item > a, span.nav-item {
   color: white !important;
   margin-top: 20px;
-  font-size: 1.2em;
+  font-size: 1.25em !important;
   font-weight: 0;
   text-transform: uppercase; 
 

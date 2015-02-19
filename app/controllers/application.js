@@ -91,15 +91,3 @@ export default Ember.Controller.extend(SearchMixin,{
     }
   }
 });
-
-/*
-alert('jumpin');
-        if (this.get('onIndex') === false) {
-          this.set('onIndex', true);
-          this.transitionToRoute('index' { queryParams: {concept=true}});
-          Ember.$(document).ready(
-            Ember.$('html, body').animate({
-                scrollTop: Ember.$("#concept").offset().top
-            }, 750)
-          )
-        }*/
