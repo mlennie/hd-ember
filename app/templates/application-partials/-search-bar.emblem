@@ -16,6 +16,10 @@ if showTopSearch
 									= view Ember.Select content=couverts class="search-select input"
 									span.search-icon = fa-icon 'caret-down'
 								span.input_container
-									= view Ember.Select prompt="Où ?" content=names valueBinding=name class="search-select input"  
+									select prompt="Où ?" valueBinding=name id="name-select" class="search-select input"
+										option Où
+										= each name in names
+											option value=name id=name
+												= name  
 									span.search-icon = fa-icon 'caret-down'
 								button#top-search-button type="submit" Rechercher
