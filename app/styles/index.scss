@@ -20,6 +20,17 @@
   text-shadow: -1px -1px 10px #333;
 }
 
+#concept-button {
+  margin-top: 30px;
+  padding: 15px;
+
+  .register-gold {
+    padding: 13px 50px 13px 50px;
+    background-color: rgba(85, 90, 96, 0.8);
+    border: 1px solid #000;
+    text-transform: none;
+  }
+}
 .register-gold {
   background-color: #CB9A4E;
   border-radius: 0;
