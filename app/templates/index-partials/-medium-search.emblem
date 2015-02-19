@@ -1,3 +1,4 @@
+h4#main-title.no-transformation Rechercher un restaurant
 #center-search-medium.col-sm-8.col-sm-offset-2
 	form submit='search'
 		span.input_container
@@ -10,3 +11,10 @@
 			= view Ember.Select content=couverts class="search-select input"
 			span.search-icon = fa-icon 'caret-down'
 		button type="submit" Rechercher
+.container
+	.row
+		.col-sm-6.col-sm-offset-3.col-xs-8.col-xs-offset-2
+			#concept-button.center 
+				a click=scrollToConcept
+					button.btn.register-gold.center
+						h5.light.no-margin.center Concept

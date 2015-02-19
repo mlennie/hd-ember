@@ -45,6 +45,15 @@ export default Ember.Controller.extend(SearchMixin,{
       };
 
       ce.save().then(onMailSuccess,onMailFail);
+    },
+
+    //scroll down to concept part of page when concept button clicked
+    scrollToConcept: function() {
+      Ember.$(document).ready(
+        Ember.$('html, body').animate({
+            scrollTop: 520
+        }, 750)
+      )
     }
   }
 });

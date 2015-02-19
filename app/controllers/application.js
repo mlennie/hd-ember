@@ -76,7 +76,7 @@ export default Ember.Controller.extend(SearchMixin,{
     scrollToConcept: function() {
       Ember.$(document).ready(
         Ember.$('html, body').animate({
-            scrollTop: Ember.$("#concept").offset().top
+            scrollTop: 520
         }, 750)
       )
     },
