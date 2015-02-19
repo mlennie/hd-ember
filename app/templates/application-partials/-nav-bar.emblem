@@ -16,7 +16,7 @@
 						li.dropdown
 							a.dropdown-toggle#mon-compte-dropdown href="#" data-toggle="dropdown" role="button" aria-expanded="false"
 								span.nav-icon = fa-icon 'caret-down'
-								span.nav-item Mon compte
+								span.nav-item.no-transformation Mon compte
 							ul.dropdown-menu#main-nav-dropdown role="menu"
 								li = link-to 'users.mes-euros' 
 									if session.currentUser.isOwner

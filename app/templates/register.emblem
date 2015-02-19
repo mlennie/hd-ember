@@ -50,7 +50,7 @@
               .gold.required-asterix.pull-right *
               = input class='form-control black-border' value=passwordConfirmation placeholder='Confirmation mot de passe' type='password' required=true
             if codeBad
-              .alert.alert-danger This Promotional code does not exist.
+              .alert.alert-danger Ce code promotionnel n'existe pas.
             .input-group.full-width.margin-top-20
               = input class='form-control black-border' value=promotionCode placeholder='Code promotionnel'
             br 
