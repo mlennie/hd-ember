@@ -13,5 +13,10 @@ export default Ember.View.extend({
 		Ember.$('html').on('click', '.navbar-collapse', function(){
     	Ember.$(".navbar-collapse").collapse('hide');
 		});
+	}.on('didInsertElement'),
+
+	//style ou form select values
+	styleOuSearchSelect: function() {
+		Ember.$('name-select > option').val('75017').css('font-weight', 900);
 	}.on('didInsertElement')
 });
