@@ -17,6 +17,7 @@ export default Ember.Route.extend(ApplicationRouteMixin, {
     	registrationSuccessful: false,
     	registrationFailed: false,
     	genderBlank: false,
+      codeBad: false,
     	passwordMismatch: false,
     	passwordTooShort: false,
       isLoading: false

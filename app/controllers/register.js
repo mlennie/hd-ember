@@ -9,6 +9,7 @@ export default Ember.Controller.extend({
   registrationSuccessful: false,
   registrationFailed: false,
   genderBlank: false,
+  codeBad: false,
   passwordTooShort: false,
   passwordMismatch: false,
   lastName: '',
@@ -98,10 +99,17 @@ export default Ember.Controller.extend({
           _this.set('registrationSuccessful', true);
         };
 
-        var onFail = function() {
-          _this.set('isLoading', false);
-          _this.set('registrationFailed', true);
-          _this.set('registrationSuccessful', false);
+        var onFail = function(response) {
+          if (response["errors"]["code"] === 'bad') {
+            _this.set('codeBad', true);
+            _this.set('isLoading', false);
+            _this.set('registrationFailed', false);
+            _this.set('registrationSuccessful', false);
+          } else {
+            _this.set('isLoading', false);
+            _this.set('registrationFailed', true);
+            _this.set('registrationSuccessful', false);
+          }
         };
 
         //send user update request
