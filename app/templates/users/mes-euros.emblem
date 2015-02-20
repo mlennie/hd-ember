@@ -39,7 +39,7 @@
 				button.btn.btn-success View history
 			else
 				br 
-				button.btn.btn-success data-toggle="popover" data-placement="bottom" data-trigger="focus" title="Please phone" data-content="09 90 90 87 85"
+				button.btn.btn-success data-toggle="popover" data-placement="bottom" data-trigger="focus" data-html="true" data-original-title="<div class='popover-title'>Composez le:</div>" data-content="<div class='popver-content'>09.52.66.53.19</div>"
 					| Use my euros!
 
 

@@ -1,6 +1,21 @@
 .percent-discount {
   color: red;
 }
+
+.popover-title {
+  font-weight: 400;
+  font-size: 0.6em;
+  font-family: raleway;
+  text-decoration: none;
+  border: none;
+}
+
+.popover-content {
+  font-weight: 600;
+  font-size: 1.5em;
+  font-family: raleway;
+}
+
 .load-spinner {
   display: none;
   color: #CA9956;
