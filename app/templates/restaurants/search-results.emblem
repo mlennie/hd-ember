@@ -7,9 +7,12 @@
 .visible-sm-block.visible-xs-block
 	br
 	br
+br
+.back-link=link-to 'index'
+	span.back-caret= fa-icon 'caret-left'
+	| Retour
 .container
 	.row#restaurant-list
-		br
 		h1.load-spinner.center = fa-icon 'fa-spin fa-spinner'
 		if filteredRestaurants
 			h5.row#search-results-message
