@@ -5,6 +5,13 @@
   display: none;
   color: #CA9956;
 }
+#search-results-message {
+  margin-top: 0;
+}
+
+div.back-link {
+  height: 35px;
+}
 
 .reserve-button {
   margin-top: 25px;
@@ -24,6 +31,8 @@
 
 #search-results-title {
   font-weight: 400;
+  padding-right: 0;
+  padding-left: 0;
 }
 
 .restaurant-box {
