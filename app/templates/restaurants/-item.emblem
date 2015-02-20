@@ -12,7 +12,7 @@
 				=restaurant.cuisine
 			h6.address 
 				=restaurant.fullAddress
-			p.visible-md-block.visible-lg-block
+			p.visible-md-block.visible-lg-block.normal-description
 				= restaurant.shortDescription
 				|  ...
 			p.visible-xs-block.visible-sm-block.description
