@@ -169,6 +169,10 @@ li.dropdown.open > a {
   text-decoration: none;
 }
 
+#logo-link, #concept-link {
+  cursor: pointer;
+}
+
 #logo-link > a {
 
   &:link, &:visited, &:active, &:hover {
