@@ -1,5 +1,5 @@
 if showCookieMessage
-	.cookie.alert.alert-warning.full-width 
+	.cookie.alert.alert-warning.full-width.hidden-xs 
 		.row
 			.col-xs-1
 				h3.margin-left-10.pull-right = fa-icon 'info-circle'

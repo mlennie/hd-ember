@@ -1,4 +1,4 @@
-footer.footer.light-black-background
+footer.footer.light-black-background.hidden-xs
 	.center.margin-top-5
 		span.white.margin-right-10.one-smaller Conditions d'utilisation 
 		span.white.margin-right-10.one-smaller FAQ
