@@ -2,7 +2,7 @@ h4#main-title.no-transformation Rechercher un restaurant
 #center-search-medium.col-sm-8.col-sm-offset-2
 	form submit='search'
 		span.input_container
-			= bootstrap-datepicker value=date class="input" format="dd/mm/yy" todayBtn=true todayHighlight=true placeholder="Date" language='fr'
+			= bootstrap-datepicker value=date class="input" format="dd/mm/yy" todayBtn=false todayHighlight=true placeholder="Date" language='fr'
 			span.search-icon = fa-icon 'calendar'
 		span.input_container
 			= view Ember.Select content=hours class="search-select input" prompt="Heure"
