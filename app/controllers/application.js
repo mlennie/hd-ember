@@ -70,6 +70,11 @@ export default Ember.Controller.extend(SearchMixin,{
 
     goToIndex: function() {
       this.transitionToRoute('index', { queryParams: {concept: null}});
+      this.controllerFor('index').setProperties({
+        confirmation_success: null,
+        confirmation_fail: null,
+        already_logged_in: null
+      });
       Ember.$(window).scrollTop(0);
     },
 
