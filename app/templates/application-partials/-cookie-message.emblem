@@ -1,11 +1,10 @@
 if showCookieMessage
-	.cookie.alert.alert-warning.full-width.hidden-xs 
+	.cookie.alert.alert-warning.hidden-xs 
 		.row
-			.col-xs-1
-				h3.margin-left-10.pull-right = fa-icon 'info-circle'
-			.col-xs-9
-				p.small Ce site utilise des cookies pour enregistrer des informations sur votre ordinateur. Parmi ces informations, certaines sont essentielles au bon fonctionnement de notre site. D'autres nous aident à optimiser la visite des utilisateurs. En utilisant ce site, vous acceptez d'utiliser ces cookies. Consultez note politique de confidentialité pour en savoir plus.
+			.col-xs-11
+				span.small En poursuivant votre navigation sur ce site, vous acceptez l'utilisation de cookies pour vous proposes de contenus et services adapté à vos centres d'intérêts. 
+				span.small.blue En savoir plus et gérer ces paramètres.
 				br
 			.col-xs-1
 				button.pull-right click=closeAndAcceptCookies
-					h3.pull-right = fa-icon 'close'
+					h5.pull-right = fa-icon 'close'

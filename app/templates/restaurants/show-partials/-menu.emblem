@@ -1,6 +1,6 @@
 .grey-background#menu
 	h5.no-margin.center 
-		span#menu-main-title.center Menu selection
+		span#menu-main-title.center Aperçu de la carte
 	#menu-inner-box
 		br
 		br
