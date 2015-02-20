@@ -1,16 +1,19 @@
 .row
 	.col-sm-6.col-sm-offset-3.center
-		if confirmation_success
-			.alert.alert-success.margin-top-60 Confirmation successful. You can now log into this new account once you sign out of your current account. 
-		if confirmation_fail
-			.alert.alert-danger.margin-top-60 Confirmation failed. Either you have already confirmed your account, or this user does not exist. 
 		if already_logged_in
-			.alert.alert-danger.margin-top-10
+			br
+			br
+			.alert.alert-danger.margin-top-60
 				| You are Already logged in as 	
 				= session.currentUser.email		
 				| . If you would like to login as someone else, please logout first.
+		if confirmation_success
+			.alert.alert-success Confirmation successful. You can now log into this new account once you sign out of your current account. 
+		if confirmation_fail
+			.alert.alert-danger Confirmation failed. Either you have already confirmed your account, or this user does not exist. 
 unless session.currentUser.isOwner
-	.visible-md-block.visible-lg-block
-		partial 'index-partials/medium-search'
-	.visible-sm-block.visible-xs-block
-		partial 'index-partials/small-search'
+	unless already_logged_in
+		.visible-md-block.visible-lg-block
+			partial 'index-partials/medium-search'
+		.visible-sm-block.visible-xs-block
+			partial 'index-partials/small-search'
