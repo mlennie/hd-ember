@@ -74,8 +74,13 @@ div.back-link {
     .address {
     }
 
+    .normal-description {
+      height: 120px;
+    }
+
+
     button {
-      margin-top: 30px;
+      margin-top: 25px;
       margin-right: 10px;
       font-size: 1.25em;
       font-weight: 200;
@@ -173,6 +178,9 @@ div.back-link {
       }
     }
   }
+}
+#restaurant-list-info > p.visible-md-block.visible-lg-block.normal-description {
+  height: 120px;
 }
 
 @media (max-width: 600px) {
