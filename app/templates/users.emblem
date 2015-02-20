@@ -26,6 +26,6 @@ else
 					li.nav-link
 						=link-to 'users.edit' | Mon Profil 
 					li.nav-link
-						=link-to 'users.parrainer-un-ami' | Parrainer un ami est en gras
+						=link-to 'users.parrainer-un-ami' | Parrainer un ami
 		.col-sm-8.col-xs-12
 			==outlet
