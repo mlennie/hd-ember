@@ -2,9 +2,11 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
 	setupController: function(controller, model) {
+    controller.controllerFor('application').set('showTopSearch', false);
     controller.setProperties({
     	registrationSuccessful: false,
-    	registrationFailed: false
+    	registrationFailed: false,
+      date: undefined
     });
     this._super(controller, model);
   },

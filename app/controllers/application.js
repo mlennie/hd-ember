@@ -3,6 +3,8 @@ import SearchMixin from '../mixins/search';
 
 export default Ember.Controller.extend(SearchMixin,{
 
+  showTopSearch: false,
+
 	//computed properties
 	showCookieMessage: function() {
 		//get cookieAccepted cookie and if not there (cookies not accepted)
@@ -53,9 +55,13 @@ export default Ember.Controller.extend(SearchMixin,{
   }.property('currentPath'),
 
   //whether to show top search bar or not
-  showTopSearch: function() {
-    return this.get('currentPath') !== 'index';
-  }.property('currentPath'),
+  setShowTopSearch: function() {
+    if (this.get('currentPath') !== 'index') {
+      this.set('showTopSearch', true);
+    } else {
+      this.set('showTopSearch', false);
+    }
+  }.observes('currentPath'),
 
   //actions
   actions: {
@@ -70,6 +76,8 @@ export default Ember.Controller.extend(SearchMixin,{
 
     goToIndex: function() {
       this.transitionToRoute('index', { queryParams: {concept: null}});
+      this.set('showTopSearch', false);
+      this.set('date', undefined);
       this.controllerFor('index').setProperties({
         confirmation_success: null,
         confirmation_fail: null,

@@ -5,7 +5,7 @@ export default Ember.Mixin.create({
 	name: null,
 	zipcodes: ['75016','75017','75008'],
 	cuisines: ['Type de cuisine', 'French', 'Italian', 'World'],
-	date: '',
+	date: null,
 	//setup hours to be shown for select box
 	hours: ['12:00', '12:30','13:00','13:30','14:00','14:30','15:00','15:30','16:00',
 					'16:30','17:00','17:30','18:00','18:30','19:00','19:30','20:00',
