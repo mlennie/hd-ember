@@ -2,11 +2,32 @@
   border-radius: 0px;
   margin-bottom: 0;
   width: 100%;
+
+  #gold-menu-box {
+    margin-right: 20px;
+    margin-left: 15px;
+    border: 1px solid #CB9A4E;
+    margin-top: 23px;
+    margin-bottom: 5px;
+    padding: 10px;
+  }
+
+  #logo-image {
+    margin: 10px;
+    height: 65px;
+  }
+
+  #mon-compte-dropdown {
+    margin-top: 10px;
+    margin-right: 15px;
+  }
 }
 
 /*collapse navbar menu button*/
 div.container-fluid.fixed-nav > nav > div > div.navbar-header > button {
   background-color: #000;
+  margin-top: 25px;
+  margin-right: 25px;
 
   .icon-bar {
     background-color: #fff;
@@ -23,14 +44,19 @@ div.container-fluid.fixed-nav > nav > div > div.navbar-header > button {
 
 }
 
+/* Collapsed navbar */
 #navbar-collapse-1 {
     background-color: #fff !important;
     border: 1px solid #eee;
 
+    li > a {
+      color: #000 !important;
+    }
+
     ul > li > a {
       color: #333;
       text-align: right;
-      font-size: 1.2em;
+      font-size: 1.25em;
       border-bottom: 1px solid #eee;
 
       &:hover {
@@ -53,30 +79,74 @@ div.container-fluid.fixed-nav > nav > div > div.navbar-header > button {
 }
 
 div.container-fluid.fixed-nav > nav {
-  background-color: rgba(255, 255, 255, 0.4);
+  background-color: rgba(0, 0, 0, 0.8);
   border: none;
+  border-bottom: 1px solid #fff;
 }
 
 div.container-fluid.fixed-nav > nav.transparent {
-  background-color: rgba(255, 255, 255, 0);
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 li.dropdown.open > a {
   background-color: rgba(255, 255, 255, 0) !important;
 }
 
+/*
+//WHITE NAVBAR//
+*/
 .navbar-white {
   background-color: #fff !important;
 
+  .container-fluid > .navbar-header > button {
+    margin-top: 15px !important;
+  }
+
   & > a {
     color: #000 !important;
-    font-size: 1.2em;
-    margin-top: 10px;
+    font-size: 1.25em;
+    margin-top: 8px;
     text-transform: uppercase;
     
     &.active {
       padding-bottom: 5px;
       border-bottom: 2px solid #CB9A4E;
+      padding-left: 0;
+      padding-right: 0;
+      margin-left: 15px;
+      margin-right: 15px;
+    }
+  }
+
+  .nav-item > a, span.nav-item {
+    color: #000 !important;
+  }
+
+  #logo-image {
+    margin: 5px;
+    height: 50px;
+  }
+
+  #mon-compte-dropdown {
+    margin-top: 0px;
+    margin-right: 15px;
+  }
+
+  #gold-menu-box {
+    margin-right: 20px;
+    margin-left: 10px;
+    border: none;
+    margin-top: 13px;
+    margin-bottom: 5px;
+    padding: 10px;
+
+    &.active {
+      padding-bottom: 5px;
+      border-bottom: 2px solid #CB9A4E;
+      padding-left: 0;
+      padding-right: 0;
+      margin-left: 20px !important;
+      margin-right: 30px !important;
     }
   }
 }
@@ -84,7 +154,7 @@ li.dropdown.open > a {
 .fixed-nav {
   position: fixed;
   width: 100%;
-  z-index: 3;
+  z-index: 9990000000;
   padding: 0;
 }
 
@@ -99,7 +169,12 @@ li.dropdown.open > a {
   text-decoration: none;
 }
 
+#logo-link, #concept-link {
+  cursor: pointer;
+}
+
 #logo-link > a {
+
   &:link, &:visited, &:active, &:hover {
     text-decoration: none !important;
   }
@@ -107,10 +182,10 @@ li.dropdown.open > a {
 
 .nav-item > a, span.nav-item {
   color: white !important;
-  margin-top: 10px;
-  font-size: 1.5em;
+  margin-top: 20px;
+  font-size: 1.25em !important;
+  font-weight: 0;
   text-transform: uppercase; 
-  text-shadow: -0.5px -0.5px 4px #333;
 
   &.active {
     padding-bottom: 5px;

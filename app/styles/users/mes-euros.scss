@@ -1,0 +1,107 @@
+.mes-euros {
+
+	#gold-euros-box {
+		border: 2px solid #CA9956;
+		background-color: #fff;
+		padding: 5px 20px 10px 20px;
+		margin: 5px 5px 0 0;
+
+		.gold-balance {
+			color: #CA9956;
+			font-size: 2.1875em;
+			font-weight: 600;
+		}
+	}
+
+	#mobile-balance {
+		h3 {
+			text-transform: uppercase;
+			font-size: 1.1em;
+
+		}
+	}
+
+	.col-8-box {
+		padding: 15px;
+		padding-left: 20px;
+		margin-right: 20px;
+
+		.users-title {		
+			border-bottom: 1px solid #000;
+			margin-left: 10px;
+			padding-bottom: 2px;
+		}
+
+		.mes-euros-text {
+			margin: 0;
+			padding-top: 10px;
+			padding-bottom: 5px;
+		}
+
+		#parrainez-center-text {
+			text-align: center;
+			margin-top: 40px;
+			font-weight: 400;
+		}
+
+		#social-buttons-title {
+			margin: 0;
+			font-size: 1.1em;
+			font-weight: 0;
+		}
+
+		p {
+			padding: 15px;
+			margin-top: 40px;
+		}
+
+		.register-gold {
+			text-transform: none;
+			margin-bottom: 10px;
+			text-shadow: none;
+			box-shadow: none;
+			font-weight: 200;
+			font-size: 1.25em;
+		}
+	}
+}
+
+@media (max-width: 768px) {
+	#mobile-balance {
+		margin-top: 10px;
+	}
+
+	.mes-euros {
+
+		.col-8-box {
+			margin: 0;
+			padding-left: 15px;
+			margin-top: 15px;
+
+			#parrainez-center-text {
+				font-size: 1.5em;
+				font-weight: normal;
+			}
+
+			.users-title {
+				font-size: 0.7em;
+			}
+			p {
+				font-size: 0.9em;
+				margin-top: 10px;
+			}
+		}
+
+		#gold-euros-box {
+			span.gold-balance {
+				font-size: 1.5em;
+			}
+		}
+
+		.register-gold {
+			font-size: 1.1em;
+			margin-top: 20px;
+			margin-bottom: 20px;
+		}
+	}
+}

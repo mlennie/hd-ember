@@ -2,22 +2,22 @@
 	.row
 		if loginError
 			.alert.alert-danger 
-				strong Could not log in. 
+				strong Indentifiants invalides 
 				ul
-					li Please make sure email and password match. 
+					li Veuillez vous assurer que l'email et le mot de passe correspondent.
 					li 
-						| Please make sure you have confirmed your account. If you would like another confirmation email sent to you, please click 
-						= link-to 'resend-confirmation' | here
+						| Veuilliz vous assurer que vous avez confirmer votre compte. Pour recevoir un autre email de confirmation, 
+						= link-to 'resend-confirmation' | cliquez ici
 		if confirmation_success
-			.alert.alert-success Confirmation successful. You can now log into your account. 
+			.alert.alert-success Votre compte est dêsormais confirmé. Connectez vous dès maintenant.
 		if confirmation_fail
 			.alert.alert-danger Confirmation failed. Either you have already confirmed your account, or this user does not exist. 
 		if isLoading
 			h1.center = fa-icon 'fa-spin fa-spinner'
 		else
 			.col-md-4.col-md-offset-4#register-form
+				h4.center Connectez-vous:
 				br
-				p.center Connectez-vous:
 				form#sign-in-form submit='authenticate'
 					.input-group.full-width
 						.gold.required-asterix.pull-right *
@@ -25,19 +25,19 @@
 					.input-group.full-width
 						.gold.required-asterix.pull-right *
 						= input class='form-control black-border' value=password placeholder='Mot de passe' type='password' required=true
-					.black-link.margin-top-10= link-to 'new-password' | Mot de passe oublié?
-					.black-link= link-to 'resend-confirmation' | Didn't receive confirmation email?
-					.padding-top-5.input-group#remember-me
+					.small.black-link.margin-top-10= link-to 'new-password' | Mot de passe oublié?
+					.small.black-link= link-to 'resend-confirmation' | Vous n'avez pas reçu d'email de confirmation?
+					.small.padding-top-5.input-group#remember-me
 						= input type="checkbox" name="rememberMe"
-						span.margin-left-10 Se souvenir de moi cur cet ordinateur
+						span.margin-left-10 Se souvenir de moi
 					br
 					button.btn.register-gold.center.full-width type="submit" Se Connecter
-					.pull-right.margin-top-10.required-asterix-legend
+					.small.pull-right.margin-top-10.required-asterix-legend
 						span.gold (*)
 						span.margin-left-10 Champs obligatoires
 					.clear
 					br
 					hr.black-line
-					.login-bottom
-						.center.black Pas encore membre?
-						.center.black-link= link-to 'register' | S'inscrire maintenant
+					h6.center
+						.black Pas encore membre?
+						.black-link= link-to 'register' | S'inscrire maintenant

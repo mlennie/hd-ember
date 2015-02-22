@@ -1,31 +1,31 @@
-.container-fluid
+.container-fluid.mes-euros
 	.row
-		.col-md-8.col-md-offset-2
-			h1.center#profile-title Parrainer un ami
-			br
-			.row
-				.col-sm-12
-					.panel.panel-default
-						.panel-heading.center
-							p Share your referral link with friends to make money!. 
-						.panel-body
-							p 
-								| After a friend that you referred finishes their first reservation you will get money!!  
-							p Send through one of the below social links:
-							br
-							.row
-								.col-sm-2
-									a href="https://twitter.com/share" class="twitter-share-button" data-count="none" data-url={referralCodeUrl} data-text="Sign up for Happy Dining. Get money to eat out! Sign up and I'll get money too!" Tweet
-								.col-sm-2
-									#fb-root
-									.fb-share-button data-href={referralCodeUrl} data-layout="button" 
-								.col-sm-2
-									a href={emailReferralMessage}
-										.btn.btn-danger.btn-xs
-											| @ email
-							br
-							p Or send your referral link yourself:
-							= referralCodeUrl
+		.col-8-box.grey-background
+			h5.no-margin
+				span.users-title
+					| Parrainer un ami
+			p#parrainez-center-text
+				| Faites découvrir Happy Dining à vos amis. Ils
+				br
+				| bénéficieront de 5€ crédités sur leur compte Happy 
+				br
+				| Dining. Dès leur première réservation (honorée). vous
+				br
+				| recevrez automatiquement 5€* sur votre compte Happy Dining. 
+			p#social-buttons-title Choisissez votre lien de parrainage en cliquant dessus :
+			ul.share-buttons.center
+				li 
+					a href={twitterShareUrl} target="_blank" title="Tweet"
+						span.twitter = fa-icon 'twitter'
+				li 
+					a href={facebookShareUrl} target="_blank"
+						span.facebook = fa-icon 'facebook'
+				li 
+					a href={emailReferralMessage} target="_blank" title="Email"
+						span.envelope = fa-icon 'fa-envelope-o'
+			p.margin-top-20 Ou en envoyant directement votre lien référentiel à vos amis: 
+			.white-box
+				= referralCodeUrl
 
 
 

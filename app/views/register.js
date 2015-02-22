@@ -8,5 +8,9 @@ export default Ember.View.extend({
 	    var cookie = this.get('cookie');
 	    cookie.setCookie('referralCode', referralCode);
 	  }
+  }.on('didInsertElement'),
+
+  setHtmlBackgroundColor: function() {
+  	Ember.$('html').css('background-color', '#ECECEC');
   }.on('didInsertElement')
 });

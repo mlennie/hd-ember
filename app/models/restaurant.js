@@ -8,6 +8,7 @@ export default DS.Model.extend({
   street: DS.attr('string'),
   city: DS.attr('string'),
   user: DS.belongsTo('user', {async: true}),
+  menus: DS.hasMany('menu', {async: true}),
   fullAddress: function() {
     var street = this.get('street');
     var city = this.get('city');
@@ -17,5 +18,9 @@ export default DS.Model.extend({
   shortDescription: function() {
     var description = this.get('description');
     return description.split(' ').slice(0,25).join(' ');
+  }.property('description'),
+  shortMobileDescription: function() {
+    var description = this.get('description');
+    return description.split(' ').slice(0,15).join(' ');
   }.property('description')
 });

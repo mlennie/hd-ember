@@ -1,0 +1,12 @@
+h1#main-title L'addition qui rapporte
+h6#second-home-title
+	| Réservez pour vous, vos amis, vos clients 
+	br
+	| et recevez personnellement un pourcentage de l'addition.  
+br
+br
+br
+.col-sm-4.col-sm-offset-4.col-xs-8.col-xs-offset-2
+	= link-to 'register'
+		button.btn.register-gold.btn-lg.center.full-width 
+			h5.extra-light.no-margin S'inscrire

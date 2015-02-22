@@ -1,14 +1,36 @@
-.container-fluid
+.container-fluid.mes-euros#user-edit
 	.row
-		.col-md-7.col-md-offset-2
+		.col-8-box.grey-background
+			h5.no-margin
+				span.users-title
+					| Mon profil
 			if success
+				br
 				.alert.alert-success User updated!
 			if fail
+				br
 				.alert.alert-danger User could not be updated, please try again later.
-			h1.center#profile-title Mon Profile
-			br
-			if isLoading
-				h1.center = fa-icon 'fa-spin fa-spinner'
-			else 
-				= partial "users/form" gender=gender email=email lastName=lastName firstName=firstName 
+			.row.margin-top-40
+				.col-xs-3.form-labels
+					p Prénom
+					p.margin-top-10 Nom
+				.col-sm-6.col-xs-8
+					form submit='update'
+						span.clear.grey M.
+						span.margin-left-10 = radio-button value='Male' checked=gender
+						span.margin-left-10.grey Mme.
+						span.margin-left-10 = radio-button value='Female' checked=gender
+						span.margin-left-10.gold.required-asterix *
+						.input-group.full-width
+							.gold.required-asterix.pull-right *
+							= input class='form-control black-border' value=lastName placeholder='Prénom' required=true
+						.input-group.full-width
+							.gold.required-asterix.pull-right *
+							= input class='form-control black-border' value=firstName placeholder='Nom' required=true
+						br 
+						button.margin-top-10.btn.register-gold.center.full-width type="submit" Enregistrer les modifications
+						br
+						.pull-right.margin-top-10.required-asterix-legend
+							span.gold.small (*)
+							span.margin-left-10.small Champs obligatoires
 

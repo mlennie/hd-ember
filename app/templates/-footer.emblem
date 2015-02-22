@@ -1,7 +1,0 @@
-footer.footer.light-black-background
-	.container-fluid
-		.center.margin-top-5
-			span.white.margin-right-10.one-smaller Conditions d'utilisation 
-			span.white.margin-right-10.one-smaller FAQ
-			span.white.margin-right-10.one-smaller  Contact
-			span.white.one-smaller  Qui sommes-nous

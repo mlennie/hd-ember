@@ -1,0 +1,11 @@
+.grey-background#menu
+	h5.no-margin.center 
+		span#menu-main-title.center Aperçu de la carte
+	#menu-inner-box
+		br
+		br
+		= menu-category array=orderveMenuItems title="Les hors d'oeuvres"
+		= menu-category array=entreeMenuItems title="Les entrées"
+		= menu-category array=principauxMenuItems title="Les plats principaux"
+		= menu-category array=dessertMenuItems title="Les desserts"
+		= menu-category array=boissonMenuItems title="Les boissons"

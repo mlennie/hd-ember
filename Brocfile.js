@@ -1,5 +1,4 @@
 /* global require, module */
-
 var EmberApp = require('ember-cli/lib/broccoli/ember-app');
 
 var app = new EmberApp({
@@ -7,6 +6,9 @@ var app = new EmberApp({
     clientAllowedKeys: ['HOST']
   }
 });
+
+//Mixpanel
+app.import('vendor/scripts/mixpanel.js');
 
 // Bootstrap
 app.import('bower_components/bootstrap-sass-official/assets/javascripts/bootstrap.js');
