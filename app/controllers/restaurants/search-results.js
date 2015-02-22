@@ -1,6 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
+  itemController: 'restaurants/search-item',
 	
   //properties
   queryParams: ['name'],
