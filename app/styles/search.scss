@@ -15,6 +15,12 @@
   margin-top: 80px;
 }
 
+/* make medium search bar on index page when logged in responsive */
+
+#center-search-medium.col-md-8 {
+  width: 80%;
+}
+
 #search-navbar-collapse {
 
   .navbar-form {
@@ -128,6 +134,10 @@ option#75016, option#75017, option#75008 {
 #top-search-medium {
   padding: 10px;
 
+  .col-lg-10, .col-md-12 {
+    
+  }
+
   #mobile-top-search-button {
     width: 140px;
     height: 35px;
@@ -180,7 +190,7 @@ option#75016, option#75017, option#75008 {
 
     &:nth-child(1) > input {
       color: #999;
-      width: 17%;
+      width: 20%;
       
       .input {
         color: #999;
@@ -244,6 +254,16 @@ option#75016, option#75017, option#75008 {
 }
 
 /* MEDIA QUERIES */
+
+@media (max-width: 1050px) {
+  /*make top search form responsive by making font smaller*/
+  #top-search-medium {
+    input, .search-select, button {    
+      font-size: 1em !important;
+    }
+  }
+}
+
 @media (max-width: 991px) {
   nav#top-search-medium.navbar.grey-background {
     padding: 0px;

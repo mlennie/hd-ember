@@ -1,6 +1,6 @@
 #main-title.no-transformation.col-sm-6.col-sm-offset-3 
 	h4 Rechercher un restaurant
-#center-search-medium.col-sm-8.col-sm-offset-2
+#center-search-medium.col-md-8.col-md-offset-2
 	form submit='search'
 		span.input_container
 			= bootstrap-datepicker value=date class="input" format="dd/mm/yy" todayBtn=false todayHighlight=true placeholder="Date" language='fr'
