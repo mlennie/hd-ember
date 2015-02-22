@@ -1,7 +1,11 @@
 .percent-discount {
   color: red;
 }
-
+a#search-result-link {
+  &:visited, &:active, &:hover {
+    text-decoration: none;
+  }
+}
 .popover-title {
   font-weight: 400;
   font-size: 0.6em;
