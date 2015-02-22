@@ -211,6 +211,11 @@ div.back-link {
 @media (max-width: 600px) {
   .landing-image {
     height: 650px;
+
+    &.logged-in {
+      background-image: none;
+      background-color: #ECECEC;
+    }
   }
 
   .restaurant-img-container {
