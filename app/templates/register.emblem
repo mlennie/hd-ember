@@ -32,10 +32,10 @@
             span.margin-left-10.gold.required-asterix *
             .input-group.full-width
               .gold.required-asterix.pull-right *
-              = input class='form-control black-border' value=lastName placeholder='Prénom' required=true
+              = input class='form-control black-border' value=firstName placeholder='Prénom' required=true
             .input-group.full-width
               .gold.required-asterix.pull-right *
-              = input class='form-control black-border' value=firstName placeholder='Nom' required=true
+              = input class='form-control black-border' value=lastName placeholder='Nom' required=true
             .input-group.full-width
               .gold.required-asterix.pull-right *
               = input class='form-control black-border' value=email placeholder='Addresse email' type='email' required=true
