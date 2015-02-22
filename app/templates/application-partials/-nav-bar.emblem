@@ -18,6 +18,9 @@
 								span.nav-icon = fa-icon 'caret-down'
 								span.nav-item.no-transformation Mon compte
 							ul.dropdown-menu#main-nav-dropdown role="menu"
+								li 
+									a click=goToIndex
+										| Page d'acceuil
 								li = link-to 'users.mes-euros' 
 									if session.currentUser.isOwner
 										| Ma balance
@@ -38,6 +41,9 @@
 				.collapse.navbar-collapse#navbar-collapse-1
 					ul.nav.navbar-nav.navbar-right
 						if session.isAuthenticated
+							li 
+								a click=goToIndex
+									| Page d'acceuil
 							li = link-to 'users.mes-euros' 
 								if session.currentUser.isOwner
 									| Ma balance

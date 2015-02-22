@@ -1,7 +1,7 @@
 .percent-discount {
   color: red;
 }
-a#search-result-link {
+#search-result-link > a {
   &:visited, &:active, &:hover {
     text-decoration: none;
   }
