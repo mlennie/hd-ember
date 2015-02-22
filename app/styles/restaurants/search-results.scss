@@ -10,6 +10,21 @@
   border: none;
 }
 
+.restaurant-box {
+  padding: 15px;
+  max-height: 600px;
+
+  #restaurant-image {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+    height: 450px;
+    width: 900px;
+    box-shadow: none;
+    text-shadow: none;
+  }
+}
+
 .popover-content {
   font-weight: 600;
   font-size: 1.5em;
@@ -56,9 +71,8 @@ div.back-link {
   overflow: hidden;
 
   .restaurant-search-pic {
-    height: auto;
-    width: 100%;
-    max-height: 340px;
+    height: 345px;
+    width: 690px;
   }
 
   #restaurant-list-info {
@@ -130,7 +144,18 @@ div.back-link {
   }
 
   .restaurant-box {
-    max-height: 550px;
+    padding: 15px;
+    max-height: 600px;
+
+    #restaurant-image {
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: top;
+      height: 300px;
+      width: 100%;
+      box-shadow: none;
+      text-shadow: none;
+    }
 
     .corner-ribbon {
       font-size: 1.5em;
