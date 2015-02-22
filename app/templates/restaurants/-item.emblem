@@ -1,4 +1,4 @@
-.row.margin-bottom-20 = link-to 'restaurants.show' restaurant
+.row.margin-bottom-20 = link-to 'restaurants.show' restaurant id="search-result-link"
 	.restaurant-box.grey-background.padding-15.highlighted-border
 		.row.corner-ribbon.top-right.sticky.black 
 			.gold-border 10%
