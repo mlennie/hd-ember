@@ -286,6 +286,16 @@ option#75016, option#75017, option#75008 {
   }
 }
 
+@media (max-width: 768px) {
+  #mobile-search-title {
+    margin-top: 160px;
+    margin-bottom: 50px;
+  }
+  #mobile-search-form {
+    margin-top: 0 !important;
+  }
+}
+
 
 
 
