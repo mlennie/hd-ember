@@ -24,7 +24,7 @@ export default Ember.Controller.extend({
 
     //filter by restaurant name
     if (name !== null) {
-      if (name === '75017' || name === '75008') {
+      if (name === '75017' || name === '75008' || name === '75016') {
         restaurants = restaurants.filterBy('zipcode', name);
       } else {
         restaurants = restaurants.filterBy('name', name);
@@ -58,7 +58,6 @@ export default Ember.Controller.extend({
     });
 
   }.property('filteredRestaurants'),
-  
   hasFilteredRestaurants: function() {
     return this.get('filteredRestaurants.length') > 0;
   }.property('filteredRestaurants'),
