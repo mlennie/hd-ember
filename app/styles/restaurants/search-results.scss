@@ -180,6 +180,7 @@ div.back-link {
 
 
 @media (max-width: 1230px) {
+  
   .restaurant-box > #search-item-img-container  > .restaurant-search-pic > .discount-banner {
     top: 205px;
     left: -15px;
@@ -202,6 +203,11 @@ div.back-link {
 }
 
 @media (max-width: 991px) {
+
+  div > div.col-sm-8.visible-xs-block.visible-sm-block {
+    top: -50px !important;
+  }
+
   .restaurant-img-container {
     width: 80%;
     height: 100%;
@@ -276,6 +282,20 @@ div.back-link {
 }
 
 @media (max-width: 600px) {
+  #restaurant-image > div {
+    margin: 20px !important;
+  }
+
+  div > div.col-sm-8.visible-xs-block.visible-sm-block {
+    top: -20px !important;
+  }
+
+  .restaurant-box {
+
+    .col-sm-8.visible-xs-block.visible-sm-block {
+      padding: 0 !important;
+    }
+  }
   .landing-image {
     height: 650px;
 
