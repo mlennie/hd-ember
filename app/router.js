@@ -33,6 +33,7 @@ Router.map(function() {
   this.route('new-password');
   this.route('edit-password');
   this.route('resend-confirmation');
+  this.route('conditions-generales');
 });
 
 export default Router;
