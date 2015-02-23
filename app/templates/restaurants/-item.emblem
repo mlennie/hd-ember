@@ -1,8 +1,6 @@
 .row.margin-bottom-20#search-result-link = link-to 'restaurants.show' restaurant
 	.restaurant-box.grey-background.padding-15.highlighted-border
-		.row.corner-ribbon.top-right.sticky.black 
-			.gold-border 10%
-		.col-sm-8.visible-xs-block.visible-sm-block.no-padding
+		.col-sm-8.visible-xs-block.visible-sm-block
 			#restaurant-image style=restaurant.backgroundUrl
 				.discount-banner
 					p.small Collectez 10% sur l'addition
