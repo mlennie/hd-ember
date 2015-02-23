@@ -4,8 +4,14 @@
 			.gold-border 10%
 		.col-sm-8.visible-xs-block.visible-sm-block.no-padding
 			#restaurant-image style=restaurant.backgroundUrl
-		.col-sm-8.visible-md-block.visible-lg-block
+				.discount-banner
+					p.small Collectez 10% sur l'addition
+		.col-sm-8.visible-md-block.visible-lg-block#search-item-img-container
 			img.restaurant-search-pic.img-responsive src={restaurant.imgUrl}
+			.row
+				.col-md-7.col-md-offset-5
+					.discount-banner
+						p Collectez 10% sur l'addition
 		.col-sm-4#restaurant-list-info
 			h4.medium.restaurant-title-container
 				span.restaurant-title 
