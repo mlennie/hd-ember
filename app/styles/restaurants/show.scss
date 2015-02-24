@@ -10,20 +10,24 @@
 	margin-left: 5px;
 }
 
+#restaurant-show > div:nth-child(1) > div > div > div > div {
+		top: -40px !important;
+	}
+
 #restaurant-show {
 	margin: 10px 30px;
 	width: 95%;
 
 	.restaurant-box {
 		padding: 15px;
-		max-height: 600px;
+		max-height: 510px;
 
 		#restaurant-image {
 		  background-repeat: no-repeat;
 		  background-size: cover;
 		  background-position: top;
-		  height: 450px;
-		  width: 900px;
+		  height: 375px;
+		  width: 750px;
 		  box-shadow: none;
 		  text-shadow: none;
 		}
@@ -104,6 +108,23 @@
 	}
 }
 
+@media (max-width: 1090px) {
+	#restaurant-show {
+		margin: 10px 30px;
+		width: 95%;
+
+		.restaurant-box {
+			padding: 15px;
+			height: 500px;
+
+			#restaurant-image {
+			  height: 375px;
+			  width: 750px;
+			}
+		}
+	}
+}
+
 @media (max-width: 991px) {
 
 	#restaurant-show {
@@ -144,3 +165,41 @@
 		}
 	}
 }
+
+@media(min-width: 1090px) {
+	#restaurant-show {
+		.discount-banner {
+			top: 320px !important;
+		}
+	}
+}
+
+@media(max-width: 880px) {
+	#restaurant-show > div:nth-child(1) > div > div > div > div {
+		margin-top: 0;
+	}
+}
+
+@media(max-width: 800px) {
+	#restaurant-show {
+		#restaurant-image {
+			top: 40px !important;
+		}
+	}
+}
+
+@media(max-width: 727px) {
+	#restaurant-show {
+		#restaurant-image {
+			top: 0px !important;
+		}
+	}
+}
+
+@media(max-width: 660px) {
+	#restaurant-show > div:nth-child(1) > div > div > div > div {
+		margin-top: 40px;
+	}
+}
+
+
