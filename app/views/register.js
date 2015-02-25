@@ -3,7 +3,6 @@ import Ember from 'ember';
 export default Ember.View.extend({
 
 	setReferralCode: function() {
-    alert(this.controller.get('referralCode'));
     var referralCode = this.controller.get('referralCode');
     if (referralCode !== null) {
 	    var cookie = this.get('cookie');
