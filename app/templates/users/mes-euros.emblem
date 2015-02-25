@@ -14,7 +14,7 @@
 					else
 						| Mes Euros Collectés
 			p 
-				| Il est temps de vous faire plaisir ! Profitez dès à présent de vos euros collectés, dans nimporte quel restaurant du réseau Happy Dining. Pour cela, cliquer sur
+				| Il est temps de vous faire plaisir ! Profitez dès à présent de vos euros collectés, dans nimporte quel restaurant du réseau Happy Dining. Pour cela, cliquez sur
 				span 
 					a.inline#use-euros-link data-toggle="popover" data-placement="bottom" data-toggle="popover-show" data-placement="top" data-trigger="focus" data-html="true" data-original-title="<div class='popover-title'>Composez le:</div>" data-content="<div class='popver-content'>09.52.66.53.19</div>"
 						|  utilisez mes euros .
