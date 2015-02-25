@@ -19,7 +19,7 @@ export default Ember.Controller.extend(CurrentUserMixin, {
 
 	//get query string referral url
 	queryReferralUrl: function() {
-		var url = "https%3A%2F%2Fhd-ember.herokuapp.com%2Fregister%3FreferralCode%3D"
+		var url = "https%3A%2F%2Fhappydining.fr%2Fregister%3FreferralCode%3D"
 		return url + this.get('currentUser.referralCode');
 	}.property('referralCodeUrl'),
 
@@ -43,7 +43,7 @@ export default Ember.Controller.extend(CurrentUserMixin, {
 	//get twitter share url
 	twitterShareUrl: function() {
 		var twitterUrl = "https://twitter.com/intent/tweet?";
-		var source = "source=https%3A%2F%2Fhd-ember.herokuapp.com%2F&";
+		var source = "source=https%3A%2F%2Fhappydining.fr%2F&";
 		var body = "Please%20sign%20up%20for%20happy%20dining.%20You%20get%20money%20for%20eating%20out%20and%20if%20you%20sign%20up%20I%20get%20money%20too!";
 		var text = "text=" + body + ":%20" + this.get('queryReferralUrl');
 		return twitterUrl + source + text;
