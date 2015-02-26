@@ -3,7 +3,8 @@ if showSmallFooter
 		.center.margin-top-5
 			span 
 				=link-to 'conditions-generales' | Conditions d'utilisation 
-			span FAQ
+			span
+				=link-to 'faq' | FAQ
 			span  Contact
 else
 	footer.large-footer.light-black-background.hidden-xs
