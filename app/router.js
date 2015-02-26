@@ -34,6 +34,7 @@ Router.map(function() {
   this.route('edit-password');
   this.route('resend-confirmation');
   this.route('conditions-generales');
+  this.route('faq');
 });
 
 export default Router;
