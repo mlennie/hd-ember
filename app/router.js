@@ -34,6 +34,7 @@ Router.map(function() {
   this.route('resend-confirmation');
   this.route('conditions-generales');
   this.route('faq');
+  this.route('remerciements');
 });
 
 export default Router;

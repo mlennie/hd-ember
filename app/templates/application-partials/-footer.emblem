@@ -6,6 +6,8 @@ if showSmallFooter
 			span
 				=link-to 'faq' | FAQ
 			span  Contact
+			span
+				=link-to 'remerciements' | Remerciements
 else
 	footer.large-footer.light-black-background.hidden-xs
 		.center.margin-top-5
