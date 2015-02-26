@@ -10,6 +10,7 @@
 					#restaurant-image style=backgroundUrl
 						.discount-banner
 							p.small Collectez 10% sur l'addition
-				button.btn.register-gold.center data-toggle="popover-show" data-placement="top" data-trigger="focus" data-html="true" data-original-title="<div class='popover-title'>Composez le:</div>" data-content="<div class='popver-content'>09.52.66.53.19</div>"
-					| Réserver
+				div
+					button.reserver-button.btn.register-gold.center data-toggle="popover-show" data-placement="top" data-trigger="focus" data-html="true" data-original-title="<div class='popover-title'>Composez le:</div>" data-content="<div class='popver-content'>09.52.66.53.19</div>"
+						| Réserver
 			
