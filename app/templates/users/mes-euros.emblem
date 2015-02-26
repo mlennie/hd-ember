@@ -16,7 +16,7 @@
 			p 
 				| Il est temps de vous faire plaisir ! Profitez dès à présent de vos euros collectés, dans nimporte quel restaurant du réseau Happy Dining. Pour cela, cliquez sur
 				span 
-					a.inline#use-euros-link data-toggle="popover" data-placement="bottom" data-toggle="popover-show" data-placement="top" data-trigger="focus" data-html="true" data-original-title="<div class='popover-title'>Composez le:</div>" data-content="<div class='popver-content'>09.52.66.53.19</div>"
+					a.inline#use-euros-link data-toggle="popover" data-placement="bottom" data-toggle="popover-show" data-trigger="focus" data-html="true" data-original-title="<div><a href='tel:+33952665319'class='popover-title'>Composez le:</a></div>" data-content="<div><a href='tel:+33952665319'class='popver-content'>09.52.66.53.19</a></div>"
 						|  utilisez mes euros .
 			p.mes-euros-text Envie d'obtenir plus d'euros sur votre compte ? Nous vous rappelons que vous collectez entre 10 et 30% de l'addition sur chaque reservation honorée, effectuée depuis happydining.fr *. L'addition ne vous aura jamais autant rapporté !
 			p.small.mes-euros-text *hors réservations visant à utiliser ses euros collectés 
