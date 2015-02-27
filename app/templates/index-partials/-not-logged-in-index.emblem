@@ -1,8 +1,9 @@
-h1#main-title L'addition qui rapporte
-h6#second-home-title
-	| Réservez pour vous, vos amis, vos clients 
-	br
-	| et recevez personnellement un pourcentage de l'addition.  
+.black-transparent-background	
+	h1#main-title L'addition qui rapporte
+	h6#second-home-title
+		| Réservez pour vous, vos amis, vos clients 
+		br
+		| et recevez personnellement un pourcentage de l'addition.  
 br
 br
 br
