@@ -1,16 +1,29 @@
-if session.currentUser.isOwner
-	br
-	br
-	br
-	br
-	br
-	br
-else
-	br
-	br
-	br
-	br
-	br
+.hidden-xs.hidden-sm
+	if session.currentUser.isOwner
+		br
+		br
+		br
+		br
+		br
+		br
+	else
+		br
+		br
+		br
+		br
+		br
+.visible-xs-block.visible-sm-block
+	if session.currentUser.isOwner
+		br
+		br
+		br
+		br
+		br
+		br
+	else
+		br
+		br
+		br
 .container-fluid#users-page
 	.row
 		.col-sm-4.hidden-xs
