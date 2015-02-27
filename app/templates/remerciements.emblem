@@ -5,5 +5,5 @@ br
 	.row
 		#conditions-image
 			h5 Remerciements
-			span.margin-right-10 Vanessa Quirié :
+			p Vanessa Quirié 
 			a href='http://www.hotelmonceau.com' target='_blank' www.hotelmonceau.com

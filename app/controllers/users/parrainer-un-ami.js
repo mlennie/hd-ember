@@ -28,7 +28,7 @@ export default Ember.Controller.extend(CurrentUserMixin, {
 	emailReferralMessage: function() {
 		var mail = "mailto:?";
 		var subject = "subject=Une nouvelle appli à essayer absolument&";
-		var body = "body=Lorsque tu reserves un restaurant avec Happy Dining tu reçois personnellement de 10 à 30 pourcent du montant de l'addition. Si tu t'inscrit avec ce lien tu recevras instantanément 5 euros sur ton compte : ";
+		var body = "body=Lorsque tu reserves un restaurant avec Happy Dining tu reçois personnellement de 10 à 30 pourcent du montant de l'addition. Si tu t'inscris avec ce lien tu recevras instantanément 5 euros sur ton compte : ";
 		var link = this.get('referralCodeUrl'); 
 		return mail + subject + body + link;
 	}.property('referralCodeUrl'),

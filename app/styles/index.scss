@@ -71,15 +71,20 @@
   }
 
   #main-title {
-    font-size: 2em;
+    font-size: 2em !important;
     margin-top: 200px;
+    background-color: rgba(85, 90, 96, 0.4);
+    padding: 10px 0 10px 0;
+    margin-left: 10px;
+    margin-right: 10px;
   }
 
   #second-home-title {
-    font-size: 1em;
+    font-size: 0.8em !important;
+    margin-top: 30px;
   }
 
   .register-gold {
-    font-size: 1.5em;
+    font-size: 1em !important;
   }
 }
