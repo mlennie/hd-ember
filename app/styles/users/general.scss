@@ -113,6 +113,43 @@
 	.form-labels {
 		margin-top: 35px;
 	}
+	#parrainez-center-text {
+		font-size: 0.8em !important;
+		text-align: left !important;
+
+	}
+
+	.white-box {
+		font-size: 1em !important;
+	}
+	.share-buttons li {
+
+		.envelope {
+			background-color: red;
+			border-radius: 50px;
+			padding: 9px 12px;
+			font-size: 2em;
+			color: white;
+		}
+
+		.facebook {
+			background-color: #3E5C97;
+			border-radius: 50px;
+			padding: 10px 20px;
+			font-size: 2em;
+			color: white;
+			margin-right: 20px;
+		}
+
+		.twitter {
+			background-color: #1DADEA;
+			border-radius: 50px;
+			padding: 10px 13px;
+			font-size: 2em;
+			color: white;
+			margin-right: 20px;
+		}
+	}
 }
 
 
