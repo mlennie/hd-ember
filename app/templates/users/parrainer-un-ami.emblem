@@ -20,7 +20,7 @@
 						span.envelope = fa-icon 'fa-envelope-o'
 			p.margin-top-20 Ou en envoyant directement votre lien référentiel à vos amis: 
 			.white-box
-				= zero-clipboard text=referralCodeUrl label=referralCodeUrl 
+				#referral-link= zero-clipboard text=referralCodeUrl label=referralCodeUrl 
 
 
 
