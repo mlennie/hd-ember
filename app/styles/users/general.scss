@@ -124,7 +124,10 @@
 		text-align: left !important;
 
 	}
-	
+
+	.white-box {
+		font-size: 1em !important;
+	}
 	.share-buttons li {
 
 		.envelope {
@@ -155,11 +158,10 @@
 	}
 }
 
-@media (max-width: 400px) {
+@media (max-width: 500px) {
 	.white-box {
+		font-size: 0.8em !important;
 		#referral-link { 
-			width: 50px; 
-			text-align: center;
 		}
 	}
 }
