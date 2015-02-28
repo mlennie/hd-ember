@@ -14,8 +14,8 @@
 				ul.nav.navbar-nav.navbar-right
 					if session.isAuthenticated
 						li.nav-item
-							a.nav-phone href='tel:+33952665319'
-								| 09.52.66.53.19
+							a.nav-phone.no-transformation href='tel:+33952665319'
+								| Contact : 09.52.66.53.19
 						li.dropdown	
 							a.dropdown-toggle#mon-compte-dropdown href="#" data-toggle="dropdown" role="button" aria-expanded="false"
 								span.nav-icon = fa-icon 'caret-down'
