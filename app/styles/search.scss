@@ -119,6 +119,9 @@
     height: 80px;
     font-size: 1.25em;
     font-weight: 200;
+    &::-ms-expand {
+      display: none;
+    }
   }
 
   button {
@@ -167,6 +170,9 @@ option#75016, option#75017, option#75008 {
     height: 50px;
     font-size: 1.25em;
     font-weight: 200;
+    &::-ms-expand {
+      display: none;
+    }
   }
 
   .search-select {
