@@ -2,10 +2,6 @@ import Ember from 'ember';
 
 export default Ember.View.extend({
 	classNames: ['special-height'],
-	
-	formatSearchFields: function(){
-   	Ember.$("#date").mask("99/99/99",{placeholder:"mm/dd/yy"});
-	}.on('didInsertElement'),
 
 	//scroll to concept part of page when concept link clicked
 	scrollToConcept: function() {
@@ -14,5 +10,17 @@ export default Ember.View.extend({
 	        scrollTop: Ember.$("#concept").offset().top
 	    }, 750);
 		}
+	}.on('didInsertElement'),
+
+	//send events to MIXPANEL
+	indexMixpanelEvents: function() {
+		Ember.$('body').on('click', '#middle-register-button', function() {
+			//MIXPANEL: Add inscription button click event
+	    mixpanel.track('Inscription Button Clicked', { 
+	    	'color': 'gold',
+	    	'location': 'middle',
+	    	'page': 'index'  
+	    });
+		});
 	}.on('didInsertElement')
 });
