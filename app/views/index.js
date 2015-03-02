@@ -16,11 +16,21 @@ export default Ember.View.extend({
 	indexMixpanelEvents: function() {
 		Ember.$('body').on('click', '#middle-register-button', function() {
 			//MIXPANEL: Add inscription button click event
-	    mixpanel.track('Inscription Button Clicked', { 
+	    mixpanel.track('Inscription Button Click', { 
 	    	'color': 'gold',
 	    	'location': 'middle',
 	    	'page': 'index'  
 	    });
 		});
-	}.on('didInsertElement')
+
+		Ember.$('body').on('click', '#concept-button', function() {
+			//MIXPANEL: Add concept button click event
+	    mixpanel.track('Concept Button Click', { 
+	    	'color': 'black transparent',
+	    	'location': 'under search',
+	    	'page': 'index',
+	    	'connected': 'yes'  
+	    });
+		});
+	}.observes('controller.currentPath').on('didInsertElement')
 });

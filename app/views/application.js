@@ -18,5 +18,15 @@ export default Ember.View.extend({
 	//style ou form select values
 	styleOuSearchSelect: function() {
 		Ember.$('name-select > option').val('75017').css('font-weight', 900);
-	}.on('didInsertElement')
+	}.on('didInsertElement'),
+
+	//send events to MIXPANEL
+	applicationMixpanelEvents: function() {
+		Ember.$('body').on('click', '#connection-button ', function() {
+			//MIXPANEL: Add connection link click event
+	    mixpanel.track('Connexion Link Click', { 
+	    	'location': 'navbar' 
+	    });
+		});
+	}.observes('controller.currentPath').on('didInsertElement')
 });
