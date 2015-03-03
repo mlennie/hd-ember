@@ -5,6 +5,16 @@ export default Ember.Controller.extend(SearchMixin,{
 
   showTopSearch: false,
 
+  //decide whether to show small footer or not
+  showSmallFooter: function() {
+    var path = this.get('currentPath');
+    if (path === 'index' || path === 'login' || path === 'register') {
+      return true;
+    } else {
+      return false;
+    }
+  }.property('currentPath'),
+
 	//computed properties
 	showCookieMessage: function() {
 		//get cookieAccepted cookie and if not there (cookies not accepted)
@@ -56,7 +66,11 @@ export default Ember.Controller.extend(SearchMixin,{
 
   //whether to show top search bar or not
   setShowTopSearch: function() {
-    if (this.get('currentPath') !== 'index') {
+    var path = this.get('currentPath');
+    if (path !== 'index' && 
+      path !== 'conditions-generales' &&
+      path !== 'faq' &&
+      path !== 'remerciements') {
       this.set('showTopSearch', true);
     } else {
       this.set('showTopSearch', false);

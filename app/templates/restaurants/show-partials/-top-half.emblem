@@ -1,8 +1,6 @@
 .container
 	.row
 		.col-md-12.restaurant-box.grey-background
-			.corner-ribbon.top-right.sticky.black 
-				.gold-border 10%
 			h4.medium
 				=model.name
 			h6.light.address
@@ -10,6 +8,9 @@
 			.row
 				.col-md-11
 					#restaurant-image style=backgroundUrl
-				button.btn.register-gold.center data-toggle="popover-show" data-placement="top" data-trigger="focus" data-html="true" data-original-title="<div class='popover-title'>Composez le:</div>" data-content="<div class='popver-content'>09.52.66.53.19</div>"
-					| Réserver
+						.discount-banner
+							p.small Collectez 10% sur l'addition
+				div
+					button.reserver-button.btn.register-gold.center data-toggle="popover-show" data-placement="top" data-trigger="focus" data-html="true" data-original-title="<div><a href='tel:+33952665319'class='popover-title'>Composez le:</a></div>" data-content="<div><a href='tel:+33952665319'class='popver-content'>09.52.66.53.19</a></div>"
+						| Réserver
 			

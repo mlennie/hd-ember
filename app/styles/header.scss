@@ -3,6 +3,14 @@
   margin-bottom: 0;
   width: 100%;
 
+  .nav-phone {
+    display: inline;
+    margin-top: 20px;
+    font-family: sans-serif;
+    font-weight: 200;
+    top: 34px;
+  }
+
   #gold-menu-box {
     margin-right: 20px;
     margin-left: 15px;
@@ -97,6 +105,11 @@ li.dropdown.open > a {
 */
 .navbar-white {
   background-color: #fff !important;
+
+  .nav-phone {
+    top: 24px;
+    font-family: sans-serif;
+  }
 
   .container-fluid > .navbar-header > button {
     margin-top: 15px !important;

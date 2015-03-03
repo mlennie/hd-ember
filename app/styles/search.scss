@@ -15,6 +15,12 @@
   margin-top: 80px;
 }
 
+/* make medium search bar on index page when logged in responsive */
+
+#center-search-medium.col-md-8 {
+  width: 80%;
+}
+
 #search-navbar-collapse {
 
   .navbar-form {
@@ -113,6 +119,9 @@
     height: 80px;
     font-size: 1.25em;
     font-weight: 200;
+    &::-ms-expand {
+      display: none;
+    }
   }
 
   button {
@@ -127,6 +136,10 @@ option#75016, option#75017, option#75008 {
 
 #top-search-medium {
   padding: 10px;
+
+  .col-lg-10, .col-md-12 {
+    
+  }
 
   #mobile-top-search-button {
     width: 140px;
@@ -157,6 +170,9 @@ option#75016, option#75017, option#75008 {
     height: 50px;
     font-size: 1.25em;
     font-weight: 200;
+    &::-ms-expand {
+      display: none;
+    }
   }
 
   .search-select {
@@ -180,7 +196,7 @@ option#75016, option#75017, option#75008 {
 
     &:nth-child(1) > input {
       color: #999;
-      width: 17%;
+      width: 20%;
       
       .input {
         color: #999;
@@ -244,6 +260,16 @@ option#75016, option#75017, option#75008 {
 }
 
 /* MEDIA QUERIES */
+
+@media (max-width: 1150px) {
+  /*make top search form responsive by making font smaller*/
+  #top-search-medium {
+    input, .search-select, button {    
+      font-size: 1em !important;
+    }
+  }
+}
+
 @media (max-width: 991px) {
   nav#top-search-medium.navbar.grey-background {
     padding: 0px;
@@ -263,6 +289,16 @@ option#75016, option#75017, option#75008 {
   #restaurant-list {
     margin: 20px;
     margin-top: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  #mobile-search-title {
+    margin-top: 160px;
+    margin-bottom: 50px;
+  }
+  #mobile-search-form {
+    margin-top: 0 !important;
   }
 }
 

@@ -1,13 +1,74 @@
 .percent-discount {
   color: red;
 }
-
+#search-result-link > a {
+  &:visited, &:active, &:hover {
+    text-decoration: none;
+  }
+}
 .popover-title {
   font-weight: 400;
   font-size: 0.6em;
   font-family: raleway;
   text-decoration: none;
   border: none;
+}
+
+.restaurant-box {
+  padding: 15px;
+  max-height: 600px;
+
+  #search-item-img-container {
+    position: relative;
+
+    .restaurant-search-pic {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 1;
+    }
+
+    .discount-banner {
+      position: relative;
+      top: 210px;
+      left: -15px;
+      color: #fff;
+      text-align: center;
+      background-color: rgba(0,0,0,0.8);
+      padding: 10px 5px 10px 5px;
+      margin: 80px;
+      z-index: 2;
+
+      p {
+        margin: 0;
+      }
+    }
+  }
+
+  #restaurant-image {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+    position: relative;
+    height: 450px;
+    width: 900px;
+    box-shadow: none;
+    text-shadow: none;
+
+    .discount-banner {
+      position: relative;
+      top: 250px;
+      color: #fff;
+      text-align: center;
+      background-color: rgba(0,0,0,0.8);
+      padding: 10px 5px 10px 5px;
+      margin: 60px;
+
+      p.small {
+        margin: 0;
+      }
+    }
+  }
 }
 
 .popover-content {
@@ -56,9 +117,8 @@ div.back-link {
   overflow: hidden;
 
   .restaurant-search-pic {
-    height: auto;
-    width: 100%;
-    max-height: 340px;
+    height: 345px;
+    width: 690px;
   }
 
   #restaurant-list-info {
@@ -119,8 +179,35 @@ div.back-link {
 }
 
 
+@media (max-width: 1230px) {
+  
+  .restaurant-box > #search-item-img-container  > .restaurant-search-pic > .discount-banner {
+    top: 205px;
+    left: -15px;
+    padding: 10px 5px 10px 5px;
+    margin: 85px;
+  }
+}
+
+@media (max-width: 1200px) {
+  #search-item-img-container > div > div > div {
+    top: 290px !important;
+    left: 0px;
+    padding: 10px 5px 10px 5px;
+    margin: 60px !important;
+  }
+
+  #search-item-img-container > div > div > div {
+    margin: 0 !important;
+  }
+}
 
 @media (max-width: 991px) {
+
+  div > div.col-sm-8.visible-xs-block.visible-sm-block {
+    top: -50px !important;
+  }
+
   .restaurant-img-container {
     width: 80%;
     height: 100%;
@@ -130,7 +217,18 @@ div.back-link {
   }
 
   .restaurant-box {
-    max-height: 550px;
+    padding: 15px;
+    max-height: 600px;
+
+    #restaurant-image {
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: top;
+      height: 300px;
+      width: 100%;
+      box-shadow: none;
+      text-shadow: none;
+    }
 
     .corner-ribbon {
       font-size: 1.5em;
@@ -184,8 +282,27 @@ div.back-link {
 }
 
 @media (max-width: 600px) {
+  #restaurant-image > div {
+    margin: 20px !important;
+  }
+
+  div > div.col-sm-8.visible-xs-block.visible-sm-block {
+    top: -20px !important;
+  }
+
+  .restaurant-box {
+
+    .col-sm-8.visible-xs-block.visible-sm-block {
+      padding: 0 !important;
+    }
+  }
   .landing-image {
     height: 650px;
+
+    &.logged-in {
+      background-image: none;
+      background-color: #ECECEC;
+    }
   }
 
   .restaurant-img-container {

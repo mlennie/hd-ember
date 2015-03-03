@@ -3,6 +3,11 @@ import Ember from 'ember';
 export default Ember.View.extend({
 	handlePopovers: function(){
 
+    //when clicking on phone number stop other behaviour
+    Ember.$('body').on('click', '#phone-link', function(event) {
+      event.stopPropagation();
+    });
+
     //close popovers when click anywhere
     Ember.$('body').on('click', function() {
       Ember.$('*[data-toggle="popover"]').popover();

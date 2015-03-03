@@ -1,6 +1,30 @@
-footer.footer.light-black-background.hidden-xs
-	.center.margin-top-5
-		span.white.margin-right-10.one-smaller Conditions d'utilisation 
-		span.white.margin-right-10.one-smaller FAQ
-		span.white.margin-right-10.one-smaller  Contact
-		span.white.one-smaller  Qui sommes-nous
+if showSmallFooter
+	footer.small-footer.light-black-background.hidden-xs
+		.center.margin-top-5
+			span 
+				=link-to 'conditions-generales' | Conditions d'utilisation 
+			span
+				=link-to 'faq' | FAQ
+			span 
+				a href='tel:+33952665319'
+					| 09.52.66.53.19	
+			span
+				=link-to 'remerciements' | Remerciements
+				
+else
+	footer.large-footer.light-black-background.hidden-xs
+		.center.margin-top-5
+			span Politique des cookies
+			span 
+				a href='tel:+33952665319'
+					| 09.52.66.53.19	
+			span 
+				=link-to 'conditions-generales' | CGU et Mentions Légales
+		.center.margin-top-10
+			| * Voir condition et validité dans le détail de la fiche du restaurant. Les offres sur les boissons alcoolisées sont strictement 
+			br
+			| réservées aux majeurs. L'abus d'alcool est dangereux pour la santé. A consommer avec modération. L'établissement
+			br
+			| et Happy Dining déclinent toute responsabilité en cas d'abus.
+			
+			

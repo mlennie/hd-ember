@@ -13,11 +13,15 @@
 			.hidden-xs
 				ul.nav.navbar-nav.navbar-right
 					if session.isAuthenticated
-						li.dropdown
+						li.nav-item
+							a.nav-phone.no-transformation href='tel:+33952665319'
+								| Contact : 09.52.66.53.19
+						li.dropdown	
 							a.dropdown-toggle#mon-compte-dropdown href="#" data-toggle="dropdown" role="button" aria-expanded="false"
 								span.nav-icon = fa-icon 'caret-down'
 								span.nav-item.no-transformation Mon compte
 							ul.dropdown-menu#main-nav-dropdown role="menu"
+								li = link-to 'index' | Page d'accueil
 								li = link-to 'users.mes-euros' 
 									if session.currentUser.isOwner
 										| Ma balance
@@ -32,12 +36,13 @@
 						li class={navbarClass}
 							a#concept-link click=jumpToConcept
 								| Le Concept 
-						li class={navbarClass} #{ link-to 'login' | Connexion }
+						li#connection-button class={navbarClass} #{ link-to 'login' | Connexion }
 						li class={navbarClass} #{ link-to 'register' id='gold-menu-box' | Inscription }
 			.visible-xs-block
 				.collapse.navbar-collapse#navbar-collapse-1
 					ul.nav.navbar-nav.navbar-right
 						if session.isAuthenticated
+							li = link-to 'index' | Page d'accueil
 							li = link-to 'users.mes-euros' 
 								if session.currentUser.isOwner
 									| Ma balance
@@ -51,6 +56,6 @@
 							li class={navbarClass}
 								a#concept-link click=jumpToConcept
 									| Le Concept
-							li class={navbarClass} #{ link-to 'login' | Connexion }
+							li#connection-button class={navbarClass} #{ link-to 'login' | Connexion }
 							li class={navbarClass} #{ link-to 'register' | Inscription }
 	= partial 'application-partials/search-bar' 

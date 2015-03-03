@@ -1,6 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
+  itemController: 'restaurants/search-item',
 	
   //properties
   queryParams: ['name'],
@@ -23,7 +24,7 @@ export default Ember.Controller.extend({
     var restaurants = this.get('shuffledRestaurants');
 
 
-    if (name === '75017' || name === '75008') {
+    if (name === '75017' || name === '75008' || name === '75016') {
       return restaurants.filterBy('zipcode', name);
     } else if (name !== null) {
       return restaurants.filterBy('name', name);
@@ -41,7 +42,7 @@ export default Ember.Controller.extend({
     var name = this.get('name');
     var restaurants = this.get('shuffledRestaurants');
 
-    if (name === '75017' || name === '75008') {
+    if (name === '75017' || name === '75008' || name === '75016') {
       return restaurants.rejectBy('zipcode', name);
     } else {
       return restaurants.rejectBy('name', name);

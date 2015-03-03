@@ -1,0 +1,9 @@
+br
+br
+br
+.container
+	.row
+		#conditions-image
+			h5.padding-10.center FAQ
+			//h5.padding-10 Mentions légales et Conditions d'utilisation des services
+			img.img-responsive src="https://res.cloudinary.com/happydining/image/upload/c_crop,w_1200,h_2680/v1424715420/hd-cgu_wbrj6n.jpg"

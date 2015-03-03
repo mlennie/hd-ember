@@ -1,9 +1,15 @@
-.row.margin-bottom-20 = link-to 'restaurants.show' restaurant
+.row.margin-bottom-20#search-result-link = link-to 'restaurants.show' restaurant
 	.restaurant-box.grey-background.padding-15.highlighted-border
-		.row.corner-ribbon.top-right.sticky.black 
-			.gold-border 10%
-		.col-sm-8.restaurant-img-container
-			img.restaurant-search-pic src={restaurant.imgUrl} 
+		.col-sm-8.visible-xs-block.visible-sm-block
+			#restaurant-image style=restaurant.backgroundUrl
+				.discount-banner
+					p.small Collectez 10% sur l'addition
+		.col-sm-8.visible-md-block.visible-lg-block#search-item-img-container
+			img.restaurant-search-pic.img-responsive src={restaurant.imgUrl}
+			.row
+				.col-md-7.col-md-offset-5
+					.discount-banner
+						p Collectez 10% sur l'addition
 		.col-sm-4#restaurant-list-info
 			h4.medium.restaurant-title-container
 				span.restaurant-title 
@@ -19,5 +25,5 @@
 				= restaurant.shortMobileDescription
 				|  ...
 			.pull-right
-				button.btn.register-gold.center data-toggle="popover" data-placement="top" data-trigger="focus" data-html="true" data-original-title="<div class='popover-title'>Composez le:</div>" data-content="<div class='popver-content'>09.52.66.53.19</div>" 
+				button.btn.register-gold.center data-toggle="popover" data-placement="top" data-trigger="focus" data-html="true" data-original-title="<div><a href='tel:+33952665319'class='popover-title'id='phone-link'>Composez le:</a></div>" data-content="<div><a href='tel:+33952665319'class='popver-content'id='phone-link'>09.52.66.53.19</a></div>"
 					| Réserver

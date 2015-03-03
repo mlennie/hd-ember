@@ -19,13 +19,6 @@ app.import('bower_components/bootstrap-datepicker/js/locales/bootstrap-datepicke
 // maskedinput
 app.import('bower_components/jquery-maskedinputs/src/jquery.maskedinput.js');
 
-// Glyphicons
-var pickFiles = require('broccoli-static-compiler');
-var bootstrapFonts = pickFiles('bower_components/bootstrap-sass-official/assets/fonts/bootstrap', {
-  srcDir: '/',
-  destDir: '/fonts'
-});
-
 // Use `app.import` to add additional libraries to the generated
 // output files.
 //
