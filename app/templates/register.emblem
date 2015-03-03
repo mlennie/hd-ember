@@ -2,54 +2,64 @@
   .row
     if registrationFailed
       .alert.alert-danger 
-        strong User not registered. 
+        strong Compte non créé 
         ul
           li 
-            | Email is already associated with an account. If you already have an account associated with this email, please sign in 
-            =link-to 'login' | here
+            | Cette adresse email est déjà associée à un compte utilisateur. Si vous avez déjà associé un compte à cette adresse email, 
+            =link-to 'login' | connectez-vous ici.
     if registrationSuccessful
-      .alert.alert-success Yay you registered You will now receive an email to confirm your registration!
+      br
+      br
+      br
+      br
+        h1.center Bienvenue sur Happydining.fr
+        br
+        h4#confirmation-success-text.center Confirmez dès à présent votre inscription en vous rendant dans votre boite mail et en cliquant sur "activer mon compte"
     if isLoading
       h1.center = fa-icon 'fa-spin fa-spinner'
     else
-      .col-md-4.col-md-offset-4#register-form
-        p.center Rejoignez-nous:
-        form#sign-in-form submit='registerUser'
-          if genderBlank
-            .alert.alert-danger Gender can't be blank
-          span.clear.grey M.
-          span.margin-left-10 = radio-button value='Male' checked=gender
-          span.margin-left-10.grey Mme.
-          span.margin-left-10 = radio-button value='Female' checked=gender
-          span.margin-left-10.gold.required-asterix *
-          .input-group.full-width
-            .gold.required-asterix.pull-right *
-            = input class='form-control black-border' value=lastName placeholder='Prénom' required=true
-          .input-group.full-width
-            .gold.required-asterix.pull-right *
-            = input class='form-control black-border' value=firstName placeholder='Nom' required=true
-          .input-group.full-width
-            .gold.required-asterix.pull-right *
-            = input class='form-control black-border' value=email placeholder='Addresse email' type='email' required=true
-          if passwordTooShort
-            .alert.alert-danger Password must be at least 4 characters
-          if passwordMismatch
-            .alert.alert-danger Password do not match
-          .input-group.full-width
-            .gold.required-asterix.pull-right *
-            = input class='form-control black-border' value=password placeholder='Mot de passe' type='password' required=true
-          .input-group.full-width.margin-bottom-10
-            .gold.required-asterix.pull-right *
-            = input class='form-control black-border' value=passwordConfirmation placeholder='Confirmation mot de passe' type='password' required=true
-          .input-group.full-width.margin-top-20
-            = input class='form-control black-border' value=promotionCode placeholder='Code Promotional'
-          br 
-          .black.center.small-text En cliquant sur S'inscrire, vous acceptez
-          .black-link.center.margin-left-10.small-text=link-to 'register' | les conditions générales d'Happy Dining
-          button.margin-top-10.btn.register-gold.center.full-width type="submit" S'inscrire
+      unless registrationSuccessful
+        .col-sm-4.col-sm-offset-4#register-form
+          h4.center Rejoignez-nous:
           br
-          span.black.small-text Déja membre?
-          span.black-link.margin-left-10.small-text=link-to 'login' | Se connecter
-          .pull-right.margin-top-10.required-asterix-legend
-            span.gold (*)
-            span.margin-left-10 Champs obligatoires
+          form#sign-in-form submit='registerUser'
+            if genderBlank
+              .alert.alert-danger Veuillez indiquer votre civilitè
+            span.clear.grey M.
+            span.margin-left-10 = radio-button value='Male' checked=gender required=true
+            span.margin-left-10.grey Mme.
+            span.margin-left-10 = radio-button value='Female' checked=gender required=true
+            span.margin-left-10.gold.required-asterix *
+            .input-group.full-width
+              .gold.required-asterix.pull-right *
+              = input class='form-control black-border' value=firstName placeholder='Prénom' required=true
+            .input-group.full-width
+              .gold.required-asterix.pull-right *
+              = input class='form-control black-border' value=lastName placeholder='Nom' required=true
+            .input-group.full-width
+              .gold.required-asterix.pull-right *
+              = input class='form-control black-border' value=email placeholder='Addresse email' type='email' required=true
+            if passwordTooShort
+              .margin-top-10.margin-bottom-10.alert.alert-danger Votre mot de passe doit comporter au moins 4 caractères
+            if passwordMismatch
+              .margin-top-10.margin-bottom-10.alert.alert-danger Les mots de passe doivent correspondre
+            .input-group.full-width
+              .gold.required-asterix.pull-right *
+              = input class='form-control black-border' value=password placeholder='Mot de passe' type='password' required=true
+            .input-group.full-width.margin-bottom-10
+              .gold.required-asterix.pull-right *
+              = input class='form-control black-border' value=passwordConfirmation placeholder='Confirmation mot de passe' type='password' required=true
+            if codeBad
+              .alert.alert-danger Ce code promotionnel n'existe pas.
+            .input-group.full-width.margin-top-20
+              = input class='form-control black-border' value=promotionCode placeholder='Code promotionnel'
+            br 
+            .black.center.small En cliquant sur S'inscrire, vous acceptez
+            .black-link.center.margin-left-10.small=link-to 'register' | les conditions générale d'utilisation de Happy Dining
+            button.margin-top-10.btn.register-gold.center.full-width type="submit" S'inscrire
+            br
+            span.black.small Déjà membre?
+            span.black-link.margin-left-10.small=link-to 'login' | Se connecter
+            .small.pull-right.margin-top-10.required-asterix-legend
+              span.gold (*)
+              span.margin-left-10 Champs obligatoires

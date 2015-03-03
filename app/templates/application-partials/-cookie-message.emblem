@@ -1,0 +1,10 @@
+if showCookieMessage
+	.cookie.alert.alert-warning.hidden-xs 
+		.row
+			.col-xs-11
+				span.small En poursuivant votre navigation sur ce site, vous acceptez l'utilisation de cookies pour vous proposes de contenus et services adapté à vos centres d'intérêts. 
+				span.small.blue En savoir plus et gérer ces paramètres.
+				br
+			.col-xs-1
+				button.pull-right click=closeAndAcceptCookies
+					h5.pull-right = fa-icon 'close'

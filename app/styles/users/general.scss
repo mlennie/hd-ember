@@ -1,3 +1,13 @@
+#users-page {
+	margin-top: 50px;
+}
+
+#user-edit {
+	.register-gold {
+		font-size: 1.2em;
+	}
+}
+
 #profile-title {
   margin-top: 0;
 }
@@ -9,30 +19,82 @@
   margin-left: 10px;
 }
 
+.share-buttons {
+	list-style: none;
+}
+
+.form-labels {
+	font-size: 1.3em;
+	font-weight: normal;
+}
+
+.share-buttons li {
+	display: inline;
+
+	.envelope {
+		background-color: red;
+		border-radius: 50px;
+		padding: 8px 12px;
+		font-size: 3.2em;
+		color: white;
+	}
+
+	.facebook {
+		background-color: #3E5C97;
+		border-radius: 50px;
+		padding: 8px 22px;
+		font-size: 3.2em;
+		color: white;
+		margin-right: 50px;
+	}
+
+	.twitter {
+		background-color: #1DADEA;
+		border-radius: 50px;
+		padding: 8px 13px;
+		font-size: 3.2em;
+		color: white;
+		margin-right: 50px;
+		margin-left: -50px;
+	}
+}
+
+.white-box {
+	text-align: center;
+	padding: 15px;
+	background-color: #fff;
+	font-weight: bold;
+	font-size: 1.2em;
+	cursor: pointer;
+
+	button {
+	background-color: #fff !important;
+	border: none;
+	}
+}
+
+
 .horizontal-nav {
 	margin-left: 20px;
 	padding: 10px;
 
 	.nav-title {
-		font-size: 1.5em;
-		border-bottom: 1px solid #44A9F9;
 		text-transform: capitalize;
 		margin-left: 10px;
 		padding-bottom: 2px;
-		font-weight: bold;
 	}
 
 	.nav-link {
 		list-style-type: none;
 		margin-top: 15px;
-		font-size: 1.1em;
+		font-weight: 300;
+		font-size: 1.25em;
 
 		a {
 			color: #000;
 
 			&.active {
-				font-weight: 900;
-				font-size: 1.1em;
+				font-weight: 600;
 			}
 
 			&:link, &:visited, &:active, &:hover {
@@ -42,49 +104,64 @@
 	}
 }
 
-.mes-euros {
-	.col-8-box {
-		padding: 15px;
-		padding-left: 20px;
-		margin-right: 20px;
-
-		.users-title {		
-			border-bottom: 1px solid #000;
-			text-transform: capitalize;
-			margin-left: 10px;
-			padding-bottom: 2px;
-			font-weight: bold;
-		}
-
-		.users-title-small {
-			font-size: 0.8em;
-			font-weight: none;
-		}
-
-		#gold-euros-box {
-			border: 2px solid #CA9956;
-			background-color: #fff;
-			padding: 5px 20px 10px 20px;
-			margin: 5px 5px 0 0;
-
-			.gold-balance {
-				color: #CA9956;
-				font-size: 2.2em;
-				font-weight: bold;
-			}
-		}
-
-		p {
-			padding: 15px;
-		}
-
+@media (max-width: 900px) {
+	#user-edit {
 		.register-gold {
-			text-transform: none;
-			font-weight: none;
-			font-size: 1.5em;
-			margin-bottom: 10px;
-			text-shadow: none;
+			font-size: 1em;
 		}
 	}
 }
 
+@media (max-width: 768px) {
+	#users-page {
+		margin-top: 0px;
+	}
+	.form-labels {
+		margin-top: 35px;
+	}
+	#parrainez-center-text {
+		font-size: 0.8em !important;
+		text-align: left !important;
+
+	}
+
+	.white-box {
+		font-size: 1em !important;
+	}
+	.share-buttons li {
+
+		.envelope {
+			background-color: red;
+			border-radius: 50px;
+			padding: 9px 12px;
+			font-size: 2em;
+			color: white;
+		}
+
+		.facebook {
+			background-color: #3E5C97;
+			border-radius: 50px;
+			padding: 10px 20px;
+			font-size: 2em;
+			color: white;
+			margin-right: 20px;
+		}
+
+		.twitter {
+			background-color: #1DADEA;
+			border-radius: 50px;
+			padding: 10px 13px;
+			font-size: 2em;
+			color: white;
+			margin-right: 20px;
+		}
+	}
+}
+
+@media (max-width: 500px) {
+	.white-box {
+		font-size: 0.8em !important;
+		#referral-link { 
+		}
+	}
+}

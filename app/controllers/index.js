@@ -2,6 +2,12 @@ import Ember from 'ember';
 import SearchMixin from '../mixins/search';
 
 export default Ember.Controller.extend(SearchMixin,{
+
+  queryParams: ['concept', 'confirmation_success', 'confirmation_fail', 'already_logged_in'],
+  concept: null,
+  confirmation_success: null,
+  confirmation_fail: null,
+  already_logged_in: null,
   //properties
   mailFailed: false,
   mailSuccessful: false,
@@ -13,6 +19,8 @@ export default Ember.Controller.extend(SearchMixin,{
   contactEmail: function() {
     return this.store.createRecord('contact-email', {});
   }.property(),
+
+  //alreadyLoggedInMessage: func
 
   //actions
   actions: {
@@ -37,6 +45,15 @@ export default Ember.Controller.extend(SearchMixin,{
       };
 
       ce.save().then(onMailSuccess,onMailFail);
+    },
+
+    //scroll down to concept part of page when concept button clicked
+    scrollToConcept: function() {
+      Ember.$(document).ready(
+        Ember.$('html, body').animate({
+            scrollTop: 520
+        }, 750)
+      )
     }
   }
 });

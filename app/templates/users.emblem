@@ -1,23 +1,34 @@
-if session.currentUser.isOwner
-	br
-	br
-	br
-	br
-	br
-	br
-else
-	br
-	br
-	br
-	br
-	br
-	br
-	br
-.container-fluid.margin-top-10
+.hidden-xs.hidden-sm
+	if session.currentUser.isOwner
+		br
+		br
+		br
+		br
+		br
+		br
+	else
+		br
+		br
+		br
+		br
+		br
+.visible-xs-block.visible-sm-block
+	if session.currentUser.isOwner
+		br
+		br
+		br
+		br
+		br
+		br
+	else
+		br
+		br
+		br
+.container-fluid#users-page
 	.row
-		.col-sm-4
+		.col-sm-4.hidden-xs
 			nav.horizontal-nav.grey-background
-				span.nav-title = session.currentUser.fullName
+				h5.nav-title = session.currentUser.fullName
 				ul
 					li.nav-link
 						=link-to 'users.mes-euros'
@@ -28,6 +39,6 @@ else
 					li.nav-link
 						=link-to 'users.edit' | Mon Profil 
 					li.nav-link
-						=link-to 'users.parrainer-un-ami' | Parrainer un ami 
-		.col-sm-8.padding-left-5
+						=link-to 'users.parrainer-un-ami' | Parrainer un ami
+		.col-sm-8.col-xs-12
 			==outlet

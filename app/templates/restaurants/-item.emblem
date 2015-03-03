@@ -1,65 +1,29 @@
-.row.margin-bottom-20
-	.restaurant-box.grey-background.padding-15
-		.row.corner-ribbon.top-right.sticky.black 
-			.gold-border 10%
-		.col-sm-8
-			.restaurant-img-container
-				img.restaurant-search-pic src={restaurant.imgUrl} 
-		.col-sm-4
-			h4.margin-top-60
+.row.margin-bottom-20#search-result-link = link-to 'restaurants.show' restaurant
+	.restaurant-box.grey-background.padding-15.highlighted-border
+		.col-sm-8.visible-xs-block.visible-sm-block
+			#restaurant-image style=restaurant.backgroundUrl
+				.discount-banner
+					p.small Collectez 10% sur l'addition
+		.col-sm-8.visible-md-block.visible-lg-block#search-item-img-container
+			img.restaurant-search-pic.img-responsive src={restaurant.imgUrl}
+			.row
+				.col-md-7.col-md-offset-5
+					.discount-banner
+						p Collectez 10% sur l'addition
+		.col-sm-4#restaurant-list-info
+			h4.medium.restaurant-title-container
 				span.restaurant-title 
 					=restaurant.name
 			p 
 				=restaurant.cuisine
-			p.address 
+			h6.address 
 				=restaurant.fullAddress
-			br
-			br
-			p
+			p.visible-md-block.visible-lg-block.normal-description
 				= restaurant.shortDescription
 				|  ...
-			.pull-right= link-to 'restaurants.show' restaurant
-				button.btn.register-gold.center Réserver
-
-
-
-
-
-//li.list-group-item
-	.row
-		.visible-md-block.visible-lg-block
-			.col-sm-4
-				=link-to 'restaurants.show' restaurant
-					.restaurant-img-container
-						img.restaurant-search-pic.img-thumbnail src={restaurant.imgUrl} 
-			.col-sm-4
-				=link-to 'restaurants.show' restaurant
-					h4
-						=restaurant.name
-					p 
-						=restaurant.fullAddress
-			.col-sm-2.no-padding
-				=link-to 'restaurants.show' restaurant
-					h1.percent-discount -10%
-			.col-sm-2.no-padding
-				button.btn.btn-success.reserve-button#reserve-button data-toggle="popover" data-placement="bottom" data-trigger="focus" title="Please phone" data-content="09 90 90 87 85"
-					| Reserver
-		.visible-sm-block.visible-xs-block
-			.col-sm-12.center
-				=link-to 'restaurants.show' restaurant
-					h2
-						=restaurant.name
-					p 
-						=restaurant.fullAddress
-			.col-sm-12.no-padding.center
-				=link-to 'restaurants.show' restaurant
-					h2.percent-discount -10%
-			.col-xs-12.col-lg-6.col-lg-offset-3.center
-				=link-to 'restaurants.show' restaurant
-					.restaurant-img-container
-						img.restaurant-search-pic.img-thumbnail.img-responsive src={restaurant.imgUrl} 
-			.col-xs-12.col-sm-8.col-sm-offset-2.center.no-padding
-				button.btn.btn-success.btn-lg.reserve-button.full-width#reserve-button data-toggle="popover" data-placement="bottom" data-trigger="focus" title="Please phone" data-content="09 90 90 87 85"
-					| Reserver
-
-
+			p.visible-xs-block.visible-sm-block.description
+				= restaurant.shortMobileDescription
+				|  ...
+			.pull-right
+				button.btn.register-gold.center data-toggle="popover" data-placement="top" data-trigger="focus" data-html="true" data-original-title="<div><a href='tel:+33952665319'class='popover-title'id='phone-link'>Composez le:</a></div>" data-content="<div><a href='tel:+33952665319'class='popver-content'id='phone-link'>09.52.66.53.19</a></div>"
+					| Réserver

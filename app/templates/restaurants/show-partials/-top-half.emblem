@@ -1,0 +1,16 @@
+.container
+	.row
+		.col-md-12.restaurant-box.grey-background
+			h4.medium
+				=model.name
+			h6.light.address
+				=model.fullAddress
+			.row
+				.col-md-11
+					#restaurant-image style=backgroundUrl
+						.discount-banner
+							p.small Collectez 10% sur l'addition
+				div
+					button.reserver-button.btn.register-gold.center data-toggle="popover-show" data-placement="top" data-trigger="focus" data-html="true" data-original-title="<div><a href='tel:+33952665319'class='popover-title'>Composez le:</a></div>" data-content="<div><a href='tel:+33952665319'class='popver-content'>09.52.66.53.19</a></div>"
+						| Réserver
+			

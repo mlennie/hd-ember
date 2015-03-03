@@ -1,36 +1,48 @@
 .landing-image {
-  background-image: url("https://res.cloudinary.com/happydining/image/upload/v1422806918/landing-image-1_oxo9qx.jpg");
+  background-image: url("https://res.cloudinary.com/happydining/image/upload/v1424447625/goldlanding2000_foccn2.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 0 70%;
-  height: 750px;
-}
-
-.special-height {
-  height: 720px;
+  height: 600px;
 }
 
 #main-title {
   text-align: center;
   text-transform: uppercase;
   color: white;
-  margin-top: 200px;
-  text-shadow: -2px -2px 10px #333;
-  font-size: 4em;
+  margin-top: 160px;
+
+  h4 {
+    margin-left: 70px;
+    margin-right: 70px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: rgba(85, 90, 96, 0.3);
+    font-weight: 400;
+  }
 }
 
 #second-home-title {
   text-align: center;
   color: #fff;
   text-shadow: -1px -1px 10px #333;
-  font-size: 1.5em;
 }
 
+#concept-button {
+  margin-top: 30px;
+  padding: 15px;
+
+  .register-gold {
+    padding: 13px 50px 13px 50px;
+    background-color: rgba(85, 90, 96, 0.8);
+    border: 1px solid #000;
+    text-transform: none;
+  }
+}
 .register-gold {
   background-color: #CB9A4E;
   border-radius: 0;
   color: #fff;
-  font-size: 2em;
   text-transform: uppercase;
   text-shadow: -0.5px -0.5px 4px #333;
   box-shadow: -0.5px -0.5px 10px #333;
@@ -57,17 +69,22 @@
   .special-height {
     height: 95%;
   }
-
+.black-transparent-background  {
+  background-color: rgba(85, 90, 96, 0.3);
+  padding: 20px 0 20px 0;
+  margin-top: 160px;
+}
   #main-title {
-    font-size: 2em;
-    margin-top: 200px;
+    font-size: 2em !important;
+    margin-top: 0;
   }
 
   #second-home-title {
-    font-size: 1em;
+    font-size: 0.8em !important;
+    margin-top: 30px;
   }
 
   .register-gold {
-    font-size: 1.5em;
+    font-size: 1em !important;
   }
 }

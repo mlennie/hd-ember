@@ -1,0 +1,8 @@
+br
+br
+br
+.container
+	.row
+		#conditions-image
+			h5.padding-10 Mentions légales et Conditions d'utilisation des services
+			img.img-responsive src="https://res.cloudinary.com/happydining/image/upload/c_crop,g_north,h_4200,x_0,y_220/v1424965442/mentionlegales_msfyo3.png"

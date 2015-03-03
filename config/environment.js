@@ -21,6 +21,8 @@ module.exports = function(environment) {
 
 
   if (environment === 'development') {
+    //initialize mixpanel
+    ENV.APP.MIXPANEL_CODE = "71aac3e175ed8f2f524fa6641358284b"
     //ENV.APP.LOG_RESOLVER = true;
     //ENV.APP.LOG_ACTIVE_GENERATION = true;
     ENV.APP.LOG_TRANSITIONS = true;
@@ -52,6 +54,8 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
+    //initialize mixpanel
+    ENV.APP.MIXPANEL_CODE = process.env.MIXPANEL_CODE
     ENV.APP.HOST = process.env.API_URL
     ENV.APP.EMBER_URL = process.env.EMBER_URL
     ENV['simple-auth'] = {

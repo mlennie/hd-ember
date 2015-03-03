@@ -1,5 +1,4 @@
 /* global require, module */
-
 var EmberApp = require('ember-cli/lib/broccoli/ember-app');
 
 var app = new EmberApp({
@@ -7,6 +6,9 @@ var app = new EmberApp({
     clientAllowedKeys: ['HOST']
   }
 });
+
+//Mixpanel
+app.import('vendor/scripts/mixpanel.js');
 
 // Bootstrap
 app.import('bower_components/bootstrap-sass-official/assets/javascripts/bootstrap.js');
@@ -16,13 +18,6 @@ app.import('bower_components/bootstrap-datepicker/js/locales/bootstrap-datepicke
 
 // maskedinput
 app.import('bower_components/jquery-maskedinputs/src/jquery.maskedinput.js');
-
-// Glyphicons
-var pickFiles = require('broccoli-static-compiler');
-var bootstrapFonts = pickFiles('bower_components/bootstrap-sass-official/assets/fonts/bootstrap', {
-  srcDir: '/',
-  destDir: '/fonts'
-});
 
 // Use `app.import` to add additional libraries to the generated
 // output files.

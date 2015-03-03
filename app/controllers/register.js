@@ -2,13 +2,14 @@ import Ember from 'ember';
 
 export default Ember.Controller.extend({
   //queryParams
-  queryParams: ['referral_code'],
+  queryParams: ['referralCode'],
 
   //properties
-  referral_code: null,
+  referralCode: null,
   registrationSuccessful: false,
   registrationFailed: false,
   genderBlank: false,
+  codeBad: false,
   passwordTooShort: false,
   passwordMismatch: false,
   lastName: '',
@@ -77,16 +78,38 @@ export default Ember.Controller.extend({
 
         //setup callbacks for after user request is sent
         var _this = this;
-        var onSuccess = function(){
+        var onSuccess = function(user){
+
+          //MIXPANEL: create a mixpanel alias (assign user id to given profile id)
+          mixpanel.alias(user.id.toString());
+          //MIXPANEL: Add registered event
+          mixpanel.track('Registered', { 'Made By': 'User' });
+          //MIXPANEL: Add user profile
+          mixpanel.people.set({
+            'Id': user.id,
+            '$first_name': _this.get('firstName'),
+            '$last_name': _this.get('lastName'),
+            '$email': _this.get('email'),
+            'Gender': _this.get('gender')
+          });
+
+          //reset properties
           _this.set('isLoading', false);
           _this.set('registrationFailed', false);
           _this.set('registrationSuccessful', true);
         };
 
-        var onFail = function() {
-          _this.set('isLoading', false);
-          _this.set('registrationFailed', true);
-          _this.set('registrationSuccessful', false);
+        var onFail = function(response) {
+          if (response["errors"]["code"] === 'bad') {
+            _this.set('codeBad', true);
+            _this.set('isLoading', false);
+            _this.set('registrationFailed', false);
+            _this.set('registrationSuccessful', false);
+          } else {
+            _this.set('isLoading', false);
+            _this.set('registrationFailed', true);
+            _this.set('registrationSuccessful', false);
+          }
         };
 
         //send user update request

@@ -3,21 +3,15 @@
 @import 'index.scss';
 @import 'header.scss';
 @import 'footer.scss';
+@import 'concept.scss';
 @import 'search.scss';
 @import 'contact.scss';
 @import 'users/login.scss';
 @import 'users/general.scss';
+@import 'users/mes-euros.scss';
 @import 'restaurants/show.scss';
 @import 'restaurants/search-results.scss';
 
-/* latin */
-@font-face {
-  font-family: 'Raleway';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Raleway'), url(https://fonts.gstatic.com/s/raleway/v9/QAUlVt1jXOgQavlW5wEfxQLUuEpTyoUstqEm5AMlJo4.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
-}
 
 /* GENERAL */
 
@@ -25,6 +19,8 @@ html, body {
   margin: 0px;
   line-height: 1.5;
   font-family: 'Raleway', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
 }
 
 html {
@@ -34,20 +30,64 @@ html {
 
 body {
   /* Margin bottom by footer height */
-  margin-bottom: 60px;
+  margin-bottom: 30px;
 }
 
 h1 {
-  font-size: 2.8em;
+  font-size: 3.4375em !important; /* 55px/16=3.4375em  */
 }
 
 h2 {
-  font-size: 1.9em;
+  font-size: 2.5em !important; /* 40px/16=2.5em */
 }
 
 h3 {
-  font-size: 2em;
+  font-size: 2.1875em !important; /* 35px/16=2.1875em */
 }
+
+h4 {
+  font-size: 1.875em !important; /* 30px/16=1.875em */
+}
+
+h5 {
+  font-size: 1.5625em !important; /* 25px/16=1.5625 */
+}
+
+h6 {
+  font-size: 1.25em !important; /* 20px/16=1.25em */
+}
+
+p {
+  font-size: 1em !important; /* 16px/16=1em */
+}
+
+input {
+  font-size: 1.25em !important; /* 20px/16=1.25em */
+  font-weight: 200;
+}
+
+.small {
+  font-size: 0.875em !important; /* 14px/16=0.875em */
+}
+
+.extra-light {
+  font-weight: 200;
+}
+
+.light {
+  font-weight: 300;
+}
+
+.medium {
+  font-weight: 500;
+}
+
+.semi-bold {
+  font-weight: 600;
+}
+
+.no-transformation { text-transform: none !important; }
+
 
 .small-text { font-size: 0.8em; }
 
@@ -75,13 +115,19 @@ h3 {
   color: #000 !important;
 }
 
+.inline { display: inline; }
+
 hr.black-line { border-bottom: 1px solid #000; }
+
+.no-background { background: none !important;}
 
 .grey-background { background-color: #ECECEC; }
 
 .white-background { background-color: #fff; }
 
 .light-black-background { background-color: #4F4F4F; }
+
+.red-background { background-color: red;}
 
 /* padding */
 
@@ -103,13 +149,17 @@ hr.black-line { border-bottom: 1px solid #000; }
 
 .no-margin { margin: 0 !important; }
 
+.margin-10 { margin: 10 !important; }
+
 .no-margin-top { margin-top: 0 !important; }
 
-.margin-top-5 { margin-top: 5px; }
+.margin-top-5 { margin-top: 5px !important; }
 
-.margin-top-10 { margin-top: 10px; }
+.margin-top-10 { margin-top: 10px !important; }
 
-.margin-top-20 { margin-top: 20px; }
+.margin-top-20 { margin-top: 20px !important; }
+
+.margin-top-40 { margin-top: 40px !important; }
 
 .margin-top-60 { margin-top: 60px; }
 
@@ -117,7 +167,7 @@ hr.black-line { border-bottom: 1px solid #000; }
 
 .margin-right-5 { margin-right: 5px; }
 
-.margin-right-10 { margin-right: 10px; }
+.margin-right-10 { margin-right: 10px !important; }
 
 .margin-bottom-10 { margin-bottom: 10px; }
 

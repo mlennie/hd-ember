@@ -2,7 +2,19 @@ import Ember from 'ember';
 import SearchMixin from '../mixins/search';
 
 export default Ember.Controller.extend(SearchMixin,{
-	
+
+  showTopSearch: false,
+
+  //decide whether to show small footer or not
+  showSmallFooter: function() {
+    var path = this.get('currentPath');
+    if (path === 'index' || path === 'login' || path === 'register') {
+      return true;
+    } else {
+      return false;
+    }
+  }.property('currentPath'),
+
 	//computed properties
 	showCookieMessage: function() {
 		//get cookieAccepted cookie and if not there (cookies not accepted)
@@ -13,7 +25,7 @@ export default Ember.Controller.extend(SearchMixin,{
 	}.property('currentPath'),
 
 	//scroll to top of page on page change
-	currentPathChanged: function () {
+	scrollToTop: function () {
     window.scrollTo(0, 0);
   }.observes('currentPath'),
 
@@ -53,9 +65,17 @@ export default Ember.Controller.extend(SearchMixin,{
   }.property('currentPath'),
 
   //whether to show top search bar or not
-  showTopSearch: function() {
-    return this.get('currentPath') !== 'index'
-  }.property('currentPath'),
+  setShowTopSearch: function() {
+    var path = this.get('currentPath');
+    if (path !== 'index' && 
+      path !== 'conditions-generales' &&
+      path !== 'faq' &&
+      path !== 'remerciements') {
+      this.set('showTopSearch', true);
+    } else {
+      this.set('showTopSearch', false);
+    }
+  }.observes('currentPath'),
 
   //actions
   actions: {
@@ -66,6 +86,35 @@ export default Ember.Controller.extend(SearchMixin,{
   		var cookie = this.get('cookie');
 	    cookie.setCookie('cookiesAccepted', true);
 	    this.set('showCookieMessage', false);
-  	}
+  	},
+
+    goToIndex: function() {
+      this.transitionToRoute('index', { queryParams: {concept: null}});
+      this.set('showTopSearch', false);
+      this.set('date', undefined);
+      this.controllerFor('index').setProperties({
+        confirmation_success: null,
+        confirmation_fail: null,
+        already_logged_in: null
+      });
+      Ember.$(window).scrollTop(0);
+    },
+
+    scrollToConcept: function() {
+      Ember.$(document).ready(
+        Ember.$('html, body').animate({
+            scrollTop: 520
+        }, 750)
+      )
+    },
+
+     //allow clicking of link with specific id to go to that part of page
+    jumpToConcept : function(){
+      if (this.get('currentPath') === 'index') {
+        this.send('scrollToConcept');
+      } else {
+        this.transitionToRoute('index', { queryParams: {concept: true}});
+      }
+    }
   }
 });

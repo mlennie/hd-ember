@@ -1,0 +1,11 @@
+.container#second-half
+	.row
+		.col-sm-6
+			h5.description-title
+				| Description et Histoire
+			p.description
+				=model.description
+		.col-sm-6
+			if firstMenu
+				= partial 'restaurants/show-partials/menu'
+			

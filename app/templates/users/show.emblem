@@ -1,6 +1,6 @@
-.container-fluid
+.container-fluid.mes-euros
 	.row
-		.col-md-7.col-md-offset-2
+		.col-8-box.grey-background
 			h1.center#profile-title Mon Profil
 			br
 			br

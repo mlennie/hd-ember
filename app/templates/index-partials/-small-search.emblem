@@ -1,0 +1,14 @@
+.container
+	.col-sm-8.col-sm-offset-2.col-xs-12
+		h5#mobile-search-title.visible-xs-block Rechercher un restaurant
+		form#mobile-search-form submit='search' role="search"
+			.input_container
+				= bootstrap-datepicker value=date format="dd/mm/yy" class="input" readonly="true" todayBtn=false todayHighlight=true placeholder="Date" language='fr'
+				span.search-icon = fa-icon 'calendar'
+			.input_container
+				= view Ember.Select content=hours class="search-select input" prompt="Heure"
+				span.search-icon = fa-icon 'caret-down'
+			.input_container
+				= view Ember.Select content=couverts class="search-select input"
+				span.search-icon = fa-icon 'caret-down'
+			button type="submit" Rechercher
