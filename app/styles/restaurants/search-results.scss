@@ -126,6 +126,7 @@ div.back-link {
     text-underline: none;
     color: #000;
     position: relative;
+    padding: 0;
 
     .restaurant-title {
       border-bottom: 1px solid #000;
@@ -141,7 +142,7 @@ div.back-link {
 
     button {
       margin-top: 25px;
-      margin-right: 10px;
+      margin-right: 0px;
       font-size: 1.25em;
       font-weight: 200;
       box-shadow: none;
