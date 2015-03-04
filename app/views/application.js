@@ -17,10 +17,31 @@ export default Ember.View.extend({
 
 	//send events to MIXPANEL
 	applicationMixpanelEvents: function() {
-		Ember.$('body').on('click', '#connection-button ', function() {
-			//MIXPANEL: Add connection link click event
-	    mixpanel.track('Connexion Link Click', { 
-	    	'location': 'navbar' 
+
+		//get controller
+		var controller = this.controller;
+
+		//navbar events
+		//MIXPANEL: Add concept link click event
+		Ember.$('body').on('click', '#connection-button', function() {
+	    mixpanel.track('Concept Link Click', { 
+	    	'location': 'navbar',
+	    	'page': controller.get('currentPath') 
+	    });
+		});
+
+		//footer events
+		//MIXPANEL: Add CGU link click event
+		Ember.$('body').on('click', '#conditions-generales', function() {
+			
+			//MIXPANEL: Identify user if signed in
+			if (controller.get('session.user_id') !== undefined) {
+				alert("signed in!");
+				mixpanel.identify(controller.get('session.user_id'));
+			}
+			
+	    mixpanel.track('CGU Link Click', { 
+	    	'location': 'footer' 
 	    });
 		});
 	}.on('didInsertElement')

@@ -110,6 +110,14 @@ export default Ember.Controller.extend(SearchMixin,{
 
      //allow clicking of link with specific id to go to that part of page
     jumpToConcept : function(){
+      //MIXPANEL: send concept link click event
+      alert('concept clicked!');
+      mixpanel.track('Connexion Link Click', { 
+        'location': 'navbar',
+        'page': this.get('currentPath')
+      });
+
+      //scroll to top if on index, if not go to index and scroll to top
       if (this.get('currentPath') === 'index') {
         this.send('scrollToConcept');
       } else {
