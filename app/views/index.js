@@ -32,5 +32,5 @@ export default Ember.View.extend({
 	    	'connected': 'yes'  
 	    });
 		});
-	}.observes('controller.currentPath').on('didInsertElement')
+	}.on('didInsertElement')
 });
