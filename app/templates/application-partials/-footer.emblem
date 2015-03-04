@@ -1,7 +1,7 @@
 if showSmallFooter
 	footer.small-footer.light-black-background.hidden-xs
 		.center.margin-top-5
-			span 
+			span#conditions-generales
 				=link-to 'conditions-generales' | Conditions d'utilisation 
 			span
 				=link-to 'faq' | FAQ
@@ -18,7 +18,7 @@ else
 			span 
 				a href='tel:+33952665319'
 					| 09.52.66.53.19	
-			span 
+			span#conditions-generales 
 				=link-to 'conditions-generales' | CGU et Mentions Légales
 		.center.margin-top-10
 			| * Voir condition et validité dans le détail de la fiche du restaurant. Les offres sur les boissons alcoolisées sont strictement 
