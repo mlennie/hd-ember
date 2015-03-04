@@ -28,7 +28,7 @@ module.exports = function(environment) {
     ENV.APP.LOG_TRANSITIONS = true;
     //ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     //ENV.APP.LOG_VIEW_LOOKUPS = true;
-    ENV.APP.HOST = 'https://hdrailsdev.herokuapp.com'
+    ENV.APP.HOST = 'http://localhost:3000'
     ENV.APP.EMBER_URL = 'http://localhost:4200'
     ENV['simple-auth'] = {
       authorizer: 'simple-auth-authorizer:devise',
