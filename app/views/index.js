@@ -14,6 +14,9 @@ export default Ember.View.extend({
 
 	//send events to MIXPANEL
 	indexMixpanelEvents: function() {
+
+		var controller = this.controller;
+
 		Ember.$('body').on('click', '#middle-register-button', function() {
 			//MIXPANEL: Add inscription button click event
 	    mixpanel.track('Inscription Button Click', { 
@@ -24,6 +27,8 @@ export default Ember.View.extend({
 		});
 
 		Ember.$('body').on('click', '#concept-button', function() {
+			//MIXPANEL: Identify user
+				mixpanel.identify(controller.get('session.user_id'));
 			//MIXPANEL: Add concept button click event
 	    mixpanel.track('Concept Button Click', { 
 	    	'color': 'black transparent',
