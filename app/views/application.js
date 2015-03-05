@@ -36,7 +36,6 @@ export default Ember.View.extend({
 			
 			//MIXPANEL: Identify user if signed in
 			if (controller.get('session.user_id') !== undefined) {
-				alert("signed in!");
 				mixpanel.identify(controller.get('session.user_id'));
 			}
 			
