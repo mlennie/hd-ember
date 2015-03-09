@@ -37,7 +37,7 @@
 							a#concept-link click=jumpToConcept
 								| Le Concept 
 						li#connection-button class={navbarClass} #{ link-to 'login' | Connexion }
-						li class={navbarClass} #{ link-to 'register' id='gold-menu-box' | Inscription }
+						li#inscription-nav-link class={navbarClass} #{ link-to 'register' id='gold-menu-box' | Inscription }
 			.visible-xs-block
 				.collapse.navbar-collapse#navbar-collapse-1
 					ul.nav.navbar-nav.navbar-right
@@ -57,5 +57,5 @@
 								a#concept-link click=jumpToConcept
 									| Le Concept
 							li#connection-button class={navbarClass} #{ link-to 'login' | Connexion }
-							li class={navbarClass} #{ link-to 'register' | Inscription }
+							li#inscription-nav-link class={navbarClass} #{ link-to 'register' | Inscription }
 	= partial 'application-partials/search-bar' 

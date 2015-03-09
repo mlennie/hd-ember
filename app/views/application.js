@@ -30,6 +30,14 @@ export default Ember.View.extend({
 	    });
 		});
 
+		//MIXPANEL: Add inscription nav bar link click event
+		Ember.$('body').on('click', '#inscription-nav-link', function() {
+	    mixpanel.track('Inscription Nav Link Click', { 
+	    	'location': 'nav bar',
+	    	'page': 'multiple'  
+	    });
+		});
+
 		//footer events
 		//MIXPANEL: Add CGU link click event
 		Ember.$('body').on('click', '#conditions-generales', function() {
