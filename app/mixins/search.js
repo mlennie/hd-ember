@@ -5,6 +5,8 @@ export default Ember.Mixin.create({
 	//set initial search options to be null
 	name: null,
 	cuisine: undefined,
+	hour: null,
+	nbCouverts: null,
 	date: null,
 	time: null, 
 	number: null,
@@ -86,6 +88,28 @@ export default Ember.Mixin.create({
 		return fullList;
 	}.property('sortedRestaurants'),
 
+	//MIXPANEL HELPERS
+	//check if date is empty
+	dateEmpty: function() {
+		return this.get('date') === null || this.get('date') === undefined;
+	}.property('date'),
+
+	//check if hour is empty
+	hourEmpty: function() {
+		return this.get('hour') === null || this.get('hour') === undefined;
+	}.property('hour'),
+
+	//check if nbCouverts is empty
+	nbCouvertsEmpty: function() {
+		var c = this.get('nbCouverts');
+		return c === null || c === undefined || c === 'Nombre de couverts';
+	}.property('nbCouverts'),
+
+	//check if name is empty
+	nameEmpty: function() {
+		return this.get('name') === null || this.get('name') === undefined;
+	}.property('name'),
+
 	//ACTIONS
 	actions: {
 
@@ -94,6 +118,21 @@ export default Ember.Mixin.create({
 		search: function() {
 			//reset page location to top of page
     	window.scrollTo(0, 0);
+
+    	//MIXPANEL: restaurant search button click event
+	    mixpanel.track('Restaurant Search Button Click', { 
+	    	"location": "logged in home page not mobile",
+	    	"page": this.get('currentPath'),
+	    	"date empty?": this.get('dateEmpty'),
+	    	"date": this.get('date'),
+	    	"hour empty?": this.get('hourEmpty'),
+	    	"hour": this.get('hour'),
+	    	"nbCouverts empty?": this.get('nbCouvertsEmpty'),
+	    	"nbCouverts": this.get('nbCouverts'),
+	    	"location empty?": this.get('nameEmpty'),
+	    	"Restaurant location": this.get('name')
+	    });
+
     	//get name of restaurant
 			var name = this.get('name');
     	//go to search results page and list restaurants that match criteria 

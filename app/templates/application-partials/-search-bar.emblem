@@ -10,12 +10,12 @@ if showTopSearch
 									= bootstrap-datepicker value=date class="input" readonly="true" format="dd/mm/yy" todayBtn=false todayHighlight=true placeholder="Date" language='fr'
 									span.search-icon = fa-icon 'calendar'
 								span.input_container
-									= view Ember.Select content=hours class="search-select input" prompt="Heure"
+									= view Ember.Select content=hours value=hour class="search-select input" prompt="Heure"
 									span.search-icon = fa-icon 'caret-down'
 								span.input_container
-									= view Ember.Select content=couverts class="search-select input"
+									= view Ember.Select content=couverts value=nbCouverts class="search-select input"
 									span.search-icon = fa-icon 'caret-down'
 								span.input_container
-									= view Ember.Select content=names prompt="Où ?" valueBinding=name id="name-select" class="search-select input"
+									= view Ember.Select content=names prompt="Où ?" value=name id="name-select" class="search-select input"
 									span.search-icon = fa-icon 'caret-down'
 								button#top-search-button type="submit" Rechercher

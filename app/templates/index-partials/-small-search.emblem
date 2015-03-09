@@ -6,9 +6,9 @@
 				= bootstrap-datepicker value=date format="dd/mm/yy" class="input" readonly="true" todayBtn=false todayHighlight=true placeholder="Date" language='fr'
 				span.search-icon = fa-icon 'calendar'
 			.input_container
-				= view Ember.Select content=hours class="search-select input" prompt="Heure"
+				= view Ember.Select content=hours value=name class="search-select input" prompt="Heure"
 				span.search-icon = fa-icon 'caret-down'
 			.input_container
-				= view Ember.Select content=couverts class="search-select input"
+				= view Ember.Select content=couverts value=nbCouverts class="search-select input"
 				span.search-icon = fa-icon 'caret-down'
 			button type="submit" Rechercher
