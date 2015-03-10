@@ -11,7 +11,7 @@
 						.discount-banner
 							p.small Collectez 10% sur l'addition
 				div
-					button.reserver-button.btn.register-gold.center data-toggle="popover-show" data-placement="top" data-trigger="focus" data-html="true" data-original-title="<div><a href='tel:+33952665319'class='popover-title'>Composez le:</a></div>" data-content="<div><a href='tel:+33952665319'class='popver-content'>09.52.66.53.19</a></div>"
+					button.reserver-button.btn.register-gold.center click='clickReserver' data-toggle="popover-show" data-placement="top" data-trigger="focus" data-html="true" data-original-title="<div><a href='tel:+33952665319'class='popover-title'>Composez le:</a></div>" data-content="<div><a href='tel:+33952665319'class='popver-content'>09.52.66.53.19</a></div>"
 						| Réserver
 	.row
 		.col-sm-6.col-sm-offset-3

@@ -213,6 +213,13 @@ export default Ember.Controller.extend({
           }
         }
       );
+    },
+
+    clickReserver: function() {
+      //MIXPANEL: Add Restaurant Page Reserver Button Click Event
+      mixpanel.track('Restaurant Page Réserver Button Click', { 
+        'restaurant': this.get('model.name')
+      });
     }
   }
 });

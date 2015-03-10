@@ -76,7 +76,7 @@ export default Ember.Controller.extend({
       }
       this.set('sortBy', input.get('firstObject'));
     },
-
+    
     clickReserver: function(restaurantName) {
       //MIXPANEL: Add Search Results Reserver Button Click Event
       mixpanel.track('Search Results Page Réserver Button Click', { 

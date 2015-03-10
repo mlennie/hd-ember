@@ -85,5 +85,18 @@ export default Ember.View.extend({
 	    	'location': 'footer' 
 	    });
 		});
+
+		//Search Results Page
+		//added here because was sending multiple events when adding to search 
+		//results view
+
+		//MIXPANEL: Add Mon Compte link click event
+    Ember.$('body').on('click', '#search-result-link', function() {
+      //MIXPANEL: Add Search Results Page Restaurant Click Event
+      mixpanel.track('Restaurant Click', { 
+        'restaurant': Ember.$(this).data('name'),
+        'page': controller.get('currentPath')
+      });
+    });
 	}.on('didInsertElement')
 });
