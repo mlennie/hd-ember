@@ -32,32 +32,42 @@ export default Ember.View.extend({
 		//MIXPANEL: Add Mon Compte link click event
 		Ember.$('body').on('click', '#mon-compte-dropdown', function() {
 	    mixpanel.track('Mon Compte Link Click', { 
-	    	'location': 'navbar',
-	    	'page': controller.get('currentPath') 
+	    	'location': 'navbar'
+	    });
+		});
+
+		//MIXPANEL: Add Mon Profile nav link click event
+		Ember.$('body').on('click', '#welcome-page-nav-link', function() {
+	    mixpanel.track("Page d'accueil Link Click", { 
+	    	'location': 'navbar'
 	    });
 		});
 
 		//MIXPANEL: Add Mon Profile nav link click event
 		Ember.$('body').on('click', '#mon-profile-nav-link', function() {
 	    mixpanel.track('Mon Profile Link Click', { 
-	    	'location': 'navbar',
-	    	'page': controller.get('currentPath') 
+	    	'location': 'navbar'
 	    });
 		});
 
 		//MIXPANEL: Add Mes Euros nav link click event
 		Ember.$('body').on('click', '#mes-euros-nav-link', function() {
 	    mixpanel.track('Mes Euros Link Click', { 
-	    	'location': 'navbar',
-	    	'page': controller.get('currentPath') 
+	    	'location': 'navbar'
 	    });
 		});
 
 		//MIXPANEL: Add Parrainer nav link click event
 		Ember.$('body').on('click', '#parrainer-nav-link', function() {
 	    mixpanel.track('Parrainer Link Click', { 
-	    	'location': 'navbar',
-	    	'page': controller.get('currentPath') 
+	    	'location': 'navbar'
+	    });
+		});
+
+		//MIXPANEL: Add Logout click event
+		Ember.$('body').on('click', '#logout-link', function() {
+	    mixpanel.track('Logout', { 
+	    	'location': 'navbar'
 	    });
 		});
 
@@ -65,16 +75,14 @@ export default Ember.View.extend({
 		//MIXPANEL: Add concept link click event
 		Ember.$('body').on('click', '#connection-button', function() {
 	    mixpanel.track('Concept Link Click', { 
-	    	'location': 'navbar',
-	    	'page': controller.get('currentPath') 
+	    	'location': 'navbar'
 	    });
 		});
 
 		//MIXPANEL: Add inscription nav bar link click event
 		Ember.$('body').on('click', '#inscription-nav-link', function() {
 	    mixpanel.track('Inscription Nav Link Click', { 
-	    	'location': 'nav bar',
-	    	'page': 'multiple'  
+	    	'location': 'nav bar' 
 	    });
 		});
 
@@ -96,6 +104,13 @@ export default Ember.View.extend({
       mixpanel.track('Restaurant Click', { 
         'restaurant': Ember.$(this).data('name'),
         'page': controller.get('currentPath')
+      });
+    });
+
+    //MIXPANEL: retour links(search results and restaurant page)
+     Ember.$('body').on('click', '.back-link', function() {
+      mixpanel.track('Retour Link Click', { 
+        'page': Ember.$(this).data('page')
       });
     });
 	}.on('didInsertElement')
