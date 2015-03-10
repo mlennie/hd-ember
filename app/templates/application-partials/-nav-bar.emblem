@@ -22,13 +22,13 @@
 								span.nav-item.no-transformation Mon compte
 							ul.dropdown-menu#main-nav-dropdown role="menu"
 								li = link-to 'index' | Page d'accueil
-								li = link-to 'users.mes-euros' 
+								li#mes-euros-nav-link = link-to 'users.mes-euros' 
 									if session.currentUser.isOwner
 										| Ma balance
 									else
 										| Mes Euros Collectés
-								li = link-to 'users.edit' | Mon Profil
-								li = link-to 'users.parrainer-un-ami' | Parrainer un ami  
+								li#mon-profile-nav-link = link-to 'users.edit' | Mon Profil
+								li#parrainer-nav-link = link-to 'users.parrainer-un-ami' | Parrainer un ami  
 								li.divider
 								li
 									a{action 'invalidateSession'} Se déconnecter
@@ -43,13 +43,13 @@
 					ul.nav.navbar-nav.navbar-right
 						if session.isAuthenticated
 							li = link-to 'index' | Page d'accueil
-							li = link-to 'users.mes-euros' 
+							li#mes-euros-nav-link = link-to 'users.mes-euros' 
 								if session.currentUser.isOwner
 									| Ma balance
 								else
 									| Mes Euros Collectés
-							li = link-to 'users.edit' | Mon Profil
-							li = link-to 'users.parrainer-un-ami' | Parrainer un ami 
+							li#mon-profile-nav-link = link-to 'users.edit' | Mon Profil
+							li#parrainer-nav-link = link-to 'users.parrainer-un-ami' | Parrainer un ami 
 							li
 								a{action 'invalidateSession'} Se déconnecter
 						else
