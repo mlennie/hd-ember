@@ -22,6 +22,16 @@ export default Ember.View.extend({
 		var controller = this.controller;
 
 		//navbar events
+		//logged in
+		//MIXPANEL: Add Mon Compte link click event
+		Ember.$('body').on('click', '#mon-compte-dropdown', function() {
+	    mixpanel.track('Mon Compte Link Click', { 
+	    	'location': 'navbar',
+	    	'page': controller.get('currentPath') 
+	    });
+		});
+
+		//not logged in
 		//MIXPANEL: Add concept link click event
 		Ember.$('body').on('click', '#connection-button', function() {
 	    mixpanel.track('Concept Link Click', { 
