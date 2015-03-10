@@ -46,6 +46,13 @@ export default Ember.Controller.extend({
   actions: {
     showPhoneNumber: function() {
       this.set('showReserveButton', false);
+    },
+
+    clickReserver: function() {
+      //MIXPANEL: Add Restaurant Page Reserver Button Click Event
+      mixpanel.track('Restaurant Page Réserver Button Click', { 
+        'restaurant': this.get('model.name')
+      });
     }
   }
 });
