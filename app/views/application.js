@@ -97,9 +97,6 @@ export default Ember.View.extend({
         'restaurant': Ember.$(this).data('name'),
         'page': controller.get('currentPath')
       });
-      //unbind because clicking restaurant was sending multiple events
-      Ember.$(this).unbind('click');
-
     });
 	}.on('didInsertElement')
 });
