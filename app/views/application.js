@@ -21,7 +21,47 @@ export default Ember.View.extend({
 		//get controller
 		var controller = this.controller;
 
+		//MIXPANEL: Identify user if signed in NOTE: user is identified here if 
+		//app reloads
+		if (controller.get('session.user_id') !== undefined) {
+			mixpanel.identify(controller.get('session.user_id'));
+		}
+
 		//navbar events
+		//logged in
+		//MIXPANEL: Add Mon Compte link click event
+		Ember.$('body').on('click', '#mon-compte-dropdown', function() {
+	    mixpanel.track('Mon Compte Link Click', { 
+	    	'location': 'navbar',
+	    	'page': controller.get('currentPath') 
+	    });
+		});
+
+		//MIXPANEL: Add Mon Profile nav link click event
+		Ember.$('body').on('click', '#mon-profile-nav-link', function() {
+	    mixpanel.track('Mon Profile Link Click', { 
+	    	'location': 'navbar',
+	    	'page': controller.get('currentPath') 
+	    });
+		});
+
+		//MIXPANEL: Add Mes Euros nav link click event
+		Ember.$('body').on('click', '#mes-euros-nav-link', function() {
+	    mixpanel.track('Mes Euros Link Click', { 
+	    	'location': 'navbar',
+	    	'page': controller.get('currentPath') 
+	    });
+		});
+
+		//MIXPANEL: Add Parrainer nav link click event
+		Ember.$('body').on('click', '#parrainer-nav-link', function() {
+	    mixpanel.track('Parrainer Link Click', { 
+	    	'location': 'navbar',
+	    	'page': controller.get('currentPath') 
+	    });
+		});
+
+		//not logged in
 		//MIXPANEL: Add concept link click event
 		Ember.$('body').on('click', '#connection-button', function() {
 	    mixpanel.track('Concept Link Click', { 
@@ -41,12 +81,6 @@ export default Ember.View.extend({
 		//footer events
 		//MIXPANEL: Add CGU link click event
 		Ember.$('body').on('click', '#conditions-generales', function() {
-			
-			//MIXPANEL: Identify user if signed in
-			if (controller.get('session.user_id') !== undefined) {
-				mixpanel.identify(controller.get('session.user_id'));
-			}
-			
 	    mixpanel.track('CGU Link Click', { 
 	    	'location': 'footer' 
 	    });

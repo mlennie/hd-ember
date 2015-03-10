@@ -25,5 +25,5 @@
 				= restaurant.shortMobileDescription
 				|  ...
 			.pull-right
-				button.btn.register-gold.center data-toggle="popover" data-placement="top" data-trigger="focus" data-html="true" data-original-title="<div><a href='tel:+33952665319'class='popover-title'id='phone-link'>Composez le:</a></div>" data-content="<div><a href='tel:+33952665319'class='popver-content'id='phone-link'>09.52.66.53.19</a></div>"
+				button.btn.register-gold.center click='clickReserver restaurant.name' data-toggle="popover" data-placement="top" data-trigger="focus" data-html="true" data-original-title="<div><a href='tel:+33952665319'class='popover-title'id='phone-link'>Composez le:</a></div>" data-content="<div><a href='tel:+33952665319'class='popver-content'id='phone-link'>09.52.66.53.19</a></div>" 
 					| Réserver
