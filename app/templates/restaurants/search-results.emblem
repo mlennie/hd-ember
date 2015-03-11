@@ -8,9 +8,10 @@
 	br
 	br
 br
-.back-link=link-to 'index'
-	span.back-caret= fa-icon 'caret-left'
-	| Retour
+.back-link data-page="search-results" 
+	=link-to 'index'
+		span.back-caret= fa-icon 'caret-left'
+		| Retour
 .container
 	.row#restaurant-list
 		h1.load-spinner.center = fa-icon 'fa-spin fa-spinner'
