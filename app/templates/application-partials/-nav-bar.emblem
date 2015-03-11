@@ -21,14 +21,14 @@
 								span.nav-icon = fa-icon 'caret-down'
 								span.nav-item.no-transformation Mon compte
 							ul.dropdown-menu#main-nav-dropdown role="menu"
-								li#welcome-page-nav-link = link-to 'index' | Page d'accueil
+								li#welcome-page-nav-link = link-to 'index' | Page d'Accueil
 								li#mes-euros-nav-link = link-to 'users.mes-euros' 
 									if session.currentUser.isOwner
 										| Ma balance
 									else
 										| Mes Euros Collectés
 								li#mon-profile-nav-link = link-to 'users.edit' | Mon Profil
-								li#parrainer-nav-link = link-to 'users.parrainer-un-ami' | Parrainer un ami  
+								li#parrainer-nav-link = link-to 'users.parrainer-un-ami' | Parrainer un Ami  
 								li.divider
 								li#logout-link
 									a{action 'invalidateSession'} Se déconnecter
@@ -42,14 +42,14 @@
 				.collapse.navbar-collapse#navbar-collapse-1
 					ul.nav.navbar-nav.navbar-right
 						if session.isAuthenticated
-							li#welcome-page-nav-link = link-to 'index' | Page d'accueil
+							li#welcome-page-nav-link = link-to 'index' | Page d'Accueil
 							li#mes-euros-nav-link = link-to 'users.mes-euros' 
 								if session.currentUser.isOwner
 									| Ma balance
 								else
 									| Mes Euros Collectés
 							li#mon-profile-nav-link = link-to 'users.edit' | Mon Profil
-							li#parrainer-nav-link = link-to 'users.parrainer-un-ami' | Parrainer un ami 
+							li#parrainer-nav-link = link-to 'users.parrainer-un-ami' | Parrainer un Ami 
 							li#logout-link
 								a{action 'invalidateSession'} Se déconnecter
 						else

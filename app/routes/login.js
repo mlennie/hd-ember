@@ -34,5 +34,15 @@ export default Ember.Route.extend({
     	isLoading: false
     });
     this._super(controller, model);
+  },
+
+  resetController: function (controller, isExiting, transition) {
+    if (isExiting) {
+      // isExiting would be false if only the route's model was changing
+      //reset messages
+      controller.setProperties({
+        editSuccess: false
+      });
+    }
   }
 });

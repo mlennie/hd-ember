@@ -7,11 +7,12 @@ export default Ember.Controller.extend(
 	LoginControllerMixin, {
 
 	//queryParams
-	queryParams: ['confirmation_success','confirmation_fail'],
+	queryParams: ['confirmation_success','confirmation_fail', 'editSuccess'],
 
 	//properties
 	authenticator: 'simple-auth-authenticator:devise',
 	identification: null,
+	editSuccess: false,
 	password: null,
 	loginError: false,
 	confirmation_success: false,
@@ -48,7 +49,8 @@ export default Ember.Controller.extend(
 				controller.setProperties({
 					loginError: true, 
 					password: null,
-					isLoading: false
+					isLoading: false,
+					editSuccess: false
 				});
 			});
 		}
