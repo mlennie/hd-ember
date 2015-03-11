@@ -30,15 +30,15 @@
 			nav.horizontal-nav.grey-background
 				h5.nav-title = session.currentUser.fullName
 				ul
-					li.nav-link
+					li.nav-link#users-mes-euros-link
 						=link-to 'users.mes-euros'
 							if session.currentUser.isOwner
 								| Ma balance
 							else
 								| Mes Euros Collectés
-					li.nav-link
+					li.nav-link#users-mon-profil-link
 						=link-to 'users.edit' | Mon Profil 
-					li.nav-link
+					li.nav-link#users-parrainer-link
 						=link-to 'users.parrainer-un-ami' | Parrainer un ami
 		.col-sm-8.col-xs-12
 			==outlet

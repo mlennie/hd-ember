@@ -113,5 +113,29 @@ export default Ember.View.extend({
         'page': Ember.$(this).data('page')
       });
     });
+
+    //
+    //USERS PAGES
+    //
+    //MIXPANEL: Add Mes Euros link click event
+		Ember.$('body').on('click', '#users-mes-euros-link', function() {
+	    mixpanel.track('Mes Euros Link Click', { 
+	    	'location': 'users pages left vertical navbar'
+	    });
+		});
+
+		//MIXPANEL: Add Mes Euros link click event
+		Ember.$('body').on('click', '#users-mon-profil-link', function() {
+	    mixpanel.track('Mon Profil Link Click', { 
+	    	'location': 'users pages left vertical navbar'
+	    });
+		});
+
+		//MIXPANEL: Add Mes Euros link click event
+		Ember.$('body').on('click', '#users-parrainer-link', function() {
+	    mixpanel.track('Parrainer Link Click', { 
+	    	'location': 'users pages left vertical navbar'
+	    });
+		});
 	}.on('didInsertElement')
 });
