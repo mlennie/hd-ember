@@ -1,5 +1,7 @@
 .container-fluid#login-page
 	.row
+		if editSuccess
+			.alert.alert-success Félicitations, votre mot de passe vient d'être réinitialisé
 		if loginError
 			.alert.alert-danger 
 				strong Indentifiants invalides 

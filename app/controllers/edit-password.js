@@ -6,7 +6,6 @@ export default Ember.Controller.extend({
   token: null,
   newPassword: null,
   newPasswordConfirmation: null,
-  editSuccess: false,
   editFailed: false,
   isLoading: false,
 
@@ -14,8 +13,7 @@ export default Ember.Controller.extend({
 	actions: {
     resetPassword: function() {
       var controller = this;
-      controller.set('isLoading', true);  
-      controller.set('editSuccess', false);                                                                                                                                               
+      controller.set('isLoading', true);                                                                                                                                               
       controller.set('editFailed', false); 
        // Custom ajax call for resending .                                                                             
       Ember.$.ajax({                                                                                                                                                                                       
@@ -27,11 +25,10 @@ export default Ember.Controller.extend({
           password_confirmation: this.get('newPasswordConfirmation'), 
         }                                                                                   
       }).then(function(){                                                                                     
-        controller.set('editSuccess', true);                                                                                                                                               
         controller.set('editFailed', false);  
-        controller.set('isLoading', false);                                                                                                                                               
-      }, function(){                                                                                               
-        controller.set('editSuccess', false);                                                                                                                                               
+        controller.set('isLoading', false);
+        controller.transitionToRoute('login', { queryParams: {editSuccess: true}});                                                                                                                                           
+      }, function(){                                                                                                                                                                     
         controller.set('editFailed', true);     
         controller.set('isLoading', false);                                                                                    
       });     
