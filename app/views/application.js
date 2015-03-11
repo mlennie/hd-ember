@@ -102,8 +102,7 @@ export default Ember.View.extend({
     Ember.$('body').on('click', '#search-result-link', function() {
       //MIXPANEL: Add Search Results Page Restaurant Click Event
       mixpanel.track('Restaurant Click', { 
-        'restaurant': Ember.$(this).data('name'),
-        'page': controller.get('currentPath')
+        'restaurant': Ember.$(this).data('name')
       });
     });
 
