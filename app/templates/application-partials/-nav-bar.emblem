@@ -14,7 +14,7 @@
 				ul.nav.navbar-nav.navbar-right
 					if session.isAuthenticated
 						li.nav-item
-							a.nav-phone.no-transformation href='tel:+33952665319'
+							a.nav-phone.no-transformation
 								| Contact : 09.52.66.53.19
 						li.dropdown	
 							a.dropdown-toggle#mon-compte-dropdown href="#" data-toggle="dropdown" role="button" aria-expanded="false"
