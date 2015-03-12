@@ -5,7 +5,8 @@ export default Ember.View.extend({
 
 	//scroll to concept part of page when concept link clicked
 	scrollToConcept: function() {
-		if (this.controller.get('concept') === 'true') {
+		alert(this.get('controller.concept'));
+		if (this.get('controller.concept') === 'true') {
 			Ember.$('html, body').animate({
 	        scrollTop: Ember.$("#concept").offset().top
 	    }, 750);

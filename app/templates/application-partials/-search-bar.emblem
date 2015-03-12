@@ -1,21 +1,20 @@
-if showTopSearch
-	if session.isAuthenticated
-		unless session.currentUser.isOwner
-			div.visible-md-block.visible-lg-block
-				nav.navbar.grey-background#top-search-medium
-					.row
-						.col-lg-12.col-md-12
-							form submit='search'
-								span.input_container
-									= bootstrap-datepicker value=date class="input" readonly="true" format="dd/mm/yy" todayBtn=false todayHighlight=true placeholder="Date" language='fr'
-									span.search-icon = fa-icon 'calendar'
-								span.input_container
-									= view Ember.Select content=hours value=hour class="search-select input" prompt="Heure"
-									span.search-icon = fa-icon 'caret-down'
-								span.input_container
-									= view Ember.Select content=couverts value=nbCouverts class="search-select input"
-									span.search-icon = fa-icon 'caret-down'
-								span.input_container
-									= view Ember.Select content=names prompt="Où ?" value=name id="name-select" class="search-select input"
-									span.search-icon = fa-icon 'caret-down'
-								button#top-search-button type="submit" Rechercher
+if session.isAuthenticated
+	unless session.currentUser.isOwner
+		div.visible-md-block.visible-lg-block#top-search-bar
+			nav.navbar.grey-background#top-search-medium
+				.row
+					.col-lg-12.col-md-12
+						form submit='search'
+							span.input_container
+								= bootstrap-datepicker value=date class="input" readonly="true" format="dd/mm/yy" todayBtn=false todayHighlight=true placeholder="Date" language='fr'
+								span.search-icon = fa-icon 'calendar'
+							span.input_container
+								= view Ember.Select content=hours value=hour class="search-select input" prompt="Heure"
+								span.search-icon = fa-icon 'caret-down'
+							span.input_container
+								= view Ember.Select content=couverts value=nbCouverts class="search-select input"
+								span.search-icon = fa-icon 'caret-down'
+							span.input_container
+								= view Ember.Select content=names prompt="Où ?" value=name id="name-select" class="search-select input"
+								span.search-icon = fa-icon 'caret-down'
+							button#top-search-button type="submit" Rechercher
