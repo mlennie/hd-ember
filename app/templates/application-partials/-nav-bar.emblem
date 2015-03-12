@@ -34,7 +34,7 @@
 									a{action 'invalidateSession'} Se déconnecter
 					else
 						li class={navbarClass}
-							a#concept-link click=jumpToConcept
+							a#concept-link click='jumpToConcept'
 								| Le Concept 
 						li#connection-button class={navbarClass} 
 							= link-to 'login' | Connexion 
@@ -56,7 +56,7 @@
 								a{action 'invalidateSession'} Se déconnecter
 						else
 							li class={navbarClass}
-								a#concept-link click=jumpToConcept
+								a#concept-link click='jumpToConcept'
 									| Le Concept
 							li#connection-button class={navbarClass} 
 								= link-to 'login' | Connexion 

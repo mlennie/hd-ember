@@ -17,6 +17,6 @@
 	.row
 		.col-sm-6.col-sm-offset-3.col-xs-8.col-xs-offset-2
 			#concept-button.center 
-				a click=scrollToConcept
+				a click='scrollToConcept'
 					button.btn.register-gold.center
 						h5.light.no-margin.center Concept
