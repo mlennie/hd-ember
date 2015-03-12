@@ -15,8 +15,6 @@ export default Ember.View.extend({
 	//send events to MIXPANEL
 	indexMixpanelEvents: function() {
 
-		var controller = this.controller;
-
 		Ember.$('body').on('click', '#middle-register-button', function() {
 			//MIXPANEL: Add inscription button click event
 	    mixpanel.track('Inscription Button Click', { 
