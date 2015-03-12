@@ -7,9 +7,9 @@ form submit='update'
 		label for='lastName' Last name
 		=input class='form-control' type="text" value=lastName placeholder='Last Name' required=true
 	br
-		.input-group.full-width
-			label Email
-			p = email
+	.input-group.full-width
+		label Email
+		p = email
 	span Male
 	span.margin-left-10 = radio-button value='Male' checked=gender
 	span.margin-left-10 Female
@@ -20,4 +20,4 @@ form submit='update'
 			label for='email' Email
 			=input class='form-control' type="email" value=email placeholder='Email' required=true 
 	br
-		button.btn.btn-default.btn-lg.btn-black.full-width type="submit" Update
+	button.btn.btn-default.btn-lg.btn-black.full-width type="submit" Update

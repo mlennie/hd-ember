@@ -2,6 +2,8 @@ import Ember from 'ember';
 import SearchMixin from '../mixins/search';
 
 export default Ember.Controller.extend(SearchMixin,{
+  needs: "index",
+  index: Ember.computed.alias("controllers.index"),
 
   showTopSearch: false,
 
@@ -92,7 +94,7 @@ export default Ember.Controller.extend(SearchMixin,{
       this.transitionToRoute('index', { queryParams: {concept: null}});
       this.set('showTopSearch', false);
       this.set('date', undefined);
-      this.controllerFor('index').setProperties({
+      this.get('index').setProperties({
         confirmation_success: null,
         confirmation_fail: null,
         already_logged_in: null
