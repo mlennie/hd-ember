@@ -16,7 +16,6 @@ export default Ember.View.extend({
 	}.on('didInsertElement'),
 
 	showTopSearchBar: function() {
-		alert(this.get('controller.currentPath'));
     var path = this.get('controller.currentPath');
     if (path !== 'index' && 
       path !== 'conditions-generales' &&

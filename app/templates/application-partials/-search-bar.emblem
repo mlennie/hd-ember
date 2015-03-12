@@ -1,6 +1,6 @@
 if session.isAuthenticated
 	unless session.currentUser.isOwner
-		div.visible-md-block.visible-lg-block#top-search-bar
+		div.hidden-sm.hidden-xs#top-search-bar
 			nav.navbar.grey-background#top-search-medium
 				.row
 					.col-lg-12.col-md-12

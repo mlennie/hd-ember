@@ -5,7 +5,6 @@ export default Ember.View.extend({
 
 	//scroll to concept part of page when concept link clicked
 	scrollToConcept: function() {
-		alert(this.get('controller.concept'));
 		if (this.get('controller.concept') === 'true') {
 			Ember.$('html, body').animate({
 	        scrollTop: Ember.$("#concept").offset().top
@@ -29,7 +28,7 @@ export default Ember.View.extend({
 
 		Ember.$('body').on('click', '#concept-button', function() {
 			//MIXPANEL: Identify user
-				mixpanel.identify(controller.get('session.user_id'));
+				mixpanel.identify(this.get('controller.session.user_id'));
 			//MIXPANEL: Add concept button click event
 	    mixpanel.track('Concept Button Click', { 
 	    	'color': 'black transparent',
