@@ -49,6 +49,7 @@
     "glob": "4.4.0"
   },
   "dependencies": {
+    "broccoli-sass": "^0.3.3",
     "broccoli-static-compiler": "^0.2.1"
   }
 }
