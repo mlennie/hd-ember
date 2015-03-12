@@ -25,7 +25,7 @@ export default Ember.View.extend({
     } else {
       Ember.$('#top-search-bar').hide();
     }
-	}.on('didInsertElement').observes('controller.currentPath'),
+	}.on('didInsertElement').observes('controller.currentPath', 'controller.session'),
 
 	//send events to MIXPANEL
 	applicationMixpanelEvents: function() {
