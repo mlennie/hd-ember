@@ -8,7 +8,7 @@
 					span.icon-bar
 					span.icon-bar
 				#logo-link
-					a click=goToIndex
+					a click='goToIndex'
 						img#logo-image src='https://res.cloudinary.com/happydining/image/upload/v1424185468/logogold_g8zd5e.png'
 			.hidden-xs
 				ul.nav.navbar-nav.navbar-right
@@ -34,10 +34,12 @@
 									a{action 'invalidateSession'} Se déconnecter
 					else
 						li class={navbarClass}
-							a#concept-link click=jumpToConcept
+							a#concept-link click='jumpToConcept'
 								| Le Concept 
-						li#connection-button class={navbarClass} #{ link-to 'login' | Connexion }
-						li#inscription-nav-link class={navbarClass} #{ link-to 'register' id='gold-menu-box' | Inscription }
+						li#connection-button class={navbarClass} 
+							= link-to 'login' | Connexion 
+						li#inscription-nav-link class={navbarClass} 
+							= link-to 'register' id='gold-menu-box' | Inscription 
 			.visible-xs-block
 				.collapse.navbar-collapse#navbar-collapse-1
 					ul.nav.navbar-nav.navbar-right
@@ -54,8 +56,10 @@
 								a{action 'invalidateSession'} Se déconnecter
 						else
 							li class={navbarClass}
-								a#concept-link click=jumpToConcept
+								a#concept-link click='jumpToConcept'
 									| Le Concept
-							li#connection-button class={navbarClass} #{ link-to 'login' | Connexion }
-							li#inscription-nav-link class={navbarClass} #{ link-to 'register' | Inscription }
+							li#connection-button class={navbarClass} 
+								= link-to 'login' | Connexion 
+							li#inscription-nav-link class={navbarClass} 
+								= link-to 'register' | Inscription 
 	= partial 'application-partials/search-bar' 

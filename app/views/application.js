@@ -15,16 +15,25 @@ export default Ember.View.extend({
 		});
 	}.on('didInsertElement'),
 
+	showTopSearchBar: function() {
+    var path = this.get('controller.currentPath');
+    if (path !== 'index' && 
+      path !== 'conditions-generales' &&
+      path !== 'faq' &&
+      path !== 'remerciements') {
+      Ember.$('#top-search-bar').show();
+    } else {
+      Ember.$('#top-search-bar').hide();
+    }
+	}.on('didInsertElement').observes('controller.currentPath', 'controller.session'),
+
 	//send events to MIXPANEL
 	applicationMixpanelEvents: function() {
 
-		//get controller
-		var controller = this.controller;
-
 		//MIXPANEL: Identify user if signed in NOTE: user is identified here if 
 		//app reloads
-		if (controller.get('session.user_id') !== undefined) {
-			mixpanel.identify(controller.get('session.user_id'));
+		if (this.get('controller.session.user_id') !== undefined) {
+			mixpanel.identify(this.get('controller.session.user_id'));
 		}
 
 		//navbar events

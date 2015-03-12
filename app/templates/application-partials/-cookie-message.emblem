@@ -6,5 +6,5 @@ if showCookieMessage
 				span.small.blue En savoir plus et gérer ces paramètres.
 				br
 			.col-xs-1
-				button.pull-right click=closeAndAcceptCookies
+				button.pull-right click='closeAndAcceptCookies'
 					h5.pull-right = fa-icon 'close'
