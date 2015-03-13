@@ -3,7 +3,7 @@ import Ember from 'ember';
 export default Ember.View.extend({
 
 	setReferralCode: function() {
-    var referralCode = this.controller.get('referralCode');
+    var referralCode = this.get('controller.referralCode');
     if (referralCode !== null) {
 
       //facebook had trouble with some referral codes so facebook parrinage 
