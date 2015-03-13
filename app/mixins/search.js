@@ -34,9 +34,10 @@ export default Ember.Mixin.create({
 			var restaurants = this.get('sortedRestaurants').filterBy('zipcode', zipcodes[i]);
 			var names = restaurants.getEach('name');
 
-			//make longer names shorter
-			if (names.indexOf("Grand Bistro Maillot Saint Ferdinand") > -1) {
-				names["Grand Bistro Maillot Saint Ferdinand"] = "Grand Bistro Maillot"
+			//make longer names shorter to not stretch ou search bar
+			var index = names.indexOf("Grand Bistro Maillot Saint Ferdinand");
+			if (index > -1) {
+				names[index] = "Grand Bistro Maillot";
 			}
 
 			//update list with zipcode and names for current zipcode in loop
