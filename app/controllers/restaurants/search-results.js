@@ -17,6 +17,13 @@ export default Ember.Controller.extend({
     return this.get('model').sortBy(this.get('sortBy'));
   }.property('sortBy'),
 
+  //unshorten name if name was shorteneed in the ou search field
+  unShortenName: function() {
+    if (this.get('name') === "Grand Bistro Maillot") {
+      this.set('name', "Grand Bistro Maillot Saint Ferdinand");
+    }
+  }.property('name'),
+
   filteredRestaurants: function() {
     var name = this.get('name');
     var cuisine = this.get('cuisine');
