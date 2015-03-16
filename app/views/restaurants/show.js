@@ -32,7 +32,7 @@ export default Ember.View.extend({
   		dayRender: function(date, cell) {
 
   			//get start times of services for restaurant
-				var startTimes = self.controller.get('serviceStartTimes');
+				var startTimes = self.get('controller.serviceStartTimes');
 
 				//change start time format to just show days
 				var days = startTimes.map(function(item) {
@@ -58,8 +58,8 @@ export default Ember.View.extend({
 
           //get highest discount from all services for that day 
           //with that have a date equal to dateFormat
-          self.controller.set('calendarDate', dateFormat);
-          var highestDiscount = self.controller.get('highestDiscount');
+          self.set('controller.calendarDate', dateFormat);
+          var highestDiscount = self.get('controller.highestDiscount');
           //check to make sure theres still availabilites left
         	if (highestDiscount !== 0) {
             //add percent and change background color to yellow
@@ -80,7 +80,7 @@ export default Ember.View.extend({
   		dayClick: function(date) {
 
   				//get start times of services for restaurant
-					var startTimes = self.controller.get('serviceStartTimes');
+					var startTimes = self.get('controller.serviceStartTimes');
 
 					//change start time format to just show days
 					var days = startTimes.map(function(item) {
@@ -95,8 +95,8 @@ export default Ember.View.extend({
   			if ( days.indexOf(dateFormat) > -1 ) {
           //get highest discount from all services for that day 
           //with that have a date equal to dateFormat
-          self.controller.set('calendarDate', dateFormat);
-          var highestDiscount = self.controller.get('highestDiscount');
+          self.set('controller.calendarDate', dateFormat);
+          var highestDiscount = self.get('controller.highestDiscount');
           //check to make sure theres still availabilites left
           if (highestDiscount !== 0) {
 
