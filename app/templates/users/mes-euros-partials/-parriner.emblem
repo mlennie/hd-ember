@@ -1,0 +1,18 @@
+.row
+	.col-8-box.grey-background
+		h5.no-margin
+			span.users-title
+				unless session.currentUser.isOwner
+					| Le saviez-vous?
+		p.mes-euros-text.margin-top-10 Partager le bon plan Happy Dining permet de gagner encore plus d'euros *.
+		p.mes-euros-text En effet pour chaque personne parrainée ayant réalisé une reservation effective vous êtes crédités de 10€*.
+		p.small.mes-euros-text *A utiliser dans un des restaurants du réseau Happy Dining. 
+		.hidden-xs
+			.center= link-to 'users.parrainer-un-ami'
+				button.margin-top-10.btn.register-gold.center.half-width Parrainer mes amis
+.row.visible-xs-block
+	.col-xs-10.col-xs-offset-1
+		.center= link-to 'users.parrainer-un-ami'
+			button.margin-top-10.btn.register-gold.center.full-width Parrainer mes amis
+br
+	

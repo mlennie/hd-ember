@@ -1,6 +1,6 @@
 .container-fluid.mes-euros
 	.row
-		.col-8-box.grey-background
+		.col-8-box.grey-background.margin-bottom-20
 			h5.no-margin
 				span.users-title
 					| Parrainer un ami

@@ -12,6 +12,7 @@ export default DS.Model.extend({
   referredUserCode: DS.attr('string'),
   restaurants: DS.hasMany('restaurant', {async: true}),
   roles: DS.hasMany('role', {async: true}),
+  reservations: DS.hasMany('reservation', {async: true}),
   promotionCode: DS.attr('string'),
   isOwner: function() {
   	var ownerRole = this.get('roles').findBy('name', 'owner');
