@@ -137,8 +137,8 @@ option#75016, option#75017, option#75008 {
 #top-search-medium {
   padding: 10px;
 
-  .col-lg-10, .col-md-12 {
-    
+  #name-select {
+    max-width: 300px;
   }
 
   #mobile-top-search-button {
@@ -261,13 +261,17 @@ option#75016, option#75017, option#75008 {
 
 /* MEDIA QUERIES */
 
-@media (max-width: 1150px) {
+@media (max-width: 1180px) {
   /*make top search form responsive by making font smaller*/
   #top-search-medium {
     input, .search-select, button {    
       font-size: 1em !important;
     }
+    #name-select {
+      max-width: 200px;
+    }
   }
+
 }
 
 @media (max-width: 991px) {
