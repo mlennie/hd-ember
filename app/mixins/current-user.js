@@ -35,5 +35,8 @@ export default Ember.Mixin.create({
   }.property('wallet.balance'),
   hasBalance: function() {
     return this.get('balance') != null;
-  }.property('balance')
+  }.property('balance'),
+  reservations: function() {
+  	return this.get('currentUser.reservations');
+  }.property('currentUser')
 });
