@@ -9,6 +9,9 @@ if showSmallFooter
 				a
 					| 09.52.66.53.19	
 			span
+				a href="mailto:hello@happydining.fr"
+					| hello@happydining.fr
+			span
 				=link-to 'remerciements' | Remerciements
 				
 else
@@ -18,6 +21,9 @@ else
 			span 
 				a
 					| 09.52.66.53.19	
+			span
+				a href="mailto:hello@happydining.fr"
+					| hello@happydining.fr
 			span#conditions-generales 
 				=link-to 'conditions-generales' | CGU et Mentions Légales
 		.center.margin-top-10
