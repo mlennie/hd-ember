@@ -9,5 +9,8 @@ export default DS.Model.extend({
   service: DS.belongsTo('service'),
   discount: DS.attr('number'),
   userContribution: DS.attr('number'),
-  bookingName: DS.attr('string')
+  bookingName: DS.attr('string'),
+  restaurant_name: DS.attr('string'),
+  user: DS.belongsTo('user', {async: true}),
+  restaurant: DS.belongsTo('restaurant', {async: true})
 });

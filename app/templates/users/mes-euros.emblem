@@ -1,50 +1,16 @@
 .container-fluid.mes-euros
-	.visible-xs-block#mobile-balance
-		.row
-			h3.pull-left Vous avez actuellement: 
-			= partial 'users/balance'
-	.row
-		.col-8-box.grey-background
-			.hidden-xs
-				= partial 'users/balance'
-			h5.no-margin
-				span.users-title
-					if session.currentUser.isOwner
-						| Ma balance
-					else
-						| Mes Euros Collectés
-			p 
-				| Il est temps de vous faire plaisir ! Profitez dès à présent de vos euros collectés, dans nimporte quel restaurant du réseau Happy Dining. Pour cela, cliquez sur
-				span 
-					a.inline#use-euros-link data-toggle="popover-mes-euros" data-placement="bottom" data-trigger="focus" data-html="true" data-original-title="<div><a href='tel:+33952665319'class='popover-title'>Composez le:</a></div>" data-content="<div><a href='tel:+33952665319'class='popver-content'>09.52.66.53.19</a></div>"
-						|  utilisez mes euros .
-			p.mes-euros-text Envie d'obtenir plus d'euros sur votre compte ? Nous vous rappelons que vous collectez entre 10 et 30% de l'addition sur chaque reservation honorée, effectuée depuis happydining.fr *. L'addition ne vous aura jamais autant rapporté !
-			p.small.mes-euros-text *hors réservations visant à utiliser ses euros collectés 
+	= partial 'users/mes-euros-partials/user-balance-box'
+	= partial 'users/mes-euros-partials/parriner'
+	= partial 'users/mes-euros-partials/reservation-history'
+
+//
+	if session.currentUser.isOwner
 		br
-	.row
-		.col-8-box.grey-background.margin-bottom-20
-			h5.no-margin
-				span.users-title
-					unless session.currentUser.isOwner
-						| Le saviez-vous?
-			p.mes-euros-text.margin-top-10 Partager le bon plan Happy Dining permet de gagner encore plus d'euros *.
-			p.mes-euros-text En effet pour chaque personne parrainée ayant réalisé une reservation effective vous êtes crédités de 5€*.
-			p.small.mes-euros-text *A utiliser dans un des restaurants du réseau Happy Dining. 
-			.hidden-xs
-				.center= link-to 'users.parrainer-un-ami'
-					button.margin-top-10.btn.register-gold.center.half-width Parrainer mes amis
-	.row.visible-xs-block
-		.col-xs-10.col-xs-offset-1
-			.center= link-to 'users.parrainer-un-ami'
-				button.margin-top-10.btn.register-gold.center.full-width Parrainer mes amis
-		//
-			if session.currentUser.isOwner
-				br
-				button.btn.btn-success View history
-			else
-				br 
-				button.btn.btn-success data-toggle="popover" data-placement="bottom" data-trigger="focus" data-html="true" data-original-title="<div class='popover-title'>Composez le:</div>" data-content="<div class='popver-content'>09.52.66.53.19</div>"
-					| Use my euros!
+		button.btn.btn-success View history
+	else
+		br 
+		button.btn.btn-success data-toggle="popover" data-placement="bottom" data-trigger="focus" data-html="true" data-original-title="<div class='popover-title'>Composez le:</div>" data-content="<div class='popver-content'>09.52.66.53.19</div>"
+			| Use my euros!
 
 
 					
