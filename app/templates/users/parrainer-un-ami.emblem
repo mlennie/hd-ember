@@ -6,7 +6,8 @@
 					| Parrainer un ami
 			p#parrainez-center-text
 			  | Faites découvrir Happy Dining à vos amis. Ils bénéficieront de {{referralAmount}}€ crédités sur leur compte Happy Dining. 
-			  | Dès leur première réservation (honorée). vous recevrez automatiquement {{referralAmount}}€* sur votre compte Happy Dining. 
+			  | Vous recevrez automatiquement {{referralAmount}}€* sur votre compte Happy Dining
+			  |  lors de leur-première réservation. 
 			p#social-buttons-title Choisissez votre lien de parrainage en cliquant dessus :
 			ul.share-buttons.center
 				li 
