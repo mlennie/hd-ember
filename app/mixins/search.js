@@ -11,7 +11,7 @@ export default Ember.Mixin.create({
 	time: null, 
 	number: null,
 	datesRequired: false,
-	couverts: ['Nombre de couverts', 1, 2, 3, 4, 5, 6, 7, 8, 9],
+	couverts: [1, 2, 3, 4, 5, 6, 7, 8, 9],
 	zipcodes: ['75016','75017','75008'],
 	//setup hours to be shown for select box
 	hours: ['12:00', '12:30','13:00','13:30','14:00','14:30','15:00','15:30','16:00',
@@ -44,11 +44,7 @@ export default Ember.Mixin.create({
 	//if one is selected
 	checkIfDatesRequired: function() {
 		if (
-			this.get('date') !== null && 
-			this.get('date') !== "" &&
-			this.get('date') !== undefined ||
-			this.get('time') !== null ||
-			this.get('number') !== null
+			!this.get('dateEmpty') || !this.get('hourEmpty') || !this.get('number')
 		) {
 			this.set('datesRequired', true);
 		} else {
@@ -100,10 +96,10 @@ export default Ember.Mixin.create({
 	}.property('hour'),
 
 	//check if nbCouverts is empty
-	nbCouvertsEmpty: function() {
-		var c = this.get('nbCouverts');
-		return c === null || c === undefined || c === 'Nombre de couverts';
-	}.property('nbCouverts'),
+	numberEmpty: function() {
+		var c = this.get('number');
+		return c === null || c === undefined;
+	}.property('number'),
 
 	//check if name is empty
 	nameEmpty: function() {
@@ -127,8 +123,8 @@ export default Ember.Mixin.create({
 	    	"date": this.get('date'),
 	    	"hour empty?": this.get('hourEmpty'),
 	    	"hour": this.get('hour'),
-	    	"nbCouverts empty?": this.get('nbCouvertsEmpty'),
-	    	"nbCouverts": this.get('nbCouverts'),
+	    	"nbCouverts empty?": this.get('numberEmpty'),
+	    	"nbCouverts": this.get('number'),
 	    	"location empty?": this.get('nameEmpty'),
 	    	"Restaurant location": this.get('name')
 	    });

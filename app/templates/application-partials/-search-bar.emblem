@@ -7,13 +7,13 @@
 						.col-lg-12.col-md-12
 							form submit='search'
 								span.input_container
-									= bootstrap-datepicker value=date class="input" id="date-field" readonly="true" format="dd/mm/yy" todayBtn=false todayHighlight=true placeholder="Date" language='fr'
+									= bootstrap-datepicker value=date class="input" id="date-field" readonly="true" format="dd/mm/yy" todayBtn=false todayHighlight=true placeholder="Date" language='fr' required=datesRequired
 									span.search-icon = fa-icon 'calendar'
 								span.input_container
-									= view Ember.Select content=hours value=hour class="search-select input" prompt="Heure"
+									= view Ember.Select content=hours value=hour class="search-select input" prompt="Heure" required=datesRequired
 									span.search-icon = fa-icon 'caret-down'
 								span.input_container
-									= view Ember.Select content=couverts value=nbCouverts class="search-select input"
+									= view Ember.Select content=couverts value=number class="search-select input" prompt='Nombre de couverts' required=datesRequired
 									span.search-icon = fa-icon 'caret-down'
 								span.input_container
 									= view Ember.Select content=cuisines value=cuisine class="search-select input" prompt="Cuisine" disabled=isDisabled
@@ -21,4 +21,4 @@
 								span.input_container
 									= view Ember.Select content=names prompt="Où ?" value=name id="name-select" class="search-select input"
 									span.search-icon = fa-icon 'caret-down'
-								button#top-search-button type="submit" Rechercher
+								button#top-search-button type="submit" Rechercher 

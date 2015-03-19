@@ -27,7 +27,6 @@ export default Ember.View.extend({
   
   //shuffle restaurants and add loading spinner when rechercher is clicked
   resetRestaurantSorting: function(){
-  	var controller = this.controller;
   	//add click event
     Ember.$('body').on('click','button#top-search-button', function() {
     	//load spinner and set timeout
