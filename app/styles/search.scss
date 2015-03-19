@@ -141,6 +141,10 @@ option#75016, option#75017, option#75008 {
     max-width: 280px;
   }
 
+  .disabled {
+    cursor: not-allowed;
+  }
+
   #date-field { max-width: 150px; }
 
   #mobile-top-search-button {
