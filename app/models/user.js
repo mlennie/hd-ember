@@ -11,7 +11,6 @@ export default DS.Model.extend({
   referralCode: DS.attr('string'),
   referredUserCode: DS.attr('string'),
   restaurants: DS.hasMany('restaurant', {async: true}),
-  reservations: DS.hasMany('reservation'),
   roles: DS.hasMany('role', {async: true}),
   reservations: DS.hasMany('reservation', {async: true}),
   promotionCode: DS.attr('string'),
