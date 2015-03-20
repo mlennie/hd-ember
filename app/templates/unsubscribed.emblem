@@ -1,0 +1,7 @@
+.container-fluid#login-page.grey-background#register-page
+	.row
+		.col-md-6.col-md-offset-3#register-form
+			if showSuccess
+				.alert.alert-success Vous avez été désinscrit des emails Happy Dining.
+			if showFailure
+				.alert.alert-danger Il y a eu un problème et nous n'avons pas pu vous désinscrire, svp contactez-nous à admin@happydining.fr
