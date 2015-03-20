@@ -60,7 +60,7 @@ export default Ember.Controller.extend({
         //set user
         var user = this.get('user');
 
-        //get cookies
+        //get referral code from cookies
         var cookie = this.get('cookie');
         var referred_user_code = cookie.getCookie('referralCode');
 
