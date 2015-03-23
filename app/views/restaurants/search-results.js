@@ -27,6 +27,7 @@ export default Ember.View.extend({
   
   //shuffle restaurants and add loading spinner when rechercher is clicked
   resetRestaurantSorting: function(){
+    var _this = this;
   	//add click event
     Ember.$('body').on('click','button#top-search-button', function() {
     	//load spinner and set timeout
@@ -34,7 +35,7 @@ export default Ember.View.extend({
 	    setTimeout(function(){
 	      Ember.$('.load-spinner').css('display', 'none');}, 500);
 	    //update sortBy property so restaurants will shuffle
-    	controller.send('changeSortBy');
+    	_this.get('controller').send('changeSortBy');
     });
   }.observes('controller.currentPath').on('didInsertElement')
 });
