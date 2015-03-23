@@ -26,6 +26,14 @@ export default Ember.Controller.extend({
     return this.store.createRecord('user', {});
   }.property(),
 
+  //if referral code is given via query params, set promotional code
+  //as referral code so will show up in code promotional field
+  fillPromotionCodeWithReferralCode: function() {
+    if (this.get('referralCode') != null) {
+      this.set('promotionCode', this.get('referralCode'));
+    }
+  }.observes('referralCode'),
+
   //actions
   actions: {
   
@@ -60,7 +68,7 @@ export default Ember.Controller.extend({
         //set user
         var user = this.get('user');
 
-        //get cookies
+        //get referral code from cookies
         var cookie = this.get('cookie');
         var referred_user_code = cookie.getCookie('referralCode');
 

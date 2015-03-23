@@ -19,6 +19,10 @@
 				li 
 					a href={emailReferralMessage} target="_blank" title="Email"
 						span.envelope = fa-icon 'fa-envelope-o'
+			p.margin-top-20 Ou en envoyant directement votre code référentiel à vos amis: 
+			.white-box
+				| Votre code : 
+				#referral-link= zero-clipboard text=referralCode label=referralCode 
 			p.margin-top-20 Ou en envoyant directement votre lien référentiel à vos amis: 
 			.white-box
 				#referral-link= zero-clipboard text=referralCodeUrl label=referralCodeUrl 

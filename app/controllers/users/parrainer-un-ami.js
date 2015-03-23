@@ -14,6 +14,10 @@ export default Ember.Controller.extend(CurrentUserMixin, {
 	}.property(),
 
 	//get referral code
+	referralCode: function() {
+		return this.get('currentUser.referralCode');
+	}.property('currentUser'),
+
 	referralCodeUrl: function() {
 		var url = this.get('siteURL');
 		var registerUrl = url + '/register';
