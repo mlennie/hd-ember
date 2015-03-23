@@ -1,3 +1,9 @@
+br
+br
+br
+br
+br
+br
 .container-fluid#login-page.grey-background#register-page
 	.row
 		.col-md-6.col-md-offset-3#register-form
