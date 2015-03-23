@@ -2,6 +2,7 @@ import Ember from 'ember';
 
 export default Ember.View.extend({
 
+  //store referral code in cookies so can be used later when registering user
 	setReferralCode: function() {
     var referralCode = this.get('controller.referralCode');
     if (referralCode !== null) {

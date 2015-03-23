@@ -52,10 +52,7 @@
             if codeBad
               .alert.alert-danger Ce code promotionnel n'existe pas.
             .input-group.full-width.margin-top-20
-              if referralCode
-                = input class='form-control black-border' value=referralCode placeholder='Code promotionnel'
-              else
-                = input class='form-control black-border' value=promotionCode placeholder='Code promotionnel'
+              = input class='form-control black-border' value=promotionCode placeholder='Code promotionnel'
             br 
             .black.center.small En cliquant sur S'inscrire, vous acceptez
             .black-link.center.margin-left-10.small=link-to 'register' | les conditions générale d'utilisation de Happy Dining
