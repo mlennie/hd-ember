@@ -1,4 +1,3 @@
-
 #main-title.no-transformation.col-sm-6.col-sm-offset-3 
 	h4 Rechercher un restaurant
 #center-search-medium.col-md-8.col-md-offset-2
@@ -10,7 +9,7 @@
 			= view Ember.Select content=hours value=hour class="search-select input" prompt="Heure"
 			span.search-icon = fa-icon 'caret-down'
 		span.input_container
-			= view Ember.Select content=couverts value=nbCouverts class="search-select input"
+			= view Ember.Select content=couverts value=number class="search-select input" prompt="Nombre de couverts"
 			span.search-icon = fa-icon 'caret-down'
 		button type="submit" Rechercher
 .container
