@@ -10,6 +10,25 @@
 	margin-left: 5px;
 }
 
+#calendar {
+	width: 300px;
+	/*style calendar week height */
+	div.fc-view-container > div > table > tbody > tr > td > div > div > div {
+		min-height: 3em;
+	}
+
+	div.fc-toolbar > div.fc-left > h2 {
+		font-size: 1.5em !important;
+	}
+	/*style how the discount percentage looks inside a calendar day*/
+	#calendar-percent{
+		margin-top: 20px;
+		margin-left: 5px;
+		margin-bottom: 0;
+		color: red;
+	}
+}
+
 #restaurant-show > div:nth-child(1) > div > div > div > div {
 		top: -40px !important;
 	}

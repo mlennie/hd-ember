@@ -25,7 +25,7 @@ export default Ember.View.extend({
 		
     Ember.$("#calendar").fullCalendar({
 
-    	height: 300,
+    	height: 350,
     	fixedWeekCount: false,
 
     	//add logic for each day on calendar
