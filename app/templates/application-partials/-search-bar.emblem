@@ -7,10 +7,10 @@
 						.col-lg-12.col-md-12
 							form submit='search'
 								span.input_container
-									= bootstrap-datepicker value=date class="input" id="date-field" readonly="true" format="dd/mm/yy" todayBtn=false todayHighlight=true placeholder="Date" language='fr' required=datesRequired
+									= bootstrap-datepicker value=date class="input" id="date-field" readonly="true" format="yyyy-mm-dd" todayBtn=false todayHighlight=true placeholder="Date" language='fr' required=datesRequired
 									span.search-icon = fa-icon 'calendar'
 								span.input_container
-									= view Ember.Select content=hours value=hour class="search-select input" prompt="Heure" required=datesRequired
+									= view Ember.Select content=hours value=time class="search-select input" prompt="Heure" required=datesRequired
 									span.search-icon = fa-icon 'caret-down'
 								span.input_container
 									= view Ember.Select content=couverts value=number class="search-select input" prompt='Nombre de couverts' required=datesRequired

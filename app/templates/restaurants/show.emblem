@@ -13,6 +13,10 @@
 	=link-to 'restaurants.search-results'
 		span.back-caret= fa-icon 'caret-left'
 		| Retour
+if showNoServiceMessage
+	.alert.alert-warning.center
+		| There are currently no reservations available that match that date. 
+		|  Please use the calendar below to choose a date with an opening. 
 #restaurant-show
 	= partial 'restaurants/show-partials/top-half' 
 	= partial 'restaurants/show-partials/second-half'
