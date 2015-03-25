@@ -7,6 +7,8 @@ export default DS.Model.extend({
   zipcode: DS.attr('string'),
   street: DS.attr('string'),
   city: DS.attr('string'),
+  latitude: DS.attr('number'),
+  longitude: DS.attr('number'),
   user: DS.belongsTo('user', {async: true}),
   cuisines: DS.hasMany('cuisine', {async: true}),
   services: DS.hasMany('service', {async: true}),

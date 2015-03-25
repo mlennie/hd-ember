@@ -22,25 +22,30 @@ export default Ember.View.extend({
   //MAP
   //
   initializeMap: function() {
+    var lat = this.get('controller.model.latitude');
+    var lng = this.get('controller.model.longitude');
 
     //add latitude and longitude
-    var myLatlng = new google.maps.LatLng(-34.397, 150.644);
+    var myLatlng = new google.maps.LatLng(lat, lng);
     
     //add map options
     var mapOptions = {
-      zoom: 8,
+      zoom: 15,
       center: myLatlng
     };
 
-    //create map
-    var map = new google.maps.Map(document.getElementById('map'),
-        mapOptions);
+    //dont show map if restaurant has not been geocoded
+    if (lat != null) {
+      //create map
+      var map = new google.maps.Map(document.getElementById('map'),
+          mapOptions);
 
-    //add marker
-    var marker = new google.maps.Marker({
-        position: myLatlng,
-        map: map
-    });
+      //add marker
+      var marker = new google.maps.Marker({
+          position: myLatlng,
+          map: map
+      });
+    }
 
   }.on('didInsertElement'),
 
