@@ -5,6 +5,7 @@
 				| Description et Histoire
 			p.description
 				=model.description
+			= partial 'restaurants/show-partials/map'
 		.col-sm-6
 			if firstMenu
 				= partial 'restaurants/show-partials/menu'

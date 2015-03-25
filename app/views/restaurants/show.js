@@ -2,7 +2,7 @@ import Ember from 'ember';
 
 export default Ember.View.extend({
 
-  jqueryEvents: function(){
+  reserverPopover: function(){
     //close popovers when click anywhere
     Ember.$('body').on('click', function() {
       Ember.$('*[data-toggle="popover-show"]').popover();
@@ -18,6 +18,35 @@ export default Ember.View.extend({
     });
   }.on('didInsertElement'),
 
+  //
+  //MAP
+  //
+  initializeMap: function() {
+
+    //add latitude and longitude
+    var myLatlng = new google.maps.LatLng(-34.397, 150.644);
+    
+    //add map options
+    var mapOptions = {
+      zoom: 8,
+      center: myLatlng
+    };
+
+    //create map
+    var map = new google.maps.Map(document.getElementById('map'),
+        mapOptions);
+
+    //add marker
+    var marker = new google.maps.Marker({
+        position: myLatlng,
+        map: map
+    });
+
+  }.on('didInsertElement'),
+
+  //
+  //CALENDAR
+  //
 	initializeCalendar: function() {
 
 		//set component
