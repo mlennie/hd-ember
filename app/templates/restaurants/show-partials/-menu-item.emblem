@@ -4,6 +4,7 @@
 		= item.description
 	.col-xs-3
 		.pull-right.menu-item-price
-			= item.price
-			| €
+			if item.price
+				= item.price
+				| €
 .margin-bottom-5

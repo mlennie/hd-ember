@@ -9,6 +9,8 @@ export default Ember.Controller.extend({
   firstMenu: function() {
     return this.get('model.menus').get('firstObject');
   }.property('model'),
+
+  //get menu items for first menu
   menuItems: function() {
     return this.get('firstMenu.menuItems');
   }.property('firstMenu'),

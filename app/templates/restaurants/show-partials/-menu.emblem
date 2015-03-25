@@ -3,6 +3,9 @@
 		span#menu-main-title.center Aperçu de la carte
 	#menu-inner-box
 		br
+		span
+			p = firstMenu.title
+			p = firstMenu.description
 		br
 		= menu-category array=orderveMenuItems title="Les hors d'oeuvres"
 		= menu-category array=entreeMenuItems title="Les entrées"
