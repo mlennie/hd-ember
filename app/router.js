@@ -1,7 +1,7 @@
 import Ember from 'ember';
 import config from './config/environment';
 Ember.Route.reopen(
-  /*{
+  {
     //initionalize mixpanel on page view
     beforeModel: function(transition) {
       mixpanel.init(config.APP.MIXPANEL_CODE);
@@ -10,7 +10,7 @@ Ember.Route.reopen(
         secure_cookie: true
       });
     }
-  }*/
+  }
 );
 
 var Router = Ember.Router.extend({
