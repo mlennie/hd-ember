@@ -14,6 +14,8 @@
 				.col-xs-3.form-labels
 					p Prénom
 					p.margin-top-10 Nom
+					if session.currentUser.isOwner
+						p.margin-top-10 Réstaurant
 				.col-sm-6.col-xs-8
 					form submit='update'
 						span.clear.grey M.
@@ -27,6 +29,9 @@
 						.input-group.full-width
 							.gold.required-asterix.pull-right *
 							= input class='form-control black-border' value=lastName placeholder='Nom' required=true
+						if session.currentUser.isOwner
+							.margin-top-40
+								= restaurant.name
 						br 
 						button.margin-top-10.btn.register-gold.center.full-width type="submit" Enregistrer les modifications
 						br

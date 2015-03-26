@@ -2,10 +2,6 @@
 	if session.currentUser.isOwner
 		br
 		br
-		br
-		br
-		br
-		br
 	else
 		br
 		br
@@ -38,7 +34,11 @@
 								| Mes Euros Collectés
 					li.nav-link#users-mon-profil-link
 						=link-to 'users.edit' | Mon Profil 
-					li.nav-link#users-parrainer-link
-						=link-to 'users.parrainer-un-ami' | Parrainer un ami
+					if session.currentUser.isOwner
+						li.nav-link#users-parrainer-link
+							=link-to 'users.reservations' | Réservations
+					else
+						li.nav-link#users-parrainer-link
+							=link-to 'users.parrainer-un-ami' | Parrainer un ami
 		.col-sm-8.col-xs-12
 			==outlet

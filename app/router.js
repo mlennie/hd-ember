@@ -22,6 +22,7 @@ Router.map(function() {
     this.route('edit', { path: '/show' });
     this.route('mes-euros');
     this.route('parrainer-un-ami');
+    this.route('reservations');
   });
   this.resource('restaurants', function() {
     this.route('show', { path: ':restaurant_id'});

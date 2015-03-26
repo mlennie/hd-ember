@@ -1,21 +1,22 @@
-.row
-	.col-8-box.grey-background.margin-bottom-20
-		h5.no-margin
-			span.users-title Historique des 30 derniers jours
-		br
-		table.table.padding-left-10
-			tr
-				th Date
-				th Restaurant
-				th Euros Collectés
-			= each reservation in reservations 
+unless session.currentUser.isOwner
+	.row
+		.col-8-box.grey-background.margin-bottom-20
+			h5.no-margin
+				span.users-title Historique des 30 derniers jours
+			br
+			table.table.padding-left-10
 				tr
-					td = reservation.date
-					td = reservation.restaurant_name
-					td 
-						if reservation.earnings
-							span + 
-							= reservation.earnings
-							| €
-						else
-							| en cours de traitement
+					th Date
+					th Restaurant
+					th Euros Collectés
+				= each reservation in reservations 
+					tr
+						td = reservation.date
+						td = reservation.restaurant_name
+						td 
+							if reservation.earnings
+								span + 
+								= reservation.earnings
+								| €
+							else
+								| en cours de traitement
