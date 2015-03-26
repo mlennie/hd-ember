@@ -4,3 +4,5 @@
 			h5.no-margin
 				span.users-title
 					| Reservations
+				each day in days
+					= reservation-day day=day services=servicesForWeek
