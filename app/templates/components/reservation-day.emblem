@@ -1,13 +1,33 @@
 h5 = dateTitle
-#reservation-day
-	table.table.table-striped
-		tr
-			th Horaire
-			th Nom
-			th Couverts
-			th Montant
-			th Valider
-		each reservations itemController="reservation"
-			tr
-				td = hour
+.row
+	.col-md-8
+		#reservation-day
+			form
+				table.table.table-striped
+					tr
+						th Horaire
+						th Nom
+						th Couverts
+						th Montant
+						th Valider
+					each reservations itemController="reservation"
+						tr
+							td = hour
+							td = bookingName
+							td = nbPeople
+							td.reservation-amount
+								= input value=amount
+							td
+								button type=submit
+	.col-md-4
+		.service-complet-box
+			p INDIQUER UN SERVICE COMPLET
+			form
+				= input type="checkbox" 
+				| Midi
+				br
+				= input type="checkbox" 
+				| Soir
+				br
+				button type=submit Valider
 	br
