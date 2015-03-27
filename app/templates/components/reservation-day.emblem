@@ -1,9 +1,13 @@
-br
-| Hello
-br
-each reservations itemController="reservation"
-	= date
+h5 = dateTitle
+#reservation-day
+	table.table
+		tr
+			th Horaire
+			th Nom
+			th Couverts
+			th Montant
+			th Valider
+		each reservations itemController="reservation"
+			tr
+				td = hour
 	br
-	= hour
-
-br

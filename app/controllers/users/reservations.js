@@ -11,6 +11,23 @@ export default Ember.ArrayController.extend({
 	day5Reservations: null,
 	day6Reservations: null,
 	day7Reservations: null,
+	date1: null,
+	date2: null,
+	date3: null,
+	date4: null,
+	date5: null,
+	date6: null,
+	date7: null,
+
+	setDates: function() {
+		for (var i = 0; i < 7; i++) {
+			var time = new Date();
+			time = (time.getDate() + i).toString() + '/' + 
+						 (time.getMonth() + 1).toString() + '/' +
+						 time.getFullYear().toString();
+			this.set('date' + (i + 1).toString(), time);
+		}
+	}.observes('model'),
 
 	//computed properties
 	SetReservationsForDays: function() {
@@ -33,6 +50,5 @@ export default Ember.ArrayController.extend({
 				});
 				this.set('day' + day.toString() + 'Reservations', reservations);
 			}
-	}.observes('model'),
-
+	}.observes('model')
 });
