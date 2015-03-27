@@ -4,5 +4,10 @@
 			h5.no-margin
 				span.users-title
 					| Reservations
-				each day in days
-					= reservation-day day=day services=servicesForWeek
+					= reservation-day reservations=day1Reservations 
+					= reservation-day reservations=day2Reservations 
+					= reservation-day reservations=day3Reservations 
+					= reservation-day reservations=day4Reservations 
+					= reservation-day reservations=day5Reservations 
+					= reservation-day reservations=day6Reservations 
+					= reservation-day reservations=day7Reservations 

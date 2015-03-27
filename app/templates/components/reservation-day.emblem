@@ -1,3 +1,7 @@
+br
 | Hello
-= day
-= restaurant.name
+br
+each r in reservations
+	= r.time
+
+br
