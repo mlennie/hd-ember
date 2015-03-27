@@ -23,10 +23,12 @@ export default Ember.ArrayController.extend({
 
 				
 				var reservations = this.get('model').filter(function(reservation) {
+					var time = reservation.get('time');
 					var reservation_time = reservation.get('time').setHours(0,0,0,0);
 					var today = new Date();
 					today.setDate(today.getDate() + i);
 					today = today.setHours(0,0,0,0);
+					reservation.set('time', time);
 					return reservation_time === today;
 				});
 				this.set('day' + day.toString() + 'Reservations', reservations);

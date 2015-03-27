@@ -1,7 +1,9 @@
 br
 | Hello
 br
-each r in reservations
-	= r.time
+each reservations itemController="reservation"
+	= date
+	br
+	= hour
 
 br
