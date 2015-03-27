@@ -1,6 +1,6 @@
 h5 = dateTitle
 #reservation-day
-	table.table
+	table.table.table-striped
 		tr
 			th Horaire
 			th Nom

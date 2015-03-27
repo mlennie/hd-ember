@@ -38,15 +38,23 @@ export default Ember.ArrayController.extend({
 				var day = days[i];
 				var extra_days = 86400000 * i;
 
-				
+				//filter reservations for reservations on specific date				
 				var reservations = this.get('model').filter(function(reservation) {
-					var time = reservation.get('time');
+
+					//get hours so can put them back after
+					var hours = reservation.get('time').getHours();
+					var minutes = reservation.get('time').getMinutes();
+					//get day of reservation to compare with date
 					var reservation_time = reservation.get('time').setHours(0,0,0,0);
+					//reset hours for reservation
+					reservation.get('time').setHours(hours);
+					//get today's date at midnight
 					var today = new Date();
 					today.setDate(today.getDate() + i);
 					today = today.setHours(0,0,0,0);
-					reservation.set('time', time);
+					//compare dates to return reservation when dates match
 					return reservation_time === today;
+
 				});
 				this.set('day' + day.toString() + 'Reservations', reservations);
 			}

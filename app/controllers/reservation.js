@@ -10,8 +10,10 @@ export default Ember.ObjectController.extend({
 
 	hour: function() {
 		var time = this.get('time');
+		var secondMinuteDigit = time.getMinutes() < 10 ? '0' : '';
 		return time.getHours().toString() + 
 					 ':' + 
-					 time.getMinutes().toString();
+					 time.getMinutes().toString() +
+					 secondMinuteDigit;
 	}.property()
 });
