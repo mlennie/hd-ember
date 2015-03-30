@@ -22,7 +22,8 @@ export default Ember.ArrayController.extend({
 	setDates: function() {
 		for (var i = 0; i < 7; i++) {
 			var time = new Date();
-			time = (time.getDate() + i).toString() + '/' + 
+			time.setDate(time.getDate()+i)
+			time = (time.getDate()).toString() + '/' + 
 						 (time.getMonth() + 1).toString() + '/' +
 						 time.getFullYear().toString();
 			this.set('date' + (i + 1).toString(), time);
@@ -40,7 +41,7 @@ export default Ember.ArrayController.extend({
 	}.property(),
 
 	//computed properties
-	SetReservationsForDays: function() {
+	setReservationsForDays: function() {
 		var days = this.get('days');
 			var reservationsByDay = [];
 

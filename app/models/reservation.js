@@ -2,6 +2,7 @@ import DS from 'ember-data';
 
 export default DS.Model.extend({
   nbPeople: DS.attr('number'),
+  amount: DS.attr('number'),
   time: DS.attr('date'),
   status: DS.attr('string'),
   service: DS.belongsTo('service'),

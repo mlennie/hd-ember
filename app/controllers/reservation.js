@@ -2,6 +2,7 @@ import Ember from 'ember';
 
 export default Ember.ObjectController.extend({
 
+	//check if reservations are more than 30 minutes after starting
 	reservationHasPassed: function() {
 		var date = new Date();
 		return this.get('time').getTime() < (date.getTime() - 1800000);
@@ -25,5 +26,11 @@ export default Ember.ObjectController.extend({
 					 ':' + 
 					 time.getMinutes().toString() +
 					 secondMinuteDigit;
-	}.property()
+	}.property(),
+
+	actions: {
+		validateReservationAmount: function() {
+			alert(this.get('amount'));
+		}
+	}
 });

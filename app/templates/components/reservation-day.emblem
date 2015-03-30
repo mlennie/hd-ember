@@ -21,9 +21,9 @@ else
 							td = reservation.nbPeople
 							if reservation.reservationHasPassed
 								td.reservation-amount
-									= input value=amount
+									= input value=reservation.amount
 								td
-									button type=submit
+									button click='validateReservationAmount' Validate
 	.col-md-4
 		.service-complet-box
 			p INDIQUER UN SERVICE COMPLET
