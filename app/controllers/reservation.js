@@ -40,7 +40,20 @@ export default Ember.ObjectController.extend({
 													this.get('amount');
 				var confirmationResponse = confirm(confirmationText);
 				if (confirmationResponse == true) {
+					var _this = this;
+
+					var onSuccess = function(reservation) {
+					  _this.set('status', 'validated');
+					  alert('Update successful. Thank you!');
+					};
+
+					var onFail = function(reservation) {
+					  alert('Sorry could not update reservation. Please Try again soon.');
+					};
+
+					this.get('model').save().then(onSuccess, onFail);
 				} else {
+
 				}
 			}
 		}
