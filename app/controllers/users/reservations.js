@@ -4,7 +4,6 @@ import CurrentUserMixin from '../../mixins/current-user';
 export default Ember.ArrayController.extend({
 
 	days: [1,2,3,4,5,6,7],
-	nonValidatedReservations: null,
 	day1Reservations: null,
 	day2Reservations: null,
 	day3Reservations: null,
@@ -30,12 +29,23 @@ export default Ember.ArrayController.extend({
 		}
 	}.observes('model'),
 
+	nonValidatedReservations: function() {
+		//filter reservations for reservations that have already started
+		//for more than 30 minutes		
+		var date = new Date();
+		return this.get('model').filter(function(reservation) {
+			return reservation.get('time').getTime() < (date.getTime() - 1800000);
+		});
+
+	}.property(),
+
 	//computed properties
 	SetReservationsForDays: function() {
 		var days = this.get('days');
 			var reservationsByDay = [];
 
 			for (var i = 0; i < days.length; i++) {
+				var date = new Date();
 				var day = days[i];
 				var extra_days = 86400000 * i;
 
@@ -53,8 +63,12 @@ export default Ember.ArrayController.extend({
 					var today = new Date();
 					today.setDate(today.getDate() + i);
 					today = today.setHours(0,0,0,0);
-					//compare dates to return reservation when dates match
-					return reservation_time === today;
+					//compare dates to return reservation when dates match 
+					//and when reservation is greater than now minus 30 minutes
+					//(reservation shows if reservation has not already started 
+					//for 30 minutes)
+					return reservation_time === today && 
+								 reservation.get('time').getTime() > (date.getTime() - 1800000);
 
 				});
 				this.set('day' + day.toString() + 'Reservations', reservations);

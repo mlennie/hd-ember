@@ -1,4 +1,7 @@
-h5 = dateTitle
+if dateTitle
+	h5 = dateTitle
+else
+	h5 Reservations Needing Validation
 .row
 	.col-md-8
 		#reservation-day
@@ -16,7 +19,7 @@ h5 = dateTitle
 							td = reservation.hour
 							td = reservation.bookingName
 							td = reservation.nbPeople
-							if reservationHasPassed
+							if reservation.reservationHasPassed
 								td.reservation-amount
 									= input value=amount
 								td
