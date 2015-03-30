@@ -1,5 +1,6 @@
 .container-fluid
 	| Reservations
+	= reservation-day reservations=nonValidatedReservations dateTitle=nil
 	= reservation-day reservations=day1Reservations dateTitle=date1
 	= reservation-day reservations=day2Reservations dateTitle=date2
 	= reservation-day reservations=day3Reservations dateTitle=date3

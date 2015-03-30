@@ -1,6 +1,15 @@
 import Ember from 'ember';
 
 export default Ember.ObjectController.extend({
+	reservationHasPassed: function() {
+		var date = new Date();
+		return this.get('time').getTime() < date.getTime();
+	}.property(),
+
+	reservationIsForFuture: function() {
+		return this.get('reservationHasPassed') == false;
+	}.property('reservationHasPassed'),
+
 	date: function() {
 		var time = this.get('time');
 		return time.getDate().toString() + '/' + 

@@ -4,6 +4,7 @@ import CurrentUserMixin from '../../mixins/current-user';
 export default Ember.ArrayController.extend({
 
 	days: [1,2,3,4,5,6,7],
+	nonValidatedReservations: null,
 	day1Reservations: null,
 	day2Reservations: null,
 	day3Reservations: null,

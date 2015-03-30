@@ -8,17 +8,19 @@ h5 = dateTitle
 						th Horaire
 						th Nom
 						th Couverts
-						th Montant
-						th Valider
-					each reservations itemController="reservation"
+						unless dateTitle
+							th Montant
+							th Valider
+					each reservation in reservations itemController="reservation" 
 						tr
-							td = hour
-							td = bookingName
-							td = nbPeople
-							td.reservation-amount
-								= input value=amount
-							td
-								button type=submit
+							td = reservation.hour
+							td = reservation.bookingName
+							td = reservation.nbPeople
+							if reservationHasPassed
+								td.reservation-amount
+									= input value=amount
+								td
+									button type=submit
 	.col-md-4
 		.service-complet-box
 			p INDIQUER UN SERVICE COMPLET
