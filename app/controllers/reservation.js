@@ -30,7 +30,19 @@ export default Ember.ObjectController.extend({
 
 	actions: {
 		validateReservationAmount: function() {
-			alert(this.get('amount'));
+			if (this.get('amount') === undefined) {
+				alert('Please enter an amount.');
+			} else {
+				var confirmationText = "Are you sure you would like to validate " +
+													"the reservation under the name " + 
+													this.get('bookingName') +
+													" for an amount of " +
+													this.get('amount');
+				var confirmationResponse = confirm(confirmationText);
+				if (confirmationResponse == true) {
+				} else {
+				}
+			}
 		}
 	}
 });
