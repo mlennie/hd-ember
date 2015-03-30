@@ -15,15 +15,16 @@ else
 							th Montant
 							th Valider
 					each reservation in reservations itemController="reservation" 
-						tr
-							td = reservation.hour
-							td = reservation.bookingName
-							td = reservation.nbPeople
-							if reservation.reservationHasPassed
-								td.reservation-amount
-									= input value=reservation.amount
-								td
-									button click='validateReservationAmount' Validate
+						unless reservation.validated
+							tr
+								td = reservation.hour
+								td = reservation.bookingName
+								td = reservation.nbPeople
+								if reservation.reservationHasPassed
+									td.reservation-amount
+										= input value=reservation.amount
+									td
+										button click='validateReservationAmount' Validate
 	.col-md-4
 		.service-complet-box
 			p INDIQUER UN SERVICE COMPLET

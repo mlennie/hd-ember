@@ -8,6 +8,12 @@ export default Ember.ObjectController.extend({
 		return this.get('time').getTime() < (date.getTime() - 1800000);
 	}.property(),
 
+	validated: function() {
+		console.log(this.get('status'));
+		console.log(this.get('status') == "pending_confirmation");
+		return this.get('status') == 'pending_confirmation';
+	}.property('status'),
+
 	reservationIsForFuture: function() {
 		return this.get('reservationHasPassed') == false;
 	}.property('reservationHasPassed'),
@@ -43,7 +49,7 @@ export default Ember.ObjectController.extend({
 					var _this = this;
 
 					var onSuccess = function(reservation) {
-					  _this.set('status', 'validated');
+					  _this.set('status', 'pending_confirmation');
 					  alert('Update successful. Thank you!');
 					};
 

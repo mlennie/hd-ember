@@ -35,10 +35,16 @@ export default Ember.ArrayController.extend({
 		//for more than 30 minutes		
 		var date = new Date();
 		return this.get('model').filter(function(reservation) {
-			return reservation.get('time').getTime() < (date.getTime() - 1800000);
+			var time = reservation.get('time');
+			var status = reservation.get('status');
+			return (time.getTime() < (date.getTime() - 1800000)) &&
+						 (status !== 'validated') &&
+						 (status !== 'pending_confirmation') &&
+						 (status !== 'absent') &&
+						 (status !== 'cancelled');
 		});
 
-	}.property(),
+	}.property('model'),
 
 	//computed properties
 	setReservationsForDays: function() {
