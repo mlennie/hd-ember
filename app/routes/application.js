@@ -10,6 +10,8 @@ export default Ember.Route.extend(ApplicationRouteMixin, {
 		sessionAuthenticationSucceeded: function(error) {
 			if (this.get('session.is_owner')) {
       	this.transitionTo('users.reservations');
+      } else {
+      	this.transitionTo('index');
       }
     }
 	}
