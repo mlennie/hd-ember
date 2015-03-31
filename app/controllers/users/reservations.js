@@ -11,6 +11,13 @@ export default Ember.ArrayController.extend({
 	day5Reservations: null,
 	day6Reservations: null,
 	day7Reservations: null,
+	day1Services: null,
+	day2Services: null,
+	day3Services: null,
+	day4Services: null,
+	day5Services: null,
+	day6Services: null,
+	day7Services: null,
 	date1: null,
 	date2: null,
 	date3: null,
@@ -54,7 +61,6 @@ export default Ember.ArrayController.extend({
 			for (var i = 0; i < days.length; i++) {
 				var date = new Date();
 				var day = days[i];
-				var extra_days = 86400000 * i;
 
 				//filter reservations for reservations on specific date				
 				var reservations = this.get('model').filter(function(reservation) {
@@ -80,5 +86,47 @@ export default Ember.ArrayController.extend({
 				});
 				this.set('day' + day.toString() + 'Reservations', reservations);
 			}
+	}.observes('model'),
+
+	services: function() {
+		var restaurant = this.get('session.currentUser.restaurants').get('firstObject');
+		return restaurant.get('services');
+	}.property(),
+
+	setServicesForDays: function() {
+		var days = this.get('days');
+			var servicesByDay = [];
+
+			for (var i = 0; i < days.length; i++) {
+				var date = new Date();
+				var day = days[i];
+
+				//filter services for services on specific date				
+				var services = this.get('services').filter(function(service) {
+					//get hours so can put them back after
+					var hours = service.get('startTime').getHours();
+					var minutes = service.get('startTime').getMinutes();
+					//get day of service to compare with date
+					var service_time = service.get('startTime').setHours(0,0,0,0);
+					//reset hours for service
+					service.get('startTime').setHours(hours);
+					//get today's date at midnight
+					var today = new Date();
+					today.setDate(today.getDate() + i);
+					today = today.setHours(0,0,0,0);
+					//compare dates to return service when dates match 
+					return service_time === today;
+
+				});
+				this.set('day' + day.toString() + 'Services', services);
+			}
 	}.observes('model')
 });
+
+
+
+
+
+
+
+

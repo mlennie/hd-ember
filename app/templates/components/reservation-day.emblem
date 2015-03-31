@@ -26,15 +26,14 @@ else
 											= input value=reservation.amount
 										td
 											button click='validateReservationAmount' Validate
-	.col-md-4
-		.service-complet-box
-			p INDIQUER UN SERVICE COMPLET
-			form
-				= input type="checkbox" 
-				| Midi
-				br
-				= input type="checkbox" 
-				| Soir
-				br
-				button type=submit Valider
+	if dateTitle
+		.col-md-4
+			.service-complet-box
+				p INDIQUER UN SERVICE COMPLET
+				form
+					each service in services itemController="service"
+						= input type="checkbox" 
+						= service.startTime
+						br
+					button type=submit Valider
 	br

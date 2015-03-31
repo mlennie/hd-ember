@@ -1,10 +1,10 @@
 .container-fluid
 	| Reservations
 	= reservation-day reservations=nonValidatedReservations dateTitle=nil
-	= reservation-day reservations=day1Reservations dateTitle=date1
-	= reservation-day reservations=day2Reservations dateTitle=date2
-	= reservation-day reservations=day3Reservations dateTitle=date3
-	= reservation-day reservations=day4Reservations dateTitle=date4
-	= reservation-day reservations=day5Reservations dateTitle=date5
-	= reservation-day reservations=day6Reservations dateTitle=date6
-	= reservation-day reservations=day7Reservations dateTitle=date7
+	= reservation-day reservations=day1Reservations dateTitle=date1 services=day1Services
+	= reservation-day reservations=day2Reservations dateTitle=date2 services=day2Services
+	= reservation-day reservations=day3Reservations dateTitle=date3 services=day3Services
+	= reservation-day reservations=day4Reservations dateTitle=date4 services=day4Services
+	= reservation-day reservations=day5Reservations dateTitle=date5 services=day5Services
+	= reservation-day reservations=day6Reservations dateTitle=date6 services=day6Services
+	= reservation-day reservations=day7Reservations dateTitle=date7 services=day7Services
