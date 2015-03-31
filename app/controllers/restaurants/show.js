@@ -78,9 +78,17 @@ export default Ember.Controller.extend({
     return this.get('model.services');
   }.property('model'),
 
+  //get all services that have not been marked 
+  //as complete by the restaurant
+  nonCompleteServices: function() {
+    return this.get('services').filter(function(service) {
+      return service.get('status') != 'complete';
+    })
+  }.property('model'),
+
   //get start times of all services
   serviceStartTimes: function() {
-    return this.get('services').getEach('startTime');
+    return this.get('nonCompleteServices').getEach('startTime');
   }.property('services'),
 
   //array with number of services with given date
@@ -93,7 +101,8 @@ export default Ember.Controller.extend({
       return services.filter(function(service) {
         var serviceStartTime = moment(service.get('startTime'));
         var serviceDate = serviceStartTime.stripTime().stripZone().format();
-        return date === serviceDate;
+        return date === serviceDate &&
+               service.get('status') !== "complete";
       });
     } else {
       return [];
