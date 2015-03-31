@@ -32,8 +32,12 @@ else
 				p INDIQUER UN SERVICE COMPLET
 				form
 					each service in services itemController="service"
-						= input type="checkbox" 
-						= service.startTime
+						if service.alreadyComplete
+							p.red Already complete
+						else
+							button click='changeServiceToComplete' Complet!
+						= service.startToFinish
 						br
-					button type=submit Valider
+						br
+
 	br
