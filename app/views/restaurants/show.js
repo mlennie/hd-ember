@@ -18,6 +18,7 @@ export default Ember.View.extend({
     });
   }.on('didInsertElement'),
 
+  //highlight buttons when selected
   highlightSelectedTime: function() {
     Ember.$(".time-button")
     .css('background-color', '#fff')
@@ -27,6 +28,7 @@ export default Ember.View.extend({
     .css( "color", "#fff" );
   }.observes("controller.time").on("didInsertElement"),
 
+  //highlight buttons when selected
   highlightSelectedNbCouverts: function() {
     Ember.$(".number-button")
     .css('background-color', '#fff')
@@ -35,6 +37,15 @@ export default Ember.View.extend({
     .css( "background-color", "#5CB85C" )
     .css( "color", "#fff" );
   }.observes("controller.number").on("didInsertElement"),
+
+  //set reservation number to null (which hides name) 
+  //when a time button is clicked
+  hideNameWhenClickTime: function() {
+    var _this = this;
+    Ember.$("body").on('click', '.time-button', function() {
+      _this.set('controller.number', null);
+    });
+  }.observes("controller.time").on("didInsertElement"),
 
   //
   //MAP

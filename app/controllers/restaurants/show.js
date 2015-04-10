@@ -119,6 +119,7 @@ export default Ember.Controller.extend({
         showNbPeople: false,
         showReservationName: false
       });
+
       if (
         this.get('time') !== null 
       ) {
@@ -126,6 +127,7 @@ export default Ember.Controller.extend({
           showNbPeople: true,
           showReservationName: false
         });
+
         if (
           this.get('number') !== null 
         ) {
@@ -134,6 +136,7 @@ export default Ember.Controller.extend({
           });
         }
       }
+
     } else {
       this.setProperties({
         showServices: false,
@@ -201,6 +204,9 @@ export default Ember.Controller.extend({
     //to trigger next step
     addDateQueryParams: function(date) {
       this.set('showServices', true);
+      this.set('time', null);
+      this.set('number', null);
+      this.set('name', null);
       //update query params
       this.transitionToRoute(
         'restaurants.show', 
