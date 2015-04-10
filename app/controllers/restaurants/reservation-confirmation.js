@@ -29,7 +29,19 @@ export default Ember.Controller.extend({
   //actions
   actions: {
   	confirmReservation: function() {
-      var time = new Date(moment(this.get('date') + ',' + this.get('time')));
+
+      //parse date and time
+      var dateArray = this.get('date').split('-');
+      var timeArray = this.get('time').split(':');
+      
+      var year = dateArray[0];
+      var month = dateArray[1] - 1;
+      var day = dateArray[2];
+      var hour = timeArray[0];
+      var minutes = timeArray[1];
+
+      var time = new Date(year,month,day,hour,minutes);
+
       //show loading spinner
       this.set('isLoading', true);
 

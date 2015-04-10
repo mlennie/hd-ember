@@ -10,6 +10,9 @@ var app = new EmberApp({
 //Mixpanel
 app.import('vendor/scripts/mixpanel.js');
 
+//Moment
+app.import('bower_components/moment/moment.js')
+
 // Bootstrap
 app.import('bower_components/bootstrap-sass-official/assets/javascripts/bootstrap.js');
 
