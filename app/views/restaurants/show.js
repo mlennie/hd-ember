@@ -18,6 +18,24 @@ export default Ember.View.extend({
     });
   }.on('didInsertElement'),
 
+  highlightSelectedTime: function() {
+    Ember.$(".time-button")
+    .css('background-color', '#fff')
+    .css('color', '#000');
+    Ember.$(".time-button[data-time='" + this.get('controller.time') + "']")
+    .css( "background-color", "#5CB85C" )
+    .css( "color", "#fff" );
+  }.observes("controller.time").on("didInsertElement"),
+
+  highlightSelectedNbCouverts: function() {
+    Ember.$(".number-button")
+    .css('background-color', '#fff')
+    .css('color', '#000');
+    Ember.$(".number-button[data-number='" + this.get('controller.number') + "']")
+    .css( "background-color", "#5CB85C" )
+    .css( "color", "#fff" );
+  }.observes("controller.number").on("didInsertElement"),
+
   //
   //MAP
   //

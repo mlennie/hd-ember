@@ -5,6 +5,6 @@ ul.list-group
 			span.percent-discount
 				= formatedCurrentDiscount
 				| %
-		each time in timeArray
+		each time in timeArray 
 			= link-to 'restaurants.show' restaurant (query-params date=date time=time discount=formatedCurrentDiscount)
-				.center.btn.btn-default.btn-sm.margin-2 = time
+				.time-button.center.btn.btn-default.btn-sm.margin-2 data-time=time = time

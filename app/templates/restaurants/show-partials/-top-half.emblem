@@ -23,7 +23,7 @@
 			if showServices
 				p Heure:
 				each service in filteredServices
-					service-times service=service restaurant=model date=date
+					service-times service=service restaurant=model date=date paramTime=time
 	.row
 		.col-sm-3.col-sm-offset-2
 			if showNbPeople
@@ -32,7 +32,7 @@
 					li.list-group-item
 						each number in nbPeopleArray
 							= link-to 'restaurants.show' model (query-params date=date time=time number=number)
-								.center.btn.btn-default.btn-sm.margin-2
+								.number-button.center.btn.btn-default.btn-sm.margin-2 data-number=number
 									= number
 		.col-sm-4.col-sm-offset-1
 			if showReservationName
