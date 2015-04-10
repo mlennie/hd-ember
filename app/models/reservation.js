@@ -5,7 +5,7 @@ export default DS.Model.extend({
   amount: DS.attr('number'),
   time: DS.attr('date'),
   status: DS.attr('string'),
-  service: DS.belongsTo('service'),
+  service: DS.belongsTo('service', {async: true}),
   discount: DS.attr('number'),
   userContribution: DS.attr('number'),
   bookingName: DS.attr('string'),

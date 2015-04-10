@@ -88,10 +88,15 @@ export default Ember.ArrayController.extend({
 			}
 	}.observes('model'),
 
+	//get restaurant for services
+	restaurant: function() {
+		return this.get('model.firstObject.restaurant');
+	}.property('model'),
+
+	//get services for reservations
 	services: function() {
-		var restaurant = this.get('session.currentUser.restaurants').get('firstObject');
-		return restaurant.get('services');
-	}.property(),
+		return this.get('restaurant.services');
+	}.property('restaurant'),
 
 	setServicesForDays: function() {
 		var days = this.get('days');
