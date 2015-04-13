@@ -28,5 +28,22 @@ export default DS.Model.extend({
   	} else {
   		return this.get('earnings');
   	}
+  }.property('earnings'),
+
+  earningsWithPlusSignForRestaurants: function() {
+    //alter earnings to be number we can use to compare 
+    //(to see if it's positive or not)
+    var earningsArray = this.get('earnings').split(',');
+    var earningsString = earningsArray[0] + '.' + earningsArray[1];
+    var earningsNumber = Number(earningsString);
+
+    if (earningsNumber > 0) {
+      return '-' + this.get('earnings');
+    } else {
+      var absEarnings = Math.abs(earningsNumber);
+      var absEarningsArray = absEarnings.toString().split('.');
+      var absEarningsString = '+' + absEarningsArray[0] + ',' + earningsArray[1];
+      return absEarningsString;
+    }
   }.property('earnings')
 });

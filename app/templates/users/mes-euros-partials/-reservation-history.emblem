@@ -15,7 +15,7 @@ if session.currentUser.isOwner
 						td = reservation.bookingName
 						td 
 							if reservation.earnings
-								= reservation.earningsWithPlusSign
+								= reservation.earningsWithPlusSignForRestaurants
 								| €
 							else
 								if reservation.absent
