@@ -15,8 +15,7 @@ unless session.currentUser.isOwner
 						td = reservation.restaurant_name
 						td 
 							if reservation.earnings
-								span + 
-								= reservation.earnings
+								= reservation.earningsWithPlusSign
 								| €
 							else
 								| en cours de traitement
