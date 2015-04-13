@@ -8,6 +8,21 @@ export default Ember.ObjectController.extend({
 		return this.get('time').getTime() < (date.getTime() - 1800000);
 	}.property(),
 
+	//check if status is absent
+	absent: function() {
+		return this.get('status') === 'absent';
+	}.property(),
+
+	//check if status is cancelled
+	cancelled: function() {
+		return this.get('status') === 'cancelled';
+	}.property(),
+
+	//check if status is pending confirmation
+	pendingConfirmation: function() {
+		return this.get('status') === 'pending_confirmation';
+	}.property(),
+
 	validated: function() {
 		console.log(this.get('status'));
 		console.log(this.get('status') == "pending_confirmation");
