@@ -37,6 +37,7 @@ else
 							p.red Not Available
 							button click='makeServiceAvailable' Make Available again
 						else
+							p.green Available
 							button click='changeServiceToComplete' Make Not Available
 						br
 						br
