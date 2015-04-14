@@ -8,6 +8,7 @@ else
 			form
 				table.table.table-striped
 					tr
+						th Date
 						th Horaire
 						th Nom
 						th Couverts
@@ -18,6 +19,7 @@ else
 						if reservation.nbPeople
 							unless reservation.validated
 								tr
+									td = reservation.date
 									td = reservation.hour
 									td = reservation.bookingName
 									td = reservation.nbPeople
