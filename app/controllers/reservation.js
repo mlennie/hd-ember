@@ -24,8 +24,6 @@ export default Ember.ObjectController.extend({
 	}.property(),
 
 	validated: function() {
-		console.log(this.get('status'));
-		console.log(this.get('status') == "pending_confirmation");
 		return this.get('status') == 'pending_confirmation';
 	}.property('status'),
 
