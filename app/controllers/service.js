@@ -56,6 +56,29 @@ export default Ember.ObjectController.extend({
 			} else {
 
 			}
+		},
+		makeServiceAvailable: function() {
+			var confirmationText = "Are you sure you would like to make the service " +
+												this.get('startToFinish') + 
+												" available again? " +
+												"Doing so will allow customers to reserve during these periods again." 
+			var confirmationResponse = confirm(confirmationText);
+			if (confirmationResponse == true) {
+				var _this = this;
+
+				var onSuccess = function() {
+				  _this.set('status', 'available');
+				  alert('Update successful. Thank you!');
+				};
+
+				var onFail = function() {
+				  alert('Sorry could not update service. Please Try again soon.');
+				};
+
+				this.get('model').save().then(onSuccess, onFail);
+			} else {
+
+			}
 		}
 	}
 

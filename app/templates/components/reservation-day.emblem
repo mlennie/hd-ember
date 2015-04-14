@@ -29,14 +29,15 @@ else
 	if dateTitle
 		.col-md-4
 			.service-complet-box
-				p INDIQUER UN SERVICE COMPLET
+				p Service Availabilities
 				form
 					each service in services itemController="service"
-						if service.alreadyComplete
-							p.red Already complete
-						else
-							button click='changeServiceToComplete' Complet!
 						= service.startToFinish
+						if service.alreadyComplete
+							p.red Not Available
+							button click='makeServiceAvailable' Make Available again
+						else
+							button click='changeServiceToComplete' Make Not Available
 						br
 						br
 
