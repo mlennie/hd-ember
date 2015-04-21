@@ -24,7 +24,7 @@ export default Ember.ObjectController.extend({
 	}.property(),
 
 	validated: function() {
-		return this.get('status') == 'pending_confirmation';
+		return this.get('status') == 'validated';
 	}.property('status'),
 
 	reservationIsForFuture: function() {
@@ -32,9 +32,20 @@ export default Ember.ObjectController.extend({
 	}.property('reservationHasPassed'),
 
 	date: function() {
+
+		//add french months
+		var months = ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", 
+								  "Juillet", "Août", "Septembre", "Octobre", "Novembre", 
+								  "Décembre"];
+
+		//add french days
+		var days = ["Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi", 
+								  "Dimanche"];
+
 		var time = this.get('time');
-		return time.getDate().toString() + '/' + 
-					 (time.getMonth() + 1).toString() + '/' +
+		return days[time.getDay()] + ' ' +
+					 time.getDate().toString() + ' ' + 
+					 (months[time.getMonth()]) + ' ' +
 					 time.getFullYear().toString();
 	}.property(),
 

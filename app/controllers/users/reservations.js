@@ -120,7 +120,7 @@ export default Ember.ArrayController.extend(CurrentUserMixin,{
 				});
 				this.set('day' + day.toString() + 'Services', services);
 			}
-	}.observes('model')
+	}.observes('session.currentUser')
 });
 
 

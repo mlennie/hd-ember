@@ -19,8 +19,7 @@ export default Ember.Mixin.create({
 		return this.get('session.isOwner');
 	}.property('session'),
 	restaurant: function() {
-		var restaurants = this.get('currentUser.restaurants');
-		return restaurants.get('firstObject');
+		return this.get('currentUser.restaurants.firstObject');
 	}.property('currentUser.restaurants'),
 	gender: function() {
 		return this.get('currentUser.gender');

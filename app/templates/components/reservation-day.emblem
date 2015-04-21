@@ -1,9 +1,9 @@
-if dateTitle
-	h5 = dateTitle
-else
-	h5 Reservations Needing Validation
 .row
 	.col-md-8
+		if dateTitle
+			h5 = dateTitle
+		else
+			h5 Reservations Needing Validation
 		#reservation-day
 			form
 				table.table.table-striped
@@ -30,6 +30,7 @@ else
 											button click='validateReservationAmount' Validate
 	if dateTitle
 		.col-md-4
+			h5 = dateTitle
 			.service-complet-box
 				p Service Availabilities
 				form
