@@ -11,6 +11,8 @@ export default Ember.Route.extend(AuthenticatedRouteMixin, {
 
 		if (parsed_session["is_owner"]) {
     	return this.store.find('reservation', { finished: "true" });
+    } else {
+    	return this.store.find('transaction');
     }
   }
 });
