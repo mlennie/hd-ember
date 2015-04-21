@@ -8,7 +8,8 @@
 			form
 				table.table.table-striped
 					tr
-						th Date
+						unless dateTitle
+							th Date
 						th Horaire
 						th Nom
 						th Couverts
@@ -18,16 +19,18 @@
 					each reservation in reservations itemController="reservation" 
 						if reservation.nbPeople
 							unless reservation.validated
-								tr
-									td = reservation.date
-									td = reservation.hour
-									td = reservation.bookingName
-									td = reservation.nbPeople
-									if reservation.reservationHasPassed
-										td.reservation-amount
-											= input value=reservation.amount
-										td
-											button click='validateReservationAmount' Validate
+								unless reservation.pending_confirmation
+									tr
+										unless dateTitle
+											td = reservation.date
+										td = reservation.hour
+										td = reservation.bookingName
+										td = reservation.nbPeople
+										if reservation.reservationHasPassed
+											td.reservation-amount
+												= input value=reservation.amount
+											td
+												button click='validateReservationAmount' Validate
 	if dateTitle
 		.col-md-4
 			h5 = dateTitle
