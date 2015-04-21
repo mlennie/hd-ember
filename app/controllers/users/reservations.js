@@ -1,7 +1,7 @@
 import Ember from 'ember';
 import CurrentUserMixin from '../../mixins/current-user';
 
-export default Ember.ArrayController.extend({
+export default Ember.ArrayController.extend(CurrentUserMixin,{
 
 	days: [1,2,3,4,5,6,7],
 	day1Reservations: null,
@@ -87,11 +87,6 @@ export default Ember.ArrayController.extend({
 				this.set('day' + day.toString() + 'Reservations', reservations);
 			}
 	}.observes('model'),
-
-	//get restaurant for services
-	restaurant: function() {
-		return this.get('model.firstObject.restaurant');
-	}.property('model'),
 
 	//get services for reservations
 	services: function() {
