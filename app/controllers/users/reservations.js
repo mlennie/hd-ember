@@ -27,12 +27,30 @@ export default Ember.ArrayController.extend(CurrentUserMixin,{
 	date7: null,
 
 	setDates: function() {
+		//add french months
+		var months = ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", 
+								  "Juillet", "Août", "Septembre", "Octobre", "Novembre", 
+								  "Décembre"];
+
+		//add french days
+		var days = ["Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi", 
+								  "Dimanche"];
+
 		for (var i = 0; i < 7; i++) {
 			var time = new Date();
 			time.setDate(time.getDate()+i)
-			time = (time.getDate()).toString() + '/' + 
-						 (time.getMonth() + 1).toString() + '/' +
+			var newDate = new Date();
+
+			if (time.getDate() == newDate.getDate()) {
+				time = "Aujourd'hui";
+			} else if (time.getDate() == newDate.getDate() + 1){
+				time = "Demain"
+			} else {
+				time = days[time.getDay()] + ' ' +
+						 time.getDate().toString() + ' ' + 
+						 (months[time.getMonth()]) + ' ' +
 						 time.getFullYear().toString();
+			}
 			this.set('date' + (i + 1).toString(), time);
 		}
 	}.observes('model'),
