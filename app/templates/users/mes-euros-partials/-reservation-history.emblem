@@ -1,20 +1,50 @@
-.row
-	.col-8-box.grey-background.margin-bottom-20
-		h5.no-margin
-			span.users-title Historique des 30 derniers jours
-		br
-		table.table.padding-left-10
-			tr
+if session.currentUser.isOwner
+	.row
+		.col-8-box.grey-background.margin-bottom-20
+			h5.no-margin
+				span.users-title Historique des 30 derniers jours
+			br
+			table.table.padding-left-10
 				th Date
-				th Restaurant
+				th Booking name
 				th Euros Collectés
-			= each reservation in reservations 
+				= each reservation in model itemController="reservation"
+					tr
+						td = reservation.date
+						td = reservation.bookingName
+						td 
+							if reservation.earnings
+								= reservation.earningsWithPlusSignForRestaurants
+								| €
+							else
+								if reservation.absent
+									| absent
+								else 
+									if reservation.cancelled
+										| cancelled
+									else
+										if reservation.pendingConfirmation
+											| pending confirmation 
+										else
+											| en cours de traitement
+else
+	.row
+		.col-8-box.grey-background.margin-bottom-20
+			h5.no-margin
+				span.users-title Historique des 30 derniers jours
+			br
+			table.table.padding-left-10
 				tr
-					td = reservation.date
-					td = reservation.restaurant_name
-					td 
-						if reservation.earnings
-							= reservation.earningsWithPlusSign
-							| €
-						else
-							| en cours de traitement
+					th Date
+					th Restaurant
+					th Euros Collectés
+				= each transaction in model itemController="transaction"
+					tr
+						td = transaction.date
+						td = transaction.restaurant_name
+						td 
+							if transaction.earnings
+								= transaction.earnings
+								| €
+							else
+								| en cours de traitement
