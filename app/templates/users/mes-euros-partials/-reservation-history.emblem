@@ -39,13 +39,13 @@ else
 					th Date
 					th Restaurant
 					th Euros Collectés
-				= each reservation in reservations 
+				= each transaction in model itemController="transaction"
 					tr
-						td = reservation.date
-						td = reservation.restaurant_name
+						td = transaction.date
+						td = transaction.restaurant_name
 						td 
-							if reservation.earnings
-								= reservation.earningsWithPlusSign
+							if transaction.earnings
+								= transaction.earnings
 								| €
 							else
 								| en cours de traitement
