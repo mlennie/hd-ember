@@ -19,7 +19,7 @@
 					each reservation in reservations itemController="reservation" 
 						if reservation.nbPeople
 							unless reservation.validated
-								unless reservation.pending_confirmation
+								unless reservation.pendingConfirmation
 									tr
 										unless dateTitle
 											td = reservation.date

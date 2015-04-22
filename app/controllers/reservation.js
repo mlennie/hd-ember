@@ -21,7 +21,7 @@ export default Ember.ObjectController.extend({
 	//check if status is pending confirmation
 	pendingConfirmation: function() {
 		return this.get('status') === 'pending_confirmation';
-	}.property(),
+	}.property('status'),
 
 	validated: function() {
 		return this.get('status') == 'validated';
