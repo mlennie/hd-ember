@@ -33,10 +33,17 @@ export default Ember.ObjectController.extend({
 		} else {
 			var time = this.get('created_at');
 		}
+
+		//add extra zero to minutes if less than 10 minutes
+		var minutes = time.getMinutes();
+		minutes = minutes < 10 ? '0' + minutes.toString() : minutes.toString();
+
 		return days[time.getDay()] + ' ' +
 					 time.getDate().toString() + ' ' + 
 					 (months[time.getMonth()]) + ' ' +
-					 time.getFullYear().toString();
+					 time.getFullYear().toString() + ' ' + 
+					 (time.getHours() - 2).toString() + ':' + 
+					 minutes + 'h';
 	}.property('model'),
 
 	earnings: function() {
