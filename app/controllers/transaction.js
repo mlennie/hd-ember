@@ -48,6 +48,8 @@ export default Ember.ObjectController.extend({
 
 	earnings: function() {
 		var amount = this.get('final_balance') - this.get('original_balance');
+		//amount = Math.round(amount * 100) / 100
+		amount = amount.toFixed(2);
 		return amount > 0 ? '+' + amount : amount;
 	}.property('model')
 
