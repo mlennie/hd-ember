@@ -60,6 +60,7 @@ export default Ember.ObjectController.extend({
 
 	actions: {
 		validateReservationAmount: function() {
+			
 			if (this.get('amount') === undefined) {
 				alert('Please enter an amount.');
 			} else {
@@ -71,6 +72,34 @@ export default Ember.ObjectController.extend({
 				var confirmationResponse = confirm(confirmationText);
 				if (confirmationResponse == true) {
 					var _this = this;
+
+					//convert decimals to commas and commas to decimals 
+					//so system can understand
+					var amount = this.get('amount');
+					//split amount into array based on commas
+					var commaArray = amount.split(',');
+
+					//get cents if there's a comma
+					if (commaArray.length == 2) {
+						var cents = commaArray[1];
+					} else {
+						var cents = "00";
+					}
+
+					//get thousands if there's a decimal
+					//and get euros
+					var eurosArray = commaArray[0].split('.');
+					if (eurosArray.length == 2) {
+						var thousands = eurosArray[0];
+						var euros = eurosArray[1];
+					} else {
+						var thousands = "";
+						var euros = eurosArray[0];
+					}
+
+					//set new formatted amount
+					var amountFormatted = thousands + euros + "." + cents;
+					this.set('amount', amountFormatted);
 
 					var onSuccess = function(reservation) {
 					  _this.set('status', 'pending_confirmation');
