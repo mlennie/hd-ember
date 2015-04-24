@@ -26,8 +26,7 @@ export default Ember.ObjectController.extend({
 								  "Décembre"];
 
 		//add french days
-		var days = ["Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi", 
-								  "Dimanche"];
+		var days = ["Dimanche", "Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi"];
 		if (this.get('reservation') !== null) {
 			var time = this.get('reservation.time');
 		} else {
@@ -38,11 +37,18 @@ export default Ember.ObjectController.extend({
 		var minutes = time.getMinutes();
 		minutes = minutes < 10 ? '0' + minutes.toString() : minutes.toString();
 
+		if (this.get('itemable_type') == "Reservation") {
+			time.setHours(time.getHours() - 2);
+			var hours = (time.getHours()).toString()
+		} else {
+			var hours = time.getHours().toString();
+		}
+		
 		return days[time.getDay()] + ' ' +
 					 time.getDate().toString() + ' ' + 
 					 (months[time.getMonth()]) + ' ' +
 					 time.getFullYear().toString() + ' ' + 
-					 (time.getHours() - 2).toString() + ':' + 
+					 hours + ':' + 
 					 minutes + 'h';
 
 	}.property('model'),
