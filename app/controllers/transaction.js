@@ -38,9 +38,10 @@ export default Ember.ObjectController.extend({
 		minutes = minutes < 10 ? '0' + minutes.toString() : minutes.toString();
 
 		if (this.get('itemable_type') == "Reservation") {
-			var hours = (time.getHours() + 24 - 22).toString()
+			time.setHours(time.getHours() - 2);
+			var hours = (time.getHours()).toString()
 		} else {
-			var hours = time.getHours().toString()
+			var hours = time.getHours().toString();
 		}
 		
 		return days[time.getDay()] + ' ' +
