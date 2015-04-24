@@ -16,12 +16,14 @@ export default Ember.Component.extend({
 	timeArray: function() {
 		var numberButtons = this.get('numberButtons');
 		var start = this.get('service.startTime');
-		var timeArray = [moment(start).format("HH:mm")];
+		var timeArray = moment(start) > moment() ? [moment(start).format("HH:mm")] : [];
 		var i;
 		for (i=0; i < numberButtons; ++i) {
 			start = moment(start).add(30, 'minutes');
 			var startFormatted = moment(start).format("HH:mm");
-			timeArray.push(startFormatted);
+			if (moment(start) > moment()) {
+				timeArray.push(startFormatted);
+			}
 		}
 		return timeArray;
 	}.property('service')
