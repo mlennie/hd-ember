@@ -16,7 +16,10 @@ export default Ember.Mixin.create({
 		return this.get('currentUser.lastName');
 	}.property('currentUser.lastName'),
 	isOwner: function() {
-		return this.get('session.isOwner');
+		var session = window.localStorage.getItem('ember_simple_auth:session');
+		var parsed_session = JSON.parse(session);
+
+		return parsed_session["is_owner"];
 	}.property('session'),
 	restaurant: function() {
 		return this.get('currentUser.restaurants.firstObject');

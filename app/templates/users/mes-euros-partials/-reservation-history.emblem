@@ -1,4 +1,4 @@
-if session.currentUser.isOwner
+if isOwner
 	.row
 		.col-8-box.grey-background.margin-bottom-20
 			h5.no-margin
