@@ -84,7 +84,7 @@ export default Ember.Controller.extend({
     return this.get('services').filter(function(service) {
       return service.get('status') != 'complete';
     })
-  }.property('model'),
+  }.property('services'),
 
   //get start times of all services
   serviceStartTimes: function() {

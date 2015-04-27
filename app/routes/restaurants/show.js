@@ -2,7 +2,12 @@ import Ember from 'ember';
 import AuthenticatedRouteMixin from 'simple-auth/mixins/authenticated-route-mixin';
 
 export default Ember.Route.extend(AuthenticatedRouteMixin, {
-	resetController: function (controller, isExiting) {
+
+  model: function(params) {
+    return this.store.fetchById('restaurant', params.restaurant_id);
+  },
+	
+  resetController: function (controller, isExiting) {
     if (isExiting) {
       // isExiting would be false if only the route's model was changing
       controller.setProperties({
