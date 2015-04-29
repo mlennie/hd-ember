@@ -1,6 +1,21 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
+  //redirect owner if logged in
+  beforeModel: function(transition) {
+    
+    var session = window.localStorage.getItem('ember_simple_auth:session');
+    if (session !== null) {
+      var parsed_session = JSON.parse(session);
+      if (parsed_session["is_owner"] == true) {
+        this.transitionTo('users.reservations');
+      } else {
+        this.transitionTo('index');
+      }
+    } else {
+      this.transitionTo('index');
+    }
+  },
 	setupController: function(controller, model) {
     controller.controllerFor('application').set('showTopSearch', false);
     controller.setProperties({

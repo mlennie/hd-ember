@@ -2,20 +2,6 @@ import Ember from 'ember';
 import ApplicationRouteMixin from 'simple-auth/mixins/application-route-mixin';
 
 export default Ember.Route.extend(ApplicationRouteMixin, {
-	//redirect owner if logged in
-	beforeModel: function(transition) {
-		var session = window.localStorage.getItem('ember_simple_auth:session');
-		if (session !== null) {
-			var parsed_session = JSON.parse(session);
-			if (parsed_session["is_owner"] == true) {
-				this.transitionTo('users.reservations');
-			} else {
-				this.transitionTo('index');
-			}
-		}	else {
-			this.transitionTo('index');
-		}
-  },
 
 	model: function(){
 		return this.store.find('restaurant');
@@ -23,6 +9,7 @@ export default Ember.Route.extend(ApplicationRouteMixin, {
 
 	actions: {
 		sessionAuthenticationSucceeded: function(error) {
+			
 			var session = window.localStorage.getItem('ember_simple_auth:session');
 			if (session !== null) {
 				var parsed_session = JSON.parse(session);
