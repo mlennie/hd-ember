@@ -107,9 +107,13 @@ export default Ember.ArrayController.extend(CurrentUserMixin,{
 	}.observes('model'),
 
 	//get services for reservations
+	getServices: function() {
+		this.store.find('service', {restaurant_id: this.get('restaurant.id')});
+	}.observes('model'),
+
 	services: function() {
 		return this.get('restaurant.services');
-	}.property('restaurant'),
+	}.property('restaurant.services'),
 
 	setServicesForDays: function() {
 		var days = this.get('days');
@@ -140,7 +144,7 @@ export default Ember.ArrayController.extend(CurrentUserMixin,{
 					this.set('day' + day.toString() + 'Services', services);
 				}
 			}
-	}.observes('model'),
+	}.observes('model', 'services'),
 
 	setServicesForDaysIfSessionChanges: function() {
 		var days = this.get('days');
