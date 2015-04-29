@@ -1,6 +1,6 @@
 #top-search-bar
 	if session.isAuthenticated
-		unless session.currentUser.isOwner
+		unless isOwner
 			div.hidden-sm.hidden-xs
 				nav.navbar.grey-background#top-search-medium
 					.row

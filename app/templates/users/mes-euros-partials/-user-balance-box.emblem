@@ -8,11 +8,11 @@
 			= partial 'users/balance'
 		h5.no-margin
 			span.users-title
-				if session.currentUser.isOwner
+				if isOwner
 					| Ma balance
 				else
 					| Mes Euros Collectés
-		if session.currentUser.isOwner
+		if isOwner
 			br
 			br
 			br

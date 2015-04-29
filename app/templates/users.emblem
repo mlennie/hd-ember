@@ -1,5 +1,5 @@
 .hidden-xs.hidden-sm
-	if session.currentUser.isOwner
+	if isOwner
 		br
 		br
 	else
@@ -9,7 +9,7 @@
 		br
 		br
 .visible-xs-block.visible-sm-block
-	if session.currentUser.isOwner
+	if isOwner
 		br
 		br
 		br
@@ -28,13 +28,13 @@
 				ul
 					li.nav-link#users-mes-euros-link
 						=link-to 'users.mes-euros'
-							if session.currentUser.isOwner
+							if isOwner
 								| Ma balance
 							else
 								| Mes Euros Collectés
 					li.nav-link#users-mon-profil-link
 						=link-to 'users.edit' | Mon Profil 
-					if session.currentUser.isOwner
+					if isOwner
 						li.nav-link#users-parrainer-link
 							=link-to 'users.reservations' | Réservations
 					else

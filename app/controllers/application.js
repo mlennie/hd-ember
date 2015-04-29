@@ -1,7 +1,12 @@
 import Ember from 'ember';
 import SearchMixin from '../mixins/search';
+import CurrentUserMixin from '../mixins/current-user';
 
-export default Ember.Controller.extend(SearchMixin,{
+export default Ember.Controller.extend(
+  //Mixins
+  SearchMixin,
+  CurrentUserMixin, {
+
   needs: "index",
   index: Ember.computed.alias("controllers.index"),
 

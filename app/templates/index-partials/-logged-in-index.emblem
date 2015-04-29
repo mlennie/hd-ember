@@ -11,7 +11,7 @@
 			.alert.alert-success Confirmation successful. You can now log into this new account once you sign out of your current account. 
 		if confirmation_fail
 			.alert.alert-danger Confirmation failed. Either you have already confirmed your account, or this user does not exist. 
-unless session.currentUser.isOwner
+unless isOwner
 	unless already_logged_in
 		.visible-md-block.visible-lg-block
 			partial 'index-partials/medium-search'

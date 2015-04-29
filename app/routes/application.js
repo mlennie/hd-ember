@@ -8,11 +8,17 @@ export default Ember.Route.extend(ApplicationRouteMixin, {
 
 	actions: {
 		sessionAuthenticationSucceeded: function(error) {
-			if (this.get('session.is_owner')) {
-      	this.transitionTo('users.reservations');
-      } else {
-      	this.transitionTo('index');
-      }
+			var session = window.localStorage.getItem('ember_simple_auth:session');
+			if (session !== null) {
+				var parsed_session = JSON.parse(session);
+				if (parsed_session["is_owner"] == true) {
+					this.transitionTo('users.reservations');
+				} else {
+					this.transitionTo('index');
+				}
+			}	else {
+				this.transitionTo('index');
+			}
     }
 	}
 });
