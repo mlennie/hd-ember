@@ -7,7 +7,6 @@ export default Ember.View.extend({
       Ember.$(this).popover('show');
    	});
 	}.observes('controller.filteredRestaurants').on('didInsertElement'),
-	
 
 	//close collapsable navbar dropdown when 
 	closeNavbar: function() {
