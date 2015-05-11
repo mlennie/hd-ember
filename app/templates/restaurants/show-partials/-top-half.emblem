@@ -22,8 +22,16 @@
 		.col-sm-4
 			if showServices
 				p Heure:
-				each service in filteredServices
-					service-times service=service restaurant=model date=date paramTime=time
+				each service in filteredServices itemController="service" 
+					ul.list-group
+					li.list-group-item
+						p 
+							| Discount: 
+							span.percent-discount
+								= service.formatedCurrentDiscount
+								| %
+						each time in service.timeArray 
+							.time-button.center.btn.btn-default.btn-sm.margin-2{action "updateTime" time service.formatedCurrentDiscount} data-time=time = time
 	.row
 		.col-sm-3.col-sm-offset-2
 			if showNbPeople

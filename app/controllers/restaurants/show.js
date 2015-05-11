@@ -237,6 +237,11 @@ export default Ember.Controller.extend({
       mixpanel.track('Restaurant Page Réserver Button Click', { 
         'restaurant': this.get('model.name')
       });
+    },
+
+    updateTime: function(time, discount) {
+      this.set('time', time);
+      this.set('discount', discount);
     }
   }
 });

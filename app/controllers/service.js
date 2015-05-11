@@ -2,6 +2,31 @@ import Ember from 'ember';
 
 export default Ember.ObjectController.extend({
 	//computed properties
+	//computed properties
+	numberButtons: function() {
+		var start = this.get('startTime');
+		var end = this.get('lastBookingTime');
+		return (moment(end) - moment(start)) / 1000 / 60 / 30;
+	}.property(),
+
+	formatedCurrentDiscount: function() {
+    return this.get('currentDiscount') * 100;
+  }.property(),
+
+	timeArray: function() {
+		var numberButtons = this.get('numberButtons');
+		var start = this.get('startTime');
+		var timeArray = moment(start) > moment() ? [moment(start).format("HH:mm")] : [];
+		var i;
+		for (i=0; i < numberButtons; ++i) {
+			start = moment(start).add(30, 'minutes');
+			var startFormatted = moment(start).format("HH:mm");
+			if (moment(start) > moment()) {
+				timeArray.push(startFormatted);
+			}
+		}
+		return timeArray;
+	}.property(),
 
 	//check if service already has a complete status
 	alreadyComplete: function() {
