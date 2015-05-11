@@ -21,7 +21,7 @@ export default Ember.ObjectController.extend({
 		for (i=0; i < numberButtons; ++i) {
 			start = moment(start).add(30, 'minutes');
 			var startFormatted = moment(start).format("HH:mm");
-			if (moment(start) > moment()) {
+			if (moment(start) > moment().add('hour', 1)) {
 				timeArray.push(startFormatted);
 			}
 		}
