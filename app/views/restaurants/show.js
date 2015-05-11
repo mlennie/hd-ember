@@ -127,7 +127,13 @@ export default Ember.View.extend({
         	if (highestDiscount !== 0) {
             //add percent and change background color to yellow
           	cell.html("<p id='calendar-percent'>-" + highestDiscount.toString() + "%</p>");
-          	cell.css('background-color', 'yellow');
+            //if date is selected, make green else make yellow
+            if (date.format("YYYY-MM-DD") == self.get('controller.date')) {
+              cell.css('background-color', '#5CB85C');
+              cell.css('color', '#fff');
+            } else {
+              cell.css('background-color', 'yellow');
+            }
           	cell.css('cursor', 'pointer');
           } else {
             cell.prop('disabled', true);
@@ -141,18 +147,21 @@ export default Ember.View.extend({
 
   		//set logic when clicking on day
   		dayClick: function(date) {
+        //change date background color to green when clicked and remove
+        //previously colored green days
+        date.format("YYYY-MM-DD")
 
-  				//get start times of services for restaurant
-					var startTimes = self.get('controller.serviceStartTimes');
+				//get start times of services for restaurant
+				var startTimes = self.get('controller.serviceStartTimes');
 
-					//change start time format to just show days
-					var days = startTimes.map(function(item) {
-						return moment(item).stripZone().stripTime().format();
-					});
+				//change start time format to just show days
+				var days = startTimes.map(function(item) {
+					return moment(item).stripZone().stripTime().format();
+				});
 
-					//get proper format for calendar days
-					var dateFormat = moment(date).stripTime().format();
-					//initiate and set values for calendar
+				//get proper format for calendar days
+				var dateFormat = moment(date).stripTime().format();
+				//initiate and set values for calendar
 
   			//check if day clicked has any services
   			if ( days.indexOf(dateFormat) > -1 ) {
