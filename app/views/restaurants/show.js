@@ -125,15 +125,13 @@ export default Ember.View.extend({
           var highestDiscount = self.get('controller.highestDiscount');
           //check to make sure theres still availabilites left
         	if (highestDiscount !== 0) {
-            //add percent and change background color to yellow
-          	cell.html("<p id='calendar-percent'>-" + highestDiscount.toString() + "%</p>");
             //if date is selected, make green else make yellow
             if (date.format("YYYY-MM-DD") == self.get('controller.date')) {
-              cell.css('background-color', '#5CB85C');
-              cell.css('color', '#fff');
-            } else {
-              cell.css('background-color', 'yellow');
+              cell.addClass('selected');
             }
+            //add percent and change background color to yellow
+          	cell.html("<p id='calendar-percent'>-" + highestDiscount.toString() + "%</p>");
+            cell.addClass('has-services');
           	cell.css('cursor', 'pointer');
           } else {
             cell.prop('disabled', true);
@@ -147,9 +145,11 @@ export default Ember.View.extend({
 
   		//set logic when clicking on day
   		dayClick: function(date) {
-        //change date background color to green when clicked and remove
-        //previously colored green days
-        date.format("YYYY-MM-DD")
+        var date = date.format("YYYY-MM-DD");
+        //reset days to yellow
+        Ember.$('.fc-day').removeClass('selected');
+        //highlight selected to green
+        Ember.$('.fc-day[data-date=' + date + "]").addClass('selected');
 
 				//get start times of services for restaurant
 				var startTimes = self.get('controller.serviceStartTimes');

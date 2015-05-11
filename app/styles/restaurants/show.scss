@@ -28,8 +28,20 @@
 	div.fc-toolbar > div.fc-left > h2 {
 		font-size: 1.5em !important;
 	}
+	//hightlight selected calendar day
+	td.has-services {
+		background-color: yellow;
+
+		&.selected {
+			background-color: #5CB85C !important;
+
+			#calendar-percent {
+				color: #fff !important;
+			}
+		}
+	}
 	/*style how the discount percentage looks inside a calendar day*/
-	#calendar-percent{
+	#calendar-percent {
 		margin-top: 20px;
 		margin-left: 5px;
 		margin-bottom: 0;
