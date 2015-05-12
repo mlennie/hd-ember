@@ -24,8 +24,14 @@ br
 				| Reservation successful. You will now receive a 
 				| confirmation email with details concerning your reservation. 
 		.col-md-8.col-md-offset-2
-			h1.center Veuillez confirmer votre réservation.
-			br
+			unless dontShowReserveButton
+				h1.center Veuillez confirmer votre réservation.
+				br
+			else
+				.black-link 
+					= link-to "restaurants.search-results" 
+						= fa-icon 'chevron-left'
+						|  Retour 
 	.row
 		.col-sm-6.col-sm-offset-3
 			if isLoading 
@@ -67,14 +73,20 @@ br
 						td
 							strong Nombre De Couverts:
 						td = number
-					tr 
-						td
-							strong Veuillez indiquer un numéro
-							strong de téléphone pour vous joindre : 
-						td
-							.input-group.full-width
-								.gold.required-asterix.pull-right *
-								= input class='form-control black-border' value=phone placeholder='numéro' type='tel' required=true
+					if dontShowReserveButton
+						tr
+							td
+								strong Numéro de téléphone
+							td = phone
+					else
+						tr 
+							td
+								strong Veuillez indiquer un numéro
+								strong de téléphone pour vous joindre : 
+							td
+								.input-group.full-width
+									.gold.required-asterix.pull-right *
+									= input class='form-control black-border' value=phone placeholder='numéro' type='tel' required=true
 				br
 				unless dontShowReserveButton
 					button.btn.btn-success.btn-lg.full-width{ action 'confirmReservation' phone } Valider votre réservation

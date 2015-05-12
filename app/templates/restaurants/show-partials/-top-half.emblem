@@ -15,7 +15,7 @@
 						| Réserver
 	.row
 		.col-sm-6.col-sm-offset-3
-			h3.center Reservez en ligne ci-dessous ou par téléphone au 09.52.66.53.19
+			h5.center Reservez en ligne ci-dessous ou par téléphone au 09.52.66.53.19
 			hr
 		.col-sm-4.col-sm-offset-2
 			#calendar.margin-bottom-10
