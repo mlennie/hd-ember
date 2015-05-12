@@ -30,9 +30,9 @@ export default Ember.Controller.extend({
   //actions
   actions: {
   	confirmReservation: function(phone) {
-      debugger;
-      if (!phone) {
-        alert('Veuillez indiquer un numéro');
+      if (!phone ||
+         phone.length < 10) {
+        alert('Veuillez indiquer un numéro avec au moins dix numéros');
       } else {
 
         //parse date and time

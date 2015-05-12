@@ -11,6 +11,7 @@ export default DS.Model.extend({
   bookingName: DS.attr('string'),
   restaurant_name: DS.attr('string'),
   date: DS.attr('string'),
+  phone: DS.attr('string'),
   earnings: DS.attr('string'),
   user: DS.belongsTo('user', {async: true}),
   restaurant: DS.belongsTo('restaurant', {async: true}),
