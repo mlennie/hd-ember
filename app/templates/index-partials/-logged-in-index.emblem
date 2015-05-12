@@ -11,9 +11,17 @@
 			.alert.alert-success Confirmation successful. You can now log into this new account once you sign out of your current account. 
 		if confirmation_fail
 			.alert.alert-danger Confirmation failed. Either you have already confirmed your account, or this user does not exist. 
-unless isOwner
-	unless already_logged_in
-		.visible-md-block.visible-lg-block
-			partial 'index-partials/medium-search'
-		.visible-sm-block.visible-xs-block
-			partial 'index-partials/small-search'
+.container-fluid
+	.row
+		.col-sm-6.col-sm-offset-3.center
+			br
+			br
+			br
+			br
+			br
+			br
+			br
+			#concept-button.center 
+				= link-to "restaurants.search-results"
+					button.btn.register-gold.center
+						h5.light.no-margin.center Tout Les Restaurants
