@@ -2,7 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Controller.extend({
 
-  queryParams: ['date', 'time', 'number', 'discount'],
+  queryParams: ['date', 'time', 'number', 'discount', 'reserver'],
   
   //
   //PROPERTIES
@@ -17,6 +17,7 @@ export default Ember.Controller.extend({
   showServices: false,
   showNbPeople: false,
   discount: null,
+  reserver: null,
   showReservationName: false,
   calendarDate: null,
 

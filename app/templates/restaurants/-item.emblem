@@ -24,6 +24,7 @@
 			p.visible-xs-block.visible-sm-block.description
 				= restaurant.shortMobileDescription
 				|  ...
-			.pull-right click='clickReserver restaurant.name'
-				button.btn.register-gold.center data-toggle="popover" data-placement="top" data-trigger="focus" data-html="true" data-original-title="<div><a href='tel:+33952665319'class='popover-title'id='phone-link'>Composez le:</a></div>" data-content="<div><a href='tel:+33952665319'class='popver-content'id='phone-link'>09.52.66.53.19</a></div>" 
-					| Réserver
+			.pull-right
+				=link-to "restaurants.show" restaurant.id (query-params reserver=true)
+					button.btn.register-gold.center 
+						| Réserver

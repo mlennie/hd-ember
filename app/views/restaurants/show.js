@@ -2,6 +2,15 @@ import Ember from 'ember';
 
 export default Ember.View.extend({
 
+  //scroll to concept part of page when concept link clicked
+  scrollToReserver: function() {
+    if (this.get('controller.reserver') === 'true') {
+      Ember.$('html, body').animate({
+          scrollTop: Ember.$("#reserver-start").offset().top
+      }, 750);
+    }
+  }.on('didInsertElement'),
+
   reserverPopover: function(){
     //close popovers when click anywhere
     Ember.$('body').on('click', function() {

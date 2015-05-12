@@ -3,15 +3,6 @@ import Ember from 'ember';
 export default Ember.View.extend({
 	classNames: ['special-height'],
 
-	//scroll to concept part of page when concept link clicked
-	scrollToConcept: function() {
-		if (this.get('controller.concept') === 'true') {
-			Ember.$('html, body').animate({
-	        scrollTop: Ember.$("#concept").offset().top
-	    }, 750);
-		}
-	}.on('didInsertElement'),
-
 	//send events to MIXPANEL
 	indexMixpanelEvents: function() {
 
