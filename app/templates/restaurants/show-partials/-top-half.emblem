@@ -15,7 +15,7 @@
 						| Réserver
 	.row
 		.col-sm-6.col-sm-offset-3
-			h3.center Reserve
+			h3.center Reservez en ligne ci-dessous ou par téléphone au 09.52.66.53.19
 			hr
 		.col-sm-4.col-sm-offset-2
 			#calendar.margin-bottom-10
@@ -26,7 +26,7 @@
 					ul.list-group
 					li.list-group-item
 						p 
-							| Discount: 
+							| Euros collectés: 
 							span.percent-discount
 								= service.formatedCurrentDiscount
 								| %
@@ -35,7 +35,7 @@
 	.row
 		.col-sm-3.col-sm-offset-2
 			if showNbPeople
-				p Couverts:		
+				p Nombre de couverts:		
 				ul.list-group
 					li.list-group-item
 						each number in nbPeopleArray
@@ -44,12 +44,13 @@
 									= number
 		.col-sm-4.col-sm-offset-1
 			if showReservationName
-				p Nom de Réservation:		
+				p Nom de la réservation:
+				p (à annoncer lors de l'arrivée au restaurant )		
 				ul.list-group
 					li.list-group-item
 						form submit='goToReservationConfirmationPage'
 							.input-group.full-width
 								//label for="name"  Booking name
-								= input class='form-control' value=name placeholder='Booking name' required=true
+								= input class='form-control' value=name placeholder='Nom de réservation' required=true
 							button.btn.btn-success.btn-sm.margin-top-10 type="submit" Reserve
 							

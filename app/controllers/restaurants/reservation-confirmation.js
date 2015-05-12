@@ -27,6 +27,12 @@ export default Ember.Controller.extend({
     }
   }.property('showNoAvailibilitiesError', 'reservationSuccess'),
 
+  formattedDate: function() {
+    var date = this.get('date');
+    var dateArray = date.split("-");
+    return dateArray[2] + "/" + dateArray[1] + "/" + dateArray[0]
+  }.property('date'),
+
   //actions
   actions: {
   	confirmReservation: function(phone) {

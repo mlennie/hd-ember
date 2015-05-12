@@ -3,7 +3,7 @@
 		if dateTitle
 			h5 = dateTitle
 		else
-			h5 Reservations Needing Validation
+			h5 Veuillez remplir les montants ci-dessous puis valider .
 		#reservation-day
 			form
 				table.table.table-striped
@@ -35,15 +35,14 @@
 		.col-md-4
 			h5 = dateTitle
 			.service-complet-box
-				p Service Availabilities
 				form
 					each service in services itemController="service"
 						= service.startToFinish
 						if service.alreadyComplete
-							p.red Not Available
+							p.red Ouvrir ce service
 							button click='makeServiceAvailable' Make Available again
 						else
-							p.green Available
+							p.green Fermer ce service
 							button click='changeServiceToComplete' Make Not Available
 						br
 						br

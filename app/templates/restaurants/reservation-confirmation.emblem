@@ -24,7 +24,7 @@ br
 				| Reservation successful. You will now receive a 
 				| confirmation email with details concerning your reservation. 
 		.col-md-8.col-md-offset-2
-			h1.center Reservation Confirmation
+			h1.center Veuillez confirmer votre réservation.
 			br
 	.row
 		.col-sm-6.col-sm-offset-3
@@ -34,11 +34,11 @@ br
 				table.table
 					tr
 						td colspan="2"
-							.center Reservation Details
+							.center Détails de votre réservation
 					br
 					tr
 						td
-							strong Restaurant Name:
+							strong Nom du restaurant:
 						td = model.name
 					tr
 						td
@@ -46,26 +46,26 @@ br
 						td = name
 					tr
 						td
-							strong Discount:
+							strong Euros Collectés:
 						td.percent-discount 
-							| - 
+							| +
 							= discount
 							| %
 					tr
 						td
-							strong Restaurant Address:
+							strong Adresse du Restaurant:
 						td = model.fullAddress
 					tr
 						td
 							strong Date:
-						td = date
+						td = formattedDate
 					tr
 						td
-							strong Time:
+							strong Heure:
 						td = time
 					tr
 						td
-							strong Number of People:
+							strong Nombre De Couverts:
 						td = number
 					tr 
 						td
@@ -77,4 +77,4 @@ br
 								= input class='form-control black-border' value=phone placeholder='numéro' type='tel' required=true
 				br
 				unless dontShowReserveButton
-					button.btn.btn-success.btn-lg.full-width{ action 'confirmReservation' phone } Confirm Reservation
+					button.btn.btn-success.btn-lg.full-width{ action 'confirmReservation' phone } Valider votre réservation

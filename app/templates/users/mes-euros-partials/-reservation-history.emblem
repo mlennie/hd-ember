@@ -7,7 +7,7 @@ if isOwner
 			table.table.padding-left-10
 				tr
 					th Date
-					th Booking name
+					th Nom réservation
 					th Euros Collectés
 				= each reservation in model itemController="reservation"
 					tr
