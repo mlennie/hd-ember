@@ -67,6 +67,14 @@ br
 						td
 							strong Number of People:
 						td = number
+					tr 
+						td
+							strong Veuillez indiquer un numéro
+							strong de téléphone pour vous joindre : 
+						td
+							.input-group.full-width
+								.gold.required-asterix.pull-right *
+								= input class='form-control black-border' value=phone placeholder='numéro' type='tel' required=true
 				br
 				unless dontShowReserveButton
-					button.btn.btn-success.btn-lg.full-width click='confirmReservation' Confirm Reservation
+					button.btn.btn-success.btn-lg.full-width{ action 'confirmReservation' phone } Confirm Reservation
