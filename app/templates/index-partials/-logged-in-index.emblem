@@ -24,4 +24,4 @@
 			#concept-button.center 
 				= link-to "restaurants.search-results"
 					button.btn.register-gold.center
-						h5.light.no-margin.center Tout Les Restaurants
+						h5.light.no-margin.center Tous Les Restaurants
