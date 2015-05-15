@@ -1,7 +1,9 @@
 import Ember from 'ember';
 import SearchMixin from '../mixins/search';
 
-export default Ember.Controller.extend(SearchMixin,{
+export default Ember.Controller.extend({
+  needs: "application",
+  application: Ember.computed.alias("controllers.application"),
 
   queryParams: ['concept', 'confirmation_success', 'confirmation_fail', 'already_logged_in'],
   concept: null,
@@ -52,6 +54,32 @@ export default Ember.Controller.extend(SearchMixin,{
             scrollTop: 520
         }, 750)
       )
+    },
+
+    goToSearchResults: function() {
+      //reset search mixin values
+      this.get('application').setProperties({
+        name: null,
+        time: null,
+        date: null,
+        nbCouverts: null,
+        discount: null,
+        reserve: null,
+        cuisine: null,
+        number: null
+      });
+
+      //transition to search-results and reset query params
+      this.transitionToRoute(
+        'restaurants.search-results', 
+        { queryParams: { 
+          name: null, 
+          cuisine: undefined,
+          date: null,
+          time: null,
+          number: null
+        }}
+      );
     }
   }
 });

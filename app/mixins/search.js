@@ -144,7 +144,7 @@ export default Ember.Mixin.create({
 					{ queryParams: { 
 						name: this.get('name'), 
 						cuisine: this.get('cuisine'),
-						date: this.get('date'),
+						date: this.get('date') == undefined ? null : this.get('date'),
 						time: this.get('time'),
 						number: this.get('number')
 					}}
@@ -161,7 +161,7 @@ export default Ember.Mixin.create({
 					restaurantId,
 					{ queryParams: { 
 						cuisine: this.get('cuisine'),
-						date: this.get('date'),
+						date: this.get('date') == undefined ? null : this.get('date'),
 						time: this.get('time'),
 						number: this.get('number')
 					}}
