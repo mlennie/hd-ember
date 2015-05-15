@@ -145,8 +145,8 @@ export default Ember.Mixin.create({
 						name: this.get('name'), 
 						cuisine: this.get('cuisine') == null ? undefined : this.get('cuisine'),
 						date: this.get('date') == undefined ? null : this.get('date'),
-						time: this.get('time'),
-						number: this.get('number')
+						time: this.get('time') == undefined ? null : this.get('time'),
+						number: this.get('number') == undefined ? null : this.get('number')
 					}}
 				);
 			//else go to the specific restaurant page that was picked
@@ -162,8 +162,8 @@ export default Ember.Mixin.create({
 					{ queryParams: { 
 						cuisine: this.get('cuisine') == null ? undefined : this.get('cuisine'),
 						date: this.get('date') == undefined ? null : this.get('date'),
-						time: this.get('time'),
-						number: this.get('number')
+						time: this.get('time') == undefined ? null : this.get('time'),
+						number: this.get('number') == undefined ? null : this.get('number')
 					}}
 				);
 			}		

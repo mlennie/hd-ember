@@ -91,7 +91,6 @@ export default Ember.Controller.extend({
     //go to restaurant page based on given restaurant id 
     //and go to reservation part whether reserve param was passed or not
     goToRestaurant: function(restaurantId, reserve) {
-      debugger;
 
       //reset search properties from application's search mixin
       this.get('application').setProperties({
