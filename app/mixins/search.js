@@ -44,13 +44,13 @@ export default Ember.Mixin.create({
 	//if one is selected
 	checkIfDatesRequired: function() {
 		if (
-			!this.get('dateEmpty') || !this.get('hourEmpty') || !this.get('number')
+			this.get('dateEmpty') && this.get('hourEmpty') && this.get('numberEmpty')
 		) {
-			this.set('datesRequired', true);
-		} else {
 			this.set('datesRequired', false);
+		} else {
+			this.set('datesRequired', true);
 		}
-	}.observes('date', 'time', 'number'),
+	}.observes('date', 'time', 'number', 'name'),
 
 	//setup cuisines to be shown for select box
 	cuisines: function() {
@@ -92,8 +92,8 @@ export default Ember.Mixin.create({
 
 	//check if hour is empty
 	hourEmpty: function() {
-		return this.get('hour') === null || this.get('hour') === undefined;
-	}.property('hour'),
+		return this.get('time') === null || this.get('time') === undefined;
+	}.property('time'),
 
 	//check if nbCouverts is empty
 	numberEmpty: function() {
@@ -112,6 +112,7 @@ export default Ember.Mixin.create({
 		//when search button clicked go to search results page
 		//with query params that were selected
 		search: function() {
+				
 			//reset page location to top of page
     	window.scrollTo(0, 0);
 
@@ -165,7 +166,7 @@ export default Ember.Mixin.create({
 						number: this.get('number')
 					}}
 				);
-			}
+			}		
 		}
 	}
 });
