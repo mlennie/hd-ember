@@ -98,6 +98,7 @@ export default Ember.View.extend({
 		
     Ember.$("#calendar").fullCalendar({
 
+      lang: 'fr',
     	height: 350,
     	fixedWeekCount: false,
 
