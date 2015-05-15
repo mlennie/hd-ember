@@ -149,7 +149,7 @@ export default Ember.Controller.extend({
 
   //array with number of buttons to show in number of people box
   nbPeopleArray: function() {
-    var nbPeople = 9;
+    var nbPeople = 6;
     var nbPeopleArray = [];
     var i;
     for (i=0; i < nbPeople; ++i) {
