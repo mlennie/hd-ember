@@ -1,4 +1,4 @@
-.row.margin-bottom-20#search-result-link data-name=restaurant.name = link-to 'restaurants.show' restaurant.id
+.row.margin-bottom-20#search-result-link{action "goToRestaurant" restaurant.id null} data-name=restaurant.name 
 	.restaurant-box.grey-background.padding-15.highlighted-border
 		.col-sm-8.visible-xs-block.visible-sm-block
 			#restaurant-image style=restaurant.backgroundUrl
@@ -25,6 +25,5 @@
 				= restaurant.shortMobileDescription
 				|  ...
 			.pull-right
-				=link-to "restaurants.show" restaurant.id (query-params reserver=true)
-					button.btn.register-gold.center 
-						| Réserver
+				button.btn.register-gold.center{action "goToRestaurant" restaurant.id true}
+					| Réserver

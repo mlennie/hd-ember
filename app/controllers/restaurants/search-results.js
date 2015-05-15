@@ -1,6 +1,10 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
+
+  needs: "application",
+  application: Ember.computed.alias("controllers.application"),
+
   //properties
 	queryParams: ['name', 'cuisine'],
   name: null,
@@ -82,6 +86,48 @@ export default Ember.Controller.extend({
       mixpanel.track('Search Results Page Réserver Button Click', { 
         'restaurant': restaurantName
       });
+    },
+
+    //go to restaurant page based on given restaurant id 
+    //and go to reservation part whether reserve param was passed or not
+    goToRestaurant: function(restaurantId, reserve) {
+      debugger;
+
+      //reset search properties from application's search mixin
+      this.get('application').setProperties({
+        name: null,
+        cuisine: undefined,
+        time: null,
+        nbCouverts: null,
+        date: null,
+        number: null
+      });
+
+      //transition to restaurant page
+      this.transitionToRoute(
+        'restaurants.show',
+        restaurantId,
+        { queryParams: { 
+          cuisine: null,
+          date: null,
+          time: null,
+          number: null,
+          discount: null,
+          reserve: reserve
+        }}
+      );
     }
   }
 });
+
+
+
+
+
+
+
+
+
+
+
+
