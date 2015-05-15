@@ -65,7 +65,7 @@ export default Ember.Controller.extend({
         nbCouverts: null,
         discount: null,
         reserve: null,
-        cuisine: null,
+        cuisine: undefined,
         number: null
       });
 
