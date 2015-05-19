@@ -152,41 +152,41 @@ export default Ember.View.extend({
       		cell.prop('disabled', true);
       		cell.css('cursor', 'not-allowed');
       	}
-      },
+      }
+    });
+    
+    //set logic when clicking on day
+    Ember.$('.fc-day, .fc-day-number').on('click', function() {
+      var date = Ember.$(this).data('date');
+      //reset days to yellow
+      Ember.$('.fc-day').removeClass('selected');
+      //highlight selected to green
+      Ember.$('.fc-day[data-date=' + date + "]").addClass('selected');
 
-  		//set logic when clicking on day
-  		dayClick: function(date) {
-        var date = date.format("YYYY-MM-DD");
-        //reset days to yellow
-        Ember.$('.fc-day').removeClass('selected');
-        //highlight selected to green
-        Ember.$('.fc-day[data-date=' + date + "]").addClass('selected');
+      //get start times of services for restaurant
+      var startTimes = self.get('controller.serviceStartTimes');
 
-				//get start times of services for restaurant
-				var startTimes = self.get('controller.serviceStartTimes');
+      //change start time format to just show days
+      var days = startTimes.map(function(item) {
+        return moment(item).stripZone().stripTime().format();
+      });
 
-				//change start time format to just show days
-				var days = startTimes.map(function(item) {
-					return moment(item).stripZone().stripTime().format();
-				});
+      //get proper format for calendar days
+      var dateFormat = moment(date).stripTime().format();
+      //initiate and set values for calendar
 
-				//get proper format for calendar days
-				var dateFormat = moment(date).stripTime().format();
-				//initiate and set values for calendar
+      //check if day clicked has any services
+      if ( days.indexOf(dateFormat) > -1 ) {
+        //get highest discount from all services for that day 
+        //with that have a date equal to dateFormat
+        self.set('controller.calendarDate', dateFormat);
+        var highestDiscount = self.get('controller.highestDiscount');
+        //check to make sure theres still availabilites left
+        if (highestDiscount !== 0) {
 
-  			//check if day clicked has any services
-  			if ( days.indexOf(dateFormat) > -1 ) {
-          //get highest discount from all services for that day 
-          //with that have a date equal to dateFormat
-          self.set('controller.calendarDate', dateFormat);
-          var highestDiscount = self.get('controller.highestDiscount');
-          //check to make sure theres still availabilites left
-          if (highestDiscount !== 0) {
-
-    				//call show services method from controller
-    				self.get('controller').send('addDateQueryParams', dateFormat);
-          }
-  			}
+          //call show services method from controller
+          self.get('controller').send('addDateQueryParams', dateFormat);
+        }
       }
     });
 
