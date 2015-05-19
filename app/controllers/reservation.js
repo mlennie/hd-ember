@@ -77,7 +77,7 @@ export default Ember.ObjectController.extend({
 					//so system can understand
 					var amount = this.get('amount');
 
-					formatAmount(amount);
+					formatAmount(amount, this);
 
 					var onSuccess = function(reservation) {
 					  _this.set('status', 'pending_confirmation');
@@ -94,6 +94,7 @@ export default Ember.ObjectController.extend({
 				}
 
 				function formatAmount(amount) {
+					debugger;
 					//split amount into array based on commas and periods
 					var commaArray = amount.split(',');
 					var decimalArray = commaArray[0].split('.');
@@ -114,8 +115,8 @@ export default Ember.ObjectController.extend({
 							//2 numbers after period so must be english
 
 						} else { // 3 numbers after period so must be french
-							//treat as french
-							treatAsFrench();
+							//treat as french and set amount to be new reformatted amount
+							this.set('amount', reformatAsFrench(commaArray, decimalArray));
 						}
 
 					} else { //must have comma
@@ -127,8 +128,8 @@ export default Ember.ObjectController.extend({
 						if (afterCommaArray.length < 3) { 
 
 							//has 2 numbers after comma so must be french
-							//treat as french
-							treatAsFrench();
+							//treat as french and set amount to be new reformatted amount
+							this.set('amount', reformatAsFrench(commaArray, decimalArray));
 
 						} else {
 							//has 3 numbers after comma so must be english
@@ -137,7 +138,7 @@ export default Ember.ObjectController.extend({
 					}
 				}
 
-				function treatAsFrench () {
+				function reformatAsFrench (commaArray, decimalArray) {
 					//get cents if there's a comma
 					if (commaArray.length == 2) {
 						var cents = commaArray[1];
@@ -155,8 +156,7 @@ export default Ember.ObjectController.extend({
 					}
 
 					//set new formatted amount
-					var amountFormatted = euros + "." + cents;
-					_this.set('amount', amountFormatted);
+					return euros + "." + cents;	
 				}
 			}
 		}
