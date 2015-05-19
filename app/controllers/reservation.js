@@ -72,34 +72,71 @@ export default Ember.ObjectController.extend({
 				var confirmationResponse = confirm(confirmationText);
 				if (confirmationResponse == true) {
 					var _this = this;
+					debugger;
 
 					//convert decimals to commas and commas to decimals 
 					//so system can understand
 					var amount = this.get('amount');
-					//split amount into array based on commas
+					//split amount into array based on commas and periods
 					var commaArray = amount.split(',');
-
-					//get cents if there's a comma
-					if (commaArray.length == 2) {
-						var cents = commaArray[1];
+					var periodArray = commaArray[0].split('.');
+					var afterPeriod = periodArray[0].split('');
+					if (afterPeriod.length == 2) {
+						//treat as non french 
 					} else {
-						var cents = "00";
+						
 					}
 
-					//get thousands if there's a decimal
-					//and get euros
-					var eurosArray = commaArray[0].split('.');
-					if (eurosArray.length == 2) {
-						var thousands = eurosArray[0];
-						var euros = eurosArray[1];
-					} else {
-						var thousands = "";
-						var euros = eurosArray[0];
-					}
+					//convert decimals to commas and commas to decimals 
+					//so system can understand
+					var amount = this.get('amount');
 
-					//set new formatted amount
-					var amountFormatted = thousands + euros + "." + cents;
-					this.set('amount', amountFormatted);
+					//split amount into array based on commas and periods
+					var commaArray = amount.split(',');
+					var decimalArray = commaArray[0].split('.');
+
+					//check if has decimal or comma
+					if (commaArray.length === 1 && decimalArray.length === 1) {
+						//treat normally
+						//do nothing
+
+					//check if has period
+					} else if (decimalArray.length > 1) { //has period
+
+						//check if period is french or english and continue as such
+						if (decimalArray.length < 3) { 
+							//2 numbers after period so must be english
+
+						} else { // 3 numbers after period so must be french
+
+							//treat as french
+							//get cents if there's a comma
+							if (commaArray.length == 2) {
+								var cents = commaArray[1];
+							} else {
+								var cents = "00";
+							}
+
+							//get thousands if there's a decimal
+							//and get euros
+							
+							if (decimalArray.length == 2) {
+								var euros = decimalArray[0] + decimalArray[1];
+							} else {
+								var euros = decimalArray[0];
+							}
+
+							//set new formatted amount
+							var amountFormatted = euros + "." + cents;
+							this.set('amount', amountFormatted);
+
+						}
+
+					} else { //must have comma
+							//check if comma is french or english and continue as such
+							if ( ) 
+						}
+					}
 
 					var onSuccess = function(reservation) {
 					  _this.set('status', 'pending_confirmation');
