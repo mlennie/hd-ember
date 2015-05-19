@@ -72,71 +72,12 @@ export default Ember.ObjectController.extend({
 				var confirmationResponse = confirm(confirmationText);
 				if (confirmationResponse == true) {
 					var _this = this;
-					debugger;
-
-					//convert decimals to commas and commas to decimals 
-					//so system can understand
-					var amount = this.get('amount');
-					//split amount into array based on commas and periods
-					var commaArray = amount.split(',');
-					var periodArray = commaArray[0].split('.');
-					var afterPeriod = periodArray[0].split('');
-					if (afterPeriod.length == 2) {
-						//treat as non french 
-					} else {
-						
-					}
 
 					//convert decimals to commas and commas to decimals 
 					//so system can understand
 					var amount = this.get('amount');
 
-					//split amount into array based on commas and periods
-					var commaArray = amount.split(',');
-					var decimalArray = commaArray[0].split('.');
-
-					//check if has decimal or comma
-					if (commaArray.length === 1 && decimalArray.length === 1) {
-						//treat normally
-						//do nothing
-
-					//check if has period
-					} else if (decimalArray.length > 1) { //has period
-
-						//check if period is french or english and continue as such
-						if (decimalArray.length < 3) { 
-							//2 numbers after period so must be english
-
-						} else { // 3 numbers after period so must be french
-
-							//treat as french
-							//get cents if there's a comma
-							if (commaArray.length == 2) {
-								var cents = commaArray[1];
-							} else {
-								var cents = "00";
-							}
-
-							//get thousands if there's a decimal
-							//and get euros
-							
-							if (decimalArray.length == 2) {
-								var euros = decimalArray[0] + decimalArray[1];
-							} else {
-								var euros = decimalArray[0];
-							}
-
-							//set new formatted amount
-							var amountFormatted = euros + "." + cents;
-							this.set('amount', amountFormatted);
-
-						}
-
-					} else { //must have comma
-							//check if comma is french or english and continue as such
-							if ( ) 
-						}
-					}
+					formatAmount(amount);
 
 					var onSuccess = function(reservation) {
 					  _this.set('status', 'pending_confirmation');
@@ -149,7 +90,73 @@ export default Ember.ObjectController.extend({
 
 					this.get('model').save().then(onSuccess, onFail);
 				} else {
+					//they did not confirm so do nothing
+				}
 
+				function formatAmount(amount) {
+					//split amount into array based on commas and periods
+					var commaArray = amount.split(',');
+					var decimalArray = commaArray[0].split('.');
+
+					//check if has decimal or comma
+					if (commaArray.length === 1 && decimalArray.length === 1) {
+						//treat normally
+						//do nothing
+
+					//check if has period
+					} else if (decimalArray.length > 1) { //has period
+
+						//get number of numbers after period
+						var afterPeriodArray = decimalArray[1].split("");
+
+						//check if period is french or english and continue as such
+						if (afterPeriodArray.length < 3) { 
+							//2 numbers after period so must be english
+
+						} else { // 3 numbers after period so must be french
+							//treat as french
+							treatAsFrench();
+						}
+
+					} else { //must have comma
+
+						//get number of numbers after comma
+						var afterCommaArray = commaArray[1].split("");
+
+						//check if comma is french or english and continue as such
+						if (afterCommaArray.length < 3) { 
+
+							//has 2 numbers after comma so must be french
+							//treat as french
+							treatAsFrench();
+
+						} else {
+							//has 3 numbers after comma so must be english
+							//do nothing
+						}
+					}
+				}
+
+				function treatAsFrench () {
+					//get cents if there's a comma
+					if (commaArray.length == 2) {
+						var cents = commaArray[1];
+					} else {
+						var cents = "00";
+					}
+
+					//get thousands if there's a decimal
+					//and get euros
+					
+					if (decimalArray.length == 2) {
+						var euros = decimalArray[0] + decimalArray[1];
+					} else {
+						var euros = decimalArray[0];
+					}
+
+					//set new formatted amount
+					var amountFormatted = euros + "." + cents;
+					_this.set('amount', amountFormatted);
 				}
 			}
 		}
