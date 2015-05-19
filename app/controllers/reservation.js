@@ -91,10 +91,11 @@ export default Ember.ObjectController.extend({
 					this.get('model').save().then(onSuccess, onFail);
 				} else {
 					//they did not confirm so do nothing
+
 				}
 
-				function formatAmount(amount) {
-					debugger;
+				function formatAmount(amount, controller) {
+					
 					//split amount into array based on commas and periods
 					var commaArray = amount.split(',');
 					var decimalArray = commaArray[0].split('.');
@@ -116,7 +117,7 @@ export default Ember.ObjectController.extend({
 
 						} else { // 3 numbers after period so must be french
 							//treat as french and set amount to be new reformatted amount
-							this.set('amount', reformatAsFrench(commaArray, decimalArray));
+							controller.set('amount', reformatAsFrench(commaArray, decimalArray));
 						}
 
 					} else { //must have comma
@@ -129,7 +130,7 @@ export default Ember.ObjectController.extend({
 
 							//has 2 numbers after comma so must be french
 							//treat as french and set amount to be new reformatted amount
-							this.set('amount', reformatAsFrench(commaArray, decimalArray));
+							controller.set('amount', reformatAsFrench(commaArray, decimalArray));
 
 						} else {
 							//has 3 numbers after comma so must be english
