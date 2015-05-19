@@ -110,6 +110,11 @@ export default Ember.Controller.extend({
     }
   }.property('date', 'model', 'services'),
 
+  //sort services by time
+  sortedServices: function() {
+    return this.get('filteredServices').sortBy('startTime');
+  }.property('filteredServices'),
+
   //decide whether or not to show reservation boxes
   //based on whether previous boxes have been shown or not
   updateReservationBoxesVisibility: function() {

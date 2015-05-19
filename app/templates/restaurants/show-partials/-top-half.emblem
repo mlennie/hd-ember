@@ -22,7 +22,7 @@
 		.col-sm-4
 			if showServices
 				p Heure:
-				each service in filteredServices itemController="service" 
+				each service in sortedServices itemController="service" 
 					ul.list-group
 					li.list-group-item
 						p 
