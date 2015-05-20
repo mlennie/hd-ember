@@ -162,11 +162,21 @@ export default Ember.View.extend({
     Ember.$('.fc-day, .fc-day-number, .fc-today-button').on('click', function() {
       var date = Ember.$(this).data('date');
       changeDay(self, date);
+
+      //rebind change day even (ouch my head hurts couldn't think of a better
+      //way to rebind things when month changed)
+      Ember.$('.fc-day, .fc-day-number').on('click', function() {
+        var date = Ember.$(this).data('date');
+        changeDay(self, date);
+      });
+
+      //make today button not disabled
+      Ember.$('.fc-today-button').attr("disabled", false);
     });
 
     //rebind the change day event if prev or next button is clicked
     Ember.$('.fc-prev-button, .fc-next-button').on('click', function() {
-      Ember.$('.fc-day, .fc-day-number, .fc-today-button').on('click', function() {
+      Ember.$('.fc-day, .fc-day-number').on('click', function() {
         var date = Ember.$(this).data('date');
         changeDay(self, date);
       });
@@ -177,8 +187,12 @@ export default Ember.View.extend({
       //check if date is undefined. If it is, make date today's date and format
       if (date == undefined) {
         var today = new Date();
-        var todayDay = today.getDay().toString();
-        var todayMonth = today.getMonth().toString();
+        var todayDay = today.getDate().toString();
+        //add 0 to day if day is only one digit
+        if (todayDay.length == 1) { todayDay = "0" + todayDay; }
+        var todayMonth = (today.getMonth() + 1).toString();
+        //add 0 to month if month is only one digit
+        if (todayMonth.length == 1) { todayMonth = "0" + todayMonth; }
         var todayYear = today.getFullYear().toString();
         date = todayYear + "-" + todayMonth + "-" + todayDay;
       }
