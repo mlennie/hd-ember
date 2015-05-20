@@ -154,10 +154,34 @@ export default Ember.View.extend({
       	}
       }
     });
+
+    //make today button not disabled
+    Ember.$('.fc-today-button').attr("disabled", false);
     
     //set logic when clicking on day
-    Ember.$('.fc-day, .fc-day-number').on('click', function() {
+    Ember.$('.fc-day, .fc-day-number, .fc-today-button').on('click', function() {
       var date = Ember.$(this).data('date');
+      changeDay(self, date);
+    });
+
+    //rebind the change day event if prev or next button is clicked
+    Ember.$('.fc-prev-button, .fc-next-button').on('click', function() {
+      Ember.$('.fc-day, .fc-day-number, .fc-today-button').on('click', function() {
+        var date = Ember.$(this).data('date');
+        changeDay(self, date);
+      });
+    });
+
+    function changeDay (self, date) {
+
+      //check if date is undefined. If it is, make date today's date and format
+      if (date == undefined) {
+        var today = new Date();
+        var todayDay = today.getDay().toString();
+        var todayMonth = today.getMonth().toString();
+        var todayYear = today.getFullYear().toString();
+        date = todayYear + "-" + todayMonth + "-" + todayDay;
+      }
       //reset days to yellow
       Ember.$('.fc-day').removeClass('selected');
       //highlight selected to green
@@ -188,7 +212,7 @@ export default Ember.View.extend({
           self.get('controller').send('addDateQueryParams', dateFormat);
         }
       }
-    });
+    }
 
   }.observes("controller.serviceStartTimes").on("didInsertElement")
 });
