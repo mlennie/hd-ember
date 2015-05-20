@@ -119,8 +119,8 @@ export default Ember.Mixin.create({
     	//check and show error if one of date time or number is selected 
     	//but not all are selected
     	if (this.get('dateTimeNumberRequired')) {
-    		alert('Please select a date, time and number of ' +
-    			    'people or none of those three categories');
+    		alert('Veuillez choisir une date, un horaire et le nombre de ' +
+    			    'couvert(s), ou laisser ces 3 champs libres');
     	} else {
 
 	    	//MIXPANEL: restaurant search button click event
