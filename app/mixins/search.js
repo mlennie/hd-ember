@@ -35,7 +35,8 @@ export default Ember.Mixin.create({
 			this.set('cuisineDisabled', false);
 		} else {
 			this.set('cuisine', undefined);
-			this.set('cuisineDisabled', true);		}
+			this.set('cuisineDisabled', true);		
+		}
 	}.observes('name', 'date', 'number'),
 
 	//check to make sure date, time and number of people are required
@@ -142,8 +143,7 @@ export default Ember.Mixin.create({
 	    	//go to search results page and list restaurants that match criteria 
 	    	//if specific restaurant has not been picked
 	    	if (
-					name === '75017' ||
-					name === '75008' ||
+					this.get('zipcodes').indexOf(name) != -1 ||
 					name === null
 				) {
 					this.transitionToRoute(
