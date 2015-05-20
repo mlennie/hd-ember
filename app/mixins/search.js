@@ -9,10 +9,10 @@ export default Ember.Mixin.create({
 	nbCouverts: null,
 	date: null,
 	time: null, 
+	cuisineDisabled: false,
 	number: null,
-	datesRequired: false,
 	couverts: [1, 2, 3, 4, 5, 6, 7, 8, 9],
-	zipcodes: ['75016','75017','75008'],
+	zipcodes: ['75016','75017','75008', '75004', '75006', '75007', '75015'],
 	//setup hours to be shown for select box
 	hours: ['12:00', '12:30','13:00','13:30','14:00','14:30','15:00','15:30','16:00',
 					'16:30','17:00','17:30','18:00','18:30','19:00','19:30','20:00',
@@ -21,7 +21,7 @@ export default Ember.Mixin.create({
 	//COMPUTED PROPERTIES
 
 	//decide whether cuisine should be disabled of not
-	isDisabled: function() {
+	setCuisineDisabled: function() {
 
 		//get name of restaurant
 		var name = this.get('name');
@@ -29,28 +29,28 @@ export default Ember.Mixin.create({
 		//make cusine select disabled unless 
 		//arrondisment or nothing is chosen for name
 		if (
-			name === '75017' ||
-			name === '75008' ||
+			this.get('zipcodes').indexOf(name) != -1 ||
 			name === null
 			) {
-			return false;
+			this.set('cuisineDisabled', false);
 		} else {
 			this.set('cuisine', undefined);
-			return true;
-		}
-	}.property('name'),
+			this.set('cuisineDisabled', true);		}
+	}.observes('name'),
 
 	//check to make sure date, time and number of people are required
 	//if one is selected
-	checkIfDatesRequired: function() {
+	dateTimeNumberRequired: function() {
 		if (
-			this.get('dateEmpty') && this.get('hourEmpty') && this.get('numberEmpty')
+			(!this.get('dateEmpty') && (this.get('hourEmpty') || this.get('numberEmpty'))) ||
+			(!this.get('hourEmpty') && (this.get('dateEmpty') || this.get('numberEmpty'))) ||
+			(!this.get('numberEmpty') && (this.get('hourEmpty') || this.get('dateEmpty')))
 		) {
-			this.set('datesRequired', false);
+			return true;
 		} else {
-			this.set('datesRequired', true);
+			return false;
 		}
-	}.observes('date', 'time', 'number', 'name'),
+	}.property('dateEmpty', 'hourEmpty', 'numberEmpty'),
 
 	//setup cuisines to be shown for select box
 	cuisines: function() {
@@ -115,58 +115,66 @@ export default Ember.Mixin.create({
 				
 			//reset page location to top of page
     	window.scrollTo(0, 0);
+    	
+    	//check and show error if one of date time or number is selected 
+    	//but not all are selected
+    	if (this.get('dateTimeNumberRequired')) {
+    		alert('Please select a date, time and number of ' +
+    			    'people or none of those three categories');
+    	} else {
 
-    	//MIXPANEL: restaurant search button click event
-	    mixpanel.track('Restaurant Search Button Click', { 
-	    	"location": "logged in home page not mobile",
-	    	"page": this.get('currentPath'),
-	    	"date empty?": this.get('dateEmpty'),
-	    	"date": this.get('date'),
-	    	"hour empty?": this.get('hourEmpty'),
-	    	"hour": this.get('hour'),
-	    	"nbCouverts empty?": this.get('numberEmpty'),
-	    	"nbCouverts": this.get('number'),
-	    	"location empty?": this.get('nameEmpty'),
-	    	"Restaurant location": this.get('name')
-	    });
+	    	//MIXPANEL: restaurant search button click event
+		    mixpanel.track('Restaurant Search Button Click', { 
+		    	"location": "logged in home page not mobile",
+		    	"page": this.get('currentPath'),
+		    	"date empty?": this.get('dateEmpty'),
+		    	"date": this.get('date'),
+		    	"hour empty?": this.get('hourEmpty'),
+		    	"hour": this.get('hour'),
+		    	"nbCouverts empty?": this.get('numberEmpty'),
+		    	"nbCouverts": this.get('number'),
+		    	"location empty?": this.get('nameEmpty'),
+		    	"Restaurant location": this.get('name')
+		    });
 
-    	//get name of restaurant
-			var name = this.get('name');
-    	//go to search results page and list restaurants that match criteria 
-    	//if specific restaurant has not been picked
-    	if (
-				name === '75017' ||
-				name === '75008' ||
-				name === null
-			) {
-				this.transitionToRoute(
-					'restaurants.search-results', 
-					{ queryParams: { 
-						name: this.get('name'), 
-						cuisine: this.get('cuisine') == null ? undefined : this.get('cuisine'),
-						date: this.get('date') == undefined ? null : this.get('date'),
-						time: this.get('time') == undefined ? null : this.get('time'),
-						number: this.get('number') == undefined ? null : this.get('number')
-					}}
-				);
-			//else go to the specific restaurant page that was picked
-			//and send chosen query params so that can look up service times with that
-			} else {
-				//get restaurant id by name 
-				var filteredRestaurants = this.get('model').filterBy('name', name);
-    		var restaurantId = filteredRestaurants.get('firstObject').get('id');
-				//transition to restaurant page
-				this.transitionToRoute(
-					'restaurants.show',
-					restaurantId,
-					{ queryParams: { 
-						cuisine: this.get('cuisine') == null ? undefined : this.get('cuisine'),
-						date: this.get('date') == undefined ? null : this.get('date'),
-						time: this.get('time') == undefined ? null : this.get('time'),
-						number: this.get('number') == undefined ? null : this.get('number')
-					}}
-				);
-			}		
+	    	//get name of restaurant
+				var name = this.get('name');
+	    	//go to search results page and list restaurants that match criteria 
+	    	//if specific restaurant has not been picked
+	    	if (
+					name === '75017' ||
+					name === '75008' ||
+					name === null
+				) {
+					this.transitionToRoute(
+						'restaurants.search-results', 
+						{ queryParams: { 
+							name: this.get('name'), 
+							cuisine: this.get('cuisine') == null ? undefined : this.get('cuisine'),
+							date: this.get('date') == undefined ? null : this.get('date'),
+							time: this.get('time') == undefined ? null : this.get('time'),
+							number: this.get('number') == undefined ? null : this.get('number')
+						}}
+					);
+				//else go to the specific restaurant page that was picked
+				//and send chosen query params so that can look up service times with that
+				} else {
+					//get restaurant id by name 
+					var filteredRestaurants = this.get('model').filterBy('name', name);
+	    		var restaurantId = filteredRestaurants.get('firstObject').get('id');
+					//transition to restaurant page
+					this.transitionToRoute(
+						'restaurants.show',
+						restaurantId,
+						{ queryParams: { 
+							cuisine: this.get('cuisine') == null ? undefined : this.get('cuisine'),
+							date: this.get('date') == undefined ? null : this.get('date'),
+							time: this.get('time') == undefined ? null : this.get('time'),
+							number: this.get('number') == undefined ? null : this.get('number')
+						}}
+					);
+				}		
+			}
 		}
 	}
 });

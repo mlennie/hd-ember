@@ -54,5 +54,5 @@
 							.input-group.full-width
 								//label for="name"  Booking name
 								= input class='form-control' value=name placeholder='Nom de réservation' required=true
-							button.btn.btn-success.btn-sm.margin-top-10 type="submit" Reserve
+							button.btn.btn-success.btn-sm.margin-top-10 type="submit" Réserver
 							

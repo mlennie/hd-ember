@@ -30,12 +30,21 @@ export default Ember.View.extend({
     var _this = this;
   	//add click event
     Ember.$('body').on('click','button#top-search-button', function() {
-    	//load spinner and set timeout
-    	Ember.$('.load-spinner').css('display', 'block');
-	    setTimeout(function(){
-	      Ember.$('.load-spinner').css('display', 'none');}, 500);
-	    //update sortBy property so restaurants will shuffle
-    	_this.get('controller').send('changeSortBy');
+
+      //check and show error if one of date time or number is selected 
+      //but not all are selected
+      if (!_this.get('controller.application.dateTimeNumberRequired')) {
+      	//load spinner and set timeout
+      	Ember.$('.load-spinner').css('display', 'block');
+  	    setTimeout(function(){
+  	      Ember.$('.load-spinner').css('display', 'none');}, 500);
+  	    //update sortBy property so restaurants will shuffle
+      	_this.get('controller').send('changeSortBy');
+      }
     });
-  }.observes('controller.currentPath').on('didInsertElement')
+  }.observes('controller.currentPath', 
+             'controller.application.date',
+             'controller.application.time',
+             'controller.application.number'
+            ).on('didInsertElement')
 });
