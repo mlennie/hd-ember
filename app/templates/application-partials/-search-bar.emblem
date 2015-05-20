@@ -16,7 +16,7 @@
 									= view Ember.Select content=couverts value=number class="search-select input" prompt='Nombre de couverts' required=datesRequired
 									span.search-icon = fa-icon 'caret-down'
 								span.input_container
-									= view Ember.Select content=cuisines value=cuisine class="search-select input" prompt="Cuisine" disabled=isDisabled
+									= view Ember.Select content=cuisines value=cuisine class="search-select input" id="cuisine-select" prompt="Cuisine" disabled=isDisabled
 									span.search-icon = fa-icon 'caret-down'
 								span.input_container
 									= view Ember.Select content=names prompt="Où ?" value=name id="name-select" class="search-select input"

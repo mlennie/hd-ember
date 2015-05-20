@@ -141,6 +141,10 @@ option#75016, option#75017, option#75008 {
 #top-search-medium {
   padding: 10px;
 
+  #cuisine-select {
+    max-width: 180px;
+  }
+
   #name-select {
     max-width: 220px;
   }
@@ -276,6 +280,9 @@ option#75016, option#75017, option#75008 {
   #top-search-medium {
     input, .search-select, button {    
       font-size: 1em !important;
+    }
+    #cuisine-select {
+      max-width: 130px;
     }
     #name-select {
       max-width: 130px;
