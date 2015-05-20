@@ -36,7 +36,7 @@ export default Ember.Mixin.create({
 		} else {
 			this.set('cuisine', undefined);
 			this.set('cuisineDisabled', true);		}
-	}.observes('name'),
+	}.observes('name', 'date', 'number'),
 
 	//check to make sure date, time and number of people are required
 	//if one is selected

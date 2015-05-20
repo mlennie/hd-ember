@@ -88,6 +88,9 @@ export default Ember.Controller.extend(
   	},
 
     goToIndex: function() {
+      this.set('name', null);
+      this.set('cuisine', undefined);
+      this.set('cuisineDisabled', false);
       this.transitionToRoute('index', { queryParams: {concept: null}});
       this.set('showTopSearch', false);
       this.set('date', undefined);
