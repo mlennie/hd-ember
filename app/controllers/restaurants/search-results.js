@@ -1,13 +1,15 @@
 import Ember from 'ember';
-
+import ENV from "hd-ember/config/environment";
 export default Ember.Controller.extend({
 
   needs: "application",
   application: Ember.computed.alias("controllers.application"),
 
   //properties
-	queryParams: ['name', 'cuisine'],
+	queryParams: ['name', 'cuisine', 'time', 'date'],
   name: null,
+  date: null,
+  time: null,
   cuisine: undefined,
   sortBy: 'street',
 
@@ -15,7 +17,7 @@ export default Ember.Controller.extend({
 
   randomSortBy: function() {
     this.send('changeSortBy');
-  }.observes('model', 'name', 'cuisine'),
+  }.observes('model', 'name', 'cuisine', 'date', 'time'),
 
   shuffledRestaurants: function() {
     return this.get('model').sortBy(this.get('sortBy'));
@@ -43,7 +45,43 @@ export default Ember.Controller.extend({
         return cuisines.length > 0;
       });
     } 
-    return restaurants;
+
+    //if date or time is present filter restaurants by their services that match
+    //those times
+    var date = this.get('date');
+    var time = this.get('time');
+
+    if (date !== null || time !== null) {
+      //filter on rails side so we don't have to bring all services 
+      //over at once
+
+      //get restaurant ids
+      var restaurant_ids = restaurants.map(function(restaurant) {
+        return restaurant.id;
+      });
+      // Custom ajax call for filtering restaurants                                                           
+      Ember.$.ajax({                                                                                                                      
+        url: ENV.APP.HOST + '/restaurants',                                                               
+        type: 'GET',                                                                                                 
+        data: {date: date, time: time, ids: restaurant_ids }                                                                                   
+      }).then(function(data){  
+        debugger;                                                                                   
+        restaurant_ids = data.restaurant_ids;
+        restaurants = restaurants.filter(function(restaurant) {
+          if (restaurant_ids.indexOf(restaurant.id) != -1) {
+            return true;
+          }
+        });
+        //return filtered restaurants
+        debugger;
+        return restaurants;                                                                                                                                            
+      }, function(data){                                                                                               
+        debugger;                                                                                     
+      });     
+    } else {
+      //return filtered restaurants
+      return restaurants;
+    }
   }.property('sortBy'),
 
   //get length of filtered restaurants
@@ -57,8 +95,12 @@ export default Ember.Controller.extend({
     //take filtered restaurants out of resteraunts
     return this.get('shuffledRestaurants').filter(function(r) {
       var filteredRestaurants = controller.get('filteredRestaurants');
-      var names = filteredRestaurants.getEach('name');
-      return !(names.indexOf(r.get('name')) > -1);
+      if (filteredRestaurants) {
+        var names = filteredRestaurants.getEach('name');
+        return !(names.indexOf(r.get('name')) > -1);
+      } else {
+        return true;
+      }
     });
 
   }.property('filteredRestaurants'),
