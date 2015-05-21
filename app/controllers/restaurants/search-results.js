@@ -12,6 +12,7 @@ export default Ember.Controller.extend({
   time: null,
   cuisine: undefined,
   sortBy: 'street',
+  filteredRestaurants: [],
 
   //computed properties
 
@@ -23,7 +24,8 @@ export default Ember.Controller.extend({
     return this.get('model').sortBy(this.get('sortBy'));
   }.property('sortBy'),
 
-  filteredRestaurants: function() {
+  setFilteredRestaurants: function() { 
+    var _this = this;   
     var name = this.get('name');
     var cuisine = this.get('cuisine');
     var restaurants = this.get('shuffledRestaurants');
@@ -51,7 +53,7 @@ export default Ember.Controller.extend({
     var date = this.get('date');
     var time = this.get('time');
 
-    if (date !== null || time !== null) {
+    if (date !== null) {
       //filter on rails side so we don't have to bring all services 
       //over at once
 
@@ -59,30 +61,30 @@ export default Ember.Controller.extend({
       var restaurant_ids = restaurants.map(function(restaurant) {
         return restaurant.id;
       });
+
       // Custom ajax call for filtering restaurants                                                           
       Ember.$.ajax({                                                                                                                      
         url: ENV.APP.HOST + '/restaurants',                                                               
         type: 'GET',                                                                                                 
         data: {date: date, time: time, ids: restaurant_ids }                                                                                   
-      }).then(function(data){  
-        debugger;                                                                                   
+      }).then(function(data){                                                                               
         restaurant_ids = data.restaurant_ids;
+        //filter
         restaurants = restaurants.filter(function(restaurant) {
-          if (restaurant_ids.indexOf(restaurant.id) != -1) {
-            return true;
-          }
+          return restaurant_ids.indexOf(+restaurant.id) != -1;
         });
+
         //return filtered restaurants
-        debugger;
-        return restaurants;                                                                                                                                            
+        _this.set('filteredRestaurants', restaurants);                                                                         
       }, function(data){                                                                                               
         debugger;                                                                                     
-      });     
-    } else {
+      });   
+
+    } else { //don't filter by date or time
       //return filtered restaurants
-      return restaurants;
+      _this.set('filteredRestaurants', restaurants);
     }
-  }.property('sortBy'),
+  }.observes('shuffledRestaurants'),
 
   //get length of filtered restaurants
   filteredRestaurantsLength: function() {
