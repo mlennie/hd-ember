@@ -15,18 +15,23 @@ br
 .container
 	.row#restaurant-list
 		h1.load-spinner.center = fa-icon 'fa-spin fa-spinner'
-		if filteredRestaurants
-			h5.row#search-results-message
-				.col-md-4.col-xs-2.middle-border
-				.col-md-4.col-xs-8.center#search-results-title
-					| Résultat de votre recherche (
-					= filteredRestaurantsLength 
-					| ):
-				.col-md-4.col-xs-2.middle-border
-		= each restaurant in filteredRestaurants itemController="search-item"
-			= partial 'restaurants/item' 
-		= else
-			.alert.alert-warning Aucun restaurant ne correspond à vos critères de recherche.
-		h2#more-restaurants-title.no-margin-top Vous aimerez aussi :
-		= each restaurant in nonFilteredRestaurants itemController="search-item"
-			= partial 'restaurants/item'
+		if loading
+			br
+			br
+			h1.load-spinner.center = fa-icon 'fa-spin fa-spinner'
+		else
+			if filteredRestaurants
+				h5.row#search-results-message
+					.col-md-4.col-xs-2.middle-border
+					.col-md-4.col-xs-8.center#search-results-title
+						| Résultat de votre recherche (
+						= filteredRestaurantsLength 
+						| ):
+					.col-md-4.col-xs-2.middle-border
+			= each restaurant in filteredRestaurants itemController="search-item"
+				= partial 'restaurants/item' 
+			= else
+				.alert.alert-warning Aucun restaurant ne correspond à vos critères de recherche.
+			h2#more-restaurants-title.no-margin-top Vous aimerez aussi :
+			= each restaurant in nonFilteredRestaurants itemController="search-item"
+				= partial 'restaurants/item'

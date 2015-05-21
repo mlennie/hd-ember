@@ -11,6 +11,7 @@ export default Ember.Controller.extend({
   date: null,
   time: null,
   cuisine: undefined,
+  loading: false,
   sortBy: 'street',
 
   //computed properties
@@ -32,6 +33,9 @@ export default Ember.Controller.extend({
     var name = this.get('name');
     var cuisine = this.get('cuisine');
     var restaurants = this.get('shuffledRestaurants');
+
+    //set loading spinner
+    _this.set('loading', true);
 
     //filter by restaurant name
     if (name !== null) {
@@ -78,14 +82,20 @@ export default Ember.Controller.extend({
         });
 
         //return filtered restaurants
-        _this.set('filteredRestaurants', restaurants);                                                                         
+        _this.set('filteredRestaurants', restaurants); 
+        //remove loading spinner
+        _this.set('loading', false);                                                                        
       }, function(data){                                                                                               
-        debugger;                                                                                     
+        debugger;
+        //remove loading spinner
+        _this.set('loading', false);                                                                                     
       });   
 
     } else { //don't filter by date or time
       //return filtered restaurants
       _this.set('filteredRestaurants', restaurants);
+      //remove loading spinner
+      _this.set('loading', false);
     }
   }.observes('shuffledRestaurants'),
 
