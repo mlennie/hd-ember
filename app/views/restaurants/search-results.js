@@ -39,7 +39,7 @@ export default Ember.View.extend({
   	    setTimeout(function(){
   	      Ember.$('.load-spinner').css('display', 'none');}, 500);
   	    //update sortBy property so restaurants will shuffle
-      	_this.get('controller').send('changeSortBy');
+      	//_this.get('controller').send('changeSortBy');
       }
     });
   }.observes('controller.currentPath', 

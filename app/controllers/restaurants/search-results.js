@@ -12,13 +12,16 @@ export default Ember.Controller.extend({
   time: null,
   cuisine: undefined,
   sortBy: 'street',
-  filteredRestaurants: [],
 
   //computed properties
 
   randomSortBy: function() {
     this.send('changeSortBy');
-  }.observes('model', 'name', 'cuisine', 'date', 'time'),
+  }.observes('name', 'cuisine', 'time', 'date'),
+
+  filteredRestaurants: function() {
+    return this.get('shuffledRestaurants');
+  }.property(),
 
   shuffledRestaurants: function() {
     return this.get('model').sortBy(this.get('sortBy'));
@@ -106,6 +109,7 @@ export default Ember.Controller.extend({
     });
 
   }.property('filteredRestaurants'),
+
   hasFilteredRestaurants: function() {
     return this.get('filteredRestaurants.length') > 0;
   }.property('filteredRestaurants'),
