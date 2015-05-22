@@ -16,10 +16,12 @@ export default Ember.Controller.extend({
 
   //computed properties
 
+  //these are the restaurants that show on the page
   filteredRestaurants: function() {
     return this.get('shuffledRestaurants');
   }.property(),
 
+  //these are the restaruants that have just been rendomized
   shuffledRestaurants: function() {
     return this.get('model').sortBy(this.get('sortBy'));
   }.property('sortBy'),
@@ -29,6 +31,7 @@ export default Ember.Controller.extend({
     return this.get('filteredRestaurants.length');
   }.property('filteredRestaurants'),
 
+  //get all restaurants that are not in filtered restaurants
   nonFilteredRestaurants: function() {
     var controller = this;
 
@@ -45,12 +48,14 @@ export default Ember.Controller.extend({
 
   }.property('filteredRestaurants'),
 
+  //check if there are filtered restaruants or not
   hasFilteredRestaurants: function() {
     return this.get('filteredRestaurants.length') > 0;
   }.property('filteredRestaurants'),
 
   actions: {
 
+    //filter restaurants based on search criteria from user
     updateSearchResults: function(params) {
       //randomize results
       this.send('changeSortBy');
@@ -114,7 +119,7 @@ export default Ember.Controller.extend({
           //remove loading spinner
           _this.set('loading', false);                                                                        
         }, function(data){                                                                                               
-          debugger;
+          alert('oops there was a problem. Please try again soon.');
           //remove loading spinner
           _this.set('loading', false);                                                                                     
         });   
@@ -127,6 +132,7 @@ export default Ember.Controller.extend({
       }
     },
 
+    //change the key that restaurants will be sorted by
     changeSortBy: function() {
       var input = ['name', 'street', 'imgUrl', 'description', 'id'];
        
@@ -140,7 +146,8 @@ export default Ember.Controller.extend({
       }
       this.set('sortBy', input.get('firstObject'));
     },
-    
+
+    //MIXPANEL track reserver button click
     clickReserver: function(restaurantName) {
       //MIXPANEL: Add Search Results Reserver Button Click Event
       mixpanel.track('Search Results Page Réserver Button Click', { 
