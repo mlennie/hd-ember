@@ -156,6 +156,8 @@ export default Ember.Mixin.create({
 						time: this.get('time'),
 						number: this.get('number')
 					}
+					//make sure page is on search results
+					this.transitionToRoute('restaurants.search-results');
 					//call action to update search results
 					this.get('searchResults').send('updateSearchResults', params);
 				//else go to the specific restaurant page that was picked
