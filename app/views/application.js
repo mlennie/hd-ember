@@ -27,6 +27,16 @@ export default Ember.View.extend({
     }
 	}.on('didInsertElement').observes('controller.currentPath', 'controller.session'),
 
+	//focus search fields when icons are clicked
+	focusSearchFields: function() {
+
+		//open calendar when calendar icon clicked
+		Ember.$('#calendar-icon').on('click', function() {
+			Ember.$('#date-field').trigger('focus');
+		});
+			
+	}.on('didInsertElement'),
+
 	//send events to MIXPANEL
 	applicationMixpanelEvents: function() {
 

@@ -8,17 +8,17 @@
 							form submit='search'
 								span.input_container
 									= bootstrap-datepicker valueBinding=date class="input" id="date-field" readonly="true" format="yyyy-mm-dd" todayBtn=false todayHighlight=true placeholder="Date" language='fr' 
-									span.search-icon = fa-icon 'calendar'
+									span.search-icon#calendar-icon.no-margin = fa-icon 'calendar'
 								span.input_container
-									= view Ember.Select content=hours valueBinding=time class="search-select input" prompt="Heure" 
-									span.search-icon = fa-icon 'caret-down'
+									= view Ember.Select content=hours valueBinding=time class="search-select input" id="hour-field" prompt="Heure" 
+									span.search-icon#hour-icon = fa-icon 'caret-down'
 								span.input_container
-									= view Ember.Select content=couverts valueBinding=number class="search-select input" prompt='Nombre de couverts' 
-									span.search-icon = fa-icon 'caret-down'
+									= view Ember.Select content=couverts valueBinding=number class="search-select input" id="number-field" prompt='Nombre de couverts' 
+									span.search-icon#number-icon = fa-icon 'caret-down'
 								span.input_container
 									= view Ember.Select content=cuisines value=cuisine class="search-select input" id="cuisine-select" prompt="Cuisine" disabled=cuisineDisabled
-									span.search-icon = fa-icon 'caret-down'
+									span.search-icon#cuisine-icon = fa-icon 'caret-down'
 								span.input_container
 									= view Ember.Select content=names prompt="Où ?" value=name id="name-select" class="search-select input"
-									span.search-icon = fa-icon 'caret-down'
+									span.search-icon#name-icon = fa-icon 'caret-down'
 								button#top-search-button type="submit" Rechercher 
