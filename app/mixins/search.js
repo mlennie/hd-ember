@@ -1,6 +1,9 @@
 import Ember from "ember";
 export default Ember.Mixin.create({
 
+	needs: "restaurants/search-results",
+  searchResults: Ember.computed.alias("controllers.restaurants/search-results"),
+
 	//properties
 	//set initial search options to be null
 	name: null,
@@ -146,16 +149,15 @@ export default Ember.Mixin.create({
 					this.get('zipcodes').indexOf(name) != -1 ||
 					name === null
 				) {
-					this.transitionToRoute(
-						'restaurants.search-results', 
-						{ queryParams: { 
-							name: this.get('name'), 
-							cuisine: this.get('cuisine') == null ? undefined : this.get('cuisine'),
-							date: this.get('date') == undefined ? null : this.get('date'),
-							time: this.get('time') == undefined ? null : this.get('time'),
-							number: this.get('number') == undefined ? null : this.get('number')
-						}}
-					);
+					var params = {
+						name: this.get('name'),
+						cuisine: this.get('cuisine'),
+						date: this.get('date'),
+						time: this.get('time'),
+						number: this.get('number')
+					}
+					//call action to update search results
+					this.get('searchResults').send('updateSearchResults', params);
 				//else go to the specific restaurant page that was picked
 				//and send chosen query params so that can look up service times with that
 				} else {
