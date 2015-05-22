@@ -32,6 +32,6 @@ br
 				= partial 'restaurants/item' 
 			= else
 				.alert.alert-warning Aucun restaurant ne correspond à vos critères de recherche.
-			h2#more-restaurants-title.no-margin-top Vous aimerez aussi :
-			= each restaurant in nonFilteredRestaurants itemController="search-item"
-				= partial 'restaurants/item'
+			//h2#more-restaurants-title.no-margin-top Vous aimerez aussi :
+			//= each restaurant in nonFilteredRestaurants itemController="search-item"
+				//= partial 'restaurants/item'
