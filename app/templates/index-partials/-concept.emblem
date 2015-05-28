@@ -10,7 +10,7 @@
 			img.img-responsive.border src="/assets/images/illusite1.png" alt="step one reserve"
 			h6.light#concept-gold-subtitles
 				p Reservez un restaurant
-				p sur happydining.fr ou par téléphone.
+				p sur happydining.fr ou par téléphone
 		.col-sm-4
 			h3.medium#concept-gold-titles
 				img.circle src="/assets/images/num2.png" alt="step two eat" height='30'
